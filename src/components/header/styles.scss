@@ -1,0 +1,115 @@
+.main-header {
+    background-color: #F9F9F9;
+    height: 120px;
+    z-index: 1000;
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: inherit;
+
+        > div {
+            padding: 0 15px;        
+        }
+    
+        > .logo-wrapper {
+            flex: 1.5
+        }
+    
+        > .menu-wrapper {
+            flex: 6;
+        }
+    
+        > .socials-wrapper {
+            flex: 1
+        }
+
+        ul.navigation {
+            text-align: right;
+
+            > li {
+                font-size: 14px;
+                font-weight: 600;
+                text-transform: uppercase;
+                display: inline-block;
+                position: relative;
+
+                a, span {
+                    text-decoration: none;
+                    color: #414042;
+                    padding: 20px 30px;
+                    position: relative;
+                    z-index: 1000;
+                    transition: 0.3s;
+
+                    &:hover {
+                        color: #FF9D64; 
+                    }
+                }
+
+                .childrens-wrapper {
+                    position: absolute;
+                    top: 30px;
+                    left: -110px;
+                    width: 350px;
+                    text-align: center;
+                    padding: 10px 0;
+                    z-index: 900;
+
+                    ul {
+                        list-style: none;
+                        padding: 15px;
+                        border-radius: 15px;
+                        background-color: #F9F9F9;
+                        box-shadow: 0 14px 28px rgba(0,0,0,0.09), 0 10px 10px rgba(0,0,0,0.08);
+
+                        li {
+
+                            border-bottom: 0.3px solid #e3e3e3;
+
+                            &:last-child {
+                                border-bottom: 0px
+                            }
+
+                            a, span {
+                                text-decoration: none;
+                                color: #414042;
+                                padding: 10px 0px;
+                                position: relative;
+                                z-index: 1000;
+                                display: flex;
+
+                                > * {
+                                    text-align: left;
+                                }
+                                
+                                > img {
+                                    width: 60px;
+                                    text-align: center;
+                                }
+
+                                > .sub-item-info {
+                                    width: 100%;
+                                    padding: 5px 0 0 20px;
+
+                                    .sub-item-title {
+                                        color: #414042;
+                                        padding: 0px 0 5px;
+                                    }
+
+                                    .sub-item-description {
+                                        color: #A6A6A6;
+                                        text-transform: none;
+                                        padding: 0px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
