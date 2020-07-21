@@ -13,8 +13,8 @@ const MenuItem = ({ item }) => {
                     className={`childrens-wrapper animate__animated ${
                         hovered !== undefined
                             ? hovered
-                                ? 'animate__fadeInDown'
-                                : 'animate__fadeOutUp'
+                                ? 'animate__flipInX'
+                                : 'animate__flipOutX'
                             : 'hidden'
                     }`}
                 >
