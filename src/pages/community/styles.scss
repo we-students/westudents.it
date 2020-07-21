@@ -1,0 +1,52 @@
+
+
+
+.community-wrapper {
+    .intro-section {
+       
+        color: white;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        .section-title{
+            text-transform: uppercase;
+            font-size: 23px;
+            text-align: center;
+            letter-spacing: 0.3em;
+            font-weight: 600;
+            margin-bottom: 1.5em;
+        }
+        .section-subtitle{
+            font-weight: 700;
+            font-size: 34px;
+            text-align: center;
+        }
+        .scroll-to {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    .manifest {
+        .title {
+            font-size: 30px;
+            color: #FF9D64;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .manifest-list {
+            font-size: 14px;
+            font-weight: 600;
+            @media screen and (min-width: 768px) {
+                margin: 0 25%;
+            }
+            @media screen and (max-width: 768px) {
+                margin: 0 20%;
+            }
+            @media screen and (min-width: 992px) {
+                margin: 0 35%;
+            }
+        }
+        
+    }
+}
