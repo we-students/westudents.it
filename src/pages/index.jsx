@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Lottie from 'react-lottie'
-import * as animationData from '../lotties/main.json'
+import ReactFullpage from '@fullpage/react-fullpage'
 
 import Layout from '../components/layout'
 import Image from '../components/image'
 import SEO from '../components/seo'
+import * as animationData from '../lotties/main.json'
 
 const pageTitle = 'WeStudents — Home'
 
@@ -21,6 +22,25 @@ const defaultOptions = {
 const IndexPage = () => (
     <Layout>
         <SEO title={pageTitle} />
+        <ReactFullpage
+            scrollingSpeed={1000} /* Options here */
+            render={({ state, fullpageApi }) => {
+                console.log('state', state)
+                return (
+                    <ReactFullpage.Wrapper>
+                        <div className="section">
+                            <p>Section 1 (welcome to fullpage.js)</p>
+                            <button onClick={() => fullpageApi.moveSectionDown()}>
+                                Click me to move down
+                            </button>
+                        </div>
+                        <div className="section">
+                            <p>Section 2</p>
+                        </div>
+                    </ReactFullpage.Wrapper>
+                )
+            }}
+        />
         <div style={{ height: 300, with: 300 }} />
         <Lottie
             options={defaultOptions}
