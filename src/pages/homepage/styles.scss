@@ -1,0 +1,63 @@
+.homepage {
+
+	.section .container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		> * {
+			flex: 1;
+		}
+	}
+
+	.intro {
+		> .intro-text {
+			margin-bottom: 20vh;
+		}
+
+		h2 {
+			font-size: 3.6em;
+
+			span {
+				animation: flow 3s ease-in-out infinite;
+				background: linear-gradient(-60deg, #FF9D64, #c34823, #e4552a, #ee7752, #f09c83);
+				background-size: 300%;
+				-webkit-background-clip: text;
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+		}
+	}
+
+	h3 {
+		font-size: 2.4em;
+		margin: 20px 0px;
+	}
+
+	p.section-description {
+		color: #A6A6A6;		
+		font-weight: 700;
+		font-size: 1.2em;
+		padding: 0;
+    	margin: 0;
+    	margin-bottom: 10px;
+	}
+
+	.westudents-app, .wegather {
+
+		.westudents-app-text {
+			margin-bottom: 20vh;
+		}
+
+		.wegather-text {
+			margin-right: 50px;
+			margin-bottom: 20vh;
+			text-align: right;
+		}
+
+		button {
+			margin-top: 50px;
+		}
+	}
+
+}
