@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 import WsLogo from '../../images/logo_wes.svg'
 import './styles.scss'
