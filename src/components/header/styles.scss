@@ -40,6 +40,11 @@
                 display: inline-block !important;
                 padding: 10px;
 
+                &:hover {
+                    filter: opacity(50%);
+                    transition: 0.3s;
+                }
+
                 img {
                     width: 30px
                 }
@@ -77,6 +82,8 @@
                     text-align: center;
                     padding: 10px 0;
                     z-index: 900;
+
+                    animation-duration: 0.6s; 
 
                     ul {
                         list-style: none;

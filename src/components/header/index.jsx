@@ -38,7 +38,9 @@ const Header = ({ siteTitle }) => {
         >
             <div className="container">
                 <div className="logo-wrapper">
-                    <img src={WsLogo} alt="WeStudents logo" />
+                    <Link to="/">
+                        <img src={WsLogo} alt="WeStudents logo" />
+                    </Link>
                 </div>
                 <div className="menu-wrapper">
                     <nav>
