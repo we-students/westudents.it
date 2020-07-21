@@ -1,7 +1,18 @@
+
+
 .main-header {
-    background-color: #F9F9F9;
+    background-color: rgba(249, 249, 249, 0.7);
     height: 120px;
     z-index: 1000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(6px);
+
+    &.header-shadow {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.03), 0 10px 10px rgba(0,0,0,0.03);
+    }
 
     .container {
         display: flex;
@@ -14,7 +25,7 @@
         }
     
         > .logo-wrapper {
-            flex: 1.5
+            flex: 1
         }
     
         > .menu-wrapper {
@@ -22,7 +33,17 @@
         }
     
         > .socials-wrapper {
-            flex: 1
+            text-align: right;
+            padding-top: 10px;
+
+            > * {
+                display: inline-block !important;
+                padding: 10px;
+
+                img {
+                    width: 30px
+                }
+            }
         }
 
         ul.navigation {
