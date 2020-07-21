@@ -21,7 +21,7 @@ const MenuItem = ({ item }) => {
                     <ul>
                         {item.childrens.map((children) => {
                             return (
-                                <li key={item.key}>
+                                <li key={children.key}>
                                     <Link to={children.href}>
                                         <img
                                             className="sub-item-logo"
