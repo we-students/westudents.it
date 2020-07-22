@@ -23,7 +23,6 @@ const Bubble = (props) => {
         width: `${width}px`,
         height: `${height}px`,
     }
-
     return (
         <>
             <div
@@ -32,7 +31,7 @@ const Bubble = (props) => {
                     ...style,
                     [positionX]: '0px',
                     [positionY]: '0px',
-                    transform: `translate(${horizontalShift}px,${verticalShift}px)`,
+                    transform: `translate(${horizontalShift}px,${verticalShift}px) rotate(${rotation}deg)`,
                 }}
             >
                 <span
@@ -51,18 +50,18 @@ const Bubbles = (props) => {
     const bubblesSvgs = [
         {
             image: LargeBubble,
-            width: 270,
-            height: 320,
+            width: 260,
+            height: 310,
         },
         {
             image: MediumBubble,
-            width: 160,
-            height: 250,
+            width: 150,
+            height: 240,
         },
         {
             image: SmallBubble,
-            width: 120,
-            height: 160,
+            width: 110,
+            height: 150,
         },
     ]
     const { sectionCount } = props
@@ -72,24 +71,27 @@ const Bubbles = (props) => {
         if (sectionCount > 0 && bubblesSvgs) {
             const bubblesTemp = []
             for (let i = 0; i < sectionCount; i++) {
-                const randomBubble = bubblesSvgs[Math.floor(Math.random() * bubblesSvgs.length)]
-                const x = windowWidth * Math.random()
-                const y = windowHeight * Math.random()
-                const opacity = Math.random() + 0.2
-                bubblesTemp.push(
-                    <Bubble
-                        image={randomBubble.image}
-                        key={`bubble_${x}_${y}`}
-                        horizontalShift={x}
-                        verticalShift={y}
-                        positionX="left"
-                        positionY="top"
-                        opacity={opacity}
-                        height={randomBubble.height}
-                        width={randomBubble.width}
-                        rotation={0}
-                    />,
-                )
+                for (let z = 0; z < getRandomInt(1, 3); z++) {
+                    const y = windowHeight * Math.random() + i * windowHeight
+                    const randomBubble = bubblesSvgs[Math.floor(Math.random() * bubblesSvgs.length)]
+                    const x = windowWidth * Math.random()
+                    const opacity = Math.random() + 0.2
+                    const rotation = getRandomInt(0, 360)
+                    bubblesTemp.push(
+                        <Bubble
+                            image={randomBubble.image}
+                            key={`bubble_${x}_${y}`}
+                            horizontalShift={x}
+                            verticalShift={y}
+                            positionX="left"
+                            positionY="top"
+                            opacity={opacity}
+                            height={randomBubble.height}
+                            width={randomBubble.width}
+                            rotation={rotation}
+                        />,
+                    )
+                }
             }
 
             return bubblesTemp
