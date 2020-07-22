@@ -9,7 +9,7 @@ exports.createPages = ({ actions }) => {
     const { createPage } = actions
     createPage({
         path: `/`,
-        component: require.resolve(`./src/pages/index.jsx`),
+        component: require.resolve(`./src/pages/homepage/index.jsx`),
     })
     createPage({
         path: `/community`,
