@@ -50,18 +50,18 @@ const Bubbles = (props) => {
     const bubblesSvgs = [
         {
             image: LargeBubble,
-            width: 260,
-            height: 310,
+            width: 220,
+            height: 290,
         },
         {
             image: MediumBubble,
-            width: 150,
-            height: 240,
+            width: 130,
+            height: 220,
         },
         {
             image: SmallBubble,
-            width: 110,
-            height: 150,
+            width: 90,
+            height: 130,
         },
     ]
     const { sectionCount } = props
