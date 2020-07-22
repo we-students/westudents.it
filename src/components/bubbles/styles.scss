@@ -1,10 +1,10 @@
 @mixin bubble {
     background-size: cover;
-    /* animation-name: float-up;
+    animation-name: float-up;
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-    animation-delay: 2s; */
+    animation-delay: 2s;
 }
 
 .bubble-wrapper-container{
@@ -26,3 +26,17 @@
     @include bubble();
 }
 
+
+@keyframes float-up {
+    0% {
+        transform: translatey(0px);
+    }
+
+    50% {
+        transform: translatey(-30px);
+    }
+
+    100% {
+        transform: translatey(0px);
+    }
+}

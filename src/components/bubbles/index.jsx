@@ -71,7 +71,7 @@ const Bubbles = (props) => {
         if (sectionCount > 0 && bubblesSvgs) {
             const bubblesTemp = []
             for (let i = 0; i < sectionCount; i++) {
-                for (let z = 0; z < getRandomInt(1, 3); z++) {
+                for (let z = 0; z < getRandomInt(2, 4); z++) {
                     const y = windowHeight * Math.random() + i * windowHeight
                     const randomBubble = bubblesSvgs[Math.floor(Math.random() * bubblesSvgs.length)]
                     const x = windowWidth * Math.random()
