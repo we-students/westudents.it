@@ -1,0 +1,28 @@
+@mixin bubble {
+    background-size: cover;
+    /* animation-name: float-up;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s; */
+}
+
+.bubble-wrapper-container{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    filter: blur(40px);
+}
+
+.bubble-wrapper{
+    display: flex;
+    position: absolute;
+    &:hover{
+        opacity: .2;
+    }
+}
+
+.custom-bubble{
+    @include bubble();
+}
+
