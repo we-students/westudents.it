@@ -1,60 +1,24 @@
 import React from 'react'
-import ReactFullpage from '@fullpage/react-fullpage'
 
 import Layout from '../../components/layout'
-import SEO from '../../components/seo'
 import Intro from './IntroSection'
 import './styles.scss'
 import WeStudentsApp from './WeStudentsAppSection'
 import WeGather from './WeGatherSection'
-import Bubbles from '../../components/bubbles/index'
 
 const pageTitle = 'WeStudents — Home'
 
 const HomePage = () => (
-    <Layout className="homepage">
-        <SEO title={pageTitle} />
-        <ReactFullpage
-            anchors={['intro', 'westudents-app']}
-            navigation
-            scrollingSpeed={1000} /* Options here */
-            autoScrolling
-            scrollHorizontally
-            scrollOverflow
-            scrollOverflowReset
-            scrollOverflowOptions={{ scrollbars: false }}
-            scrollBar={false}
-            onLeave={(origin, destination, direction) => {
-                document.dispatchEvent(
-                    new CustomEvent('section-scrolled', {
-                        detail: {
-                            origin,
-                            destination,
-                            direction,
-                        },
-                    }),
-                )
-            }}
-            render={({ state, fullpageApi }) => {
-                return (
-                    <>
-                        <Bubbles sectionCount={state.sectionCount} />
-                        <ReactFullpage.Wrapper>
-                            <div className="section">
-                                <Intro onCtaPress={() => fullpageApi.moveSectionDown()} />
-                            </div>
-                            <div className="section">
-                                <WeStudentsApp onCtaPress={() => fullpageApi.moveSectionDown()} />
-                            </div>
-                            <div className="section">
-                                <WeGather onCtaPress={() => fullpageApi.moveSectionDown()} />
-                            </div>
-                        </ReactFullpage.Wrapper>
-                    </>
-                )
-            }}
-        />
-    </Layout>
+    <Layout
+        className="homepage"
+        seo={{ title: pageTitle }}
+        showBubbles
+        sections={[
+            (fullpageProps) => <Intro fullpageProps={fullpageProps} />,
+            (fullpageProps) => <WeStudentsApp fullpageProps={fullpageProps} />,
+            (fullpageProps) => <WeGather fullpageProps={fullpageProps} />,
+        ]}
+    />
 )
 
 export default HomePage
