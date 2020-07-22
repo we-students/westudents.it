@@ -7,6 +7,7 @@ import Intro from './IntroSection'
 import './styles.scss'
 import WeStudentsApp from './WeStudentsAppSection'
 import WeGather from './WeGatherSection'
+import Bubbles from '../../components/bubbles/index'
 
 const pageTitle = 'WeStudents — Home'
 
@@ -34,19 +35,22 @@ const HomePage = () => (
                     }),
                 )
             }}
-            render={({ fullpageApi }) => {
+            render={({ state, fullpageApi }) => {
                 return (
-                    <ReactFullpage.Wrapper>
-                        <div className="section">
-                            <Intro onCtaPress={() => fullpageApi.moveSectionDown()} />
-                        </div>
-                        <div className="section">
-                            <WeStudentsApp onCtaPress={() => fullpageApi.moveSectionDown()} />
-                        </div>
-                        <div className="section">
-                            <WeGather onCtaPress={() => fullpageApi.moveSectionDown()} />
-                        </div>
-                    </ReactFullpage.Wrapper>
+                    <>
+                        <Bubbles sectionCount={state.sectionCount} />
+                        <ReactFullpage.Wrapper>
+                            <div className="section">
+                                <Intro onCtaPress={() => fullpageApi.moveSectionDown()} />
+                            </div>
+                            <div className="section">
+                                <WeStudentsApp onCtaPress={() => fullpageApi.moveSectionDown()} />
+                            </div>
+                            <div className="section">
+                                <WeGather onCtaPress={() => fullpageApi.moveSectionDown()} />
+                            </div>
+                        </ReactFullpage.Wrapper>
+                    </>
                 )
             }}
         />
