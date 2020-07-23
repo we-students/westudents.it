@@ -1,8 +1,10 @@
-import React from 'react'
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import React, { useState } from 'react'
 import Translate from '../translation/translate'
 import './styles.scss'
 
 const Footer = () => {
+    const [form, setForm] = useState({ email: '', privacy: false })
     return (
         <div className="footer-wrapper">
             <div className="footer">
@@ -39,7 +41,13 @@ const Footer = () => {
                                     <Translate>FOOTER.SUPPORT.ITEM1</Translate>
                                 </li>
                                 <li className="list-item">
-                                    <Translate>CONTACTS.EMAIL</Translate>
+                                    <a
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                                        href="mailto:info@westudents.it"
+                                    >
+                                        <Translate>CONTACTS.EMAIL</Translate>
+                                    </a>
                                 </li>
                                 <li className="list-item">
                                     <Translate>FOOTER.SUPPORT.ITEM3</Translate>
@@ -88,6 +96,18 @@ const Footer = () => {
                                     Invia
                                 </button>
                             </div>
+                            <form className="newsletter-check">
+                                <input
+                                    type="checkbox"
+                                    id="subscribe"
+                                    name="subscribe"
+                                    checked={form.privacy}
+                                    onChange={() => setForm({ ...form, privacy: !form.privacy })}
+                                />
+                                <label style={{ fontSize: '10px' }} htmlFor="subscribe">
+                                    <Translate>FOOTER.JOIN_NEWSLETTER.CONDITIONS</Translate>
+                                </label>
+                            </form>
                         </div>
                         <span className="horizontal-divider" />
                     </div>
