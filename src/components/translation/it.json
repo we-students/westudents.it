@@ -9,5 +9,41 @@
             "TITLE": "Questo è il nostro manifesto",
             "ITEM1": "Noi crediamo in un'instruzione a 360 gradi, versatile, in grado di coinvolgere gli studenti e ricca di stimoli"
         }
+    },
+    "FOOTER": {
+        "PRIVACY": {
+            "TITLE": "Privacy",
+            "ITEM1": "Privacy Policy del sito",
+            "ITEM2": "Privacy Policy dell’app",
+            "ITEM3": "Termini e condizioni",
+            "ITEM4": "Norme della Community",
+            "ITEM5": "Cookies Policy"
+        },
+        "SUPPORT": {
+            "TITLE": "Supporto",
+            "ITEM1": "FAQ",
+            "ITEM3": "Press kit"
+        },
+        "WORK": {
+            "TITLE": "Lavora con noi",
+            "ITEM1": "Posizioni aperte"
+        },
+        "COMMUNITY": {
+            "TITLE": "Community",
+            "ITEM1": "Diventa un rappresentante"
+        },
+        "JOIN_NEWSLETTER": {
+            "TITLE": "Iscriviti alla nostra newsletter!",
+            "SUBTITLE": "Puoi cancellarla in qualsiasi momento.",
+            "CONDITIONS": "Accetto le condizioni generali per il ricevimento della newsletter"
+        },
+        "COMPANY": {
+            "NAME": "We students S.R.L",
+            "TYPE": "Startup innovativa P.IVA 11961860019"   
+        }
+    },
+    "CONTACTS": {
+        "EMAIL": "info@westudents.it"
+
     }
 }
