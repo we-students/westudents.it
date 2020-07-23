@@ -27,6 +27,8 @@ const Layout = ({ className, sections, seo, showBubbles }) => {
         }
     `)
 
+    console.log('data', data)
+
     return (
         <div className={className}>
             <SEO {...seo} />
