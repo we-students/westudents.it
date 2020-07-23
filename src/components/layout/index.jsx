@@ -6,7 +6,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from 'react'
+import React, { useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import ReactFullpage from '@fullpage/react-fullpage'
 
@@ -26,7 +26,15 @@ const Layout = ({ className, sections, seo, showBubbles }) => {
             }
         }
     `)
-
+    const [activeTab, setActiveTab] = useState(0)
+    const handleSectionChange = (origin, destination, direction) => {
+        if (direction === 'down') {
+            setActiveTab(origin.index + 1)
+        }
+        if (direction === 'up') {
+            setActiveTab(origin.index - 1)
+        }
+    }
     return (
         <div className={className}>
             <SEO {...seo} />
@@ -42,30 +50,26 @@ const Layout = ({ className, sections, seo, showBubbles }) => {
                     scrollOverflowReset
                     scrollOverflowOptions={{ scrollbars: false }}
                     scrollBar={false}
-                    onLeave={(origin, destination, direction) => {
-                        document.dispatchEvent(
-                            new CustomEvent('section-scrolled', {
-                                detail: {
-                                    origin,
-                                    destination,
-                                    direction,
-                                },
-                            }),
+                    onLeave={(origin, destination, direction) =>
+                        handleSectionChange(origin, destination, direction)
+                    }
+                    render={(fullpageProps) => {
+                        return (
+                            <>
+                                {showBubbles ? (
+                                    <Bubbles sectionCount={fullpageProps.state.sectionCount} />
+                                ) : null}
+                                {sections.map((renderSection, index) => (
+                                    <div className="section">
+                                        {renderSection(fullpageProps, activeTab===index)}
+                                    </div>
+                                ))}
+                                <div className="section">
+                                    <Footer />
+                                </div>
+                            </>
                         )
                     }}
-                    render={(fullpageProps) => (
-                        <>
-                            {showBubbles ? (
-                                <Bubbles sectionCount={fullpageProps.state.sectionCount} />
-                            ) : null}
-                            {sections.map((renderSection) => (
-                                <div className="section">{renderSection(fullpageProps)}</div>
-                            ))}
-                            <div className="section">
-                                <Footer />
-                            </div>
-                        </>
-                    )}
                 />
             </div>
         </div>

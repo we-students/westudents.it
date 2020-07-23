@@ -44,6 +44,24 @@
     },
     "CONTACTS": {
         "EMAIL": "info@westudents.it"
-
+    },
+    "STATISTICS": {
+        "TITLE": "Vogliamo parlare di numeri",
+        "DOWNLOAD": {
+            "TITLE": "Donwload app",
+            "VALUE": "125K"
+        },
+        "INTERACTIONS":  {
+            "TITLE": "Interazioni",
+            "VALUE": "15mln"
+        },
+        "SURVEYS": {
+            "TITLE": "Risposte ai sondagggi",
+            "VALUE": "500K"
+        },
+        "AGE": {
+            "TITLE": "Età media del team",
+            "VALUE": "22"
+        }
     }
 }
