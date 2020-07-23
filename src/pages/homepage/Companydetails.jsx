@@ -32,10 +32,10 @@ const statistics = [
     },
 ]
 
-const Details = () => {
-    const size = useWindowSize()
+const Details = (props) => {
+    const { isActive } = props
     return (
-        <div className="details-wrapper">
+        <div className={`details-wrapper ${isActive && 'active'}`}>
             <div style={{ alignItems: 'stretch' }}>
                 <h2
                     style={{ margin: 0, textTransform: 'uppercase', letterSpacing: '0.2em' }}

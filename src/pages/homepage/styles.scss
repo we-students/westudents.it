@@ -61,10 +61,11 @@
 	}
 
 	.details-wrapper {
-		background: linear-gradient(45deg, rgba(195,35,40,1) 0%, rgba(214,73,59,1) 11%, rgba(255,157,100,1) 100%);
 		height: 100%;
 		padding: 5%;
+		background: transparent;
 		color: white;
+		background: linear-gradient(45deg, rgba(195,35,40,1) 0%, rgba(214,73,59,1) 10%, rgba(224,94,69,1) 19%, rgba(255,157,100,1) 100%);
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -87,5 +88,14 @@
 				font-size: 12px;
 			}
 		}
+		&.active {
+			animation: background-orange 0.5s ease-in;
+		}
 	}
+ 	@keyframes background-orange {
+		0% {opacity: 0;}
+		100% {opacity: 1;}
+	  } 
+	  
 }
+
