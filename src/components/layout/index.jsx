@@ -12,7 +12,7 @@ import ReactFullpage from '@fullpage/react-fullpage'
 
 import Bubbles from '../bubbles/index'
 import SEO from '../seo'
-
+import Footer from '../footer'
 import Header from '../header'
 import './layout.scss'
 
@@ -62,7 +62,7 @@ const Layout = ({ className, sections, seo, showBubbles }) => {
                                 <div className="section">{renderSection(fullpageProps)}</div>
                             ))}
                             <div className="section">
-                                <footer>© {new Date().getFullYear()}, Built with Mario</footer>
+                                <Footer />
                             </div>
                         </>
                     )}
