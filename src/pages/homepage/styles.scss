@@ -108,6 +108,7 @@
 	.sponsor {
 		flex-direction: column;
 		padding-top: 9%;
+		padding-bottom: 0;
 		.title {
 			color: #FF9D64;
 			text-transform: uppercase;
@@ -120,7 +121,7 @@
 		}
 		.cta-section {
 			justify-content: center;
-			margin-bottom: 100px;
+
 		}
 		.cta-text {
 			color: #A6A6A6;
@@ -134,9 +135,6 @@
 			font-size: 15px;
 		}
 		
-	}
-	.fp-scroller > div {
-		padding: 0;
 	}
  	@keyframes background-orange {
 		0% {opacity: 0;}
