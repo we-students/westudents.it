@@ -43,7 +43,7 @@
     	margin-bottom: 10px;
 	}
 
-	.westudents-app, .wegather {
+	.westudents-app, .wegather, .dascuola {
 
 		.westudents-app-text {
 			margin-bottom: 20vh;
@@ -57,6 +57,18 @@
 
 		button {
 			margin-top: 50px;
+			height: 36px;
+			padding: 0 3em;
+			font-size: 15px;
+			&.dascuola {
+				background: #7C6BAA;
+			}
+			&.wegather {
+				background: #EA544C;
+			}
+			&.westudents {
+				background: #FF9D64;
+			}
 		}
 	}
 
@@ -91,6 +103,40 @@
 		&.active {
 			animation: background-orange 0.5s ease-in;
 		}
+	}
+
+	.sponsor {
+		flex-direction: column;
+		padding-top: 9%;
+		.title {
+			color: #FF9D64;
+			text-transform: uppercase;
+			margin-bottom: 120px;
+		}
+		.sponsor-icon {
+			width: 160px;
+			height: 60px;
+			margin: 0 1.5em;
+		}
+		.cta-section {
+			justify-content: center;
+			margin-bottom: 100px;
+		}
+		.cta-text {
+			color: #A6A6A6;
+			text-transform: uppercase;
+			font-size: inherit;
+			margin-top: 100px;
+		}
+		button {
+			height: 36px;
+			padding: 0 3em;
+			font-size: 15px;
+		}
+		
+	}
+	.fp-scroller > div {
+		padding: 0;
 	}
  	@keyframes background-orange {
 		0% {opacity: 0;}
