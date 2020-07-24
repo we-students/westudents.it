@@ -1,7 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react'
 
-import useWindowSize from '../../hooks/useWindowSize'
 import Translate from '../../components/translation/translate'
 
 const DownloadIcon = require('../../images/download_icon.svg')

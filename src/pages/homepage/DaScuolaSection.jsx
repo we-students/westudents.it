@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import Translate from '../../components/translation/translate'
-import WeStudentsAppLottieAnimation from '../../components/lotties/westudents-app'
+import DaScuolaLottieAnimation from '../../components/lotties/dascuola'
 
 import useWindowSize from '../../hooks/useWindowSize'
 
-const WeStudentsApp = ({ onCtaPress = () => {} }) => {
+const DaScuola = ({ onCtaPress = () => {} }) => {
     const size = useWindowSize()
 
     useEffect(() => {
@@ -12,27 +12,27 @@ const WeStudentsApp = ({ onCtaPress = () => {} }) => {
     }, [size])
 
     return (
-        <div className="westudents-app container">
+        <div className="dascuola container">
             <div>
-                <WeStudentsAppLottieAnimation
+                <DaScuolaLottieAnimation
                     width={(size.width > 1400 ? 1400 : size.width) * 0.6}
                     height={(size.width > 1400 ? 1400 : size.width) * 0.6}
                 />
             </div>
-            <div className="westudents-app-text">
+            <div className="dascuola-text">
                 <h3>
-                    <Translate>HOMEPAGE.WESTUDENTS.TITLE</Translate>
+                    <Translate>HOMEPAGE.DASCUOLA.TITLE</Translate>
                 </h3>
                 <p className="section-description">
-                    <Translate>HOMEPAGE.WESTUDENTS.DESCRIPTION</Translate>
+                    <Translate>HOMEPAGE.DASCUOLA.DESCRIPTION</Translate>
                 </p>
 
-                <button type="button" className="westudents" onClick={onCtaPress}>
-                    <Translate>HOMEPAGE.BUTTONS.WESTUDENTS</Translate>
+                <button type="button" className='dascuola' onClick={onCtaPress}>
+                    <Translate>HOMEPAGE.BUTTONS.DASCUOLA</Translate>
                 </button>
             </div>
         </div>
     )
 }
 
-export default WeStudentsApp
+export default DaScuola
