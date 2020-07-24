@@ -1,6 +1,7 @@
 .footer-wrapper {
     width: 100%;
     display: flex;
+    padding-bottom: 0;
     justify-content: center;
     .footer{
         display: flex;
@@ -90,7 +91,7 @@
                 position: absolute;
                 left: 73%;
                 top: calc(35px/2);
-                padding: 3% 7%;
+                padding: 0 7%;
                 font-size: 11px;
                 height: 25px;
                 margin-top: calc(-25px/2);
