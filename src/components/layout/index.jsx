@@ -16,7 +16,7 @@ import Footer from '../footer'
 import Header from '../header'
 import './layout.scss'
 
-const Layout = ({ className, sections, seo, showBubbles }) => {
+const Layout = ({ className, sections, seo, showBubbles, showFooter = true }) => {
     const data = useStaticQuery(graphql`
         query SiteTitleQuery {
             site {
@@ -55,13 +55,15 @@ const Layout = ({ className, sections, seo, showBubbles }) => {
                                     <Bubbles sectionCount={fullpageProps.state.sectionCount} />
                                 ) : null}
                                 {sections.map((renderSection, index) => (
-                                    <div className="section">
-                                        {renderSection(fullpageProps, activeTab === index)}
-                                    </div>
+                                    <>
+                                        <div className="section">
+                                            {renderSection(fullpageProps, activeTab === index)}
+                                            {showFooter && index === sections.length - 1 ? (
+                                                <Footer />
+                                            ) : null}
+                                        </div>
+                                    </>
                                 ))}
-                                <div className="section">
-                                    <Footer />
-                                </div>
                             </>
                         )
                     }}
