@@ -32,8 +32,8 @@ const statistics = [
     },
 ]
 
-const Details = (props) => {
-    const { isActive } = props
+const Details = ({ fullpageProps }) => {
+    const { isActive } = fullpageProps
     return (
         <div className={`details-wrapper ${isActive && 'active'}`}>
             <div style={{ alignItems: 'stretch' }}>

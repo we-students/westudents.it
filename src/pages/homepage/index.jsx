@@ -18,7 +18,7 @@ const HomePage = () => (
             (fullpageProps) => <Intro fullpageProps={fullpageProps} />,
             (fullpageProps) => <WeStudentsApp fullpageProps={fullpageProps} />,
             (fullpageProps) => <WeGather fullpageProps={fullpageProps} />,
-            (fullpageProps, active) => <Details fullpageProps={fullpageProps} isActive={active} />,
+            (fullpageProps) => <Details fullpageProps={fullpageProps} />,
         ]}
     />
 )
