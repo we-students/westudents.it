@@ -2,7 +2,15 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    padding-bottom: 50px;
     .footer{
+        display: flex;
+        flex-direction: column;
+        padding:2em 3em;
+        border-radius: 15px;
+        background-color: #FF9D64;
+        display: flex;
+        color: white;
         @media screen and (max-width: 1440px){
             width: 80%;
         }
@@ -32,13 +40,6 @@
                 }
             }
         }
-        display: flex;
-        flex-direction: column;
-        padding:2em 3em;
-        border-radius: 15px;
-        background-color: #FF9D64;
-        display: flex;
-        color: white;
         .list-title {
             padding-inline-start: 0;
             list-style-type: none;
@@ -90,7 +91,7 @@
                 position: absolute;
                 left: 73%;
                 top: calc(35px/2);
-                padding: 3% 7%;
+                padding: 0 7%;
                 font-size: 11px;
                 height: 25px;
                 margin-top: calc(-25px/2);
@@ -109,7 +110,7 @@
             }
         }
     }
-    a{
+    a {
         text-decoration: none;
         color: inherit;
     }

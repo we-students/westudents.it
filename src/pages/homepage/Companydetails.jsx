@@ -1,7 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react'
 
-import useWindowSize from '../../hooks/useWindowSize'
 import Translate from '../../components/translation/translate'
 
 const DownloadIcon = require('../../images/download_icon.svg')
@@ -37,15 +36,15 @@ const Details = ({ fullpageProps }) => {
     return (
         <div className={`details-wrapper ${isActive && 'active'}`}>
             <div style={{ alignItems: 'stretch' }}>
-                <h2
-                    style={{ margin: 0, textTransform: 'uppercase', letterSpacing: '0.2em' }}
+                <h1
+                    style={{ margin: 0, textTransform: 'uppercase', letterSpacing: '0.15em' }}
                     className="text-center"
                 >
                     <Translate>STATISTICS.TITLE</Translate>
-                </h2>
+                </h1>
                 <div
                     className="justify-center d-flex"
-                    style={{ height: '100%', marginTop: '90px' }}
+                    style={{ height: '100%', marginTop: '110px' }}
                 >
                     <div className="d-flex">
                         {statistics.map((item, index) => (
@@ -57,7 +56,7 @@ const Details = ({ fullpageProps }) => {
                                 <div className="icon">
                                     <img src={item.icon} alt="WeStudents" />
                                 </div>
-                                <h1 style={{ margin: 0, fontWeight: 900 }}>{item.value}</h1>
+                                <h1 style={{ margin: 0, fontWeight: 900, fontSize: '42px' }}>{item.value}</h1>
                                 <p className="name">{item.title}</p>
                             </div>
                         ))}
