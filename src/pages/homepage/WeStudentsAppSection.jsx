@@ -15,8 +15,8 @@ const WeStudentsApp = ({ onCtaPress = () => {} }) => {
         <div className="westudents-app container">
             <div>
                 <WeStudentsAppLottieAnimation
-                    width={(size.width > 1400 ? 1400 : size.width) * 0.6}
-                    height={(size.width > 1400 ? 1400 : size.width) * 0.6}
+                    width={(size.width > 1400 ? 1400 : size.width) * 0.5}
+                    height={(size.width > 1400 ? 1400 : size.width) * 0.5}
                 />
             </div>
             <div className="westudents-app-text">

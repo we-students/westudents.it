@@ -26,8 +26,8 @@ const WeGather = ({ onCtaPress = () => {} }) => {
             </div>
             <div>
                 <WeGatherLottieAnimation
-                    width={(size.width > 1400 ? 1400 : size.width) * 0.6}
-                    height={(size.width > 1400 ? 1400 : size.width) * 0.6}
+                    width={(size.width > 1400 ? 1400 : size.width) * 0.5}
+                    height={(size.width > 1400 ? 1400 : size.width) * 0.5}
                 />
             </div>
         </div>
