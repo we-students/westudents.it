@@ -15,8 +15,8 @@ const DaScuola = ({ onCtaPress = () => {} }) => {
         <div className="dascuola container">
             <div>
                 <DaScuolaLottieAnimation
-                    width={(size.width > 1400 ? 1400 : size.width) * 0.6}
-                    height={(size.width > 1400 ? 1400 : size.width) * 0.6}
+                    width={(size.width > 1400 ? 1400 : size.width) * 0.5}
+                    height={(size.width > 1400 ? 1400 : size.width) * 0.5}
                 />
             </div>
             <div className="dascuola-text">
@@ -27,7 +27,7 @@ const DaScuola = ({ onCtaPress = () => {} }) => {
                     <Translate>HOMEPAGE.DASCUOLA.DESCRIPTION</Translate>
                 </p>
 
-                <button type="button" className='dascuola' onClick={onCtaPress}>
+                <button type="button" className="dascuola" onClick={onCtaPress}>
                     <Translate>HOMEPAGE.BUTTONS.DASCUOLA</Translate>
                 </button>
             </div>
