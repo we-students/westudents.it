@@ -57,7 +57,10 @@ const Layout = ({ className, sections, seo, showBubbles, showFooter = true }) =>
                                 {sections.map((renderSection, index) => (
                                     <>
                                         <div className="section">
-                                            {renderSection(fullpageProps, activeTab === index)}
+                                            {renderSection({
+                                                ...fullpageProps,
+                                                isActive: activeTab === index,
+                                            })}
                                             {showFooter && index === sections.length - 1 ? (
                                                 <Footer />
                                             ) : null}
