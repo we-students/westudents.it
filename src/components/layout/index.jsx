@@ -27,13 +27,8 @@ const Layout = ({ className, sections, seo, showBubbles }) => {
         }
     `)
     const [activeTab, setActiveTab] = useState(0)
-    const handleSectionChange = (origin, destination, direction) => {
-        if (direction === 'down') {
-            setActiveTab(origin.index + 1)
-        }
-        if (direction === 'up') {
-            setActiveTab(origin.index - 1)
-        }
+    const handleSectionChange = (origin, destination) => {
+        setActiveTab(destination.index)
     }
     return (
         <div className={className}>
@@ -61,7 +56,7 @@ const Layout = ({ className, sections, seo, showBubbles }) => {
                                 ) : null}
                                 {sections.map((renderSection, index) => (
                                     <div className="section">
-                                        {renderSection(fullpageProps, activeTab===index)}
+                                        {renderSection(fullpageProps, activeTab === index)}
                                     </div>
                                 ))}
                                 <div className="section">
