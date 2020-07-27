@@ -33,6 +33,10 @@ body {
   justify-content: center;
 }
 
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
 .d-flex {
   display: flex;
 }
