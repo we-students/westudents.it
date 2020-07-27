@@ -33,8 +33,12 @@ const statistics = [
 
 const Details = ({ fullpageProps }) => {
     const { isActive } = fullpageProps
+
+    console.log('isActive', isActive);
+    
+
     return (
-        <div className={`details-wrapper ${isActive && 'active'}`}>
+        <div className={`details-wrapper ${isActive ? 'active' : ''}`}>
             <div style={{ alignItems: 'stretch' }}>
                 <h1
                     style={{ margin: 0, textTransform: 'uppercase', letterSpacing: '0.15em' }}
