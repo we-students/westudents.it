@@ -50,8 +50,8 @@ const OpenPosition = ({ fullpageProps }) => {
     return (
         <div className="open-positions container">
             <h3>Tutte le posizioni aperte</h3>
-
             <p>Non sei un developer o un designer? Scopri le altre posizioni aperte!</p>
+
             <GridList
                 items={data}
                 cols={3}
