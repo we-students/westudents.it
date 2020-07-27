@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import Translate from '../../components/translation/translate'
-import DaScuolaLottieAnimation from '../../components/lotties/dascuola'
 
-import useWindowSize from '../../hooks/useWindowSize'
+import Translate from '../../../components/translation/translate'
+import DaScuolaLottieAnimation from '../../../components/lotties/dascuola'
+import useWindowSize from '../../../hooks/useWindowSize'
 
 const DaScuola = ({ onCtaPress = () => {} }) => {
     const size = useWindowSize()
