@@ -1,15 +1,11 @@
-import React, { useEffect } from 'react'
-import Translate from '../../components/translation/translate'
-import WeGatherLottieAnimation from '../../components/lotties/wegather'
+import React from 'react'
 
-import useWindowSize from '../../hooks/useWindowSize'
+import Translate from '../../../components/translation/translate'
+import WeGatherLottieAnimation from '../../../components/lotties/wegather'
+import useWindowSize from '../../../hooks/useWindowSize'
 
 const WeGather = ({ onCtaPress = () => {} }) => {
     const size = useWindowSize()
-
-    useEffect(() => {
-        // console.log('size', size)
-    }, [size])
 
     return (
         <div className="wegather container">
