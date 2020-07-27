@@ -9,7 +9,15 @@ const Intro = ({ fullpageProps }) => {
     const video = React.createRef()
     useEffect(() => {
         if (isActive) {
-            video.current.play()
+            const playPromise = video.current.play()
+
+            if (playPromise !== undefined) {
+                playPromise
+                    
+                    .catch((error) => {
+                        console.log('video error', error)
+                    })
+            }
         } else video.current.pause()
     }, [isActive])
     return (
