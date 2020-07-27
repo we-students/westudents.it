@@ -5,6 +5,7 @@ import Intro from './Intro'
 import Education from './Education'
 import Connection from './Connection'
 import Freedom from './Freedom'
+import Features from './Features'
 
 import './styles.scss'
 
@@ -21,6 +22,8 @@ const CommunityPage = () => (
             (fullpageProps) => <Education fullpageProps={fullpageProps} />,
             (fullpageProps) => <Freedom fullpageProps={fullpageProps} />,
             (fullpageProps) => <Connection fullpageProps={fullpageProps} />,
+            (fullpageProps) => <Features fullpageProps={fullpageProps} />,
+            (fullpageProps) => <p>Prova</p>,
         ]}
     />
 )

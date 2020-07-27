@@ -114,4 +114,25 @@
             margin: auto 0;
         }
     }
+    .features {
+        .title{
+            color: #E08B6C;
+            margin-bottom: 80px;
+        }
+        flex-direction: column;
+        .feature {
+            h2 {
+                text-transform: uppercase;
+                color: #E08B6C;
+            }
+            margin: 0 4em;
+            img {
+                height: 60px;
+            }
+            .description {
+                font-size: 10px;
+                font-weight: 700;
+            }
+        }
+    }
 }
