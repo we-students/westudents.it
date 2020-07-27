@@ -11,4 +11,9 @@ exports.createPages = ({ actions }) => {
         path: `/`,
         component: require.resolve(`./src/pages/homepage/index.jsx`),
     })
+
+    createPage({
+        path: `/carriere`,
+        component: require.resolve(`./src/pages/careers/index.jsx`),
+    })
 }
