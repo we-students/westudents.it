@@ -49,7 +49,7 @@ const OpenPosition = ({ fullpageProps }) => {
 
     return (
         <div className="open-positions container">
-            <h2>Tutte le posizioni aperte</h2>
+            <h3>Tutte le posizioni aperte</h3>
 
             <p>Non sei un developer o un designer? Scopri le altre posizioni aperte!</p>
             <GridList
@@ -74,5 +74,3 @@ const OpenPosition = ({ fullpageProps }) => {
 }
 
 export default OpenPosition
-
-//             {data.map((node) => documentToReactComponents(node.description.json, options))}

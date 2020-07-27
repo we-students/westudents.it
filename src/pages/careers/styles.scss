@@ -153,6 +153,20 @@
     }
 
     .open-positions {
+        margin: 240px auto;
+
+        > h3 {
+            font-size: 40px;
+            text-transform: uppercase;
+            color:#FF9D64; 
+            letter-spacing: 6px;
+            text-align: center;
+        }
+
+        > p {
+            font-size: 24px;
+            text-align: center;
+        }
 
         .open-position-item {
             box-shadow: 0 4px 18px rgba(0,0,0,0.06), 0 10px 10px rgba(0,0,0,0.06);
