@@ -1,0 +1,9 @@
+.grid-container {
+    display: grid;
+    padding: 10px;
+
+    .grid-item {
+        padding: 20px;
+        text-align: center;
+    }
+}
