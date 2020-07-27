@@ -21,32 +21,97 @@
             font-size: 34px;
             text-align: center;
         }
-        .scroll-to {
-            &:hover {
-                cursor: pointer;
-            }
+        button {
+            background: transparent;
+            margin-bottom: 1.5em;
         }
     }
     .manifest {
         .title {
-            font-size: 30px;
             color: #FF9D64;
-            font-weight: 600;
+            letter-spacing: 0.2em;
+            font-weight: 700;
             text-transform: uppercase;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
         }
-        .manifest-list {
-            font-size: 14px;
-            font-weight: 600;
-            @media screen and (min-width: 768px) {
-                margin: 0 25%;
+        .manifest-item {
+            align-items: center;
+            .images-left {
+                position: relative;
+                height: 500px;
+                flex: 1;
+                .img {
+                    position: absolute;
+                    zoom: 0.6;
+                    &.bottom {
+                        z-index: 1;
+                        right: 20%;
+                        bottom: 20%;
+                        animation: exit-left 1.5s;
+                        &.active {
+                            animation: enter-left 1.5s;
+                        }
+                    }
+                    &.top {
+                        z-index: 3;
+                        right: 50%;
+                        top: 8%;
+                        animation: 1.5s exit-left 0.3s;
+                        &.active {
+                            animation: 1.7s enter-left;
+                        }
+                    } 
+                }
             }
-            @media screen and (max-width: 768px) {
-                margin: 0 20%;
-            }
-            @media screen and (min-width: 992px) {
-                margin: 0 35%;
+            .images-right {
+                position: relative;
+                height: 500px;
+                flex: 1;
+                .img {
+                    position: absolute;
+                    zoom: 0.6;
+                    &.bottom {
+                        z-index: 1;
+                        right: 20%;
+                        bottom: 20%;
+                        animation: exit-right 1.5s;
+                        &.active {
+                            animation: enter-right 1.5s;
+                        }
+                    }
+                    &.top {
+                        z-index: 3;
+                        right: 50%;
+                        top: 8%;
+                        animation: 1.5s exit-right 0.3s;
+                        &.active {
+                            animation: 1.7s enter-right;
+                        }
+                    } 
+                }
             }
         }
-        
+        @keyframes enter-left {
+            0%   {transform: translateX(-100vw);}
+            100%  {transform: translateX(0);}
+        }
+        @keyframes exit-left {
+            0%   {transform: translateX(0);}
+            100%  {transform: translateX(-100vw);}
+        }
+        @keyframes enter-right {
+            0%   {transform: translateX(100vw);}
+            100%  {transform: translateX(0);}
+        }
+        @keyframes exit-right {
+            0%   {transform: translateX(0);}
+            100%  {transform: translateX(100vw);}
+        }
+        .manifest-text {
+            flex: 1;
+            margin: auto 0;
+        }
     }
 }
