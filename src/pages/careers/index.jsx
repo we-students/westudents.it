@@ -16,10 +16,22 @@ const Careers = () => (
         seo={{ title: pageTitle }}
         showBubbles
         sections={[
-            (fullpageProps) => <Crew fullpageProps={fullpageProps} />,
-            (fullpageProps) => <DevTeam fullpageProps={fullpageProps} />,
-            (fullpageProps) => <DesignTeam fullpageProps={fullpageProps} />,
-            (fullpageProps) => <OpenPositions fullpageProps={fullpageProps} />,
+            {
+                anchor: 'crew',
+                render: (fullpageProps) => <Crew fullpageProps={fullpageProps} />,
+            },
+            {
+                anchor: 'dev',
+                render: (fullpageProps) => <DevTeam fullpageProps={fullpageProps} />,
+            },
+            {
+                anchor: 'design',
+                render: (fullpageProps) => <DesignTeam fullpageProps={fullpageProps} />,
+            },
+            {
+                anchor: 'posizioni-aperte',
+                render: (fullpageProps) => <OpenPositions fullpageProps={fullpageProps} />,
+            },
         ]}
     />
 )

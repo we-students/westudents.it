@@ -1,15 +1,11 @@
-import React, { useEffect } from 'react'
-import Translate from '../../components/translation/translate'
-import WeStudentsAppLottieAnimation from '../../components/lotties/westudents-app'
+import React from 'react'
 
-import useWindowSize from '../../hooks/useWindowSize'
+import Translate from '../../../components/translation/translate'
+import WeStudentsAppLottieAnimation from '../../../components/lotties/westudents-app'
+import useWindowSize from '../../../hooks/useWindowSize'
 
 const WeStudentsApp = ({ onCtaPress = () => {} }) => {
     const size = useWindowSize()
-
-    useEffect(() => {
-        // console.log('size', size)
-    }, [size])
 
     return (
         <div className="westudents-app container">

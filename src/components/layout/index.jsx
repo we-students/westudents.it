@@ -36,7 +36,7 @@ const Layout = ({ className, sections, seo, showBubbles, showFooter = true }) =>
             <Header siteTitle={data.site.siteMetadata.title} />
             <div style={{ margin: `0 auto` }}>
                 <ReactFullpage
-                    anchors={['intro', 'westudents-app']}
+                    anchors={sections.map((section) => section.anchor)}
                     navigation
                     scrollingSpeed={1000} /* Options here */
                     autoScrolling
@@ -45,6 +45,7 @@ const Layout = ({ className, sections, seo, showBubbles, showFooter = true }) =>
                     scrollOverflowReset
                     scrollOverflowOptions={{ scrollbars: false }}
                     scrollBar={false}
+                    fadingEffect="true"
                     onLeave={(origin, destination, direction) =>
                         handleSectionChange(origin, destination, direction)
                     }
@@ -54,10 +55,10 @@ const Layout = ({ className, sections, seo, showBubbles, showFooter = true }) =>
                                 {showBubbles ? (
                                     <Bubbles sectionCount={fullpageProps.state.sectionCount} />
                                 ) : null}
-                                {sections.map((renderSection, index) => (
+                                {sections.map((section, index) => (
                                     <>
                                         <div className="section">
-                                            {renderSection({
+                                            {section.render({
                                                 ...fullpageProps,
                                                 isActive: activeTab === index,
                                             })}

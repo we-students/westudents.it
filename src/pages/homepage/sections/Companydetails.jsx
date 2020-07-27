@@ -1,12 +1,12 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react'
 
-import Translate from '../../components/translation/translate'
+import Translate from '../../../components/translation/translate'
 
-const DownloadIcon = require('../../images/download_icon.svg')
-const InteracstionsIcon = require('../../images/interaction_icon.svg')
-const AgeIcon = require('../../images/age_icon.svg')
-const SurveysIcon = require('../../images/answer_icon.svg')
+const DownloadIcon = require('../../../images/download_icon.svg')
+const InteracstionsIcon = require('../../../images/interaction_icon.svg')
+const AgeIcon = require('../../../images/age_icon.svg')
+const SurveysIcon = require('../../../images/answer_icon.svg')
 
 const statistics = [
     {
@@ -56,7 +56,9 @@ const Details = ({ fullpageProps }) => {
                                 <div className="icon">
                                     <img src={item.icon} alt="WeStudents" />
                                 </div>
-                                <h1 style={{ margin: 0, fontWeight: 900, fontSize: '42px' }}>{item.value}</h1>
+                                <h1 style={{ margin: 0, fontWeight: 900, fontSize: '42px' }}>
+                                    {item.value}
+                                </h1>
                                 <p className="name">{item.title}</p>
                             </div>
                         ))}

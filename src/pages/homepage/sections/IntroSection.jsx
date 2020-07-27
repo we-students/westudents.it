@@ -1,8 +1,8 @@
 import React from 'react'
-import Translate from '../../components/translation/translate'
-import MainLottieAnimation from '../../components/lotties/main'
 
-import useWindowSize from '../../hooks/useWindowSize'
+import Translate from '../../../components/translation/translate'
+import MainLottieAnimation from '../../../components/lotties/main'
+import useWindowSize from '../../../hooks/useWindowSize'
 
 const Intro = ({ onCtaPress = () => {} }) => {
     const size = useWindowSize()

@@ -3,8 +3,6 @@ import React from 'react'
 import './styles.scss'
 
 const GridList = ({ items, cols, renderItem }) => {
-    console.log(items, cols, renderItem)
-
     return (
         <div
             className="grid-container"
