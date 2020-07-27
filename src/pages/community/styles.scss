@@ -2,8 +2,24 @@
 
 
 .community-wrapper {
+    .video-intro-wrapper {
+        background: linear-gradient(45deg, rgba(242,102,106,1) 0%, rgba(246,121,104,0.8) 55%, rgba(255,157,100,1) 100%);
+        height: 100%;
+        width: 100%;
+        position: relative;
+        background-position: center;
+        background-size: cover;
+        padding-top: 150px;
+        position: relative;
+        video {
+            z-index: -3;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: auto;
+        }
+    }
     .intro-section {
-       
         color: white;
         display: flex;
         flex-direction: column;
@@ -115,23 +131,144 @@
         }
     }
     .features {
+        height: 100%;
         .title{
             color: #E08B6C;
-            margin-bottom: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 100px;
         }
         flex-direction: column;
         .feature {
-            h2 {
+            h3 {
                 text-transform: uppercase;
                 color: #E08B6C;
             }
-            margin: 0 4em;
+            margin: 0 3em;
             img {
                 height: 60px;
             }
-            .description {
-                font-size: 10px;
-                font-weight: 700;
+            p {
+                font-size: 12px;
+                font-weight: 600;
+            }
+        }
+        .bottom-description {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 5%;
+            font-weight: 600;
+        }
+    }
+    .programs {
+        padding: 100px 0;
+        height: 100%;
+        .text-section {
+            text-align: center;
+            display: flex;
+            flex-shrink: 2;
+            align-items: center;
+            justify-content: center;
+            .title {
+                display: inline-block;
+                border-bottom: 1px solid #E5E5E5;
+                span {
+                    text-transform: uppercase;
+                    &.ambassador {
+                        color: #EA544C;
+                    }
+                    &.representant {
+                        color: #FF9D64;
+                    }
+                }
+                margin-bottom: 0.2em;
+            }
+            img {
+                height: 20px;
+                margin: 0 auto;
+            }
+            .description {
+                font-size: 14px;
+                padding: 0 15%;
+            }
+            button {
+                height: 30px;
+                padding: 0 2em;
+                font-size: 12px;
+                &.ambassador {
+                    background: #EA544C;
+                }
+                &.representant {
+                    background: #FF9D64;
+                }
+            }
+        }
+        .wegather-background {
+            border-radius: 15px 0 0 15px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            background-image: url('../../images/ambassador_image.png');
+        }
+        .westudents-background {
+            border-radius: 0 15px 15px 0;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            background-image: url('../../images/rappresentanti_image.png');
+        }
+    }
+    .team-wrapper {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-image: none;
+        background-image: url('../../images/team_image.png');
+        opacity: 0;
+        transition: 1s;
+        &.active {
+            opacity: 1;
+        }
+        .bg-wrapper {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(242,102,106,1) 0%, rgba(246,121,104,0.8) 55%, rgba(255,157,100,1) 100%);
+        }
+        .text-section {
+            margin: auto;
+            color: white;
+            .social {
+                font-weight: 600;
+                font-size: 13px;
+            }
+            .social-icon {
+                margin-right: 1em;
+                img {
+                    height: 25px;
+                }
+            }
+        }
+        .cta {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: white;
+            p {
+                font-size: 15px;
+                font-weight: 600;
+            }
+            div {
+                width: 180px;
+                text-align: center;
+                button {
+                    height: 30px;
+                    padding: 0 3em;
+                    font-size: 12px;
+                    background: white;
+                    color: #F36A6A;
+                }
             }
         }
     }

@@ -27,21 +27,21 @@ const features = [
 const Features = () => {
     return (
         <div className="container features d-flex">
-            <h3 className="text-center title">
+            <h3 className="text-center title" style={{ flex: 2 }}>
                 <Translate>COMMUNITY.FEATURES.TITLE</Translate>
             </h3>
-            <div className="d-flex">
+            <div className="d-flex" style={{ flex: 1 }}>
                 {features.map((item, index) => (
                     <div key={`community_feature${index}`} className="feature">
                         <div className="d-flex justify-center">
                             <img src={item.icon} alt="We Students" />
                         </div>
-                        <h2 className="text-center">{item.title}</h2>
+                        <h3 className="text-center">{item.title}</h3>
                         <p className="text-center description">{item.description}</p>
                     </div>
                 ))}
             </div>
-            <p className="text-center">
+            <p className="text-center bottom-description" style={{ flex: 1 }}>
                 <Translate>COMMUNITY.FEATURES.SUBTITLE</Translate>
             </p>
         </div>

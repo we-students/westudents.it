@@ -1,12 +1,22 @@
-import React from 'react'
-import BGWrapper from '../../components/videobg-wrapper'
+import React, { useEffect } from 'react'
 import Translate from '../../components/translation/translate'
+import introVideo from '../../../static/videos/video.mp4'
 
 import './styles.scss'
 
-const Intro = () => {
+const Intro = ({ fullpageProps }) => {
+    const { fullpageApi, isActive } = fullpageProps
+    const video = React.createRef()
+    useEffect(() => {
+        if (isActive) {
+            video.current.play()
+        } else video.current.pause()
+    }, [isActive])
     return (
-        <BGWrapper>
+        <div className="video-intro-wrapper">
+            <video className="videoTag" autoPlay loop muted ref={video}>
+                <source src={introVideo} type="video/mp4" />
+            </video>
             <div className="container intro-section" style={{ flex: 1 }}>
                 <div>
                     <p className="section-title">
@@ -27,7 +37,7 @@ const Intro = () => {
                     </p>
                 </div>
                 <div className="justify-center">
-                    <button type="button">
+                    <button type="button" onClick={() => fullpageApi.moveTo(6)}>
                         <p className="text-center" style={{ marginBottom: '1em' }}>
                             <Translate>COMMUNITY.INTRO.DISCOVER</Translate>
                         </p>
@@ -40,7 +50,7 @@ const Intro = () => {
                     </button>
                 </div>
             </div>
-        </BGWrapper>
+        </div>
     )
 }
 
