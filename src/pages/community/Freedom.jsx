@@ -39,4 +39,3 @@ const Freedom = ({ fullpageProps }) => {
 }
 
 export default Freedom
-
