@@ -33,6 +33,10 @@ body {
   justify-content: center;
 }
 
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
 .d-flex {
   display: flex;
 }
@@ -62,6 +66,21 @@ button {
     border: 0;
     outline: none;
   }
+}
+
+.justify-center{
+  display: flex;
+  justify-content: center;
+}
+
+.align-items-end{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.text-center{
+  text-align: center;
 }
 
 @media only screen and (max-width: 767px) {
