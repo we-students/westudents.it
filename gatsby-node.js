@@ -4,9 +4,21 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// You can delete this file if you're not using it
-exports.createPages = ({ actions }) => {
+exports.createPages = async ({ actions, graphql }) => {
     const { createPage } = actions
+
+    const careers = await graphql(`
+        query AllCareers {
+            allContentfulOpenPosition {
+                edges {
+                    node {
+                        slug
+                    }
+                }
+            }
+        }
+    `)
+
     createPage({
         path: `/`,
         component: require.resolve(`./src/pages/homepage/index.jsx`),
@@ -19,5 +31,15 @@ exports.createPages = ({ actions }) => {
     createPage({
         path: `/carriere`,
         component: require.resolve(`./src/pages/careers/index.jsx`),
+    })
+
+    careers.data.allContentfulOpenPosition.edges.forEach(({ node }) => {
+        createPage({
+            path: `/carriere/${node.slug}`,
+            component: require.resolve(`./src/pages/careers/detail.jsx`),
+            context: {
+                slug: node.slug,
+            },
+        })
     })
 }

@@ -240,3 +240,35 @@
         }
     }
 }
+
+.career-details {
+    margin-top: 120px;
+
+    > .top-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        > div:nth-child(1) { 
+            flex: 1
+        }
+
+        h2 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 80px;
+            font-weight: 600;
+            padding: 0;
+            margin: 0;
+        }
+    } 
+
+    > .place-row {
+        display: flex;
+        align-items: center;
+
+        > p {
+            font-size: 24px;
+            margin-left: 20px;
+        }
+    }
+}

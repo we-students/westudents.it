@@ -16,7 +16,7 @@ import Footer from '../footer'
 import Header from '../header'
 import './layout.scss'
 
-const Layout = ({ className, sections, seo, showBubbles, showFooter = true }) => {
+const Layout = ({ children, className, sections, seo, showBubbles, showFooter = true }) => {
     const data = useStaticQuery(graphql`
         query SiteTitleQuery {
             site {
@@ -35,43 +35,49 @@ const Layout = ({ className, sections, seo, showBubbles, showFooter = true }) =>
             <SEO {...seo} />
             <Header siteTitle={data.site.siteMetadata.title} />
             <div style={{ margin: `0 auto` }}>
-                <ReactFullpage
-                    anchors={sections.map((section) => section.anchor)}
-                    navigation
-                    scrollingSpeed={1000} /* Options here */
-                    autoScrolling
-                    scrollHorizontally
-                    scrollOverflow
-                    scrollOverflowReset
-                    scrollOverflowOptions={{ scrollbars: false }}
-                    scrollBar={false}
-                    fadingEffect="true"
-                    onLeave={(origin, destination, direction) =>
-                        handleSectionChange(origin, destination, direction)
-                    }
-                    render={(fullpageProps) => {
-                        return (
-                            <>
-                                {showBubbles ? (
-                                    <Bubbles sectionCount={fullpageProps.state.sectionCount} />
-                                ) : null}
-                                {sections.map((section, index) => (
-                                    <>
-                                        <div className="section">
-                                            {section.render({
-                                                ...fullpageProps,
-                                                isActive: activeTab === index,
-                                            })}
-                                            {showFooter && index === sections.length - 1 ? (
-                                                <Footer />
-                                            ) : null}
-                                        </div>
-                                    </>
-                                ))}
-                            </>
-                        )
-                    }}
-                />
+                {sections && Array.isArray(sections) ? (
+                    <ReactFullpage
+                        anchors={sections.map((section) => section.anchor)}
+                        navigation
+                        scrollingSpeed={1000} /* Options here */
+                        autoScrolling
+                        scrollHorizontally
+                        scrollOverflow
+                        scrollOverflowReset
+                        scrollOverflowOptions={{ scrollbars: false }}
+                        scrollBar={false}
+                        onLeave={(origin, destination, direction) =>
+                            handleSectionChange(origin, destination, direction)
+                        }
+                        render={(fullpageProps) => {
+                            return (
+                                <>
+                                    {showBubbles ? (
+                                        <Bubbles sectionCount={fullpageProps.state.sectionCount} />
+                                    ) : null}
+                                    {sections.map((section, index) => (
+                                        <>
+                                            <div className="section">
+                                                {section.render({
+                                                    ...fullpageProps,
+                                                    isActive: activeTab === index,
+                                                })}
+                                                {showFooter && index === sections.length - 1 ? (
+                                                    <Footer />
+                                                ) : null}
+                                            </div>
+                                        </>
+                                    ))}
+                                </>
+                            )
+                        }}
+                    />
+                ) : (
+                    <>
+                        {children}
+                        <Footer />
+                    </>
+                )}
             </div>
         </div>
     )
