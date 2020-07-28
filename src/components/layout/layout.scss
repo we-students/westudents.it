@@ -38,6 +38,10 @@ body {
   justify-content: center;
 }
 
+.justify-right {
+  justify-content: flex-end;
+}
+
 .row-reverse {
   flex-direction: row-reverse;
 }
