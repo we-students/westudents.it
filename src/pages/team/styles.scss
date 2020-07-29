@@ -1,0 +1,38 @@
+
+.teampage {
+    .intro {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        display: flex;
+        .image-section {
+            flex: 1;
+            padding: 10%;
+        }
+        .team-image {
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-image: url('../../images/team_image.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            animation: 2s image-position 3s forwards; 
+        }
+        .text-section {
+            flex: 1;
+        }
+    }
+    @keyframes image-position {
+        0% {position: absolute; 
+            }
+        100% {
+                position: relative;
+                width: 800px;
+                height: 400px;
+            }
+	} 
+}

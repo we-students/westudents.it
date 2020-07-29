@@ -34,6 +34,11 @@ exports.createPages = async ({ actions, graphql }) => {
     })
 
     createPage({
+        path: `/team`,
+        component: require.resolve(`./src/pages/team/index.jsx`),
+    })
+
+    createPage({
         path: `/partners`,
         component: require.resolve(`./src/pages/partners/index.jsx`),
     })
