@@ -39,6 +39,21 @@ module.exports = {
                 accessToken: envs.CONTENTFUL_ACCESS_TOKEN, // or process.env.CONTENTFUL_TOKEN
             },
         },
+        {
+            resolve: 'gatsby-plugin-firebase',
+            options: {
+                credentials: {
+                    apiKey: envs.FIREBASE_API_KEY,
+                    authDomain: envs.FIREBASE_AUTH_DOMAIN,
+                    databaseURL: envs.FIREBASE_DATABASE_URL,
+                    projectId: envs.FIREBASE_PROJECT_ID,
+                    storageBucket: envs.FIREBASE_STORAGE_BUCKET,
+                    messagingSenderId: envs.FIREBASE_MESSAGING_SENDER_ID,
+                    appId: envs.FIREBASE_APP_ID,
+                    measurementId: envs.MEASUREMENT_ID,
+                },
+            },
+        },
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
         // `gatsby-plugin-offline`,

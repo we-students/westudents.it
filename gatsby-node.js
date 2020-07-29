@@ -51,5 +51,13 @@ exports.createPages = async ({ actions, graphql }) => {
                 slug: node.slug,
             },
         })
+
+        createPage({
+            path: `/carriere/${node.slug}/candidatura`,
+            component: require.resolve(`./src/pages/careers/submission.jsx`),
+            context: {
+                slug: node.slug,
+            },
+        })
     })
 }

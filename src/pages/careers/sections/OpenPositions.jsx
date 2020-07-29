@@ -1,30 +1,16 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-
-import { BLOCKS, MARKS } from '@contentful/rich-text-types'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { useStaticQuery, Link, graphql } from 'gatsby'
 
 import GridList from '../../../components/grid-list'
 
-const Bold = ({ children }) => <span className="bold">{children}</span>
-const Text = ({ children }) => <p className="align-center">{children}</p>
-
-const options = {
-    renderMark: {
-        [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,
-    },
-    renderNode: {
-        [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
-    },
-}
-
 const OpenPosition = ({ fullpageProps }) => {
-    const data = useStaticQuery(graphql`
+    const openPositions = useStaticQuery(graphql`
         query OpenPositionsQuery {
             allContentfulOpenPosition {
                 edges {
                     node {
                         category
+                        slug
                         level
                         place
                         title
@@ -53,19 +39,43 @@ const OpenPosition = ({ fullpageProps }) => {
             <p>Non sei un developer o un designer? Scopri le altre posizioni aperte!</p>
 
             <GridList
-                items={data}
+                items={openPositions}
                 cols={3}
                 renderItem={(item, index) => {
+                    const title = (() => {
+                        if (item.title.length > 30) {
+                            return `${item.title.substring(0, 30)}...`
+                        }
+
+                        return item.title
+                    })()
+
+                    const description = (() => {
+                        const desc = item.shortDescription.json.content.reduce((acc, curr) => {
+                            return `${acc} ${curr.content[0].value}`
+                        }, '')
+
+                        if (desc.length > 160) {
+                            return `${desc.substring(0, 180)}...`
+                        }
+
+                        return desc
+                    })()
+
                     return (
-                        <div key={index} className="grid-item open-position-item">
-                            <img
-                                srcSet={item.icon.fluid.srcSet}
-                                srcSetWebp={item.icon.fluid.srcSetWebp}
-                                alt="Posizione aperta"
-                            />
-                            <h4>{item.title}</h4>
-                            <p>{documentToReactComponents(item.shortDescription.json, options)} </p>
-                        </div>
+                        <Link to={`/carriere/${item.slug}`}>
+                            <div key={index} className="grid-item open-position-item">
+                                <img
+                                    srcSet={item.icon.fluid.srcSet}
+                                    srcSetWebp={item.icon.fluid.srcSetWebp}
+                                    alt="Posizione aperta"
+                                />
+                                <div className="infos ">
+                                    <h4>{title}</h4>
+                                    <p>{description}</p>
+                                </div>
+                            </div>
+                        </Link>
                     )
                 }}
             />
