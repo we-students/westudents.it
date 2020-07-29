@@ -1,38 +1,54 @@
 
 .teampage {
-    .intro {
-        height: 100%;
-        width: 100%;
-        position: relative;
-        display: flex;
-        .image-section {
-            flex: 1;
-            padding: 10%;
-        }
-        .team-image {
 
+
+    * {
+        transition: 1s ease-in-out;
+    }
+
+    .intro {
+        display: flex;
+        transition: 1s;
+        height: 100vh !important;
+        justify-content: center;
+        align-items: center;
+
+
+        > * {
+            flex: 1;
+        }
+
+        .text-section {
+            > * {
+                padding: 30px;
+            }
+        }
+
+        .team-image {
             position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
             background-image: url('../../images/team_image.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            width: 100%;
-            animation: 2s image-position 3s forwards; 
+            height: 45%;
+            width: 40%;
+            top: 26%;
+            left: 10%;
+            cursor: pointer;
         }
-        .text-section {
-            flex: 1;
+
+        &.fullscreen {
+            max-width: 100% !important;
+            height: 100vh !important;
+
+            .team-image {
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
         }
+
     }
-    @keyframes image-position {
-        0% {position: absolute; 
-            }
-        100% {
-                position: relative;
-                width: 800px;
-                height: 400px;
-            }
-	} 
+
 }
