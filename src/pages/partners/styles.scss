@@ -125,6 +125,7 @@
                     left: 40%;
                     z-index: 5;
                     transition: 0.6s;
+                    transform-origin: left;
                 }
                 .icons2 {
                     position: absolute;
@@ -155,12 +156,12 @@
                 .phone1 {
                     position: absolute;
                     top: 15%;
-                    left: 20%;
+                    left: 0;
                     zoom: 0.7;
                 }
                 .phone2 {
                     position: absolute;
-                    left: 30%;
+                    left: 10%;
                     z-index: -1;
                     zoom: 0.7;
                     transition: 0.5s;
@@ -168,14 +169,15 @@
                 .icons {
                     position: absolute;
                     zoom: 0.7;
-                    left: 20%;
+                    left: 0;
                     z-index: 5;
                     transition: 0.5s;
+                    transform-origin: left;
                 }
                 .icons2 {
                     position: absolute;
                     zoom: 0.7;
-                    left: 27.5%;
+                    left: 7.5%;
                     top: -19%;
                     z-index: -1;
                     transition: 0.5s;
@@ -263,6 +265,97 @@
         border-radius: 50%;
         img {
             zoom: 0.7;
+        }
+    }
+    .wegather-section {
+        flex-direction: column;
+        display: flex;
+        .blog-posts {
+            flex-direction: row;
+            align-content: stretch;
+            .post-card {
+                border-radius: 10px;
+                background-color: white;
+                flex: 1;
+                margin: 1.5em;
+                min-width: 250px;
+                padding-bottom: 1em;
+                img {
+                    border-radius: 10px 10px 0 0;
+                    width: 100%;
+                    height: auto;
+                    transition: 0.5s;
+                }
+                &:hover {
+                    img {
+                        filter: brightness(115%);
+                    }
+                    cursor: pointer;
+                }
+                p {
+                    text-decoration: none;
+                    color: black;
+                    font-weight: 600;
+                    margin: 0;
+                    padding: 0 1em;
+                }
+            }
+        }
+        .WeGather-card {
+            border-radius: 15px;
+            margin: 1.5em;
+            background-color: rgba(234, 84, 76, 0.9);
+            height: 340px;
+            width: auto;
+            background-size: cover;
+            background-image: url('../../../static/images/pc_wegather.png');
+            color: white;
+            display: flex;
+            flex-direction: row;
+            padding: 5% 10%;
+            .text-section{
+                flex: 2;
+                height: min-content;
+                h1 {
+                    line-height: 0.6em;
+                }
+                h3 {
+                    line-height: 0.5em;
+                }
+                .social {
+                    font-weight: 600;
+                    font-size: 13px;
+                }
+                .social-icon {
+                    margin-right: 1em;
+                    img {
+                        height: 30px;
+                    }
+                }
+            }
+            .cta-section {
+                flex: 1;
+                height: min-content;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                .text {
+                    margin-top: 1.5em;
+
+                }
+                p {
+                    font-size: 16px;
+                    margin: 0;
+                }
+                button {
+                    margin-top: 2em;
+                    background: white;
+                    height: 40px;
+                    padding: 0 2em;
+                    color: rgb(206, 74, 67);
+                }
+            }
         }
     }
 }

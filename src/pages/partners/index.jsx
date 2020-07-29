@@ -7,6 +7,7 @@ import ADV from './sections/ADV'
 import OnlineDiscounts from './sections/OnlineDiscounts'
 import OfflineDiscounts from './sections/OfflineDiscounts'
 import Gamification from './sections/Gamification'
+import WeGather from './sections/WeGather'
 
 const pageTitle = 'WeStudents — Partners'
 
@@ -36,6 +37,10 @@ const HomePage = () => (
             {
                 anchor: 'gamification',
                 render: (fullpageProps) => <Gamification fullpageProps={fullpageProps} />,
+            },
+            {
+                anchor: 'WeGather',
+                render: (fullpageProps) => <WeGather fullpageProps={fullpageProps} />,
             },
             {
                 anchor: 'last',
