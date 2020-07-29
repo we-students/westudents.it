@@ -4,6 +4,7 @@
     justify-content: center;
     padding-bottom: 50px;
     .footer{
+        width: 100%;
         display: flex;
         flex-direction: column;
         padding:2em 3em;
@@ -11,15 +12,7 @@
         background-color: #FF9D64;
         display: flex;
         color: white;
-        @media screen and (max-width: 1440px){
-            width: 80%;
-        }
-        @media screen and (max-width: 576px){
-            width: 75%;
-        }
-        @media screen and (min-width: 1440px){
-            width: 60%;
-        }
+       
         .footer-row {
             @media screen and (max-width: 576px){
                 flex-direction: column-reverse;

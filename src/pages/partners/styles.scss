@@ -1,0 +1,361 @@
+.partnerspage {
+    .intro-wrapper {
+        background-image: url('../../images/intro_bg.png');
+        background-size: cover;
+        background-position: bottom;
+        height: 100%;
+        width: 100%;
+        .color-wrapper {
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(225deg, rgba(242,102,106,1) 0%, rgba(246,121,104,0.8) 55%, rgba(255,157,100,1) 100%);
+            display: flex;
+            align-items: center;
+            color: white;
+            .intro-row {
+                width: 100%;
+                padding: 0 10%;
+                .title {
+                    font-size: 50px;
+                }
+            }
+            .section-name {
+                text-transform: uppercase;
+                letter-spacing: 0.2em;
+                font-weight: 600;
+            }
+            .stats-section {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                justify-content: flex-end;
+                text-align: right;
+                h1 {
+                    line-height: 1em;
+                    margin: 0;
+                    font-size: 50px;
+                    font-weight: 900;
+                }
+                p {
+                    line-height: 2em;
+                    margin: 0;
+                    text-transform: uppercase;
+                    font-size: 12px;
+                }
+                .stat-item {
+                    margin-top: 0.6em;
+                }
+            }
+            .white-btn {
+                background: white;
+                color: rgba(246,121,104,0.8);
+                height: 30px;
+                padding: 0 2em;
+                margin-bottom: 4em;
+
+            }
+            .btn-nobg {
+                background: none;
+                display: flex;
+                align-items: center;
+                font-weight: 100;
+                font-size: 20px;
+                .arrow-icon {
+                    margin-right: 1em;
+                    background: url('../../images/arrow_down.svg');
+                    width: 20px;
+                    height: 10px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+                padding-left: 0;
+            }
+        }
+    }
+
+    .partner-sections {
+        display: flex;
+        .images {
+            flex: 1;
+            position: relative;
+            &.adv {
+                .phone1 {
+                    position: absolute;
+                    top: 20%;
+                    zoom: 0.7;
+                }
+                .phone2 {
+                    position: absolute;
+                    left: 20%;
+                    z-index: -1;
+                    zoom: 0.7;
+                    transition: 0.5s;
+                }
+                .icons {
+                    position: absolute;
+                    zoom: 0.7;
+                    transition: 0.5s;
+                }
+                &:hover {
+                    .phone2 {
+                        transform: translateX(70px);
+                    }
+                    .icons {
+                        transform: translateX(-70px);
+                    }
+                }
+            }
+            &.online-discounts {
+                .phone1 {
+                    position: absolute;
+                    top: 20%;
+                    left: 40%;
+                    zoom: 0.7;
+                }
+                .phone2 {
+                    position: absolute;
+                    left: 58%;
+                    z-index: -1;
+                    zoom: 0.7;
+                    transition: 0.5s;
+                }
+                .icons {
+                    position: absolute;
+                    zoom: 0.7;
+                    left: 40%;
+                    z-index: 5;
+                    transition: 0.6s;
+                    transform-origin: left;
+                }
+                .icons2 {
+                    position: absolute;
+                    zoom: 0.7;
+                    left: 48%;
+                    top: -14%;
+                    z-index: -1;
+                    transition: 0.5s;
+                    transform: translateY(220px);
+                    opacity: 0;
+                }
+                &:hover {
+                    .phone2 {
+                        transform: translateX(65px);
+                    }
+                    .icons {
+                        transform-origin: left;
+                        transform: translate(200px, -350px) rotate(30deg) scale(0.5);
+                        
+                    }
+                    .icons2 {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+            }
+            &.offline-discounts {
+                .phone1 {
+                    position: absolute;
+                    top: 15%;
+                    left: 0;
+                    zoom: 0.7;
+                }
+                .phone2 {
+                    position: absolute;
+                    left: 10%;
+                    z-index: -1;
+                    zoom: 0.7;
+                    transition: 0.5s;
+                }
+                .icons {
+                    position: absolute;
+                    zoom: 0.7;
+                    left: 0;
+                    z-index: 5;
+                    transition: 0.5s;
+                    transform-origin: left;
+                }
+                .icons2 {
+                    position: absolute;
+                    zoom: 0.7;
+                    left: 7.5%;
+                    top: -19%;
+                    z-index: -1;
+                    transition: 0.5s;
+                    transform: translateY(240px);
+                    opacity: 0;
+                }
+                &:hover {
+                    .phone2 {
+                        transform: translateX(150px);
+                    }
+                    .icons {
+                        transform-origin: left;
+                        transform: translate(190px, -390px) rotate(30deg) scale(0.5);
+                        
+                    }
+                    .icons2 {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+            }
+            &.gamification {
+                .phone1 {
+                    position: absolute;
+                    top: 0;
+                    left: 60%;
+                    zoom: 0.7;
+                }
+                .icons {
+                    position: absolute;
+                    zoom: 0.7;
+                    left: 50%;
+                    top: -10%;
+                    z-index: 5;
+                    transition: 0.5s;
+                }
+                &:hover {
+                    .icons {
+                        transform: translateY(-30px);
+                        
+                    }
+                }
+            }
+        }
+        .text-section {
+            padding-top: 2em;
+            flex: 1;
+            h1 {
+                color: #FF9D64;
+                text-transform: uppercase;
+                margin-bottom: 0;
+            }
+            .subtitle {
+                margin-top: 0;
+                font-weight: 700;
+                margin-bottom: 2em;
+            }
+            .list-item {
+                align-items: center;
+                margin: 0.3em 0;
+                p {
+                    text-transform: uppercase;
+                    margin: 0 1em;
+                }
+            }
+            .orange-btn {
+                margin-top: 1em;
+                background: #F7AE83;
+                height: 30px;
+                padding: 0 4em;
+            }
+        }
+    }
+    .text-right {
+        text-align: right;
+    }
+    .rounded-icon {
+        background: white;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+        padding: 0;
+        border-radius: 50%;
+        img {
+            zoom: 0.7;
+        }
+    }
+    .wegather-section {
+        flex-direction: column;
+        display: flex;
+        .blog-posts {
+            flex-direction: row;
+            align-content: stretch;
+            .post-card {
+                border-radius: 10px;
+                background-color: white;
+                flex: 1;
+                margin: 1.5em;
+                min-width: 250px;
+                padding-bottom: 1em;
+                img {
+                    border-radius: 10px 10px 0 0;
+                    width: 100%;
+                    height: auto;
+                    transition: 0.5s;
+                }
+                &:hover {
+                    img {
+                        filter: brightness(115%);
+                    }
+                    cursor: pointer;
+                }
+                p {
+                    text-decoration: none;
+                    color: black;
+                    font-weight: 600;
+                    margin: 0;
+                    padding: 0 1em;
+                }
+            }
+        }
+        .WeGather-card {
+            border-radius: 15px;
+            margin: 1.5em;
+            background-color: rgba(234, 84, 76, 0.9);
+            height: 340px;
+            width: auto;
+            background-size: cover;
+            background-image: url('../../../static/images/pc_wegather.png');
+            color: white;
+            display: flex;
+            flex-direction: row;
+            padding: 5% 10%;
+            .text-section{
+                flex: 2;
+                height: min-content;
+                h1 {
+                    line-height: 0.6em;
+                }
+                h3 {
+                    line-height: 0.5em;
+                }
+                .social {
+                    font-weight: 600;
+                    font-size: 13px;
+                }
+                .social-icon {
+                    margin-right: 1em;
+                    img {
+                        height: 30px;
+                    }
+                }
+            }
+            .cta-section {
+                flex: 1;
+                height: min-content;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                .text {
+                    margin-top: 1.5em;
+
+                }
+                p {
+                    font-size: 16px;
+                    margin: 0;
+                }
+                button {
+                    margin-top: 2em;
+                    background: white;
+                    height: 40px;
+                    padding: 0 2em;
+                    color: rgb(206, 74, 67);
+                }
+            }
+        }
+    }
+}

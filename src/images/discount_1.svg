@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17.486" height="20.993" viewBox="0 0 17.486 20.993">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f2666a"/>
+      <stop offset="1" stop-color="#ff9d64"/>
+    </linearGradient>
+  </defs>
+  <g id="Raggruppa_5654" data-name="Raggruppa 5654" transform="translate(0 0)">
+    <g id="Raggruppa_5643" data-name="Raggruppa 5643" transform="translate(0)">
+      <path id="Tracciato_5567" data-name="Tracciato 5567" d="M69.023-26.536a2.152,2.152,0,0,1-.87-.183l-8.18-3.6a2.17,2.17,0,0,1-1.112-2.857l4.6-10.452a6.544,6.544,0,0,1,8.612-3.349h0l.189.083a6.542,6.542,0,0,1,3.349,8.612l-4.6,10.452A2.171,2.171,0,0,1,69.023-26.536Zm.425-19.316A4.862,4.862,0,0,0,65-42.954L60.4-32.5a.489.489,0,0,0,.251.645l8.181,3.6a.489.489,0,0,0,.646-.251l4.6-10.452a4.821,4.821,0,0,0,.081-3.715,4.819,4.819,0,0,0-2.569-2.684l-.189-.084A4.832,4.832,0,0,0,69.447-45.853Z" transform="translate(-58.677 47.53)" fill="url(#linear-gradient)"/>
+    </g>
+    <g id="Raggruppa_5645" data-name="Raggruppa 5645" transform="translate(10.015 4.305)">
+      <g id="Raggruppa_5644" data-name="Raggruppa 5644">
+        <circle id="Ellisse_487" data-name="Ellisse 487" cx="1.259" cy="1.259" r="1.259" fill="url(#linear-gradient)"/>
+      </g>
+    </g>
+    <g id="Raggruppa_5653" data-name="Raggruppa 5653" transform="translate(4.929 10.232)">
+      <g id="Raggruppa_5648" data-name="Raggruppa 5648" transform="translate(0 1.754)">
+        <g id="Raggruppa_5647" data-name="Raggruppa 5647">
+          <g id="Raggruppa_5646" data-name="Raggruppa 5646">
+            <path id="Tracciato_5568" data-name="Tracciato 5568" d="M64.219-32.863a.84.84,0,0,1-.782-.535.84.84,0,0,1,.478-1.087L67.9-36.036a.837.837,0,0,1,1.086.478.838.838,0,0,1-.478,1.086L64.523-32.92A.835.835,0,0,1,64.219-32.863Z" transform="translate(-63.379 36.094)" fill="url(#linear-gradient)"/>
+          </g>
+        </g>
+      </g>
+      <g id="Raggruppa_5650" data-name="Raggruppa 5650" transform="translate(1.452)">
+        <g id="Raggruppa_5649" data-name="Raggruppa 5649">
+          <circle id="Ellisse_488" data-name="Ellisse 488" cx="0.839" cy="0.839" r="0.839" fill="url(#linear-gradient)"/>
+        </g>
+      </g>
+      <g id="Raggruppa_5652" data-name="Raggruppa 5652" transform="translate(2.538 5.062)">
+        <g id="Raggruppa_5651" data-name="Raggruppa 5651">
+          <circle id="Ellisse_489" data-name="Ellisse 489" cx="0.839" cy="0.839" r="0.839" fill="url(#linear-gradient)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

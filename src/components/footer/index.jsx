@@ -6,7 +6,7 @@ import './styles.scss'
 const Footer = () => {
     const [form, setForm] = useState({ email: '', privacy: false })
     return (
-        <div className="footer-wrapper">
+        <div className="footer-wrapper container">
             <div className="footer">
                 <div style={{ display: 'flex' }} className="footer-row">
                     <div style={{ display: 'flex', flex: '2' }} className="main-section">

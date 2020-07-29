@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23.362" height="23.362" viewBox="0 0 23.362 23.362">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f2666a"/>
+      <stop offset="1" stop-color="#ff9d64"/>
+    </linearGradient>
+  </defs>
+  <g id="Raggruppa_5980" data-name="Raggruppa 5980" transform="translate(-11.3 -11.348)">
+    <circle id="Ellipse_422" data-name="Ellipse 422" cx="11.681" cy="11.681" r="11.681" transform="translate(11.3 11.348)" fill="url(#linear-gradient)"/>
+    <g id="Raggruppa_5662" data-name="Raggruppa 5662" transform="translate(15.927 15.02)">
+      <path id="Tracciato_5579" data-name="Tracciato 5579" d="M79.565,84.667a1.639,1.639,0,0,1-.666-.141l-6.24-2.745a1.653,1.653,0,0,1-.847-2.179l3.508-7.972a4.983,4.983,0,0,1,6.568-2.554h0l.143.063a4.989,4.989,0,0,1,2.553,6.568l-3.508,7.971a1.655,1.655,0,0,1-1.513.988Zm.317-14.735a3.715,3.715,0,0,0-3.391,2.213l-3.508,7.972a.375.375,0,0,0,.191.492l6.239,2.745a.372.372,0,0,0,.492-.191l3.509-7.971a3.7,3.7,0,0,0-1.9-4.882l-.143-.063A3.7,3.7,0,0,0,79.882,69.932Z" transform="translate(-71.672 -68.651)" fill="#fff"/>
+    </g>
+    <g id="Raggruppa_5663" data-name="Raggruppa 5663" transform="translate(23.566 18.307)">
+      <circle id="Ellisse_490" data-name="Ellisse 490" cx="0.96" cy="0.96" r="0.96" transform="translate(0 0)" fill="#fff"/>
+    </g>
+    <g id="Raggruppa_5668" data-name="Raggruppa 5668" transform="translate(19.688 22.828)">
+      <g id="Raggruppa_5665" data-name="Raggruppa 5665" transform="translate(0 1.338)">
+        <g id="Raggruppa_5664" data-name="Raggruppa 5664">
+          <path id="Tracciato_5580" data-name="Tracciato 5580" d="M85.192,102.45a.64.64,0,0,1-.232-1.236L88,100.029a.64.64,0,1,1,.464,1.193l-3.043,1.184A.641.641,0,0,1,85.192,102.45Z" transform="translate(-84.552 -99.986)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Raggruppa_5666" data-name="Raggruppa 5666" transform="translate(1.108)">
+        <circle id="Ellisse_491" data-name="Ellisse 491" cx="0.64" cy="0.64" r="0.64" fill="#fff"/>
+      </g>
+      <g id="Raggruppa_5667" data-name="Raggruppa 5667" transform="translate(1.936 3.861)">
+        <circle id="Ellisse_492" data-name="Ellisse 492" cx="0.64" cy="0.64" r="0.64" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

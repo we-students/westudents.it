@@ -46,7 +46,7 @@ const OpenPosition = ({ fullpageProps }) => {
             }
         }
     `).allContentfulOpenPosition.edges.map(({ node }) => node)
-
+    
     return (
         <div className="open-positions container">
             <h3>Tutte le posizioni aperte</h3>

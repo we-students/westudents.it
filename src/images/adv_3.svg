@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14.092" height="19.048" viewBox="0 0 14.092 19.048">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f2666a"/>
+      <stop offset="1" stop-color="#ff9d64"/>
+    </linearGradient>
+  </defs>
+  <g id="Raggruppa_5642" data-name="Raggruppa 5642" transform="translate(0.35 0.35)">
+    <path id="Tracciato_5564" data-name="Tracciato 5564" d="M23.5,29.313a.618.618,0,0,1-.445-.183l-6.068-6.068a.629.629,0,0,1,.89-.889l4.939,4.939V14.821a.683.683,0,1,1,1.366,0V27.112l4.94-4.939a.629.629,0,1,1,.889.888l-6.066,6.067a.619.619,0,0,1-.22.141A.48.48,0,0,1,23.5,29.313Z" transform="translate(-16.802 -14.138)" stroke="#ff9d64" stroke-width="0.7" fill="url(#linear-gradient)"/>
+    <path id="Tracciato_5565" data-name="Tracciato 5565" d="M18.282,33.76a.682.682,0,0,1,0-1.365H28.825a.682.682,0,0,1,0,1.365Z" transform="translate(-16.858 -15.412)" stroke="#ff9d64" stroke-width="0.7" fill="url(#linear-gradient)"/>
+  </g>
+</svg>
