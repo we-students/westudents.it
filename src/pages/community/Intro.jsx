@@ -12,11 +12,9 @@ const Intro = ({ fullpageProps }) => {
             const playPromise = video.current.play()
 
             if (playPromise !== undefined) {
-                playPromise
-                    
-                    .catch((error) => {
-                        console.log('video error', error)
-                    })
+                playPromise.catch((error) => {
+                    console.error('video error', error)
+                })
             }
         } else video.current.pause()
     }, [isActive])

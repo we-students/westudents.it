@@ -4,7 +4,7 @@ import { useStaticQuery, Link, graphql } from 'gatsby'
 
 import GridList from '../../../components/grid-list'
 
-const OpenPosition = ({ fullpageProps }) => {
+const OpenPosition = () => {
     const openPositions = useStaticQuery(graphql`
         query OpenPositionsQuery {
             allContentfulOpenPosition {

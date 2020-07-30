@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { BLOCKS, MARKS } from '@contentful/rich-text-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
@@ -32,7 +32,9 @@ const CareerDetails = ({ data }) => {
                     </div>
                     <div>
                         <Link to={`${window.location.pathname}/candidatura`}>
-                            <button className="custom-button">Candidati</button>
+                            <button type="button" className="custom-button">
+                                Candidati
+                            </button>
                         </Link>
                     </div>
                 </div>

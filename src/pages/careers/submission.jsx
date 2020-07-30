@@ -1,6 +1,6 @@
 /* eslint-disable no-use-before-define */
 import React, { useState, useEffect } from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { useFormik } from 'formik'
 import Swal from 'sweetalert2'
 import firebase from 'gatsby-plugin-firebase'
@@ -19,7 +19,7 @@ const validationSchema = Yup.object({
 })
 
 const CareerSubmission = ({ data, pageContext }) => {
-    const { title, place, description } = data.position.edges[0].node
+    const { title } = data.position.edges[0].node
     const { slug } = pageContext
     const [isUploading, setIsUploading] = useState(false)
     const [cvUrl, setCvUrl] = useState()
@@ -59,7 +59,7 @@ const CareerSubmission = ({ data, pageContext }) => {
                 .ref()
                 .child(`westudents.it/cv/${date.toISOString()}_${slug}_${file.name}`)
                 .put(file)
-                .then(function (snapshot) {
+                .then((snapshot) => {
                     setIsUploading(false)
                     setCvUrl(snapshot.metadata.fullPath)
                 })

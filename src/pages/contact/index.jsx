@@ -1,8 +1,6 @@
 /* eslint-disable no-use-before-define */
-import React, { useState, useEffect } from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import React, { useEffect } from 'react'
 import { useFormik } from 'formik'
-import Swal from 'sweetalert2'
 import firebase from 'gatsby-plugin-firebase'
 import * as Yup from 'yup'
 import ReCAPTCHA from 'react-google-recaptcha'
@@ -45,6 +43,8 @@ const ContactPage = () => {
             subject: values.subject,
             recaptcha: token,
         })
+
+        console.log('resp', resp)
     }
 
     const formik = useFormik({
