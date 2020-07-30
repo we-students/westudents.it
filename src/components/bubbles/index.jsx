@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import SmallBubble from '../../images/bubble_small.svg'
 import MediumBubble from '../../images/bubble_medium.svg'
@@ -70,8 +70,8 @@ const Bubbles = (props) => {
     const generateBubbles = () => {
         if (sectionCount > 0 && bubblesSvgs) {
             const bubblesTemp = []
-            for (let i = 0; i < sectionCount; i++) {
-                for (let z = 0; z < getRandomInt(2, 4); z++) {
+            for (let i = 0; i < sectionCount; i + 1) {
+                for (let z = 0; z < getRandomInt(2, 4); z + 1) {
                     const y = windowHeight * Math.random() + i * windowHeight
                     const randomBubble = bubblesSvgs[Math.floor(Math.random() * bubblesSvgs.length)]
                     const x = windowWidth * Math.random()

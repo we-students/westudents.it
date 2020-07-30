@@ -19,7 +19,6 @@ const CommunityPage = () => (
         className="community-wrapper"
         seo={{ title: pageTitle }}
         showBubbles
-        showFooter={false}
         sections={[
             {
                 anchor: 'intro',

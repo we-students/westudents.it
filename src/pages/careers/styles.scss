@@ -155,6 +155,13 @@
     .open-positions {
         margin: 240px auto;
 
+        a {
+            color: inherit;
+            text-transform: none;
+        }
+
+        
+
         > h3 {
             font-size: 40px;
             text-transform: uppercase;
@@ -169,6 +176,7 @@
         }
 
         .open-position-item {
+            background-color: white;
             box-shadow: 0 4px 18px rgba(0,0,0,0.06), 0 10px 10px rgba(0,0,0,0.06);
             margin: 50px;
             overflow: hidden;
@@ -181,34 +189,56 @@
             border-radius: 25px;
             transition: ease-in-out .4s;
 
-            * {
+            > * {
                 transition: ease-in-out .4s;
                 position: absolute;
             }
 
-            > h4 {
-                font-size: 30px;
-                line-height: 30px;
-                width: 80%;
-                font-weight: 600;
-                margin: 0;
-                top: 155px;
-                text-align: center;
-                overflow: hidden;
-                height: 60px;
-                text-overflow: ellipsis;
+            > .infos {
+                top: 165px;
+                width: 100%;
+                height: 100%;
+
+                > * {
+                    margin: 0 15px;
+                }
+
+                > h4 {
+                    font-size: 30px;
+                    line-height: 30px;
+                    width: 100%;
+                    font-weight: 600;
+                    margin: 0;
+                    text-align: center;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                > p {
+                    padding: 10px;
+                    opacity: 0;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    height: 140px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: inline-block;
+                }
+
+             
+                > p:after {
+                    content: '...';
+                    position: absolute;
+                    right: 5px;
+                    bottom: 0;
+                    padding: 0 10px;
+                    background-color: white;
+                }
             }
 
-            > p {
-                opacity: 0;
-                position: absolute;
-                width: 80%;
-                height: 80px;
-                top: 200px;
-                overflow: hidden;
-                height: 160px;
-                text-overflow: ellipsis;
-            }
+            
+
+            
 
             > img {
                 position: relative;
@@ -221,21 +251,17 @@
             &:hover {
                 box-shadow: 0 14px 60px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.2);
 
-                > h4 {
-                    font-size: 30px;
-                    font-weight: 600;
+                > .infos {
                     top: 40px;
-                    margin: 0;
+
+                    > p {
+                        opacity: 1;
+                    } 
                 }
 
                 > img {
                     opacity: 0;
                 }
-
-                > p {
-                    opacity: 1;
-                    top: 70px;
-                } 
             }
         }
     }
@@ -255,11 +281,17 @@
 
         h2 {
             font-family: 'Cairo', sans-serif;
-            font-size: 80px;
+            font-size: 60px;
             font-weight: 600;
             padding: 0;
             margin: 0;
         }
+
+        button {
+            top: 6px;
+            position: relative;
+        }
+
     } 
 
     > .place-row {
@@ -269,6 +301,120 @@
         > p {
             font-size: 24px;
             margin-left: 20px;
+        }
+    }
+
+    .content {
+        padding: 60px 0;
+
+        ul {
+            margin-bottom: 60px;
+        }
+    }
+}
+
+.career-submission {
+    margin-top: 120px;
+
+    > h4 {
+        color: #A6A6A6;
+        font-size: 20px;
+        font-weight: 700;
+        padding: 0;
+        margin: 0;
+    }
+
+    p.main-text {
+        padding-top: 0;
+        margin-top: 20px;
+        font-size: 3.6em;
+        font-family: 'Cairo', sans-serif;
+        line-height:1.3em;
+        font-weight: 700;
+        letter-spacing:.03em;
+
+        input {
+            display: none;
+        }
+
+        > div {
+            display: initial;
+            position: relative;
+
+            small.error-info {
+                position: absolute;
+                font-size: 14px;
+                left: 2em;
+                bottom: -1.4em;
+                color: #f07f7f;
+                min-width: 400px;
+            }
+        }
+
+        span {
+            color: #FF9D64;
+            padding: 0px .3em;
+            outline: none;
+
+           
+
+            &:empty {
+                color: #E5E5E5;
+            }
+
+            &:empty::after {
+            }
+
+            &#fullname:empty::after {
+                content: 'Nome e Cognome';
+            }
+
+            &#role:empty::after {
+                content: 'posizione';
+            }
+
+            &#cv:empty::after {
+                content: 'nome file';
+            }
+
+            &#link:empty::after {
+                content: 'link';
+            }
+
+            &#link {
+                padding-right: 0px;
+            }
+
+            &#role {
+                padding-right: 0px;
+            }
+
+        }
+
+    }
+
+    form {
+        margin-bottom: 100px;
+    }
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 50px;
+
+        &:disabled {
+            background: linear-gradient(45deg, #cdcdcd, #bababa);
+        }
+
+        > span {
+            padding: 8px 0;
+        }
+
+        > div {
+            margin-left: 10px;
+            position: relative;
+            top: 2px;
         }
     }
 }

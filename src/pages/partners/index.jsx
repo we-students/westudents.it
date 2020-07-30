@@ -43,8 +43,8 @@ const HomePage = () => (
                 render: (fullpageProps) => <WeGather fullpageProps={fullpageProps} />,
             },
             {
-                anchor: 'last',
-                render: () => <p>Footer section</p>,
+                anchor: 'footer',
+                render: () => <div />,
             },
         ]}
     />

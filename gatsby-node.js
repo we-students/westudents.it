@@ -43,10 +43,23 @@ exports.createPages = async ({ actions, graphql }) => {
         component: require.resolve(`./src/pages/partners/index.jsx`),
     })
 
+    createPage({
+        path: `/contattaci`,
+        component: require.resolve(`./src/pages/contact/index.jsx`),
+    })
+
     careers.data.allContentfulOpenPosition.edges.forEach(({ node }) => {
         createPage({
             path: `/carriere/${node.slug}`,
             component: require.resolve(`./src/pages/careers/detail.jsx`),
+            context: {
+                slug: node.slug,
+            },
+        })
+
+        createPage({
+            path: `/carriere/${node.slug}/candidatura`,
+            component: require.resolve(`./src/pages/careers/submission.jsx`),
             context: {
                 slug: node.slug,
             },

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { BLOCKS, MARKS } from '@contentful/rich-text-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
@@ -31,16 +31,20 @@ const CareerDetails = ({ data }) => {
                         <h2>{title}</h2>
                     </div>
                     <div>
-                        <button className="custom-button" type="submit">
-                            Candidati
-                        </button>
+                        <Link to={`${window.location.pathname}/candidatura`}>
+                            <button type="button" className="custom-button">
+                                Candidati
+                            </button>
+                        </Link>
                     </div>
                 </div>
                 <div className="place-row">
                     <img src={MapMarker} alt="map marker" />
                     <p>{place}</p>
                 </div>
-                <p>{documentToReactComponents(description.json, options)} </p>
+                <div className="content">
+                    {documentToReactComponents(description.json, options)}
+                </div>
             </div>
         </Layout>
     )

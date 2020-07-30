@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/no-array-index-key */
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
@@ -29,21 +30,30 @@ const WeGather = () => {
             }
         }
     `).allContentfulBlogPost.edges.map(({ node }) => node)
+
     return (
         <div className="wegather-section container ">
             <div className="blog-posts d-flex">
-                {data.map((item, index) => (
-                    <a href={item.link} rel="noopener noreferrer" target="_blank">
-                        <div key={`blog_post_${index}`} className="post-card">
-                            <img
-                                srcSet={item.heroImage?.fluid.srcSet}
-                                srcSetWebp={item.heroImage?.fluid.srcSetWebp}
-                                alt="WeGather"
-                            />
-                            <p>{item.articleTitle}</p>
-                        </div>
-                    </a>
-                ))}
+                {data.map((item, index) => {
+                    const imgProps =
+                        item.icon && item.icon.fluid
+                            ? {
+                                  srcSet: item.icon.fluid.srcSet,
+                                  srcSetWebp: item.icon.fluid.srcSetWebp,
+                              }
+                            : {
+                                  src: '/static/images/placeholder.png',
+                              }
+
+                    return (
+                        <a href={item.link} rel="noopener noreferrer" target="_blank">
+                            <div key={`blog_post_${index}`} className="post-card">
+                                <img {...imgProps} alt="WeGather" />
+                                <p>{item.articleTitle}</p>
+                            </div>
+                        </a>
+                    )
+                })}
             </div>
             <div className="WeGather-card">
                 <div className="text-section">
@@ -84,7 +94,7 @@ const WeGather = () => {
                     </div>
                 </div>
                 <div className="cta-section">
-                    <div className='text'>
+                    <div className="text">
                         <p>
                             <Translate>PARTNERS.WEGATHER.TITLE</Translate>
                         </p>

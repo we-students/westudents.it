@@ -32,8 +32,10 @@
     "react-dom": "^16.12.0",
     "react-google-recaptcha": "^2.1.0",
     "react-helmet": "^6.1.0",
+    "react-loader-spinner": "^3.1.14",
     "react-lottie": "^1.2.3",
-    "sweetalert2": "^9.17.1"
+    "sweetalert2": "^9.17.1",
+    "yup": "^0.29.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^9.1.1",
@@ -64,7 +66,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "eslint": "eslint \"src/**/*.js\" --no-error-on-unmatched-pattern --fix",
+    "eslint": "eslint --ext .ts,.tsx,.js,.jsx --no-error-on-unmatched-pattern --fix src/",
     "commit": "npx git-cz",
     "release": "standard-version"
   },
