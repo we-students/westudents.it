@@ -1,0 +1,151 @@
+.contact {
+
+    .top-section {
+        margin: 120px auto 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        > * {
+            flex: 1;
+        }
+
+        .image-wrapper {
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 3.4em;
+        }
+
+        p {
+            max-width: 380px;
+        }
+    }
+
+    .form-wrapper {
+        form {
+            margin-bottom: 100px;
+
+            .input-wrapper {
+                position: relative;
+                margin: 15px 0;
+
+                .error-info {
+                    margin-top: 5px;
+                    display: none;
+                }
+
+                &.error {
+
+                    input, textarea {        
+                        &::-webkit-input-placeholder { color: #f07f7f }
+                        &::-moz-placeholder { color: #f07f7f }
+                        &:-ms-input-placeholder { color: #f07f7f } 
+                        &:-o-input-placeholder { color: #f07f7f }
+                        border-color: #f07f7f;
+                        color: #f07f7f;
+                    }
+
+                    .error-info {
+                        display: inherit;
+                        color: #f07f7f;
+                    }
+                }
+            }
+         
+            input {
+                font-size: 20px;
+                border: none;
+                background-color: inherit;
+                border-bottom: 1px solid rgba(166, 166, 166, .3);
+                padding: 10px 0;
+                width: 50%;
+                font-family: 'Titillium Web', sans-serif;
+
+                &::-webkit-input-placeholder { color: #A6A6A6; font-weight: 700; font-family: 'Titillium Web', sans-serif }
+                &::-moz-placeholder { color: #A6A6A6; font-weight: 700; font-family: 'Titillium Web', sans-serif }
+                &:-ms-input-placeholder { color: #A6A6A6; font-weight: 700; font-family: 'Titillium Web', sans-serif } 
+                &:-o-input-placeholder { color: #A6A6A6; font-weight: 700; font-family: 'Titillium Web', sans-serif }
+
+            }
+
+            input[type="radio"], input[type="checkbox"] {
+                margin-right: 10px;
+                background-color: #d1d3d1;
+                -webkit-appearance: default;
+                -moz-appearance: none;
+                appearance: none;
+                width: inherit;
+            }
+
+            input[type="radio"] {
+
+                &::before {
+                    content: '';
+                    background-color: #ffffff;
+                    border-radius: 20px;
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    top: 9px;
+                    left: 0px;
+                    box-shadow: 0 0px 2px rgba(0,0,0,0.06), 0 0px 4px rgba(0,0,0,0.06);
+                }
+
+                &:checked::before {
+                    background-color: #F2666A;
+                    background: radial-gradient(circle, rgba(242,102,106,1) 30%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 100%);
+                }
+            }
+
+            input[type="checkbox"] {
+
+                &::before {
+                    content: '';
+                    background-color: #ffffff;
+                    border-radius: 4px;
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    top: 12px;
+                    left: 0px;
+                    box-shadow: 0 0px 2px rgba(0,0,0,0.06), 0 0px 4px rgba(0,0,0,0.06);
+                }
+
+                &:checked::before {
+                    background-color: #F2666A;
+                    background: radial-gradient(circle, rgba(242,102,106,1) 30%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 100%);
+                }
+            }
+
+            textarea {
+                font-size: 20px;
+                font-family: 'Titillium Web', sans-serif;
+                border: none;
+                background-color: inherit;
+                border-bottom: 1px solid rgba(166, 166, 166, .3);
+                padding: 10px 0;
+                margin-bottom: 15px;
+                width: 100%;
+
+                &::-webkit-input-placeholder { color: #A6A6A6; font-weight: 700; font-family: 'Titillium Web', sans-serif }
+                &::-moz-placeholder { color: #A6A6A6; font-weight: 700; font-family: 'Titillium Web', sans-serif  }
+                &:-ms-input-placeholder { color: #A6A6A6; font-weight: 700; font-family: 'Titillium Web', sans-serif  } 
+                &:-o-input-placeholder { color: #A6A6A6; font-weight: 700; font-family: 'Titillium Web', sans-serif  }
+
+            }
+            
+            label {
+                margin-left: 15px;
+                font-size: 18px;
+                font-family: 'Cairo', sans-serif;
+            }
+
+            button {
+                margin: 50px 0;
+            }
+        }
+    }
+
+}

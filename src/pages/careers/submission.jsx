@@ -19,12 +19,25 @@ const CareerSubmission = ({ data, pageContext }) => {
 
     const recaptchaRef = React.createRef()
 
+    // useEffect(() => {
+    //     const script = document.createElement('script')
+    //     script.src = 'https://www.google.com/recaptcha/api.js'
+    //     script.async = true
+    //     script.defer = true
+    //     document.body.appendChild(script)
+
+    // }, [])
+
     useEffect(() => {
-        const script = document.createElement('script')
-        script.src = 'https://www.google.com/recaptcha/api.js'
-        script.async = true
-        script.defer = true
-        document.body.appendChild(script)
+        firebase
+            .auth()
+            .signInAnonymously()
+            .catch(function (error) {
+                // Handle Errors here.
+                let errorCode = error.code
+                let errorMessage = error.message
+                // ...
+            })
     }, [])
 
     const openPositions = data.all.edges.reduce(
@@ -37,12 +50,14 @@ const CareerSubmission = ({ data, pageContext }) => {
             fullname: '',
             role: openPositions[slug] ? openPositions[slug].title : '',
             cv_name: '',
+            profile: '',
         },
         onSubmit: async (values) => handleSubmit(values),
         validationSchema: Yup.object({
             fullname: Yup.string().required(),
             role: Yup.string().required(),
             cv_name: Yup.string().required(),
+            profile: Yup.string().required(),
         }),
     })
 
@@ -69,6 +84,17 @@ const CareerSubmission = ({ data, pageContext }) => {
     const handleSubmit = async (values) => {
         const token = await recaptchaRef.current.executeAsync()
         console.log('asd', { ...values, token })
+
+        const subFunc = firebase.functions().httpsCallable('submitJobApplication')
+        const resp = await subFunc({
+            fullname: values.fullname,
+            role: values.role,
+            cv_url: cvUrl,
+            profile: values.profile,
+            recaptcha: token,
+        })
+
+        console.log('resp', resp)
     }
 
     return (
@@ -160,11 +186,11 @@ const CareerSubmission = ({ data, pageContext }) => {
                                 formik.handleChange('link_tmp')(e.target.innerText)
                             }}
                             onBlur={(e) => {
-                                formik.handleBlur('link')(e)
-                                formik.handleChange('link')(e.target.innerText)
+                                formik.handleBlur('profile')(e)
+                                formik.handleChange('profile')(e.target.innerText)
                             }}
                         >
-                            {formik.values.link}
+                            {formik.values.profile}
                         </span>
                         <input
                             type="file"
