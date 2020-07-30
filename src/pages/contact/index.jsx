@@ -29,6 +29,10 @@ const validationSchema = Yup.object({
 const ContactPage = () => {
     const recaptchaRef = React.createRef()
 
+    useEffect(() => {
+        firebase.auth().signInAnonymously()
+    }, [])
+
     const handleSubmit = async (values) => {
         const token = await recaptchaRef.current.executeAsync()
 

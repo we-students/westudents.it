@@ -11,6 +11,13 @@ import Layout from '../../components/layout'
 import Loader from '../../components/loader'
 import './styles.scss'
 
+const validationSchema = Yup.object({
+    fullname: Yup.string().required('Ci serve sapere il tuo nome'),
+    role: Yup.string().required('Che cosa vuoi fare?'),
+    cv_name: Yup.string().required('Ci serve il tuo curriculum'),
+    profile: Yup.string().url('Non sembra un url valido'),
+})
+
 const CareerSubmission = ({ data, pageContext }) => {
     const { title, place, description } = data.position.edges[0].node
     const { slug } = pageContext
@@ -19,25 +26,8 @@ const CareerSubmission = ({ data, pageContext }) => {
 
     const recaptchaRef = React.createRef()
 
-    // useEffect(() => {
-    //     const script = document.createElement('script')
-    //     script.src = 'https://www.google.com/recaptcha/api.js'
-    //     script.async = true
-    //     script.defer = true
-    //     document.body.appendChild(script)
-
-    // }, [])
-
     useEffect(() => {
-        firebase
-            .auth()
-            .signInAnonymously()
-            .catch(function (error) {
-                // Handle Errors here.
-                let errorCode = error.code
-                let errorMessage = error.message
-                // ...
-            })
+        firebase.auth().signInAnonymously()
     }, [])
 
     const openPositions = data.all.edges.reduce(
@@ -53,12 +43,7 @@ const CareerSubmission = ({ data, pageContext }) => {
             profile: '',
         },
         onSubmit: async (values) => handleSubmit(values),
-        validationSchema: Yup.object({
-            fullname: Yup.string().required(),
-            role: Yup.string().required(),
-            cv_name: Yup.string().required(),
-            profile: Yup.string().required(),
-        }),
+        validationSchema,
     })
 
     const handleFileUpload = (event) => {
@@ -83,10 +68,9 @@ const CareerSubmission = ({ data, pageContext }) => {
 
     const handleSubmit = async (values) => {
         const token = await recaptchaRef.current.executeAsync()
-        console.log('asd', { ...values, token })
 
         const subFunc = firebase.functions().httpsCallable('submitJobApplication')
-        const resp = await subFunc({
+        const { data: resp } = await subFunc({
             fullname: values.fullname,
             role: values.role,
             cv_url: cvUrl,
@@ -94,19 +78,21 @@ const CareerSubmission = ({ data, pageContext }) => {
             recaptcha: token,
         })
 
-        console.log('resp', resp)
+        if (resp.success) {
+            Swal.fire({
+                status: 'success',
+                title: 'Ok',
+                html: 'Ok!',
+            })
+
+            formik.resetForm()
+        }
     }
 
     return (
         <Layout className="careers" seo={{ title: `WeStudents — ${title}` }} showBubbles>
             <div className="container career-submission">
-                <h4>
-                    Form di candidatura
-                    {formik.values.fullname}
-                </h4>
-
-                {console.log('formik', isUploading, formik.isSubmitting)}
-
+                <h4>Form di candidatura</h4>
                 <form onSubmit={formik.handleSubmit}>
                     <ReCAPTCHA
                         ref={recaptchaRef}
@@ -116,82 +102,102 @@ const CareerSubmission = ({ data, pageContext }) => {
 
                     <p className="main-text">
                         Mi chiamo
-                        <span
-                            id="fullname"
-                            className="input"
-                            role="textbox"
-                            contentEditable
-                            onInput={(e) => {
-                                formik.handleChange('fullname_tmp')(e.target.innerText)
-                            }}
-                            onBlur={(e) => {
-                                formik.handleBlur('fullname')(e)
-                                formik.handleChange('fullname')(e.target.innerText)
-                            }}
-                        >
-                            {formik.values.fullname}
-                        </span>
+                        <div>
+                            <span
+                                id="fullname"
+                                className="input"
+                                role="textbox"
+                                contentEditable
+                                onInput={(e) => {
+                                    formik.handleChange('fullname_tmp')(e.target.innerText)
+                                }}
+                                onBlur={(e) => {
+                                    formik.handleBlur('fullname')(e)
+                                    formik.handleChange('fullname')(e.target.innerText)
+                                }}
+                            >
+                                {formik.values.fullname}
+                            </span>
+                            {formik.errors.fullname && formik.touched.fullname ? (
+                                <small className="error-info">{formik.errors.fullname}</small>
+                            ) : null}
+                        </div>
                         e vorrei entrare nel team di WeStudents come
-                        <span
-                            id="role"
-                            className="input"
-                            role="textbox"
-                            contentEditable
-                            onFocus={async (event) => {
-                                event.target.blur()
-                                event.persist()
+                        <div>
+                            <span
+                                id="role"
+                                className="input"
+                                role="textbox"
+                                contentEditable
+                                onFocus={async (event) => {
+                                    event.target.blur()
+                                    event.persist()
 
-                                const { value } = await Swal.fire({
-                                    title: 'Posizione',
-                                    input: 'select',
-                                    inputOptions: Object.entries(openPositions).reduce(
-                                        (acc, [key, item]) => {
-                                            return { ...acc, [key]: item.title }
-                                        },
-                                        {},
-                                    ),
-                                    inputValue: formik.values.role ? formik.values.role : slug,
-                                    inputPlaceholder: 'Seleziona la posizione',
-                                })
+                                    const { value } = await Swal.fire({
+                                        title: 'Posizione',
+                                        input: 'select',
+                                        inputOptions: Object.entries(openPositions).reduce(
+                                            (acc, [key, item]) => {
+                                                return { ...acc, [key]: item.title }
+                                            },
+                                            {},
+                                        ),
+                                        inputValue: formik.values.role ? formik.values.role : slug,
+                                        inputPlaceholder: 'Seleziona la posizione',
+                                    })
 
-                                if (value) {
-                                    formik.handleChange('role')(openPositions[value].title)
-                                    formik.handleBlur('role')(event)
-                                }
-                            }}
-                        >
-                            {formik.values.role}
-                        </span>
+                                    if (value) {
+                                        formik.handleChange('role')(openPositions[value].title)
+                                        formik.handleBlur('role')(event)
+                                    }
+                                }}
+                            >
+                                {formik.values.role}
+                            </span>
+                            {formik.errors.role && formik.touched.role ? (
+                                <small className="error-info">{formik.errors.role}</small>
+                            ) : null}
+                        </div>
                         . Questo è il mio cv
-                        <span
-                            id="cv"
-                            className="input"
-                            role="textbox"
-                            contentEditable
-                            onFocus={(event) => {
-                                document.getElementById('cv_file').click()
-                                formik.handleBlur('cv_name')(event)
-                                event.target.blur()
-                            }}
-                        >
-                            {formik.values.cv_name}
-                        </span>
+                        <div>
+                            <span
+                                id="cv"
+                                className="input"
+                                role="textbox"
+                                contentEditable
+                                onFocus={(event) => {
+                                    document.getElementById('cv_file').click()
+                                    formik.handleBlur('cv_name')(event)
+                                    event.target.blur()
+                                }}
+                            >
+                                {formik.values.cv_name}
+                            </span>
+                            {formik.errors.cv_name && formik.touched.cv_name ? (
+                                <small className="error-info">{formik.errors.cv_name}</small>
+                            ) : null}
+                        </div>
                         mentre qui potete visionare i miei lavori
-                        <span
-                            id="link"
-                            className="input"
-                            role="textbox"
-                            contentEditable
-                            onInput={(e) => {
-                                formik.handleChange('link_tmp')(e.target.innerText)
-                            }}
-                            onBlur={(e) => {
-                                formik.handleBlur('profile')(e)
-                                formik.handleChange('profile')(e.target.innerText)
-                            }}
-                        >
-                            {formik.values.profile}
-                        </span>
+                        <div>
+                            <span
+                                id="link"
+                                className="input"
+                                role="textbox"
+                                contentEditable
+                                onInput={(e) => {
+                                    formik.handleChange('link_tmp')(e.target.innerText)
+                                }}
+                                onBlur={(e) => {
+                                    formik.handleBlur('profile')(e)
+                                    formik.handleChange('profile')(e.target.innerText)
+                                }}
+                            >
+                                {formik.values.profile}
+                            </span>
+                            {formik.errors.profile && formik.touched.profile ? (
+                                <small className="error-info">{formik.errors.profile}</small>
+                            ) : null}
+                        </div>
                         <input
                             type="file"
                             id="cv_file"

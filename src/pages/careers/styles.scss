@@ -337,10 +337,26 @@
             display: none;
         }
 
+        > div {
+            display: initial;
+            position: relative;
+
+            small.error-info {
+                position: absolute;
+                font-size: 14px;
+                left: 2em;
+                bottom: -1.4em;
+                color: #f07f7f;
+                min-width: 400px;
+            }
+        }
+
         span {
             color: #FF9D64;
             padding: 0px .3em;
             outline: none;
+
+           
 
             &:empty {
                 color: #E5E5E5;
@@ -377,6 +393,9 @@
 
     }
 
+    form {
+        margin-bottom: 100px;
+    }
 
     button {
         display: flex;

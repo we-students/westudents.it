@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react'
 import { useStaticQuery, Link, graphql } from 'gatsby'
 
@@ -32,7 +33,7 @@ const OpenPosition = ({ fullpageProps }) => {
             }
         }
     `).allContentfulOpenPosition.edges.map(({ node }) => node)
-    
+
     return (
         <div className="open-positions container">
             <h3>Tutte le posizioni aperte</h3>
@@ -62,14 +63,20 @@ const OpenPosition = ({ fullpageProps }) => {
                         return desc
                     })()
 
+                    const imgProps =
+                        item.icon && item.icon.fluid
+                            ? {
+                                  srcSet: item.icon.fluid.srcSet,
+                                  srcSetWebp: item.icon.fluid.srcSetWebp,
+                              }
+                            : {
+                                  src: '/static/images/candidate.png',
+                              }
+
                     return (
                         <Link to={`/carriere/${item.slug}`}>
                             <div key={index} className="grid-item open-position-item">
-                                <img
-                                    srcSet={item.icon.fluid.srcSet}
-                                    srcSetWebp={item.icon.fluid.srcSetWebp}
-                                    alt="Posizione aperta"
-                                />
+                                <img {...imgProps} alt="Posizione aperta" />
                                 <div className="infos ">
                                     <h4>{title}</h4>
                                     <p>{description}</p>
