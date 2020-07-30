@@ -1,0 +1,55 @@
+steps:
+  # Build the docker image
+  - name: "gcr.io/cloud-builders/docker"
+    id: "docker-build"
+    args:
+      - "build"
+      - "-t"
+      - "gcr.io/$PROJECT_ID/k8s/$_CLOUDSDK_CONTAINER_CLUSTER/$_NAMESPACE/$_SERVICE_NAME"
+      - "."
+    waitFor: ["-"]
+  # Push the docker image
+  - name: "gcr.io/cloud-builders/docker"
+    id: "docker-push"
+    args:
+      - "push"
+      - "gcr.io/$PROJECT_ID/k8s/$_CLOUDSDK_CONTAINER_CLUSTER/$_NAMESPACE/$_SERVICE_NAME:latest"
+    waitFor: ["docker-build"]
+  # Get credentials for the k8s cluster
+  - name: "gcr.io/cloud-builders/kubectl"
+    id: "kube-credentials"
+    env:
+      - "CLOUDSDK_COMPUTE_ZONE=$_CLOUDSDK_COMPUTE_ZONE"
+      - "CLOUDSDK_CONTAINER_CLUSTER=$_CLOUDSDK_CONTAINER_CLUSTER"
+      - "KUBECONFIG=/kube/config"
+    entrypoint: "sh"
+    args:
+      - "-c"
+      - |
+        CLUSTER=$$(gcloud config get-value container/cluster)
+        PROJECT=$$(gcloud config get-value core/project)
+        ZONE=$$(gcloud config get-value compute/zone)
+        gcloud container clusters get-credentials $$CLUSTER \
+          --project $$PROJECT \
+          --zone $$ZONE
+    volumes:
+      - name: "kube"
+        path: /kube
+    waitFor: ["-"]
+  # Refresh pod image
+  - name: "gcr.io/cloud-builders/kubectl"
+    env:
+      - "KUBECONFIG=/kube/config"
+    entrypoint: "sh"
+    args:
+      - "-c"
+      - |
+        # Restart pod 
+        echo " - Restart pod"
+        kubectl delete pods  \
+          -n $_NAMESPACE \
+          -l app=$_SERVICE_NAME
+    volumes:
+      - name: "kube"
+        path: /kube
+    waitFor: ["docker-push", "kube-credentials"]
