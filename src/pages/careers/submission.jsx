@@ -1,11 +1,14 @@
+/* eslint-disable no-use-before-define */
 import React, { useState, useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useFormik } from 'formik'
 import Swal from 'sweetalert2'
 import firebase from 'gatsby-plugin-firebase'
+import * as Yup from 'yup'
 import ReCAPTCHA from 'react-google-recaptcha'
 
 import Layout from '../../components/layout'
+import Loader from '../../components/loader'
 import './styles.scss'
 
 const CareerSubmission = ({ data, pageContext }) => {
@@ -13,6 +16,16 @@ const CareerSubmission = ({ data, pageContext }) => {
     const { slug } = pageContext
     const [isUploading, setIsUploading] = useState(false)
     const [cvUrl, setCvUrl] = useState()
+
+    const recaptchaRef = React.createRef()
+
+    useEffect(() => {
+        const script = document.createElement('script')
+        script.src = 'https://www.google.com/recaptcha/api.js'
+        script.async = true
+        script.defer = true
+        document.body.appendChild(script)
+    }, [])
 
     const openPositions = data.all.edges.reduce(
         (acc, { node: item }) => ({ ...acc, [item.slug]: item }),
@@ -25,9 +38,12 @@ const CareerSubmission = ({ data, pageContext }) => {
             role: openPositions[slug] ? openPositions[slug].title : '',
             cv_name: '',
         },
-        onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2))
-        },
+        onSubmit: async (values) => handleSubmit(values),
+        validationSchema: Yup.object({
+            fullname: Yup.string().required(),
+            role: Yup.string().required(),
+            cv_name: Yup.string().required(),
+        }),
     })
 
     const handleFileUpload = (event) => {
@@ -50,6 +66,11 @@ const CareerSubmission = ({ data, pageContext }) => {
         }
     }
 
+    const handleSubmit = async (values) => {
+        const token = await recaptchaRef.current.executeAsync()
+        console.log('asd', { ...values, token })
+    }
+
     return (
         <Layout className="careers" seo={{ title: `WeStudents — ${title}` }} showBubbles>
             <div className="container career-submission">
@@ -58,7 +79,15 @@ const CareerSubmission = ({ data, pageContext }) => {
                     {formik.values.fullname}
                 </h4>
 
+                {console.log('formik', isUploading, formik.isSubmitting)}
+
                 <form onSubmit={formik.handleSubmit}>
+                    <ReCAPTCHA
+                        ref={recaptchaRef}
+                        size="invisible"
+                        sitekey={process.env.GATSBY_RECAPTCHA_CODE}
+                    />
+
                     <p className="main-text">
                         Mi chiamo
                         <span
@@ -137,12 +166,6 @@ const CareerSubmission = ({ data, pageContext }) => {
                         >
                             {formik.values.link}
                         </span>
-                        <ReCAPTCHA
-                            sitekey="Your client site key"
-                            onChange={(value) => {
-                                console.log('Captcha value:', value)
-                            }}
-                        />
                         <input
                             type="file"
                             id="cv_file"
@@ -152,7 +175,10 @@ const CareerSubmission = ({ data, pageContext }) => {
                         />
                     </p>
 
-                    <button type="submit">Submit</button>
+                    <button type="submit" disabled={isUploading || formik.isSubmitting}>
+                        <span>Candidati</span>
+                        {isUploading || formik.isSubmitting ? <Loader /> : null}
+                    </button>
                 </form>
             </div>
         </Layout>

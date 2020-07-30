@@ -376,4 +376,26 @@
         }
 
     }
+
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 50px;
+
+        &:disabled {
+            background: linear-gradient(45deg, #cdcdcd, #bababa);
+        }
+
+        > span {
+            padding: 8px 0;
+        }
+
+        > div {
+            margin-left: 10px;
+            position: relative;
+            top: 2px;
+        }
+    }
 }
