@@ -5,7 +5,7 @@ const FacebookIcon = require('../../images/facebook_icon_white.svg')
 const InstagramIcon = require('../../images/insta_icon_white.svg')
 const LinkedinIcon = require('../../images/linkedin_icon_white.svg')
 
-const Team = ({ fullpageProps }) => {
+const Team = ({ fullpageProps = {} }) => {
     const { isActive } = fullpageProps
     return (
         <div className={`d-flex team-wrapper ${isActive ? 'active' : null}`}>

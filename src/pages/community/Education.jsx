@@ -5,7 +5,7 @@ import './styles.scss'
 const image1 = require('../../images/manifest_0.png')
 const image2 = require('../../images/manifest_1.png')
 
-const Education = ({ fullpageProps }) => {
+const Education = ({ fullpageProps = {} }) => {
     const { isActive } = fullpageProps
     return (
         <div

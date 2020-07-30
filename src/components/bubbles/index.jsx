@@ -66,7 +66,9 @@ const Bubbles = (props) => {
     ]
     const { sectionCount } = props
     const [bubbles, setBubbles] = useState([])
-    const { width: windowWidth, height: windowHeight } = window.screen
+    const { width: windowWidth, height: windowHeight } =
+        typeof window !== 'undefined' ? window.screen : {}
+
     const generateBubbles = () => {
         if (sectionCount > 0 && bubblesSvgs) {
             const bubblesTemp = []

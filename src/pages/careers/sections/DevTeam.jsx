@@ -8,7 +8,7 @@ import DevShitImageFive from '../../../images/dev-team-components/5.png'
 import DevShitImageSix from '../../../images/dev-team-components/6.png'
 import DevShitImageSeven from '../../../images/dev-team-components/7.png'
 
-const OpenPosition = ({ fullpageProps }) => {
+const OpenPosition = ({ fullpageProps = {} }) => {
     const handleCtaClick = () => {}
 
     return (

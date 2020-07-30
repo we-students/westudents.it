@@ -4,7 +4,7 @@ import introVideo from '../../../static/videos/video.mp4'
 
 import './styles.scss'
 
-const Intro = ({ fullpageProps }) => {
+const Intro = ({ fullpageProps = {} }) => {
     const { fullpageApi, isActive } = fullpageProps
     const video = React.createRef()
     useEffect(() => {

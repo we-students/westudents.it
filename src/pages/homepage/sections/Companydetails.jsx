@@ -31,7 +31,7 @@ const statistics = [
     },
 ]
 
-const Details = ({ fullpageProps }) => {
+const Details = ({ fullpageProps = {} }) => {
     const { isActive } = fullpageProps
 
     console.log('isActive', isActive)

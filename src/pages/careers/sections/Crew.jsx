@@ -2,7 +2,7 @@ import React from 'react'
 
 import CrewImage from '../../../images/crew.png'
 
-const Crew = ({ fullpageProps }) => {
+const Crew = ({ fullpageProps = {} }) => {
     const { fullpageApi } = fullpageProps
     return (
         <div className="crew container">

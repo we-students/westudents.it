@@ -31,7 +31,11 @@ const CareerDetails = ({ data }) => {
                         <h2>{title}</h2>
                     </div>
                     <div>
-                        <Link to={`${window.location.pathname}/candidatura`}>
+                        <Link
+                            to={`${
+                                typeof window !== 'undefined' ? window.location.pathname : ''
+                            }/candidatura`}
+                        >
                             <button type="button" className="custom-button">
                                 Candidati
                             </button>

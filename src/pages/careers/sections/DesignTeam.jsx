@@ -7,7 +7,7 @@ import DesignShitImageFour from '../../../images/design-team-components/4.png'
 import DesignShitImageFive from '../../../images/design-team-components/5.png'
 import DesignShitImageSix from '../../../images/design-team-components/6.png'
 
-const OpenPosition = ({ fullpageProps }) => {
+const OpenPosition = ({ fullpageProps = {} }) => {
     const handleCtaClick = () => {}
 
     return (
