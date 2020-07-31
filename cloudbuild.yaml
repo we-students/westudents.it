@@ -18,7 +18,7 @@ steps:
       - "FIREBASE_PROJECT_ID=$_ENV_FIREBASE_PROJECT_ID"
       - "FIREBASE_STORAGE_BUCKET=$_ENV_FIREBASE_STORAGE_BUCKET"
       - "GATSBY_RECAPTCHA_CODE=$_ENV_GATSBY_RECAPTCHA_CODE"
-      - "FIREBASE_STORAGE_BUCKET=$_ENV_MEASUREMENT_ID"
+      - "MEASUREMENT_ID=$_ENV_MEASUREMENT_ID"
     waitFor: ["-"]
   # Build the docker image
   - name: "gcr.io/cloud-builders/docker"
