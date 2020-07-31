@@ -7,11 +7,20 @@
 exports.createPages = async ({ actions, graphql }) => {
     const { createPage } = actions
 
-    const careers = await graphql(`
+    const { data } = await graphql(`
         query AllCareers {
-            allContentfulOpenPosition {
+            careers: allContentfulOpenPosition {
                 edges {
                     node {
+                        slug
+                    }
+                }
+            }
+
+            documents: allContentfulDocument {
+                edges {
+                    node {
+                        title
                         slug
                     }
                 }
@@ -48,7 +57,7 @@ exports.createPages = async ({ actions, graphql }) => {
         component: require.resolve(`./src/pages/contact/index.jsx`),
     })
 
-    careers.data.allContentfulOpenPosition.edges.forEach(({ node }) => {
+    data.careers.edges.forEach(({ node }) => {
         createPage({
             path: `/carriere/${node.slug}`,
             component: require.resolve(`./src/pages/careers/detail.jsx`),
@@ -60,6 +69,16 @@ exports.createPages = async ({ actions, graphql }) => {
         createPage({
             path: `/carriere/${node.slug}/candidatura`,
             component: require.resolve(`./src/pages/careers/submission.jsx`),
+            context: {
+                slug: node.slug,
+            },
+        })
+    })
+
+    data.documents.edges.forEach(({ node }) => {
+        createPage({
+            path: `/${node.slug}`,
+            component: require.resolve(`./src/pages/document/index.jsx`),
             context: {
                 slug: node.slug,
             },
