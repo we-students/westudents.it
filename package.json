@@ -68,7 +68,8 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "eslint": "eslint --ext .ts,.tsx,.js,.jsx src/",
     "commit": "npx git-cz",
-    "release": "standard-version"
+    "release": "standard-version",
+    "create-env": "printenv > .env"
   },
   "repository": {
     "type": "git",

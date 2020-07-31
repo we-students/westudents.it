@@ -9,7 +9,7 @@ COPY package.json /app/package.json
 RUN apk update && \
     apk upgrade && \
     apk add git
-RUN npx create-env --env-file .env --env-prefix _ENV_
+# RUN npx create-env --env-file .env --env-prefix _ENV_
 RUN printenv | less
 RUN npm i
 COPY . /app
