@@ -34,8 +34,6 @@ const statistics = [
 const Details = ({ fullpageProps = {} }) => {
     const { isActive } = fullpageProps
 
-    console.log('isActive', isActive)
-
     return (
         <div className={`details-wrapper ${isActive ? 'active' : ''}`}>
             <div style={{ alignItems: 'stretch' }}>

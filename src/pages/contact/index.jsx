@@ -44,7 +44,7 @@ const ContactPage = () => {
             recaptcha: token,
         })
 
-        console.log('resp', resp)
+        console.log(resp)
     }
 
     const formik = useFormik({
