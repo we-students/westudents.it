@@ -6,7 +6,7 @@ steps:
     args:
       - "-c"
       - |
-        printenv > .env && cat .env
+        printenv > .env.production && cat .env.production
     env:
       - "CONTENTFUL_ACCESS_TOKEN=$_ENV_CONTENTFUL_ACCESS_TOKEN"
       - "CONTENTFUL_SPACE_ID=$_ENV_CONTENTFUL_SPACE_ID"
