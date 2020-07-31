@@ -2,7 +2,11 @@ steps:
   # Create .env file
   - name: "bash"
     id: "create-env"
-    args: ['printenv', '>', '.env', '&&', 'cat', '.env']
+    entrypoint: 'bash'
+    args:
+      - "-c"
+      - |
+        printenv > .env && cat .env
     env:
       - "CONTENTFUL_ACCESS_TOKEN=$_ENV_CONTENTFUL_ACCESS_TOKEN"
       - "CONTENTFUL_SPACE_ID=$_ENV_CONTENTFUL_SPACE_ID"
