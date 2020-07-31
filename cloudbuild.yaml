@@ -1,9 +1,8 @@
 steps:
-  # Create .env
-  - name: "node:10.15.1"
+  # Create .env file
+  - name: "bash"
     id: "create-env"
-    entrypoint: npm
-    args: ["run", "create-env"]
+    args: ['printenv', '>', '.env', '&&', 'cat', '.env']
     env:
       - "CONTENTFUL_ACCESS_TOKEN=$_ENV_CONTENTFUL_ACCESS_TOKEN"
       - "CONTENTFUL_SPACE_ID=$_ENV_CONTENTFUL_SPACE_ID"
