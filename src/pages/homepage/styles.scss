@@ -7,6 +7,7 @@
 
 		> * {
 			flex: 1;
+			position: relative;
 		}
 	}
 
@@ -41,6 +42,58 @@
 		padding: 0;
     	margin: 0;
     	margin-bottom: 10px;
+	}
+
+	.westudents-app {
+		.big-bubble {
+			width: 300px;
+			height: 300px;
+			background: linear-gradient(45deg, #f0494e, #fcab7c);
+			position: absolute;
+			top: 10%;
+			left: 10%;
+			border-radius: 100%;
+		}
+
+		.logo {
+			position: absolute;
+			bottom: 8%;
+			width: 80px;
+			height: 80px;
+			left: 28%;
+		}
+	}
+
+	.wegather {
+		.big-bubble {
+			width: 300px;
+			height: 300px;
+			background: linear-gradient(45deg, #EA544C, #e76962);
+			position: absolute;
+			top: 10%;
+			right: 10%;
+			border-radius: 100%;
+		}
+	}
+
+	.dascuola {
+		.big-bubble {
+			width: 300px;
+			height: 300px;
+			background: linear-gradient(45deg, #7C6BAA, #FF9D64);
+			position: absolute;
+			top: 5%;
+			right: 0;
+			border-radius: 100%;
+		}
+
+		.logo {
+			position: absolute;
+			bottom: 20%;
+			width: 80px;
+			height: 80px;
+			left: 10%;
+		}
 	}
 
 	.westudents-app, .wegather, .dascuola {
