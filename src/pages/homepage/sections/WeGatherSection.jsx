@@ -21,6 +21,7 @@ const WeGather = ({ onCtaPress = () => {} }) => {
                 </button>
             </div>
             <div>
+                <div className="big-bubble" />
                 <WeGatherLottieAnimation
                     width={(size.width > 1400 ? 1400 : size.width) * 0.5}
                     height={(size.width > 1400 ? 1400 : size.width) * 0.5}
