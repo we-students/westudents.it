@@ -49,7 +49,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
     createPage({
         path: `/prodotti/westudents`,
-        component: require.resolve(`./src/pages/product-westudents/index.jsx`),
+        component: require.resolve(`./src/pages/products/westudents/index.jsx`),
     })
 
     createPage({

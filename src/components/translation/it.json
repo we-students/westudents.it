@@ -1,4 +1,85 @@
 {
+    "HOMEPAGE": {
+        "INTRO": "Il ##placeholder## della scuola, pensato dagli studenti",
+        "FUTURE": "futuro",
+        "DASCUOLA": {
+            "TITLE": "DaScuola.it",
+            "DESCRIPTION": "La piattaforma di e-learning più completa di sempre"
+        },
+        "WEGATHER": {
+            "TITLE": "WeGather.it",
+            "DESCRIPTION": "La nostra community culturale e studentesca under 25"
+        },
+        "SPONSORS": {
+            "TITLE": "Ci supportano in questa avventura",
+            "CTA": "Sei anche tu un'azienda e vuoi diventare un nostro partner?"
+        },
+        "WESTUDENTS": {
+            "TITLE": "WeStudents App",
+            "DESCRIPTION": "Il diario smart per gli stuenti del liceo"
+        },
+        "BUTTONS": {
+            "INTRO": "Scopri i nostri prodotti",
+            "WESTUDENTS": "Scopri WeStudents App",
+            "WEGATHER": "Vai su WeGather.it",
+            "DASCUOLA": "Scopri DaScuola.it",
+            "DISCOVER": "Scopri di più"
+        }
+    },
+    "PARTNERS": {
+        "INTRO": {
+            "SECTION_NAME": "Partners",
+            "TITLE": "Conquista la generazione del futuro",
+            "ACTIVE_USERS_NUMBER": "45'356",
+            "ACTIVE_USERS": "Utenti attivi al mese",
+            "ACTIONS_NUMBER": "2'856'789",
+            "ACTIONS": "Azioni compiute questo mese",
+            "DAILY_ACCESSES_NUMBER": "125'669",
+            "DAILY_ACCESSES": "Accessi giornalieri"
+        },
+        "ADV": {
+            "TITLE": "Adv",
+            "SUBTITLE": "Un target, tutta la visibilità che vuoi.",
+            "ITEM1": "Carica la tua creative",
+            "ITEM2": "Scegli il target",
+            "ITEM3": "Scegli quanto spendere",
+            "ITEM4": "Scarica il report"
+        },
+        "DISCOUNTS": {
+            "TITLE": "Sconti online",
+            "SUBTITLE": "Fagli sapere che ci tieni, attiva subito sconti online",
+            "ITEM1": "Presentati",
+            "ITEM2": "Crea il tuo codice sconto",
+            "ITEM3": "Aumenta le vendite",
+            "ITEM4": "Soddisfatto? Dividiamo?"
+        },
+        "OFFLINE_DISCOUNTS": {
+            "TITLE": "Sconti offline",
+            "SUBTITLE": "Hai un negozio? Facciamoli uscire di casa",
+            "ITEM1": "Presenta il tuo negozio",
+            "ITEM2": "Fatti trovare",
+            "ITEM3": "Attiva la sconto",
+            "ITEM4": "Accoglili"
+        },
+        "GAMIFICATION": {
+            "TITLE": "Gamification",
+            "SUBTITLE": "Ogni tanto i ragazzi pensano di studiare senza motivo. Diamogliene uno.",
+            "DESCRIPTION": "Con la Gamification in-app puoi inviare prodotti in regalo agli studenti più meritevoli e per quelli che hanno completato le sfide personalizzate sul tuo brand."
+        },
+        "WEGATHER": {
+            "TITLE": "Lo sapevi? Abbiamo anche un blog!",
+            "SUBTITLE": "Rimani aggionrato su quel che accade intorno a te.",
+            "FOLLOW_US": "Seguici anche sui social!",
+            "NEW_SITE": "Il sito web è tutto nuovo!",
+            "CTA": "Clicca qui per accedere"
+        },
+        "BUTTONS": {
+            "BEGIN_NOW": "Inizia ora",
+            "BEGIN": "Cominciamo",
+            "GO_TO_WEGATHER": "Vai su WeGather.it",
+            "DISCOVER": "Scopri tutte le iniziative"
+        }
+    },
     "COMMUNITY": {
         "INTRO": {
             "TITLE": "WeStudents community",
@@ -7,41 +88,77 @@
         },
         "MANIFEST": {
             "TITLE": "Questo è il nostro manifesto",
-            "ITEM1": "Noi crediamo in un'instruzione a 360 gradi, versatile, in grado di coinvolgere gli studenti e ricca di stimoli",
-            "ITEM2": "Crediamo nella partecipazione attiva, nella libertà di pensiero e d’azione.Abbiamo l’ambizione di spronare i ragazzi a credere nel loro futuro e nelle loro capacità. Crediamo nell’innovazione sociale e nella sperimentazione, vogliamo incentivare la curiosità e la creatività.",
-            "ITEM3": "Coinvolgere e connettere sono da sempre due parole chiave del nostro progetto. Riuscire a farlo, soddisfacendo anche i bisogni più semplici degli studenti, ci rende fieri di quello che stiamo costruendo."
+            "EDUCATION": "Istruzione",
+            "DESCRIPTION1": "Noi crediamo in un'instruzione a 360 gradi, versatile, in grado di coinvolgere gli studenti e ricca di stimoli",
+            "DESCRIPTION2": "Crediamo nell partecipazione attiva, nella libertà di pensiero e d'azione. Abbiamo l'ambizione di spronare i ragazzi a credere nel loro futuro e nelle loro capacità. Creadiamo nell'innovazione sociale e nella sperimentazione vogliamo incentivare la cuoriosità e la creatività.",
+            "FREEDOM": "Libertà",
+            "CONNECTION": "Connessione",
+            "DESCRIPTION3": "Coinvolgere e connettere sono da sempre due parole chiave del nostro progetto. Riuscire a farlo, soddisafacendo anche i bisogni più semplici degli studenti, ci rende fieri di quello che stiamo costruendo."
         },
-        "FEATURES": "Insieme disegnamo la scuola del futuro. Oggi!",
-        "FEATURE1": {
-            "TITLE": "Connessi",
-            "DESCRIPTION": "Assemblee di istituto, tornei tra scuole, feste ed eventi da organizzare insieme"
+        "FEATURES": {
+            "TITLE": "Insieme disegnamo la scuola del futuro. Oggi!",
+            "SUBTITLE": "Abbiamo create programmi ad hoc e iniziative per dare alla scuola 4.0 un boost in più. Vuoi sapere cosa c'è in serbo per te?",
+            "CONNECTED": "Connessi",
+            "SUSTAINABLE": "Sostenibili",
+            "INNOVATIVE": "Innovativi",
+            "ITEM1": "Assemblee di istituto, tornei tra scuole, feste ed eventi da organizzare insieme.",
+            "ITEM2": "Un'agenda per l'ambiente, meno carta, meno palstica...più tempo!",
+            "ITEM3": "Studenti arrivi in tutte le scelte, nuove convenzioni, una sola app per ogni esigenza"
         },
-        "FEATURE2": {
-            "TITLE": "Sostenibili",
-            "DESCRIPTION": "Un’agenda per l’ambiente, meno carta, meno plastica…più tempo!"
+        "PROGRAMS": {
+            "PROGRAM": "Programma",
+            "AMBASSADOR": "Ambassador",
+            "AMBASSADOR_DESCRIPTION": "Vorresti far parte di una community culturale unita, innovativa e promotrice di valori innovativi e pioneristici per la scuola del futuro?"
         },
-        "FEATURE3": {
-            "TITLE": "Innovativi",
-            "DESCRIPTION": "Studenti attivi in tutte le scelte, nuove convenzioni, una sola app per ogni esigenza."
-        },   
-        "DESCRIPTION": "Abbiamo creato programmi ad hoc einiziative per dare alla scuola 4.0 un boost in più. Vuoi sapere cosa c’è in serbo per te?",
-        "AMBASSADOR": {
-            "TITLE": "Ambassador",
-            "DESCRIPION": "Vorresti far parte di una community culturale unita, innovativa e promotrice di valori innovativi e pionieristici per la scuola del futuro?"
-        },
-        "RAPPRESENTANTI": {
-            "TITLE": "Rappresentanti",
-            "DESCRIPTION": "Scegli  WeStudents come sparring partner per la tua attività di rappresentante! Vantaggi e programmi esclusivi per te e per la tua scuola."
+        "TEAM": {
+            "TITLE": "Il nostro team è un pò pazzo, ma sempre al tuo fianco",
+            "SUBTITLE": "Vogliamo risolvere i vostri problemi, insieme.",
+            "SOCIAL": "Seguici anche su",
+            "CTA": "Vuoi sapere chi siamo? Visita la pagina dedicata al team"
         },
         "BUTTONS": {
-            "DISCOVER": "Scopri il programma"
+            "DISCOVER": "Scopri il programma",
+            "GO_TO_TEAM": "Vai al team"
         }
+    },
+    "TEAM": {
+        "INTRO": {
+            "MEET": "Meet the",
+            "TEAM": "Team",
+            "DESCRIPTION1": "Ah, ciao! Piacere di conoscerti.",
+            "DESCRIPTION2": "Grazie per aver cliccato su questa sezione. Vuol dire che ti interessa davvero sapere chi sono i brutti ceffi dietro WeStudents.",
+            "DISCOVER": "Scopri chi siamo tra i banchi!"
+        },
+        "JOIN_US": "Unisciti a noi!",
+        "CACTUS": "Avrai un cactus tutto tuo da coltivare!",
+        "BUTTONS": {
+            "JOIN": "Candidati"
+        }
+    },
+    "WESTUDENTS": {
+        "SMART": "Studia smart,",
+        "DOWNLOAD": "scarica WeStudents",
+        "DESCRIPTION": "Siamo il diario smart più <b>scaricato dagli studenti</b> delle scuole superiori: un'unica app per <b>interagire con il registro elettronico</b> e vivere appieno la scuola.",
+        "ALL_NEEDS": "Tutto ciò di cui hai bisogno",
+        "ONE_APP": "In una sola app!",
+        "GAMIFICATION_TITLE": "Gamification",
+        "GAMIFICATION_CONTENT": "Guadagna punti, ottieni i badge e scala tutti i livelli fino alla vetta! Partecipa al game ed entra nella Top 10 in classifica nazionale: partecipa con i tuoi amici, forma dei gruppi e diventa il campione della tua scuola. Join now!",
+        "SHOP_TITLE": "Shop",
+        "SHOP_CONTENT": "Lo store personalizzato per la scuola. Vendi i tuoi libri usati, acquista quelli nuovi, ordina prodotti esclusivi e personalizzati per la tua scuola, ricevi sconti esclusivi e molto altro. C’è tutto!",
+        "BLOG_TITLE": "Blog",
+        "BLOG_CONTENT": "Direttamente dai principali veicoli di informazione del mondo studentesco, potrai vedere le ultime notizie e rimanere aggiornato su tutto ciò che succede nel mondo.",
+        "BANCO_TITLE": "Banco",
+        "BANCO_CONTENT": "WeStudents è il compagno di banco che avresti sempre voluto, sempre pronto a condividerti tutte le informazioni che ti servono. Da oggi, tutto ciò di cui hai bisogno è sempre a portata di mano.",
+        "DIARIO_TITLE": "Diario",
+        "DIARIO_CONTENT": "Un diario digitale condiviso con tutta la classe. Non perderti nemmeno un compito e guarda i prossimi eventi del tuo istituto!",
+        "CHAT_TITLE": "Chat",
+        "CHAT_CONTENT": "Comunica con i tuoi compagni di classe e con il resto della scuola in modo veloce, semplice e smart. Il numero di telefono non serve più!"
     },
     "FOOTER": {
         "PRIVACY": {
             "TITLE": "Privacy",
             "ITEM1": "Privacy Policy del sito",
-            "ITEM2": "Privacy Policy dell’app",
+            "ITEM2": "Privacy Policy dell'app",
             "ITEM3": "Termini e condizioni",
             "ITEM4": "Norme della Community",
             "ITEM5": "Cookies Policy"
@@ -66,19 +183,19 @@
         },
         "COMPANY": {
             "NAME": "We students S.R.L",
-            "TYPE": "Startup innovativa P.IVA 11961860019"   
+            "TYPE": "Startup innovativa P.IVA 11961860019"
         }
     },
     "CONTACTS": {
         "EMAIL": "info@westudents.it"
     },
     "STATISTICS": {
-        "TITLE": "Vogliamo parlare di numeri",
+        "TITLE": "Vogliamo far parlare i numeri",
         "DOWNLOAD": {
             "TITLE": "Donwload app",
             "VALUE": "125K"
         },
-        "INTERACTIONS":  {
+        "INTERACTIONS": {
             "TITLE": "Interazioni",
             "VALUE": "15mln"
         },

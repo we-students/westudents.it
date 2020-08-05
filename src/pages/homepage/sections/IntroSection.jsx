@@ -7,7 +7,10 @@ import useWindowSize from '../../../hooks/useWindowSize'
 const Intro = ({ onCtaPress = () => {} }) => {
     const size = useWindowSize()
 
-    const introTitle = Translate({ children: 'HOMEPAGE.INTRO' }).split('##placeholder##')
+    const introTitle = Translate({ children: 'HOMEPAGE.INTRO', textOnly: true }).split(
+        '##placeholder##',
+    )
+
     return (
         <div className="intro container">
             <div className="intro-text">

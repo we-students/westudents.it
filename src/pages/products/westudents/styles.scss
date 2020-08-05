@@ -1,0 +1,259 @@
+
+.product-westudents {
+
+    .intro {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        > * {
+            flex: 1;
+        }
+
+        .text-section {
+            > h3 {
+                font-family: 'Cairo', sans-serif;
+                font-size: 1.8em;
+                padding: 0;
+                margin: 0;
+            }
+    
+            > h2 {
+                font-size: 3em;
+                padding: 0;
+                margin: 0;
+                font-family: 'Titillium Web', sans-serif;
+                line-height: .8em;
+            }
+
+            > p {
+                margin-top: 50px
+            }
+        }
+
+        .stores {
+            display: flex;
+            margin-top: 80px;
+
+            button {
+                background: white;
+                border-radius: 10px;
+                width: 160px;
+                margin-right: 15px;
+                padding: 12px 16px;
+                img {
+                    width: 100%
+                }
+            }
+        }
+    }
+
+    .demo {
+        > h3 {
+            font-weight: 700;
+            font-size: 2.4em;
+            text-align: center;
+
+            span {
+                display: block;
+                color: #FF9D64;
+                font-weight: 900;
+                text-transform: uppercase;
+                font-size: 1.2em;
+            }
+        }
+
+        .demo-wrapper {
+            display: flex;
+            height: 560px;
+
+            > div {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                font-size: .4em;
+                color: #A6A6A6;
+                font-weight: 400;
+
+                .top-part {
+                    display: flex;
+                    align-items: top;
+                    justify-content: top;
+
+                    h4 { 
+                        margin: 0; 
+                        padding: 0;
+                        font-family: 'Cairo', sans-serif;
+                        font-size: 1.6em;
+                        font-weight: 700;
+                        color: #A6A6A6;
+                        text-transform: uppercase;
+                    }
+
+                    img {
+                        width: 3em;
+                        height: 3em;
+                    }
+                }
+
+
+                &.left {
+                    text-align: right;
+
+                    > * {
+                        height: 33%;
+                        width: 130%;
+                        padding: 20px;
+                        border-radius: 30px;
+                        cursor: pointer;
+
+                        > * {
+                            padding-right: 30% !important;
+                        }
+                    }
+
+                    p { margin: 0; padding: 0 }
+
+                    .top-part {
+                        justify-content: flex-end;
+                    }
+                    
+                }
+
+                &.right {
+                    text-align: left;
+
+                    > * {
+                        height: 33%;
+                        width: 130%;
+                        padding: 20px;
+                        border-radius: 30px;
+                        position: relative;
+                        cursor: pointer;
+                        left: - 30%;
+
+                        > * {
+                            padding-left: 30% !important;
+                        }
+                    }
+
+                    p { margin: 0; padding: 0 }
+
+                    .top-part {
+                        justify-content: flex-start;
+                    }
+                }
+
+                
+            }
+
+            .image-wrapper {
+                background-size: contain;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                z-index: 10;
+            }
+
+            &.blog { 
+                .image-wrapper { background-image: url('/images/demo_westudents/blog.png') } 
+                .blog-selector { background-color: white }
+            }
+
+            &.shop { 
+                .image-wrapper { background-image: url('/images/demo_westudents/shop.png') } 
+                .shop-selector { background-color: white }
+            }
+            
+            &.gamification { 
+                .image-wrapper { background-image: url('/images/demo_westudents/gamification.png') } 
+                .gamification-selector { background-color: white }
+            }
+            
+            &.banco { 
+                .image-wrapper { background-image: url('/images/demo_westudents/banco.png') } 
+                .banco-selector { background-color: white }
+            }
+            
+            &.diario { 
+                .image-wrapper { background-image: url('/images/demo_westudents/diario.png') } 
+                .diario-selector { background-color: white }
+            }
+            
+            &.chat { 
+                .image-wrapper { background-image: url('/images/demo_westudents/chat.png') } 
+                .chat-selector { background-color: white }
+            }
+        }
+    }
+}
+
+.details-wrapper {
+    height: 100%;
+    padding: 5%;
+    background: transparent;
+    color: white;
+    background: linear-gradient(45deg, rgba(195,35,40,1) 0%, rgba(214,73,59,1) 10%, rgba(224,94,69,1) 19%, rgba(255,157,100,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .item {
+        flex: 1;
+        @media screen and (min-width: 992px){
+            margin: 0 50px
+        }
+        @media screen and (max-width: 992px){
+            margin: 0 30px
+        }
+        img {
+            width: 45px;
+            height: 45px;
+        }
+        .name {
+            margin: 0;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+    }
+    &.active {
+        animation: background-orange 0.5s ease-in;
+    }
+}
+
+.sponsor {
+    flex-direction: column;
+    padding-top: 9%;
+    padding-bottom: 0;
+    .title {
+        color: #FF9D64;
+        text-transform: uppercase;
+        margin-bottom: 120px;
+    }
+    .sponsor-icon {
+        width: 160px;
+        height: 60px;
+        margin: 0 1.5em;
+    }
+    .cta-section {
+        justify-content: center;
+        margin-bottom: 100px;
+    }
+    .cta-text {
+        color: #A6A6A6;
+        text-transform: uppercase;
+        font-size: inherit;
+        margin-top: 100px;
+    }
+    button {
+        height: 36px;
+        padding: 0 3em;
+        font-size: 15px;
+    }
+    
+}
+
+@keyframes background-orange {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
