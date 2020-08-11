@@ -139,5 +139,69 @@
             }
         }
     }
+
+    .hamburgher-wrapper { 
+        display: none;
+        
+        img {
+            height: 24px;
+            width: 24px;
+        }
+    }
 }
 
+
+@media only screen and (max-width: 991px) {
+
+    .main-header  {
+        height: 90px;
+
+        .menu-wrapper, .socials-wrapper {
+            display: none;
+        }
+
+        .logo-wrapper {
+
+            > a {
+                justify-content: flex-start;
+                display: flex;
+            }
+            
+            img {
+                max-height: 40px;
+                max-width: 100%;
+            }
+        }
+
+        .hamburgher-wrapper { 
+            justify-content: flex-end;
+            display: inherit;
+            flex: 1;
+        }
+
+        .container { 
+            .logo-wrapper {
+                flex: 3;
+            }
+        }
+    }
+
+    .homepage  {
+        .section .container {
+            display: block !important;
+
+        }
+
+        .intro  {
+            > .intro-text {
+                margin: 100px auto 50px !important;
+                max-width: 300px;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 2em !important;
+            }
+        }
+    }    
+}

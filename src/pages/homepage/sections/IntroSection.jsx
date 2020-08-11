@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Translate from '../../../components/translation/translate'
 import MainLottieAnimation from '../../../components/lotties/main'
@@ -6,10 +6,22 @@ import useWindowSize from '../../../hooks/useWindowSize'
 
 const Intro = ({ onCtaPress = () => {} }) => {
     const size = useWindowSize()
+    const [multiply, setMultiply] = useState()
 
     const introTitle = Translate({ children: 'HOMEPAGE.INTRO', textOnly: true }).split(
         '##placeholder##',
     )
+
+    useEffect(() => {
+        const m = (() => {
+            if (size.width < 767) return 0.6
+            if (size.width >= 768 && size.width < 991) return 0.8
+
+            return 0.4
+        })()
+
+        setMultiply(m)
+    }, [])
 
     return (
         <div className="intro container">
@@ -28,8 +40,8 @@ const Intro = ({ onCtaPress = () => {} }) => {
             </div>
             <div>
                 <MainLottieAnimation
-                    width={(size.width > 1400 ? 1400 : size.width) * 0.4}
-                    height={(size.width > 1400 ? 1400 : size.width) * 0.4}
+                    width={(size.width > 1400 ? 1400 : size.width) * multiply}
+                    height={(size.width > 1400 ? 1400 : size.width) * multiply}
                 />
             </div>
         </div>

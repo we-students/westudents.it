@@ -8,6 +8,8 @@ import MenuItem from './MenuItem'
 import menuItems from './menu-items'
 import socialItems from './social-items'
 
+import HamburgherIcon from '../../images/hamburgher.png'
+
 const Header = () => {
     return (
         <header className="main-header">
@@ -37,6 +39,10 @@ const Header = () => {
                             <img src={item.image} alt={`${item.value} logo`} />
                         </a>
                     ))}
+                </div>
+
+                <div className="hamburgher-wrapper">
+                    <img src={HamburgherIcon} alt="Menu" />
                 </div>
             </div>
         </header>
