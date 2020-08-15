@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Translate from '../../../components/translation/translate'
 import WeStudentsAppLottieAnimation from '../../../components/lotties/westudents-app'
@@ -8,14 +8,26 @@ import WeStudentsLogo from '../../../images/westudentsapp.svg'
 
 const WeStudentsApp = ({ onCtaPress = () => {} }) => {
     const size = useWindowSize()
+    const [multiply, setMultiply] = useState()
+
+    useEffect(() => {
+        const m = (() => {
+            if (size.width < 767) return 1.2
+            if (size.width >= 768 && size.width < 991) return 0.8
+
+            return 0.5
+        })()
+
+        setMultiply(m)
+    }, [size])
 
     return (
         <div className="westudents-app container">
             <div>
                 <div className="big-bubble" />
                 <WeStudentsAppLottieAnimation
-                    width={(size.width > 1400 ? 1400 : size.width) * 0.5}
-                    height={(size.width > 1400 ? 1400 : size.width) * 0.5}
+                    width={(size.width > 1400 ? 1400 : size.width) * multiply}
+                    height={(size.width > 1400 ? 1400 : size.width) * multiply}
                 />
                 <div className="logo">
                     <img src={WeStudentsLogo} alt="WeStudents App" />

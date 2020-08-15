@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Translate from '../../../components/translation/translate'
 import DaScuolaLottieAnimation from '../../../components/lotties/dascuola'
@@ -8,9 +8,17 @@ import DaScuolaLogo from '../../../images/dascuola.svg'
 
 const DaScuola = ({ onCtaPress = () => {} }) => {
     const size = useWindowSize()
+    const [multiply, setMultiply] = useState()
 
     useEffect(() => {
-        // console.log('size', size)
+        const m = (() => {
+            if (size.width < 767) return 1.2
+            if (size.width >= 768 && size.width < 991) return 0.8
+
+            return 0.5
+        })()
+
+        setMultiply(m)
     }, [size])
 
     return (
@@ -18,8 +26,8 @@ const DaScuola = ({ onCtaPress = () => {} }) => {
             <div>
                 <div className="big-bubble" />
                 <DaScuolaLottieAnimation
-                    width={(size.width > 1400 ? 1400 : size.width) * 0.5}
-                    height={(size.width > 1400 ? 1400 : size.width) * 0.5}
+                    width={(size.width > 1400 ? 1400 : size.width) * multiply}
+                    height={(size.width > 1400 ? 1400 : size.width) * multiply}
                 />
                 <div className="logo">
                     <img src={DaScuolaLogo} alt="DaScuola App" />
