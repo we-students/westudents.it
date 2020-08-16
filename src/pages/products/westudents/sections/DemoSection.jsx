@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState } from 'react'
+import Carousel from 'react-multi-carousel'
+import 'react-multi-carousel/lib/styles.css'
 
 import Translate from '../../../../components/translation/translate'
 
@@ -12,6 +14,17 @@ import ChatIcon from '../../../../images/chat_icon.png'
 import DiarioIcon from '../../../../images/diario_icon.png'
 
 import '../styles.scss'
+
+const responsive = {
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 1,
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1,
+    },
+}
 
 const Intro = () => {
     const [selectedSection, setSelectedSection] = useState('blog')
@@ -106,6 +119,62 @@ const Intro = () => {
                             </p>
                         </div>
                     </div>
+                </div>
+
+                <div className="mobile-demo-wrapper">
+                    <Carousel
+                        responsive={responsive}
+                        showDots={false}
+                        removeArrowOnDeviceType={['tablet', 'mobile']}
+                        additionalTransfrom={15}
+                    >
+                        <div className="carousel-item">
+                            <div className="top-part">
+                                <img src={BlogIcon} alt="Blog" />
+                                <h4>
+                                    <Translate>WESTUDENTS.BLOG_TITLE</Translate>
+                                </h4>
+                            </div>
+                            <p>
+                                <Translate>WESTUDENTS.BLOG_CONTENT</Translate>
+                            </p>
+                            <div className="demo-image">
+                                <img src="/images/demo_westudents/blog.png" alt="Blog" />
+                            </div>
+                        </div>
+                        <div className="carousel-item">
+                            <div className="top-part">
+                                <img src={ShopIcon} alt="Shop" />
+                                <h4>
+                                    <Translate>WESTUDENTS.SHOP_TITLE</Translate>
+                                </h4>
+                            </div>
+                            <p>
+                                <Translate>WESTUDENTS.SHOP_CONTENT</Translate>
+                            </p>
+                            <div className="demo-image">
+                                <img src="/images/demo_westudents/blog.png" alt="Blog" />
+                            </div>{' '}
+                        </div>
+                        <div className="carousel-item">
+                            <div className="top-part">
+                                <img src={GamificationIcon} alt="Gamification" />
+                                <h4>
+                                    <Translate>WESTUDENTS.GAMIFICATION_TITLE</Translate>
+                                </h4>
+                            </div>
+                            <p>
+                                <Translate>WESTUDENTS.GAMIFICATION_CONTENT</Translate>
+                            </p>
+                            <div className="demo-image">
+                                <img src="/images/demo_westudents/blog.png" alt="Blog" />
+                            </div>{' '}
+                        </div>
+
+                        <div>Item 2</div>
+                        <div>Item 3</div>
+                        <div>Item 4</div>
+                    </Carousel>
                 </div>
             </h3>
         </div>
