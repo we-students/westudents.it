@@ -30,11 +30,7 @@ const Intro = () => {
                         <h1 className="section-name">
                             <Translate>PARTNERS.INTRO.SECTION_NAME</Translate>
                         </h1>
-                        <img
-                            src={PartnersIcon}
-                            alt="WeStudents"
-                            style={{ height: '110px', width: '110px' }}
-                        />
+                        <img src={PartnersIcon} alt="WeStudents" className="partners-logo" />
                         <h1 className="title">
                             <Translate>PARTNERS.INTRO.TITLE</Translate>
                         </h1>
@@ -54,6 +50,10 @@ const Intro = () => {
                             </div>
                         ))}
                     </div>
+                    <button type="button" className="btn-nobg-mobile" style={{ flex: 1 }}>
+                        <div className="arrow-icon" />
+                        <Translate>PARTNERS.BUTTONS.DISCOVER</Translate>
+                    </button>
                 </div>
             </div>
         </div>

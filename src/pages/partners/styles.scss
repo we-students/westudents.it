@@ -1,4 +1,12 @@
 .partnerspage {
+
+    @mixin orange-btn {
+        margin-top: 1em;
+        background: #F7AE83;
+        height: 30px;
+        padding: 0 4em;
+    }
+
     .intro-wrapper {
         background-image: url('../../images/intro_bg.png');
         background-size: cover;
@@ -18,11 +26,32 @@
                 .title {
                     font-size: 50px;
                 }
+                img {
+                    height: 110px;
+                    width: 110px;
+                }
+
+                @media screen and (max-width: 576px) {
+                    flex-direction: column;
+                    padding-top: 40px;
+                    .title {
+                        font-size: 30px;
+                    }
+                    text-align: center;
+                    img {
+                        height: 90px;
+                        width: 90px;
+                    }
+                }
+
             }
             .section-name {
                 text-transform: uppercase;
                 letter-spacing: 0.2em;
                 font-weight: 600;
+                @media screen and (max-width: 576px) {
+                    font-size: 20px;
+                } 
             }
             .stats-section {
                 display: flex;
@@ -45,6 +74,18 @@
                 .stat-item {
                     margin-top: 0.6em;
                 }
+                
+                @media screen and (max-width: 576px) {
+                    text-align: center;
+                    margin-bottom: 2em;
+                    h1 {
+                        font-size: 30px; 
+                    }
+                    p {
+                        font-size: 10px;
+                    }
+                }
+
             }
             .white-btn {
                 background: white;
@@ -58,7 +99,7 @@
                 background: none;
                 display: flex;
                 align-items: center;
-                font-weight: 100;
+                font-weight: 2;
                 font-size: 20px;
                 .arrow-icon {
                     margin-right: 1em;
@@ -69,24 +110,58 @@
                     background-repeat: no-repeat;
                 }
                 padding-left: 0;
+                @media screen and (max-width: 576px) {
+                   display: none;
+                }
+            }
+            .btn-nobg-mobile {
+                @extend .btn-nobg;
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+                font-size: 18px;
+                padding-top: 10%;
+                .arrow-icon {
+                    order: 2;
+                    margin: 0;
+                    margin-top: 1em;
+                }
+                @media screen and (min-width: 576px) {
+                    display: none;
+                }
             }
         }
     }
 
     .partner-sections {
         display: flex;
+        @media screen and (max-width: 576px) {
+            flex-direction: column;
+        }
         .images {
             flex: 1;
             position: relative;
+            @media screen and (max-width: 576px) {
+                order: 2;
+                width: 250px;
+                height: 300px;
+                flex: none;
+                justify-content: center;
+                margin: 0 auto;
+                img {
+                    zoom: 0.4 !important;
+                }
+            }
             &.adv {
                 .phone1 {
                     position: absolute;
                     top: 20%;
                     zoom: 0.7;
+                    left: 20%;
                 }
                 .phone2 {
                     position: absolute;
-                    left: 20%;
+                    left: 40%;
                     z-index: -1;
                     zoom: 0.7;
                     transition: 0.5s;
@@ -94,6 +169,7 @@
                 .icons {
                     position: absolute;
                     zoom: 0.7;
+                    left: 16%;
                     transition: 0.5s;
                 }
                 &:hover {
@@ -109,12 +185,12 @@
                 .phone1 {
                     position: absolute;
                     top: 20%;
-                    left: 40%;
+                    left: 18%;
                     zoom: 0.7;
                 }
                 .phone2 {
                     position: absolute;
-                    left: 58%;
+                    left: 36%;
                     z-index: -1;
                     zoom: 0.7;
                     transition: 0.5s;
@@ -122,7 +198,7 @@
                 .icons {
                     position: absolute;
                     zoom: 0.7;
-                    left: 40%;
+                    left: 16%;
                     z-index: 5;
                     transition: 0.6s;
                     transform-origin: left;
@@ -156,12 +232,12 @@
                 .phone1 {
                     position: absolute;
                     top: 15%;
-                    left: 0;
+                    left: 20%;
                     zoom: 0.7;
                 }
                 .phone2 {
                     position: absolute;
-                    left: 10%;
+                    left: 32%;
                     z-index: -1;
                     zoom: 0.7;
                     transition: 0.5s;
@@ -169,7 +245,7 @@
                 .icons {
                     position: absolute;
                     zoom: 0.7;
-                    left: 0;
+                    left: 20%;
                     z-index: 5;
                     transition: 0.5s;
                     transform-origin: left;
@@ -177,7 +253,7 @@
                 .icons2 {
                     position: absolute;
                     zoom: 0.7;
-                    left: 7.5%;
+                    left: 27.5%;
                     top: -19%;
                     z-index: -1;
                     transition: 0.5s;
@@ -202,15 +278,15 @@
             &.gamification {
                 .phone1 {
                     position: absolute;
-                    top: 0;
-                    left: 60%;
+                    top: 10%;
+                    left: 25%;
                     zoom: 0.7;
                 }
                 .icons {
                     position: absolute;
                     zoom: 0.7;
-                    left: 50%;
-                    top: -10%;
+                    left: 12%;
+                    top: 0;
                     z-index: 5;
                     transition: 0.5s;
                 }
@@ -222,9 +298,23 @@
                 }
             }
         }
+
+        .orange-btn-mobile {
+            @include orange-btn();
+            order: 10;
+            margin: 0 auto;
+            @media screen and ( min-width: 576px) {
+                display: none;
+            }
+        }
+
         .text-section {
             padding-top: 2em;
             flex: 1;
+            padding: 0 10%;
+            @media screen and ( min-width: 576px) {
+                padding-left: 8%;
+            }
             h1 {
                 color: #FF9D64;
                 text-transform: uppercase;
@@ -244,15 +334,45 @@
                 }
             }
             .orange-btn {
-                margin-top: 1em;
-                background: #F7AE83;
-                height: 30px;
-                padding: 0 4em;
+                @include orange-btn();
+                @media screen and ( max-width: 576px) {
+                    display: none;
+                }
+            }
+
+            
+
+            &.right {
+                @media screen and ( min-width: 576px) {
+                    text-align: right;
+                    padding-left: 0;
+                    padding-right: 8%;
+                    .list-item {
+                        justify-content: flex-end;
+                    }
+                }
+                
+            }
+            @media screen and ( max-width: 576px) {
+                h1 {
+                    text-align: center;
+                    font-size: 25px;
+                }
+                .subtitle {
+                    text-align: center;
+                    font-size: 15px;
+                    font-weight: 200;
+                }
+                p {
+                    text-align: center;
+                }
+                .list-item {
+                    p {
+                        font-size: 15px;
+                    }
+                }
             }
         }
-    }
-    .text-right {
-        text-align: right;
     }
     .rounded-icon {
         background: white;
@@ -266,6 +386,11 @@
         img {
             zoom: 0.7;
         }
+        @media screen and ( max-width: 576px) {
+            height: 35px;
+            width: 35px;
+            order: -1;
+        }
     }
     .wegather-section {
         flex-direction: column;
@@ -273,6 +398,11 @@
         .blog-posts {
             flex-direction: row;
             align-content: stretch;
+
+            @media screen and (max-width: 576px) {
+                flex-direction: column;
+            }
+
             .post-card {
                 border-radius: 10px;
                 background-color: white;

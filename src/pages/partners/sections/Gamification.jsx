@@ -29,6 +29,9 @@ const Gamification = () => {
                 <img src={Image1} className="phone1" alt="WeStudents" />
                 <img src={Image2} className="icons" alt="WeStudents" />
             </div>
+            <button type="button" className="orange-btn-mobile">
+                <Translate>PARTNERS.BUTTONS.BEGIN_NOW</Translate>
+            </button>
         </div>
     )
 }
