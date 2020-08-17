@@ -12,7 +12,7 @@ const Education = ({ fullpageProps = {} }) => {
             className="container d-flex manifest"
             style={{ height: '100vh', flexDirection: 'column' }}
         >
-            <h2 className="text-center title" style={{ marginBottom: 0, flex: 2 }}>
+            <h2 className="text-center title">
                 <Translate>COMMUNITY.MANIFEST.TITLE</Translate>
             </h2>
             <div className="manifest-item d-flex" style={{ flex: 1 }}>

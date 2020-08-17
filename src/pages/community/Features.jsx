@@ -26,11 +26,11 @@ const features = [
 
 const Features = () => {
     return (
-        <div className="container features d-flex">
-            <h3 className="text-center title" style={{ flex: 2 }}>
+        <div className="container features">
+            <h3 className="text-center title">
                 <Translate>COMMUNITY.FEATURES.TITLE</Translate>
             </h3>
-            <div className="d-flex" style={{ flex: 1 }}>
+            <div className="d-flex features-container">
                 {features.map((item, index) => (
                     <div key={`community_feature${index}`} className="feature">
                         <div className="d-flex justify-center">

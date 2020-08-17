@@ -26,15 +26,15 @@ const Intro = ({ fullpageProps = {} }) => {
                         <Translate>COMMUNITY.INTRO.TITLE</Translate>
                     </p>
                 </div>
-                <div className="justify-center" style={{ flex: 1 }}>
-                    <img style={{ width: '120px' }} alt="community" src={CommunityIcon} />
+                <div className="justify-center cta">
+                    <img alt="community" src={CommunityIcon} />
                 </div>
-                <div style={{ flex: 1.5, margin: '0 22%' }}>
-                    <p className="section-subtitle">
+                <div className="section-subtitle">
+                    <p>
                         <Translate>COMMUNITY.INTRO.SUBTITLE</Translate>
                     </p>
                 </div>
-                <div className="justify-center">
+                <div className="justify-center" style={{ flex: 1, alignItems: 'flex-end' }}>
                     <button type="button" onClick={() => fullpageApi.moveTo(6)}>
                         <p className="text-center" style={{ marginBottom: '1em' }}>
                             <Translate>COMMUNITY.INTRO.DISCOVER</Translate>
