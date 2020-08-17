@@ -1,7 +1,7 @@
 const fs = require('fs')
 
 fs.writeFileSync(
-    './.env',
+    `./.env.${process.env.NODE_ENV}`,
     `
 CONTENTFUL_SPACE_ID=${process.env.CONTENTFUL_SPACE_ID}\n
 CONTENTFUL_ACCESS_TOKEN=${process.env.CONTENTFUL_ACCESS_TOKEN}\n
