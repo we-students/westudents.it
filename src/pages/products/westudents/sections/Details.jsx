@@ -43,27 +43,20 @@ const Details = ({ fullpageProps = {} }) => {
                 >
                     <Translate>STATISTICS.TITLE</Translate>
                 </h1>
-                <div
-                    className="justify-center d-flex"
-                    style={{ height: '100%', marginTop: '110px' }}
-                >
-                    <div className="d-flex">
-                        {statistics.map((item, index) => (
-                            <div
-                                className="d-flex text-center item"
-                                style={{ flexDirection: 'column' }}
-                                key={`company_stat${index}`}
-                            >
-                                <div className="icon">
-                                    <img src={item.icon} alt="WeStudents" />
-                                </div>
+                <div className="items">
+                    {statistics.map((item, index) => (
+                        <div className="item" key={`company_stat${index}`}>
+                            <div className="icon">
+                                <img src={item.icon} alt="WeStudents" />
+                            </div>
+                            <div className="content">
                                 <h1 style={{ margin: 0, fontWeight: 900, fontSize: '42px' }}>
                                     {item.value}
                                 </h1>
                                 <p className="name">{item.title}</p>
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

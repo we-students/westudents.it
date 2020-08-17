@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react'
+import { Link } from 'gatsby'
+
 import Translate from '../translation/translate'
 import './styles.scss'
-import { Link } from 'gatsby'
 
 const Footer = () => {
     const [form, setForm] = useState({ email: '', privacy: false })

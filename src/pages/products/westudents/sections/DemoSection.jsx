@@ -26,7 +26,7 @@ const responsive = {
     },
 }
 
-const Intro = () => {
+const Intro = ({ fullpageProps }) => {
     const [selectedSection, setSelectedSection] = useState('blog')
 
     return (
@@ -127,6 +127,9 @@ const Intro = () => {
                         showDots={false}
                         removeArrowOnDeviceType={['tablet', 'mobile']}
                         additionalTransfrom={15}
+                        autoPlaySpeed={4000}
+                        autoPlay={fullpageProps.isActive}
+                        infinite
                     >
                         <div className="carousel-item">
                             <div className="top-part">
@@ -153,7 +156,7 @@ const Intro = () => {
                                 <Translate>WESTUDENTS.SHOP_CONTENT</Translate>
                             </p>
                             <div className="demo-image">
-                                <img src="/images/demo_westudents/blog.png" alt="Blog" />
+                                <img src="/images/demo_westudents/shop.png" alt="Shop" />
                             </div>{' '}
                         </div>
                         <div className="carousel-item">
@@ -167,13 +170,54 @@ const Intro = () => {
                                 <Translate>WESTUDENTS.GAMIFICATION_CONTENT</Translate>
                             </p>
                             <div className="demo-image">
-                                <img src="/images/demo_westudents/blog.png" alt="Blog" />
+                                <img
+                                    src="/images/demo_westudents/gamification.png"
+                                    alt="Gamification"
+                                />
                             </div>{' '}
                         </div>
-
-                        <div>Item 2</div>
-                        <div>Item 3</div>
-                        <div>Item 4</div>
+                        <div className="carousel-item">
+                            <div className="top-part">
+                                <img src={BancoIcon} alt="Banco" />
+                                <h4>
+                                    <Translate>WESTUDENTS.BANCO_TITLE</Translate>
+                                </h4>
+                            </div>
+                            <p>
+                                <Translate>WESTUDENTS.BANCO_CONTENT</Translate>
+                            </p>
+                            <div className="demo-image">
+                                <img src="/images/demo_westudents/banco.png" alt="Banco" />
+                            </div>
+                        </div>
+                        <div className="carousel-item">
+                            <div className="top-part">
+                                <img src={DiarioIcon} alt="Diario" />
+                                <h4>
+                                    <Translate>WESTUDENTS.DIARIO_TITLE</Translate>
+                                </h4>
+                            </div>
+                            <p>
+                                <Translate>WESTUDENTS.DIARIO_CONTENT</Translate>
+                            </p>
+                            <div className="demo-image">
+                                <img src="/images/demo_westudents/diario.png" alt="Diario" />
+                            </div>
+                        </div>
+                        <div className="carousel-item">
+                            <div className="top-part">
+                                <img src={ChatIcon} alt="Chat" />
+                                <h4>
+                                    <Translate>WESTUDENTS.CHAT_TITLE</Translate>
+                                </h4>
+                            </div>
+                            <p>
+                                <Translate>WESTUDENTS.CHAT_CONTENT</Translate>
+                            </p>
+                            <div className="demo-image">
+                                <img src="/images/demo_westudents/chat.png" alt="Chat" />
+                            </div>
+                        </div>
                     </Carousel>
                 </div>
             </h3>
