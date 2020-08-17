@@ -170,7 +170,12 @@
         "SUPPORT": {
             "TITLE": "Supporto",
             "ITEM1": "FAQ",
-            "ITEM3": "Press kit"
+            "ITEM1LINK": "#",
+            "ITEM2": "Contattaci",
+            "ITEM2LINK": "/contattaci",
+            "ITEM3": "Press kit",
+            "ITEM3LINK": "#"
+
         },
         "WORK": {
             "TITLE": "Lavora con noi",

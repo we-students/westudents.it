@@ -1,5 +1,5 @@
 const envs = require('dotenv').config({
-    path: (process.env && process.env.NODE_ENV) ? `.env.${process.env.NODE_ENV}` : '.env',
+    path: process.env && process.env.NODE_ENV ? `.env.${process.env.NODE_ENV}` : '.env',
 }).parsed
 
 module.exports = {

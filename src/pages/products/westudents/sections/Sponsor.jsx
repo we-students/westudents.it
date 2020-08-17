@@ -21,7 +21,7 @@ const Sponsor = ({ onCtaPress = () => {} }) => {
             <h1 className="title text-center">
                 <Translate>HOMEPAGE.SPONSORS.TITLE</Translate>
             </h1>
-            <div>
+            <div className="sponsors-items">
                 {sponsors.map((item) => (
                     <img src={item.icon} alt={item.name} className="sponsor-icon" />
                 ))}

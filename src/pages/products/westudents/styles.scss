@@ -240,13 +240,20 @@
 
 .details-wrapper {
     height: 100%;
-    padding: 5%;
+    padding: 120px 5%;
     background: transparent;
     color: white;
     background: linear-gradient(45deg, rgba(195,35,40,1) 0%, rgba(214,73,59,1) 10%, rgba(224,94,69,1) 19%, rgba(255,157,100,1) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .items {
+        display: flex;
+        text-align: center;
+        margin-top: 100px;
+    }
+
     .item {
         flex: 1;
         @media screen and (min-width: 992px){
@@ -275,6 +282,12 @@
     flex-direction: column;
     padding-top: 9%;
     padding-bottom: 0;
+
+    > .sponsors-items {
+        display: flex;
+        margin: 20px auto;
+    }
+
     .title {
         color: #FF9D64;
         text-transform: uppercase;
@@ -293,7 +306,7 @@
         color: #A6A6A6;
         text-transform: uppercase;
         font-size: inherit;
-        margin-top: 100px;
+        margin: 40px auto;
     }
     button {
         height: 36px;
@@ -328,6 +341,56 @@
 
             .demo-wrapper {
                 display: none;
+            }
+        }
+    }
+
+    .section .details-wrapper {
+
+        h1 {
+            font-size: 1.6em;
+        }
+
+        .items {
+            flex-direction: column;
+            margin-top: 40px;
+
+
+            .item {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 10px;
+
+                .icon {
+                    margin: 20px 10px;
+                    width: 80px;
+                }
+
+                .content {
+                    width: 120px;
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+
+    .section .sponsor {
+        padding-top: 100px;
+
+        .title {
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        > .sponsors-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            img {
+                width: 40%;
+                margin: 10px;
             }
         }
     }
