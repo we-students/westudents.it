@@ -26,7 +26,7 @@ const responsive = {
     },
 }
 
-const Intro = ({ fullpageProps }) => {
+const Intro = ({ fullpageProps = {} }) => {
     const [selectedSection, setSelectedSection] = useState('blog')
 
     return (

@@ -4,8 +4,6 @@ const envsFromFile = require('dotenv').config({
 
 const envs = envsFromFile || process.env
 
-console.log('envs', envs)
-
 module.exports = {
     siteMetadata: {
         title: `WeStudents.it`,
