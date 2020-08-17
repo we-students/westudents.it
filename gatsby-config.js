@@ -1,10 +1,8 @@
-const envs = require('dotenv').config(
-    process.env.NODE_ENV === 'development'
-        ? {
-              path: process.env && process.env.NODE_ENV ? `.env.${process.env.NODE_ENV}` : '.env',
-          }
-        : {},
-)
+const envsFromFile = require('dotenv').config({
+    path: process.env && process.env.NODE_ENV ? `.env.${process.env.NODE_ENV}` : '.env',
+}).parsed
+
+const envs = envsFromFile || process.env
 
 console.log('envs', envs)
 
