@@ -112,6 +112,13 @@
                         &.active {
                             animation: enter-left 1.5s;
                         }
+                        @media screen and ( max-width: 960px ) {
+                            right: 10%;
+                            bottom: 22%;
+                        }
+                        @media screen and ( max-width: 768px ) {
+                            bottom: 28%;
+                        }
                     }
                     &.top {
                         z-index: 3;
@@ -121,7 +128,20 @@
                         &.active {
                             animation: 1.7s enter-left;
                         }
+                        @media screen and ( max-width: 960px ) {
+                            right: 45%;
+                            top: 12%;
+                        }
+                        @media screen and ( max-width: 768px ) {
+                            top: 18%;
+                        }
                     } 
+                    @media screen and ( max-width: 960px ) {
+                        zoom: 0.5;
+                    }
+                    @media screen and ( max-width: 768px ) {
+                        zoom: 0.4;
+                    }
                 }
                 @media screen and ( max-width: 576px ) {
                     display: none;
@@ -142,6 +162,13 @@
                         &.active {
                             animation: enter-right 1.5s;
                         }
+                        @media screen and ( max-width: 960px ) {
+                            right: 0;
+                            bottom: 25%;
+                        }
+                        @media screen and ( max-width: 768px ) {
+                            right: 12%;
+                        }
                     }
                     &.top {
                         z-index: 3;
@@ -151,7 +178,21 @@
                         &.active {
                             animation: 1.7s enter-right;
                         }
+                        @media screen and ( max-width: 960px ) {
+                            right: 30%;
+                            top: 16%;
+                        }
+                        @media screen and ( max-width: 768px ) {
+                            right: 40%;
+                            top: 22%;
+                        }
                     } 
+                    @media screen and ( max-width: 960px ) {
+                        zoom: 0.5;
+                    }
+                    @media screen and ( max-width: 768px ) {
+                        zoom: 0.4;
+                    }
                 }
                 @media screen and ( max-width: 576px ) {
                     display: none;
