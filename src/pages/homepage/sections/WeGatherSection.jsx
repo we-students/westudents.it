@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Translate from '../../../components/translation/translate'
 import WeGatherLottieAnimation from '../../../components/lotties/wegather'
@@ -6,6 +6,18 @@ import useWindowSize from '../../../hooks/useWindowSize'
 
 const WeGather = ({ onCtaPress = () => {} }) => {
     const size = useWindowSize()
+    const [multiply, setMultiply] = useState()
+
+    useEffect(() => {
+        const m = (() => {
+            if (size.width < 767) return 1.2
+            if (size.width >= 768 && size.width < 991) return 0.8
+
+            return 0.5
+        })()
+
+        setMultiply(m)
+    }, [size])
 
     return (
         <div className="wegather container">
@@ -23,8 +35,8 @@ const WeGather = ({ onCtaPress = () => {} }) => {
             <div>
                 <div className="big-bubble" />
                 <WeGatherLottieAnimation
-                    width={(size.width > 1400 ? 1400 : size.width) * 0.5}
-                    height={(size.width > 1400 ? 1400 : size.width) * 0.5}
+                    width={(size.width > 1400 ? 1400 : size.width) * multiply}
+                    height={(size.width > 1400 ? 1400 : size.width) * multiply}
                 />
             </div>
         </div>

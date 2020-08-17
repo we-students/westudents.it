@@ -65,7 +65,7 @@
 
         .demo-wrapper {
             display: flex;
-            height: 560px;
+            height: 500px;
 
             > div {
                 flex: 1;
@@ -185,6 +185,56 @@
                 .chat-selector { background-color: white }
             }
         }
+
+        .mobile-demo-wrapper {
+            display: none;
+
+            .carousel-item { 
+                margin-top: 30px;
+                height: 70vh;
+                display: flex;
+                flex-direction: column;
+                margin-right: 30px;
+                background-color: white;
+                border-radius: 20px;
+                padding: 15px 30px;
+                font-size: .8em;
+
+                .top-part {
+                    display: flex;
+                    align-items: center;
+                    height: 40px;
+
+                    h4 {
+                        color: #ff9e64;
+                        padding: 0;
+                        margin: 0;
+                    }
+
+                    img {
+                        height: 40px;
+                        width: 40px;
+                    }
+                }
+
+                p {
+                    font-size: .6em;
+                    color: #A6A6A6;
+                    font-weight: normal;
+                    text-align: left;
+                    height: 140px;
+                }
+
+                .demo-image  {
+                    height: 45vh;
+
+                    img {
+                        object-fit: cover;
+                        height: 100%;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -256,4 +306,29 @@
 @keyframes background-orange {
     0% {opacity: 0;}
     100% {opacity: 1;}
+}
+
+@media only screen and (max-width: 991px) {
+    .product-westudents {
+        .intro {
+            flex-direction: column-reverse;
+            padding: 120px 30px;
+        }
+
+        .demo {
+            padding: 60px 10px;
+
+            h3 {
+                font-size: 1.8em;
+            }
+
+            .mobile-demo-wrapper {
+                display: block;
+            }
+
+            .demo-wrapper {
+                display: none;
+            }
+        }
+    }
 }

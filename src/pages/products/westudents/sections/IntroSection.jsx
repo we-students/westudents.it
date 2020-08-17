@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Translate from '../../../../components/translation/translate'
 import WeStudentsAppLottieAnimation from '../../../../components/lotties/westudents-app'
@@ -11,13 +11,27 @@ import '../styles.scss'
 
 const Intro = () => {
     const size = useWindowSize()
+    const [multiply, setMultiply] = useState()
+
+    useEffect(() => {
+        const m = (() => {
+            if (size.width < 767) return 1
+            if (size.width >= 768 && size.width < 991) return 0.8
+
+            return 0.4
+        })()
+
+        console.log('multiply', multiply)
+
+        setMultiply(m)
+    }, [])
 
     return (
         <div className="intro container">
             <div>
                 <WeStudentsAppLottieAnimation
-                    width={(size.width > 1400 ? 1400 : size.width) * 0.5}
-                    height={(size.width > 1400 ? 1400 : size.width) * 0.5}
+                    width={(size.width > 1400 ? 1400 : size.width) * multiply}
+                    height={(size.width > 1400 ? 1400 : size.width) * multiply}
                 />
             </div>
             <div className="westudents-app-text">

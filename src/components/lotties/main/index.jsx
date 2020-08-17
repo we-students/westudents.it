@@ -4,6 +4,7 @@ import Lottie from 'react-lottie'
 import * as animationData from './data.json'
 
 const MainLottieAnimation = ({ width, height }) => {
+    console.log(width, height)
     return (
         <Lottie
             options={{

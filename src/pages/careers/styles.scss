@@ -196,7 +196,7 @@
 
             > .infos {
                 top: 165px;
-                width: 100%;
+                width: 90%;
                 height: 100%;
 
                 > * {
@@ -272,8 +272,12 @@
 
     > .top-bar {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
+
+        .apply-button-wrapper {
+            margin-top: 32px;
+        }
 
         > div:nth-child(1) { 
             flex: 1
@@ -294,7 +298,7 @@
 
     } 
 
-    > .place-row {
+    .place-row {
         display: flex;
         align-items: center;
 
@@ -416,5 +420,93 @@
             position: relative;
             top: 2px;
         }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .careers {
+
+        > div {
+            img {
+                margin-top: 20px;
+            }
+        }
+
+        .crew {
+            flex-direction: column;
+        }
+
+        .dev-team {
+            .container {
+                flex-direction: column;
+                padding: 0;
+            }
+
+            .dev-things {
+                height: 40vh;
+            }
+
+            button {
+                margin: 100px auto 0;
+            }
+        }
+
+        .design-team {
+            .container {
+                flex-direction: column-reverse;
+                padding: 0;
+            }
+
+            .design-things {
+                height: 40vh;
+
+                h3 {
+                    font-size: 3.6em;
+                }
+            }
+
+            button {
+                margin: 100px auto 0;
+            }
+        }
+
+
+        .open-positions {
+            margin: 90px auto;
+
+            .open-position-item {
+                margin: 30px auto;
+            }
+        }
+
+    }
+
+
+    .career-details {
+        .top-bar {
+            flex-direction: column;
+        }
+
+        .content {
+            padding: 30px 0;
+        }
+
+        .apply-button-wrapper {
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            height: 100px;
+        }
+    }
+
+    .career-submission {
+        p.main-text {
+            font-size: 2.4em;
+        } 
+    }
+
+    .career-submission button {
+        text-align: center;
+        margin: 0 auto;
     }
 }

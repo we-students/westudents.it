@@ -29,8 +29,15 @@ const CareerDetails = ({ data }) => {
                 <div className="top-bar">
                     <div>
                         <h2>{title}</h2>
+                        <div className="place-row">
+                            <img src={MapMarker} alt="map marker" />
+                            <p>{place}</p>
+                        </div>
+                        <div className="content">
+                            {documentToReactComponents(description.json, options)}
+                        </div>
                     </div>
-                    <div>
+                    <div className="apply-button-wrapper">
                         <Link
                             to={`${
                                 typeof window !== 'undefined' ? window.location.pathname : ''
@@ -41,13 +48,6 @@ const CareerDetails = ({ data }) => {
                             </button>
                         </Link>
                     </div>
-                </div>
-                <div className="place-row">
-                    <img src={MapMarker} alt="map marker" />
-                    <p>{place}</p>
-                </div>
-                <div className="content">
-                    {documentToReactComponents(description.json, options)}
                 </div>
             </div>
         </Layout>
