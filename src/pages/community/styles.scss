@@ -357,6 +357,7 @@
         }
     }
     .team-wrapper {
+        margin-bottom: 50px;
         width: 100%;
         height: 700px;
         background-size: cover;
@@ -389,6 +390,9 @@
                 img {
                     height: 25px;
                 }
+            }
+            @media screen and (max-width: 576px){
+                padding-top: 70px !important;
             }
         }
         .cta {
