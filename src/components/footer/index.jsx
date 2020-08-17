@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import Translate from '../translation/translate'
 import './styles.scss'
+import { Link } from 'gatsby'
 
 const Footer = () => {
     const [form, setForm] = useState({ email: '', privacy: false })
@@ -38,19 +39,34 @@ const Footer = () => {
                             </h4>
                             <ul className="list-title">
                                 <li className="list-item">
-                                    <Translate>FOOTER.SUPPORT.ITEM1</Translate>
-                                </li>
-                                <li className="list-item">
-                                    <a
-                                        rel="noopener noreferrer"
-                                        target="_blank"
-                                        href="mailto:info@westudents.it"
+                                    <Link
+                                        to={Translate({
+                                            children: 'FOOTER.SUPPORT.ITEM1LINK',
+                                            textOnly: true,
+                                        })}
                                     >
-                                        <Translate>CONTACTS.EMAIL</Translate>
-                                    </a>
+                                        <Translate>FOOTER.SUPPORT.ITEM1</Translate>
+                                    </Link>
                                 </li>
                                 <li className="list-item">
-                                    <Translate>FOOTER.SUPPORT.ITEM3</Translate>
+                                    <Link
+                                        to={Translate({
+                                            children: 'FOOTER.SUPPORT.ITEM2LINK',
+                                            textOnly: true,
+                                        })}
+                                    >
+                                        <Translate>FOOTER.SUPPORT.ITEM2</Translate>
+                                    </Link>
+                                </li>
+                                <li className="list-item">
+                                    <Link
+                                        to={Translate({
+                                            children: 'FOOTER.SUPPORT.ITEM3LINK',
+                                            textOnly: true,
+                                        })}
+                                    >
+                                        <Translate>FOOTER.SUPPORT.ITEM3</Translate>
+                                    </Link>
                                 </li>
                             </ul>
                             <h4>
