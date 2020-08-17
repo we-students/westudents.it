@@ -10,13 +10,24 @@
         background-position: center;
         background-size: cover;
         padding-top: 150px;
-        position: relative;
         video {
             z-index: -3;
             position: absolute;
-            bottom: 0;
             width: 100%;
             height: auto;
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+        }
+        @media screen and (max-width: 576px) {
+            padding-top: 100px;
+        } 
+        overflow: hidden;
+        @media (max-aspect-ratio: 16/9) {
+            video { 
+                width:auto;
+                height: 100%;
+            }
         }
     }
     .intro-section {
@@ -24,18 +35,45 @@
         display: flex;
         flex-direction: column;
         height: 100%;
+
+        .cta {
+            img {
+                width: 120px;
+                height: 120px;
+                @media screen and (max-width: 370px) {
+                    width: 90px;
+                    height: 90px;
+                } 
+            }
+        }
+
         .section-title{
             text-transform: uppercase;
             font-size: 23px;
             text-align: center;
-            letter-spacing: 0.3em;
+            letter-spacing: 0.2em;
             font-weight: 600;
             margin-bottom: 1.5em;
+            @media screen and (max-width: 576px) {
+                font-size: 20px;
+            }
+            @media screen and (max-width: 370px) {
+                font-size: 18px;
+            }  
         }
         .section-subtitle{
             font-weight: 700;
-            font-size: 34px;
+            font-size: 30px;
             text-align: center;
+            margin: 0 12%;
+            @media screen and (min-width: 576px) {
+                margin: 0 22%;
+                font-size: 34px;  
+            } 
+            @media screen and (max-width: 370px) {
+                margin: 0 10%;
+                font-size: 25px;  
+            }
         }
         button {
             background: transparent;
@@ -51,6 +89,11 @@
             display: flex;
             justify-content: center;
             align-items: flex-end;
+            margin-bottom: 0;
+            flex: 2;
+            @media screen and ( max-width: 576px ) {
+                flex: 0.5;
+            }
         }
         .manifest-item {
             align-items: center;
@@ -69,6 +112,13 @@
                         &.active {
                             animation: enter-left 1.5s;
                         }
+                        @media screen and ( max-width: 960px ) {
+                            right: 10%;
+                            bottom: 22%;
+                        }
+                        @media screen and ( max-width: 768px ) {
+                            bottom: 28%;
+                        }
                     }
                     &.top {
                         z-index: 3;
@@ -78,7 +128,23 @@
                         &.active {
                             animation: 1.7s enter-left;
                         }
+                        @media screen and ( max-width: 960px ) {
+                            right: 45%;
+                            top: 12%;
+                        }
+                        @media screen and ( max-width: 768px ) {
+                            top: 18%;
+                        }
                     } 
+                    @media screen and ( max-width: 960px ) {
+                        zoom: 0.5;
+                    }
+                    @media screen and ( max-width: 768px ) {
+                        zoom: 0.4;
+                    }
+                }
+                @media screen and ( max-width: 576px ) {
+                    display: none;
                 }
             }
             .images-right {
@@ -96,6 +162,13 @@
                         &.active {
                             animation: enter-right 1.5s;
                         }
+                        @media screen and ( max-width: 960px ) {
+                            right: 0;
+                            bottom: 25%;
+                        }
+                        @media screen and ( max-width: 768px ) {
+                            right: 12%;
+                        }
                     }
                     &.top {
                         z-index: 3;
@@ -105,7 +178,24 @@
                         &.active {
                             animation: 1.7s enter-right;
                         }
+                        @media screen and ( max-width: 960px ) {
+                            right: 30%;
+                            top: 16%;
+                        }
+                        @media screen and ( max-width: 768px ) {
+                            right: 40%;
+                            top: 22%;
+                        }
                     } 
+                    @media screen and ( max-width: 960px ) {
+                        zoom: 0.5;
+                    }
+                    @media screen and ( max-width: 768px ) {
+                        zoom: 0.4;
+                    }
+                }
+                @media screen and ( max-width: 576px ) {
+                    display: none;
                 }
             }
         }
@@ -128,19 +218,46 @@
         .manifest-text {
             flex: 1;
             margin: auto 0;
+            @media screen and ( max-width: 576px ) {
+                text-align: center;
+                padding: 0 10%;
+                h1 {
+                    display: none;
+                }
+            }
         }
     }
     .features {
         height: 100%;
+        padding-top: 180px;
         .title{
             color: #E08B6C;
             display: flex;
             justify-content: center;
             align-items: flex-end;
             padding-bottom: 100px;
+            @media screen and (max-width: 576px){
+                padding-bottom: 20px;
+            }
         }
-        flex-direction: column;
+       
+        .features-container {
+           
+            @media screen and (max-width: 576px){
+                flex-direction: column;
+                padding-bottom: 40px;
+            }
+        }
+
+        @media screen and (max-width: 370px){
+            padding-top: 120px;
+            .title {
+                flex: none;
+            }
+        }
+
         .feature {
+            flex: 1;
             h3 {
                 text-transform: uppercase;
                 color: #E08B6C;
@@ -160,17 +277,28 @@
             align-items: flex-end;
             padding: 5%;
             font-weight: 600;
+            @media screen and (max-width: 576px){
+                display: none;
+            }
         }
     }
     .programs {
         padding: 100px 0;
         height: 100%;
+        @media screen and (max-width: 576px){
+            padding-top: 110px;
+            padding-bottom: 50px;
+        }
         .text-section {
             text-align: center;
             display: flex;
             flex-shrink: 2;
             align-items: center;
             justify-content: center;
+            @media screen and (max-width: 576px){
+                padding: 0 5%;
+            }
+
             .title {
                 display: inline-block;
                 border-bottom: 1px solid #E5E5E5;
@@ -182,8 +310,14 @@
                     &.representant {
                         color: #FF9D64;
                     }
+                    @media screen and (max-width: 576px){
+                        font-weight: 900;
+                    }
                 }
                 margin-bottom: 0.2em;
+                @media screen and (max-width: 576px){
+                    margin: 0 20%;
+                }
             }
             img {
                 height: 20px;
@@ -192,18 +326,55 @@
             .description {
                 font-size: 14px;
                 padding: 0 15%;
+                @media screen and (max-width: 576px){
+                    padding: 0;
+                    margin-top: 2em;
+                }
             }
             button {
                 height: 30px;
                 padding: 0 2em;
                 font-size: 12px;
+                .default {
+                    display: block;
+                }
+                .active {
+                    display: none;
+                }
                 &.ambassador {
                     background: #EA544C;
                 }
                 &.representant {
                     background: #FF9D64;
                 }
+                &:hover {
+                    &.ambassador {
+                        background: white;
+                        color: #EA544C;
+                    }
+                    &.representant {
+                        background: white;
+                        color: #EA544C;
+                    }
+                    .default {
+                        display: none;
+                    }
+                    .active {
+                        display: block;
+                    }
+                }
             }
+
+            @media screen and (max-width: 576px){
+                .text-container {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    padding: 0 12%;
+                }
+            }
+            
         }
         .wegather-background {
             border-radius: 15px 0 0 15px;
@@ -211,6 +382,9 @@
             background-size: cover;
             background-position: center;
             background-image: url('../../images/ambassador_image.png');
+            @media screen and (max-width: 576px){
+                display: none;
+            }
         }
         .westudents-background {
             border-radius: 0 15px 15px 0;
@@ -218,13 +392,18 @@
             background-size: cover;
             background-position: center;
             background-image: url('../../images/rappresentanti_image.png');
+            @media screen and (max-width: 576px){
+                display: none;
+            }
         }
     }
     .team-wrapper {
+        margin-bottom: 50px;
         width: 100%;
-        height: 100%;
+        height: 700px;
         background-size: cover;
         background-image: none;
+        background-position: center;
         background-image: url('../../images/team_image.png');
         opacity: 0;
         transition: 1s;
@@ -235,6 +414,10 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(45deg, rgba(242,102,106,1) 0%, rgba(246,121,104,0.8) 55%, rgba(255,157,100,1) 100%);
+            @media screen and ( max-width: 576px){
+                flex-direction: column;
+                text-align: center;
+            }
         }
         .text-section {
             margin: auto;
@@ -249,12 +432,18 @@
                     height: 25px;
                 }
             }
+            @media screen and (max-width: 576px){
+                padding-top: 70px !important;
+            }
         }
         .cta {
             display: flex;
             align-items: center;
             justify-content: flex-start;
             color: white;
+            @media screen and ( max-width: 576px){
+                justify-content: center;
+            }
             p {
                 font-size: 15px;
                 font-weight: 600;
@@ -271,5 +460,6 @@
                 }
             }
         }
+
     }
 }

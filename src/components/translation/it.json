@@ -108,7 +108,9 @@
         "PROGRAMS": {
             "PROGRAM": "Programma",
             "AMBASSADOR": "Ambassador",
-            "AMBASSADOR_DESCRIPTION": "Vorresti far parte di una community culturale unita, innovativa e promotrice di valori innovativi e pioneristici per la scuola del futuro?"
+            "AMBASSADOR_DESCRIPTION": "Vorresti far parte di una community culturale unita, innovativa e promotrice di valori innovativi e pioneristici per la scuola del futuro?",
+            "REPRESENTANT": "Rappresentanti",
+            "REPRESENTANT_DESCRIPTION": "Vorresti far parte di una community culturale unita, innovativa e promotrice di valori innovativi e pioneristici per la scuola del futuro?"
         },
         "TEAM": {
             "TITLE": "Il nostro team è un pò pazzo, ma sempre al tuo fianco",
@@ -118,7 +120,9 @@
         },
         "BUTTONS": {
             "DISCOVER": "Scopri il programma",
-            "GO_TO_TEAM": "Vai al team"
+            "GO_TO_TEAM": "Vai al team",
+            "JOIN": "Candidati",
+			"WEGATHER": "Vai su WeGather.it"
         }
     },
     "TEAM": {
