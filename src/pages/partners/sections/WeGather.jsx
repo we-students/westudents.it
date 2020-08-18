@@ -96,10 +96,15 @@ const WeGather = () => {
                 <div className="cta-section">
                     <div className="text">
                         <p>
-                            <Translate>PARTNERS.WEGATHER.TITLE</Translate>
+                            <Translate>PARTNERS.WEGATHER.NEW_SITE</Translate>
                         </p>
                         <p>
-                            <Translate>PARTNERS.WEGATHER.CTA</Translate>
+                            <span className="cta-text">
+                                <Translate>PARTNERS.WEGATHER.CTA</Translate>
+                            </span>
+                            <span className="cta-text-mobile">
+                                <Translate>PARTNERS.WEGATHER.CTA_MOBILE</Translate>
+                            </span>
                         </p>
                     </div>
                     <a href="https://wegather.it/">

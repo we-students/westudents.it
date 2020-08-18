@@ -68,10 +68,11 @@
         },
         "WEGATHER": {
             "TITLE": "Lo sapevi? Abbiamo anche un blog!",
-            "SUBTITLE": "Rimani aggionrato su quel che accade intorno a te.",
+            "SUBTITLE": "Rimani aggiornato su quel che accade intorno a te.",
             "FOLLOW_US": "Seguici anche sui social!",
             "NEW_SITE": "Il sito web è tutto nuovo!",
-            "CTA": "Clicca qui per accedere"
+            "CTA": "Clicca qui per accedere",
+            "CTA_MOBILE": "Clicca qui per accedere o consultalo dall'app"
         },
         "BUTTONS": {
             "BEGIN_NOW": "Inizia ora",

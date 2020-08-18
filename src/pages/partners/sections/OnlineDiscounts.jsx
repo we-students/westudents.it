@@ -57,6 +57,9 @@ const OnlineDiscounts = () => {
                 <img src={Image3} className="icons" alt="WeStudents" />
                 <img src={Image4} className="icons2" alt="WeStudents" />
             </div>
+            <button type="button" className="orange-btn-mobile">
+                <Translate>PARTNERS.BUTTONS.BEGIN_NOW</Translate>
+            </button>
         </div>
     )
 }

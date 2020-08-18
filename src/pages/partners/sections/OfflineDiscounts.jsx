@@ -38,7 +38,7 @@ const OfflineDiscounts = () => {
                 <img src={Image3} className="icons" alt="WeStudents" />
                 <img src={Image4} className="icons2" alt="WeStudents" />
             </div>
-            <div className="text-section text-right">
+            <div className="text-section right">
                 <h1>
                     <Translate>PARTNERS.OFFLINE_DISCOUNTS.TITLE</Translate>
                 </h1>
@@ -46,7 +46,7 @@ const OfflineDiscounts = () => {
                     <Translate>PARTNERS.OFFLINE_DISCOUNTS.SUBTITLE</Translate>
                 </p>
                 {features.map((item, index) => (
-                    <div key={`list_item_adv_${index}`} className="d-flex justify-right list-item">
+                    <div key={`list_item_adv_${index}`} className="d-flex list-item">
                         <p>{item.name}</p>
                         <div className="rounded-icon">
                             <img src={item.icon} alt={item.name} />
@@ -57,6 +57,9 @@ const OfflineDiscounts = () => {
                     <Translate>PARTNERS.BUTTONS.BEGIN_NOW</Translate>
                 </button>
             </div>
+            <button type="button" className="orange-btn-mobile">
+                <Translate>PARTNERS.BUTTONS.BEGIN_NOW</Translate>
+            </button>
         </div>
     )
 }

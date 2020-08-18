@@ -36,7 +36,7 @@ const ADV = () => {
                 <img src={Image2} className="phone2" alt="WeStudents" />
                 <img src={Image3} className="icons" alt="WeStudents" />
             </div>
-            <div className="text-section text-right">
+            <div className="text-section right">
                 <h1>
                     <Translate>PARTNERS.ADV.TITLE</Translate>
                 </h1>
@@ -44,7 +44,7 @@ const ADV = () => {
                     <Translate>PARTNERS.ADV.SUBTITLE</Translate>
                 </p>
                 {features.map((item, index) => (
-                    <div key={`list_item_adv_${index}`} className="d-flex justify-right list-item">
+                    <div key={`list_item_adv_${index}`} className="d-flex list-item">
                         <p>{item.name}</p>
                         <div className="rounded-icon">
                             <img src={item.icon} alt={item.name} />
@@ -55,6 +55,9 @@ const ADV = () => {
                     <Translate>PARTNERS.BUTTONS.BEGIN_NOW</Translate>
                 </button>
             </div>
+            <button type="button" className="orange-btn-mobile">
+                <Translate>PARTNERS.BUTTONS.BEGIN_NOW</Translate>
+            </button>
         </div>
     )
 }
