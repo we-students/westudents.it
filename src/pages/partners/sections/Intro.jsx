@@ -21,7 +21,8 @@ const stats = [
     },
 ]
 
-const Intro = () => {
+const Intro = ({ fullpageProps = {} }) => {
+    const { fullpageApi } = fullpageProps
     return (
         <div className="intro-wrapper">
             <div className="color-wrapper">
@@ -50,7 +51,12 @@ const Intro = () => {
                             </div>
                         ))}
                     </div>
-                    <button type="button" className="btn-nobg-mobile" style={{ flex: 1 }}>
+                    <button
+                        type="button"
+                        className="btn-nobg-mobile"
+                        style={{ flex: 1 }}
+                        onClick={() => fullpageApi.moveTo(2)}
+                    >
                         <div className="arrow-icon" />
                         <Translate>PARTNERS.BUTTONS.DISCOVER</Translate>
                     </button>
