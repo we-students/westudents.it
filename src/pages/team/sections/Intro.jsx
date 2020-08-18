@@ -40,6 +40,9 @@ const Intro = () => {
                             <p>
                                 <Translate>TEAM.INTRO.DESCRIPTION2</Translate>
                             </p>
+                            <p>
+                                <Translate>TEAM.INTRO.DESCRIPTION3</Translate>
+                            </p>
                         </div>
                     </div>
                 </div>

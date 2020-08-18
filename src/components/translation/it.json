@@ -130,8 +130,9 @@
         "INTRO": {
             "MEET": "Meet the",
             "TEAM": "Team",
-            "DESCRIPTION1": "Ah, ciao! Piacere di conoscerti.",
-            "DESCRIPTION2": "Grazie per aver cliccato su questa sezione. Vuol dire che ti interessa davvero sapere chi sono i brutti ceffi dietro WeStudents.",
+            "DESCRIPTION1": "Siamo un branco di creativi, di curiosi, di entusiasti ma soprattutto di folli.",
+            "DESCRIPTION2": "Crediamo profondamente in ciò che stiamo realizzando: questa è la ragione che ci spinge a dare il massimo giorno dopo giorno.",
+            "DESCRIPTION3": "Ah, e amiamo i cactus ",
             "DISCOVER": "Scopri chi siamo tra i banchi!"
         },
         "JOIN_US": "Unisciti a noi!",
