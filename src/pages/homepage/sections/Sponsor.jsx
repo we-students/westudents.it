@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import Translate from '../../../components/translation/translate'
 
 const GomaIcon = require('../../../images/sponsors/Goma.svg')
@@ -31,9 +32,11 @@ const Sponsor = ({ onCtaPress = () => {} }) => {
                     <Translate>HOMEPAGE.SPONSORS.CTA</Translate>
                 </h3>
                 <div className="d-flex justify-center">
-                    <button type="button" onClick={onCtaPress}>
-                        <Translate>HOMEPAGE.BUTTONS.DISCOVER</Translate>
-                    </button>
+                    <Link to="/partners">
+                        <button type="button" onClick={onCtaPress}>
+                            <Translate>HOMEPAGE.BUTTONS.DISCOVER</Translate>
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

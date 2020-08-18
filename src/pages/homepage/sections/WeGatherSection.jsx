@@ -4,7 +4,7 @@ import Translate from '../../../components/translation/translate'
 import WeGatherLottieAnimation from '../../../components/lotties/wegather'
 import useWindowSize from '../../../hooks/useWindowSize'
 
-const WeGather = ({ onCtaPress = () => {} }) => {
+const WeGather = () => {
     const size = useWindowSize()
     const [multiply, setMultiply] = useState()
 
@@ -28,9 +28,11 @@ const WeGather = ({ onCtaPress = () => {} }) => {
                 <p className="section-description">
                     <Translate>HOMEPAGE.WEGATHER.DESCRIPTION</Translate>
                 </p>
-                <button type="button" className="wegather" onClick={onCtaPress}>
-                    <Translate>HOMEPAGE.BUTTONS.WEGATHER</Translate>
-                </button>
+                <a rel="noopener noreferrer" target="_blank" href="https://www.wegather.it">
+                    <button type="button" className="wegather">
+                        <Translate>HOMEPAGE.BUTTONS.WEGATHER</Translate>
+                    </button>
+                </a>
             </div>
             <div>
                 <div className="big-bubble" />

@@ -40,10 +40,11 @@ const DaScuola = ({ onCtaPress = () => {} }) => {
                 <p className="section-description">
                     <Translate>HOMEPAGE.DASCUOLA.DESCRIPTION</Translate>
                 </p>
-
-                <button type="button" className="dascuola" onClick={onCtaPress}>
-                    <Translate>HOMEPAGE.BUTTONS.DASCUOLA</Translate>
-                </button>
+                <a rel="noopener noreferrer" target="_blank" href="https://dascuola.it/">
+                    <button type="button" className="dascuola" onClick={onCtaPress}>
+                        <Translate>HOMEPAGE.BUTTONS.DASCUOLA</Translate>
+                    </button>
+                </a>
             </div>
         </div>
     )
