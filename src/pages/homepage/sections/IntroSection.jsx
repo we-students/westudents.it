@@ -4,7 +4,8 @@ import Translate from '../../../components/translation/translate'
 import MainLottieAnimation from '../../../components/lotties/main'
 import useWindowSize from '../../../hooks/useWindowSize'
 
-const Intro = ({ onCtaPress = () => {} }) => {
+const Intro = ({ fullpageProps = {} }) => {
+    const { fullpageApi } = fullpageProps
     const size = useWindowSize()
     const [multiply, setMultiply] = useState()
 
@@ -34,7 +35,7 @@ const Intro = ({ onCtaPress = () => {} }) => {
                     {introTitle[1]}
                 </h2>
 
-                <button type="button" onClick={onCtaPress}>
+                <button type="button" onClick={() => fullpageApi.moveTo(2)}>
                     <Translate>HOMEPAGE.BUTTONS.INTRO</Translate>
                 </button>
             </div>

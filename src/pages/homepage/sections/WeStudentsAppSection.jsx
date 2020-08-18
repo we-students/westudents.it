@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 
+import { Link } from 'gatsby'
 import Translate from '../../../components/translation/translate'
 import WeStudentsAppLottieAnimation from '../../../components/lotties/westudents-app'
 import useWindowSize from '../../../hooks/useWindowSize'
 
 import WeStudentsLogo from '../../../images/westudentsapp.svg'
 
-const WeStudentsApp = ({ onCtaPress = () => {} }) => {
+const WeStudentsApp = () => {
     const size = useWindowSize()
     const [multiply, setMultiply] = useState()
 
@@ -40,10 +41,11 @@ const WeStudentsApp = ({ onCtaPress = () => {} }) => {
                 <p className="section-description">
                     <Translate>HOMEPAGE.WESTUDENTS.DESCRIPTION</Translate>
                 </p>
-
-                <button type="button" className="westudents" onClick={onCtaPress}>
-                    <Translate>HOMEPAGE.BUTTONS.WESTUDENTS</Translate>
-                </button>
+                <Link to="/prodotti/westudents">
+                    <button type="button" className="westudents">
+                        <Translate>HOMEPAGE.BUTTONS.WESTUDENTS</Translate>
+                    </button>
+                </Link>
             </div>
         </div>
     )
