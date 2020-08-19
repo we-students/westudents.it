@@ -29,6 +29,10 @@
             > p {
                 margin-top: 50px
             }
+
+            @media screen and (max-width: 576px) {
+                padding: 0 8%;
+            }
         }
 
         .stores {
@@ -43,6 +47,9 @@
                 padding: 12px 16px;
                 img {
                     width: 100%
+                }
+                @media screen and (max-width: 576px) {
+                    margin-left: 15px;
                 }
             }
         }
@@ -325,7 +332,8 @@
     .product-westudents {
         .intro {
             flex-direction: column-reverse;
-            padding: 120px 30px;
+            padding: 100px 30px;
+            padding-bottom: 80px;
         }
 
         .demo {
