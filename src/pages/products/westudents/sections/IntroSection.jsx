@@ -28,7 +28,7 @@ const Intro = () => {
 
     return (
         <div className="intro container">
-            <div>
+            <div className="lottie-wrapper">
                 <WeStudentsAppLottieAnimation
                     width={(size.width > 1400 ? 1400 : size.width) * multiply}
                     height={(size.width > 1400 ? 1400 : size.width) * multiply}

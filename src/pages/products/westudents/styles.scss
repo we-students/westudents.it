@@ -197,6 +197,7 @@
             display: none;
 
             .carousel-item { 
+                display: grid;
                 margin-top: 30px;
                 height: 70vh;
                 display: flex;
@@ -289,6 +290,7 @@
     flex-direction: column;
     padding-top: 9%;
     padding-bottom: 0;
+    
 
     > .sponsors-items {
         display: flex;
@@ -384,6 +386,7 @@
 
 
     .section .sponsor {
+        padding-top: 80px;
 
         .title {
             padding: 0;
