@@ -18,19 +18,54 @@ const Footer = () => {
                             </h4>
                             <ul className="list-title">
                                 <li className="list-item">
-                                    <Translate>FOOTER.PRIVACY.ITEM1</Translate>
+                                    <Link
+                                        to={Translate({
+                                            children: 'FOOTER.PRIVACY.ITEM1LINK',
+                                            textOnly: true,
+                                        })}
+                                    >
+                                        <Translate>FOOTER.PRIVACY.ITEM1</Translate>
+                                    </Link>
                                 </li>
                                 <li className="list-item">
-                                    <Translate>FOOTER.PRIVACY.ITEM2</Translate>
+                                    <Link
+                                        to={Translate({
+                                            children: 'FOOTER.PRIVACY.ITEM2LINK',
+                                            textOnly: true,
+                                        })}
+                                    >
+                                        <Translate>FOOTER.PRIVACY.ITEM2</Translate>
+                                    </Link>
                                 </li>
                                 <li className="list-item">
-                                    <Translate>FOOTER.PRIVACY.ITEM3</Translate>
+                                    <Link
+                                        to={Translate({
+                                            children: 'FOOTER.PRIVACY.ITEM3LINK',
+                                            textOnly: true,
+                                        })}
+                                    >
+                                        <Translate>FOOTER.PRIVACY.ITEM3</Translate>
+                                    </Link>
                                 </li>
                                 <li className="list-item">
-                                    <Translate>FOOTER.PRIVACY.ITEM4</Translate>
+                                    <Link
+                                        to={Translate({
+                                            children: 'FOOTER.PRIVACY.ITEM4LINK',
+                                            textOnly: true,
+                                        })}
+                                    >
+                                        <Translate>FOOTER.PRIVACY.ITEM4</Translate>
+                                    </Link>
                                 </li>
                                 <li className="list-item">
-                                    <Translate>FOOTER.PRIVACY.ITEM5</Translate>
+                                    <Link
+                                        to={Translate({
+                                            children: 'FOOTER.PRIVACY.ITEM5LINK',
+                                            textOnly: true,
+                                        })}
+                                    >
+                                        <Translate>FOOTER.PRIVACY.ITEM5</Translate>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -75,7 +110,14 @@ const Footer = () => {
                             </h4>
                             <ul className="list-title">
                                 <li className="list-item">
-                                    <Translate>FOOTER.WORK.ITEM1</Translate>
+                                    <Link
+                                        to={Translate({
+                                            children: 'FOOTER.WORK.ITEM1LINK',
+                                            textOnly: true,
+                                        })}
+                                    >
+                                        <Translate>FOOTER.WORK.ITEM1</Translate>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -84,10 +126,46 @@ const Footer = () => {
                                 <Translate>FOOTER.COMMUNITY.TITLE</Translate>
                             </h4>
                             <ul className="list-title">
-                                <li className="list-item">Instagram</li>
-                                <li className="list-item">Tik Tok</li>
-                                <li className="list-item">Facebook</li>
-                                <li className="list-item">Linkedin</li>
+                                <a
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                    href={Translate({
+                                        children: 'CONTACTS.INSTAGRAM',
+                                        textOnly: true,
+                                    })}
+                                >
+                                    <li className="list-item">Instagram</li>
+                                </a>
+                                <a
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                    href={Translate({
+                                        children: 'CONTACTS.TIKTOK',
+                                        textOnly: true,
+                                    })}
+                                >
+                                    <li className="list-item">Tik Tok</li>
+                                </a>
+                                <a
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                    href={Translate({
+                                        children: 'CONTACTS.FACEBOOK',
+                                        textOnly: true,
+                                    })}
+                                >
+                                    <li className="list-item">Facebook</li>
+                                </a>
+                                <a
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                    href={Translate({
+                                        children: 'CONTACTS.LINKEDIN',
+                                        textOnly: true,
+                                    })}
+                                >
+                                    <li className="list-item">Linkedin</li>
+                                </a>
                                 <li className="list-item">
                                     <Translate>FOOTER.COMMUNITY.ITEM1</Translate>
                                 </li>

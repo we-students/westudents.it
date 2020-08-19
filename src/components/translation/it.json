@@ -164,15 +164,20 @@
         "PRIVACY": {
             "TITLE": "Privacy",
             "ITEM1": "Privacy Policy del sito",
+            "ITEM1LINK": "/privacy-policy-sito",
             "ITEM2": "Privacy Policy dell'app",
+            "ITEM2LINK": "/privacy-policy-app",
             "ITEM3": "Termini e condizioni",
+            "ITEM3LINK": "/termini-e-condizioni",
             "ITEM4": "Norme della Community",
-            "ITEM5": "Cookies Policy"
+            "ITEM4LINK": "/norme-della-community",
+            "ITEM5": "Cookies Policy",
+            "ITEM5LINK": "/cookies-policy"
         },
         "SUPPORT": {
             "TITLE": "Supporto",
             "ITEM1": "FAQ",
-            "ITEM1LINK": "#",
+            "ITEM1LINK": "/faq",
             "ITEM2": "Contattaci",
             "ITEM2LINK": "/contattaci",
             "ITEM3": "Press kit",
@@ -181,7 +186,8 @@
         },
         "WORK": {
             "TITLE": "Lavora con noi",
-            "ITEM1": "Posizioni aperte"
+            "ITEM1": "Posizioni aperte",
+            "ITEM1LINK": "/carriere#posizioni-aperte"
         },
         "COMMUNITY": {
             "TITLE": "Community",
@@ -198,7 +204,12 @@
         }
     },
     "CONTACTS": {
-        "EMAIL": "info@westudents.it"
+        "EMAIL": "info@westudents.it",
+        "INSTAGRAM": "https://www.instagram.com/westudentsapp/",
+        "FACEBOOK": "https://www.facebook.com/WeStudentsApp/",
+        "LINKEDIN": "https://www.linkedin.com/company/westudents/",
+        "TIKTOK": "https://vm.tiktok.com/ZSfYs9F8/"
+
     },
     "STATISTICS": {
         "TITLE": "Vogliamo far parlare i numeri",
