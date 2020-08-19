@@ -43,9 +43,8 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
                         autoScrolling
                         scrollHorizontally
                         scrollOverflow
-                        scrollOverflowReset
-                        scrollOverflowOptions={{ scrollbars: false }}
                         scrollBar={false}
+                        fitToSectionDelay={1000}
                         onLeave={(origin, destination, direction) =>
                             handleSectionChange(origin, destination, direction)
                         }
@@ -56,17 +55,16 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
                                         <Bubbles sectionCount={fullpageProps.state.sectionCount} />
                                     ) : null}
                                     {sections.map((section, index) => (
-                                        <>
-                                            <div className="section">
-                                                {section.render({
-                                                    ...fullpageProps,
-                                                    isActive: activeTab === index,
-                                                })}
-                                                {showFooter && index === sections.length - 1 ? (
-                                                    <Footer />
-                                                ) : null}
-                                            </div>
-                                        </>
+                                        <div className="section">
+                                            {section.render({
+                                                ...fullpageProps,
+                                                isActive: activeTab === index,
+                                            })}
+
+                                            {showFooter && index === sections.length - 1 ? (
+                                                <Footer />
+                                            ) : null}
+                                        </div>
                                     ))}
                                 </>
                             )

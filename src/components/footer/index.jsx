@@ -1,12 +1,29 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react'
+import { useFormik } from 'formik'
 import { Link } from 'gatsby'
+import * as Yup from 'yup'
 
 import Translate from '../translation/translate'
 import './styles.scss'
 
+const validationSchema = Yup.object({
+    email: Yup.string().email('Non sembra essere una mail').required('La mail è obbligatoria'),
+})
+
 const Footer = () => {
     const [form, setForm] = useState({ email: '', privacy: false })
+
+    const handleSubmit = () => {}
+
+    const formik = useFormik({
+        initialValues: { email: '' },
+        onSubmit: async (values) => handleSubmit(values),
+        validationSchema,
+    })
+
+    console.log('process.env.GATSBY_SIB_API_KEY', process.env.GATSBY_SIB_API_KEY)
+
     return (
         <div className="footer-wrapper container">
             <div className="footer">
@@ -182,16 +199,16 @@ const Footer = () => {
                                 <Translate>FOOTER.JOIN_NEWSLETTER.SUBTITLE</Translate>
                             </p>
 
-                            <div className="input-container">
-                                <input
-                                    placeholder="Inserisci la tua mail.."
-                                    className="custom-input"
-                                />
-                                <button className="custom-button" type="submit">
-                                    Invia
-                                </button>
-                            </div>
-                            <form className="newsletter-check">
+                            <form className="newsletter-check" onSubmit={formik.handleSubmit}>
+                                <div className="input-container">
+                                    <input
+                                        placeholder="Inserisci la tua mail.."
+                                        className="custom-input"
+                                    />
+                                    <button className="custom-button" type="submit">
+                                        Invia
+                                    </button>
+                                </div>
                                 <input
                                     type="checkbox"
                                     id="subscribe"

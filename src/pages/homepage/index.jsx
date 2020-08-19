@@ -22,7 +22,6 @@ const HomePage = () => (
                 anchor: 'intro',
                 render: (fullpageProps) => <Intro fullpageProps={fullpageProps} />,
             },
-
             {
                 anchor: 'westudents-app',
                 render: (fullpageProps) => <WeStudentsApp fullpageProps={fullpageProps} />,

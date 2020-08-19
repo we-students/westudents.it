@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
 
+$mobileHeaderHeight: 90px;
+
 html {
   font-family: 'Titillium Web', sans-serif;
   -ms-text-size-adjust: 100%;
@@ -92,6 +94,10 @@ button {
   text-align: center;
 }
 
+.fullpageSpacer {
+  
+}
+
 @media only screen and (max-width: 767px) {
   .container {
     width: auto
@@ -114,6 +120,10 @@ button {
   .container {
     max-width: 1140px
   }
+}
+
+@media only screen and (max-width: 991px) {
+
 }
 
 

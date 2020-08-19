@@ -24,7 +24,7 @@ const WeStudentsApp = () => {
 
     return (
         <div className="westudents-app container">
-            <div>
+            <div className="lottie-wrapper">
                 <div className="big-bubble" />
                 <WeStudentsAppLottieAnimation
                     width={(size.width > 1400 ? 1400 : size.width) * multiply}

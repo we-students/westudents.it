@@ -23,7 +23,7 @@ const DaScuola = ({ onCtaPress = () => {} }) => {
 
     return (
         <div className="dascuola container">
-            <div>
+            <div className="lottie-wrapper">
                 <div className="big-bubble" />
                 <DaScuolaLottieAnimation
                     width={(size.width > 1400 ? 1400 : size.width) * multiply}

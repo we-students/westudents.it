@@ -34,7 +34,7 @@ const WeGather = () => {
                     </button>
                 </a>
             </div>
-            <div>
+            <div className="lottie-wrapper">
                 <div className="big-bubble" />
                 <WeGatherLottieAnimation
                     width={(size.width > 1400 ? 1400 : size.width) * multiply}

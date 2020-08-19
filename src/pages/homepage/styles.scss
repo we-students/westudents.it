@@ -232,9 +232,15 @@
 		}
 
 
+		.lottie-wrapper {
+			height: 60vh;
+			display: grid;
+		}
+
 		.section .container.westudents-app {
 			display: flex !important;
-    		flex-direction: column-reverse;
+			flex-direction: column-reverse;
+			padding-top: 80px;
 
 			.big-bubble {
 				display: none;
@@ -244,12 +250,15 @@
 				text-align: center;
 				margin-bottom: 0;
 			}
+
+			
+
 		}
 
 		.section .container.wegather {
 			display: flex !important;
 			flex-direction: column;
-			padding-top: 20px;
+			padding-top: 80px;
 
 			.big-bubble {
 				display: none;
@@ -264,7 +273,7 @@
 		.section .container.dascuola {
 			display: flex !important;
 			flex-direction: column-reverse;
-			padding-top: 20px;
+			padding-top: 80px;
 
 			.big-bubble {
 				display: none;
@@ -306,7 +315,7 @@
 		}
 
 		.section .sponsor {
-			padding-top: 100px;
+			padding-top: 80px;
 
 			.title {
 				padding: 0;
