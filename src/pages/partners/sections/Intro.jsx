@@ -38,7 +38,11 @@ const Intro = ({ fullpageProps = {} }) => {
                         <button type="button" className="white-btn">
                             <Translate>PARTNERS.BUTTONS.BEGIN_NOW</Translate>
                         </button>
-                        <button type="button" className="btn-nobg">
+                        <button
+                            type="button"
+                            className="btn-nobg"
+                            onClick={() => fullpageApi.moveTo(2)}
+                        >
                             <div className="arrow-icon" />
                             <Translate>PARTNERS.BUTTONS.DISCOVER</Translate>
                         </button>

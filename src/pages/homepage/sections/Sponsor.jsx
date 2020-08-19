@@ -16,7 +16,7 @@ const sponsors = [
     { name: 'polo del 900', icon: PoloIcon },
 ]
 
-const Sponsor = ({ onCtaPress = () => {} }) => {
+const Sponsor = () => {
     return (
         <div className="sponsor container d-flex">
             <h1 className="title text-center">
@@ -33,7 +33,7 @@ const Sponsor = ({ onCtaPress = () => {} }) => {
                 </h3>
                 <div className="d-flex justify-center">
                     <Link to="/partners">
-                        <button type="button" onClick={onCtaPress}>
+                        <button type="button">
                             <Translate>HOMEPAGE.BUTTONS.DISCOVER</Translate>
                         </button>
                     </Link>

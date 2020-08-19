@@ -42,10 +42,6 @@ const HomePage = () => (
                 anchor: 'WeGather',
                 render: (fullpageProps) => <WeGather fullpageProps={fullpageProps} />,
             },
-            {
-                anchor: 'footer',
-                render: () => <div />,
-            },
         ]}
     />
 )

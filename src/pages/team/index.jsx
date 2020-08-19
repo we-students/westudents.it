@@ -27,10 +27,6 @@ const HomePage = () => (
                 anchor: 'candidati',
                 render: (fullpageProps) => <JoinUs fullpageProps={fullpageProps} />,
             },
-            {
-                anchor: 'footer',
-                render: () => <div />,
-            },
         ]}
     />
 )
