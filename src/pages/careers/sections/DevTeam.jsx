@@ -9,7 +9,10 @@ import DevShitImageSix from '../../../images/dev-team-components/6.png'
 import DevShitImageSeven from '../../../images/dev-team-components/7.png'
 
 const OpenPosition = ({ fullpageProps = {} }) => {
-    const handleCtaClick = () => {}
+    const handleCtaClick = () => {
+        const { fullpageApi } = fullpageProps
+        fullpageApi.moveTo(4)
+    }
 
     return (
         <div className={`dev-team ${fullpageProps.isActive ? 'active' : ''}`}>

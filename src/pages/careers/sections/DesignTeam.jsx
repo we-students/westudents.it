@@ -8,8 +8,10 @@ import DesignShitImageFive from '../../../images/design-team-components/5.png'
 import DesignShitImageSix from '../../../images/design-team-components/6.png'
 
 const OpenPosition = ({ fullpageProps = {} }) => {
-    const handleCtaClick = () => {}
-
+    const handleCtaClick = () => {
+        const { fullpageApi } = fullpageProps
+        fullpageApi.moveTo(4)
+    }
     return (
         <div className={`design-team ${fullpageProps.isActive ? 'active' : ''}`}>
             <div className="container">
