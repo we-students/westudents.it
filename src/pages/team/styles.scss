@@ -239,6 +239,12 @@
 				-webkit-text-fill-color: transparent;
 			}
         }
+
+        @media screen and (max-width: 576px) {
+            h2 {
+                font-size: 3em;
+            }
+        }
         .cta-section {
 
             margin-top: 3em;
@@ -268,7 +274,9 @@
             button {
                 height: 40px;
                 padding: 0 5em;
-
+                @media screen and (max-width: 576px) {
+                   padding: 0 2em;
+                }
             }
         }
 	}
