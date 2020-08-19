@@ -117,17 +117,20 @@
     }
 
     .team {
-        padding-top: 20vh;
-        padding-bottom: 10vh;
+
+
         .grid-container {
             justify-items: center;
+            padding: 80px 0;
            }
+
         .profile-item {
            transition: 0.6s !important;
            position: relative;
-           margin: 2em;
+           margin: 30px;
+
             @media screen and (min-width: 992px){
-                margin: 4em;
+                margin: 40px;
             }
             
             > * {
