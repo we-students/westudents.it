@@ -15,7 +15,7 @@ const Intro = () => {
 
     useEffect(() => {
         const m = (() => {
-            if (size.width < 767) return 1
+            if (size.width < 767) return 1.3
             if (size.width >= 768 && size.width < 991) return 0.8
 
             return 0.4
