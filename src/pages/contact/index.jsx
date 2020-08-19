@@ -4,6 +4,7 @@ import { useFormik } from 'formik'
 import firebase from 'gatsby-plugin-firebase'
 import * as Yup from 'yup'
 import ReCAPTCHA from 'react-google-recaptcha'
+import Swal from 'sweetalert2'
 
 import Layout from '../../components/layout'
 import Loader from '../../components/loader'
@@ -34,8 +35,8 @@ const ContactPage = () => {
     const handleSubmit = async (values) => {
         const token = await recaptchaRef.current.executeAsync()
 
-        const subFunc = firebase.functions().httpsCallable('NAMEFUNC')
-        const resp = await subFunc({
+        const subFunc = firebase.functions().httpsCallable('submitContactForm')
+        const { data: resp } = await subFunc({
             fullname: values.fullname,
             email: values.email,
             phone: values.phone,
@@ -44,7 +45,15 @@ const ContactPage = () => {
             recaptcha: token,
         })
 
-        console.log(resp)
+        if (resp.success) {
+            Swal.fire({
+                status: 'success',
+                title: 'Ok',
+                html: 'Ok!',
+            })
+
+            formik.resetForm()
+        }
     }
 
     const formik = useFormik({

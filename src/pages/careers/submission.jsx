@@ -69,7 +69,7 @@ const CareerSubmission = ({ data, pageContext }) => {
     const handleSubmit = async (values) => {
         const token = await recaptchaRef.current.executeAsync()
 
-        const subFunc = firebase.functions().httpsCallable('submitJobApplication')
+        const subFunc = firebase.functions().httpsCallable('submitJobApplicationForm')
         const { data: resp } = await subFunc({
             fullname: values.fullname,
             role: values.role,
