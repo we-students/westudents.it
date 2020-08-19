@@ -42,6 +42,7 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
                         scrollingSpeed={1000} /* Options here */
                         autoScrolling
                         scrollHorizontally
+                        scrollOverflowOptions={{ scrollbars: false }}
                         scrollOverflow
                         scrollBar={false}
                         fitToSectionDelay={1000}

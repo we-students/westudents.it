@@ -5,6 +5,7 @@ import WsLogo from '../../images/logo_wes.svg'
 import './styles.scss'
 import 'animate.css/animate.min.css'
 import MenuItem from './MenuItem'
+import MobileMenuItem from './MobileMenuItem'
 import menuItems from './menu-items'
 import socialItems from './social-items'
 import useWindowSize from '../../hooks/useWindowSize'
@@ -94,7 +95,7 @@ const Header = () => {
                     <nav>
                         <ul className="navigation">
                             {menuItems.map((item) => (
-                                <MenuItem key={item.key} item={item} />
+                                <MobileMenuItem key={item.key} item={item} />
                             ))}
                         </ul>
                     </nav>

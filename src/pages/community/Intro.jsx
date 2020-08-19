@@ -35,7 +35,7 @@ const Intro = ({ fullpageProps = {} }) => {
                     </p>
                 </div>
                 <div className="justify-center" style={{ flex: 1, alignItems: 'flex-end' }}>
-                    <button type="button" onClick={() => fullpageApi.moveTo(6)}>
+                    <button type="button" onClick={() => fullpageApi.moveTo(2)}>
                         <p className="text-center" style={{ marginBottom: '1em' }}>
                             <Translate>COMMUNITY.INTRO.DISCOVER</Translate>
                         </p>
