@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable no-nested-ternary */
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
@@ -20,9 +21,12 @@ const MenuItem = ({ item }) => {
                 >
                     <ul>
                         {item.childrens.map((children) => {
+                            const props = {}
+                            if (children.href[0] !== '/') props.target = '_blank'
+
                             return (
                                 <li key={children.key}>
-                                    <Link to={children.href}>
+                                    <a href={children.href} {...props}>
                                         <img
                                             className="sub-item-logo"
                                             src={children.image}
@@ -34,7 +38,7 @@ const MenuItem = ({ item }) => {
                                                 {children.description}
                                             </span>
                                         </div>
-                                    </Link>
+                                    </a>
                                 </li>
                             )
                         })}
