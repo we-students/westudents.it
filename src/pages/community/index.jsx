@@ -23,6 +23,7 @@ const CommunityPage = () => (
             {
                 anchor: 'intro',
                 render: (fullpageProps) => <Intro fullpageProps={fullpageProps} />,
+                headerStyle: 'transparent',
             },
             {
                 anchor: 'Education',
@@ -51,6 +52,7 @@ const CommunityPage = () => (
             {
                 anchor: 'Team',
                 render: (fullpageProps) => <Team fullpageProps={fullpageProps} />,
+                headerStyle: 'transparent',
             },
         ]}
     />

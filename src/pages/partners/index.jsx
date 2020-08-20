@@ -21,6 +21,7 @@ const HomePage = () => (
             {
                 anchor: 'intro',
                 render: (fullpageProps) => <Intro fullpageProps={fullpageProps} />,
+                headerStyle: 'transparent',
             },
             {
                 anchor: 'adv',

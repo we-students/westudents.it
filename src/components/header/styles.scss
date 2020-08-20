@@ -9,8 +9,7 @@
     top: 0;
     left: 0;
     backdrop-filter: blur(6px);
-    transition: .4s;
-
+    transition: 0.7s;
 
     &.header-shadow {
         box-shadow: 0 14px 28px rgba(0,0,0,0.03), 0 10px 10px rgba(0,0,0,0.03);
@@ -31,7 +30,17 @@
         }
     
         > .logo-wrapper {
-            flex: 1
+            flex: 1;
+            
+            a {
+                display: flex;
+                align-items: center;
+            }
+
+            img {
+                height: 23px;
+                width: auto;
+            }
         }
     
         > .menu-wrapper {
@@ -41,11 +50,9 @@
         > .socials-wrapper {
             text-align: right;
             padding-top: 10px;
-
             > * {
                 display: inline-block !important;
                 padding: 10px;
-
                 &:hover {
                     filter: opacity(50%);
                     transition: 0.3s;
@@ -223,6 +230,9 @@
     stroke-width: 6;
     transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
         stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    &.white {
+        stroke: white;
+    }
 }
 
 .line1 {
@@ -277,7 +287,7 @@
             }
             
             img {
-                max-height: 40px;
+                max-height: 35px;
                 max-width: 100%;
             }
         }
