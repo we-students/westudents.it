@@ -40,6 +40,7 @@ const HomePage = () => (
             {
                 anchor: 'numeri',
                 render: (fullpageProps) => <Details fullpageProps={fullpageProps} />,
+                headerStyle: 'transparent',
             },
 
             {

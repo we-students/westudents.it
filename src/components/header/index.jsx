@@ -1,36 +1,49 @@
+/* eslint-disable import/no-named-default */
 import React, { useRef, useState } from 'react'
 import { Link } from 'gatsby'
 
 import WsLogo from '../../images/logo_wes.svg'
+import WsLogoWhite from '../../images/logo_wes_white.svg'
 import './styles.scss'
 import 'animate.css/animate.min.css'
 import MenuItem from './MenuItem'
 import MobileMenuItem from './MobileMenuItem'
 import menuItems from './menu-items'
-import socialItems from './social-items'
+import { default as socialItems } from './social-items'
 import useWindowSize from '../../hooks/useWindowSize'
 
-const Header = () => {
+const Header = (props) => {
+    const { type } = props
     const [menuOpenend, setMenuOpened] = useState(false)
     const menuButtonRef = useRef()
     const { height, width } = useWindowSize()
 
+    const headerHeight = menuOpenend ? { height } : { height: width > 991 ? 120 : 90 }
+    const headerColor =
+        type === 'transparent' && !menuOpenend
+            ? { backgroundColor: 'transparent', backdropFilter: 'none' }
+            : null
+
     return (
-        <header
-            className="main-header"
-            style={menuOpenend ? { height } : { height: width > 991 ? 120 : 90 }}
-        >
+        <header className="main-header" style={{ ...headerHeight, ...headerColor }}>
             <div className="container top">
                 <div className="logo-wrapper">
                     <Link to="/">
-                        <img src={WsLogo} alt="WeStudents logo" />
+                        <img
+                            src={type === 'transparent' ? WsLogoWhite : WsLogo}
+                            alt="WeStudents logo"
+                        />
                     </Link>
                 </div>
                 <div className="menu-wrapper">
                     <nav>
                         <ul className="navigation">
                             {menuItems.map((item) => (
-                                <MenuItem key={item.key} item={item} />
+                                <MenuItem
+                                    key={item.key}
+                                    item={item}
+                                    color={type === 'transparent' ? 'white' : null}
+                                />
                             ))}
                         </ul>
                     </nav>
@@ -43,7 +56,11 @@ const Header = () => {
                             rel="noreferrer"
                             className="social-icon-wrapper"
                         >
-                            <img src={item.image} alt={`${item.value} logo`} />
+                            {/*   <img
+                                src={type === 'transparent' ? item.whiteImage : item.image}
+                                alt={`${item.value} logo`}
+                            /> */}
+                            {type === 'transparent' ? item.image('#fff') : item.image()}
                         </a>
                     ))}
                 </div>
@@ -66,12 +83,15 @@ const Header = () => {
                     >
                         <svg width="100" height="100" viewBox="0 0 100 100">
                             <path
-                                className="line line1"
+                                className={`line line1 ${type === 'transparent' ? 'white' : ''}`}
                                 d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
                             />
-                            <path className="line line2" d="M 20,50 H 80" />
                             <path
-                                className="line line3"
+                                className={`line line2 ${type === 'transparent' ? 'white' : ''}`}
+                                d="M 20,50 H 80"
+                            />
+                            <path
+                                className={`line line3 ${type === 'transparent' ? 'white' : ''}`}
                                 d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"
                             />
                         </svg>
@@ -88,7 +108,7 @@ const Header = () => {
                                 rel="noreferrer"
                                 className="social-icon-wrapper"
                             >
-                                <img src={item.image} alt={`${item.value} logo`} />
+                                {item.image()}
                             </a>
                         ))}
                     </div>

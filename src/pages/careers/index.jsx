@@ -23,6 +23,7 @@ const Careers = () => (
             {
                 anchor: 'dev',
                 render: (fullpageProps) => <DevTeam fullpageProps={fullpageProps} />,
+                headerStyle: 'transparent',
             },
             {
                 anchor: 'design',
