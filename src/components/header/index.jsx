@@ -51,15 +51,11 @@ const Header = (props) => {
                 <div className="socials-wrapper">
                     {socialItems.map((item) => (
                         <a
-                            href={item.href}
+                            href={item.href()}
                             target="_blank"
                             rel="noreferrer"
                             className="social-icon-wrapper"
                         >
-                            {/*   <img
-                                src={type === 'transparent' ? item.whiteImage : item.image}
-                                alt={`${item.value} logo`}
-                            /> */}
                             {type === 'transparent' ? item.image('#fff') : item.image()}
                         </a>
                     ))}

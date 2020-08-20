@@ -26,7 +26,7 @@ const CommunityPage = () => (
                 headerStyle: 'transparent',
             },
             {
-                anchor: 'Education',
+                anchor: 'education',
                 render: (fullpageProps) => <Education fullpageProps={fullpageProps} />,
             },
             {
@@ -38,19 +38,19 @@ const CommunityPage = () => (
                 render: (fullpageProps) => <Connection fullpageProps={fullpageProps} />,
             },
             {
-                anchor: 'Features',
+                anchor: 'features',
                 render: (fullpageProps) => <Features fullpageProps={fullpageProps} />,
             },
             {
-                anchor: 'Ambassador',
+                anchor: 'ambassador',
                 render: (fullpageProps) => <Ambassador fullpageProps={fullpageProps} />,
             },
             {
-                anchor: 'Representant',
+                anchor: 'representant',
                 render: (fullpageProps) => <Representant fullpageProps={fullpageProps} />,
             },
             {
-                anchor: 'Team',
+                anchor: 'team',
                 render: (fullpageProps) => <Team fullpageProps={fullpageProps} />,
                 headerStyle: 'transparent',
             },

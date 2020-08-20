@@ -22,8 +22,6 @@ const Footer = () => {
         validationSchema,
     })
 
-    console.log('process.env.GATSBY_SIB_API_KEY', process.env.GATSBY_SIB_API_KEY)
-
     return (
         <div className="footer-wrapper container">
             <div className="footer">
@@ -209,16 +207,21 @@ const Footer = () => {
                                         Invia
                                     </button>
                                 </div>
-                                <input
-                                    type="checkbox"
-                                    id="subscribe"
-                                    name="subscribe"
-                                    checked={form.privacy}
-                                    onChange={() => setForm({ ...form, privacy: !form.privacy })}
-                                />
-                                <label style={{ fontSize: '10px' }} htmlFor="subscribe">
-                                    <Translate>FOOTER.JOIN_NEWSLETTER.CONDITIONS</Translate>
-                                </label>
+                                <button
+                                    type="button"
+                                    className="checkbox-wrapper"
+                                    onClick={() => setForm({ ...form, privacy: !form.privacy })}
+                                >
+                                    <input
+                                        type="checkbox"
+                                        id="subscribe_id"
+                                        name="subscribe"
+                                        checked={form.privacy}
+                                    />
+                                    <label style={{ fontSize: '10px' }} htmlFor="subscribe_id">
+                                        <Translate>FOOTER.JOIN_NEWSLETTER.CONDITIONS</Translate>
+                                    </label>
+                                </button>
                             </form>
                         </div>
                         <span className="horizontal-divider" />
