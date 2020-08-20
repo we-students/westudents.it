@@ -26,6 +26,7 @@ const WeStudentsPage = () => (
             {
                 anchor: 'dettagli',
                 render: (fullpageProps) => <Details fullpageProps={fullpageProps} />,
+                headerStyle: 'transparent',
             },
             {
                 anchor: 'sponsor',

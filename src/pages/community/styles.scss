@@ -248,9 +248,12 @@
                 padding-bottom: 40px;
             }
         }
-
+        @media screen and (max-width: 576px){
+            padding-top: 90px;
+        }
+ 
         @media screen and (max-width: 370px){
-            padding-top: 120px;
+            padding-top: 90px;
             .title {
                 flex: none;
             }
@@ -316,7 +319,7 @@
                 }
                 margin-bottom: 0.2em;
                 @media screen and (max-width: 576px){
-                    margin: 0 10%;
+                    font-size: 30px;
                 }
             }
             img {
@@ -325,10 +328,11 @@
             }
             .description {
                 font-size: 14px;
-                padding: 0 15%;
+                padding: 0 12%;
                 @media screen and (max-width: 576px){
                     padding: 0;
                     margin-top: 2em;
+                    font-size: 17px;
                 }
             }
             button {

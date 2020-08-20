@@ -9,7 +9,7 @@
     top: 0;
     left: 0;
     backdrop-filter: blur(6px);
-    transition: 0.7s;
+    transition: 0.7s !important;
 
     &.header-shadow {
         box-shadow: 0 14px 28px rgba(0,0,0,0.03), 0 10px 10px rgba(0,0,0,0.03);

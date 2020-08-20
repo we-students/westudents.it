@@ -66,15 +66,17 @@
         .input-container {
             margin-top: 1em;
             position: relative;
-            width: 100%;
-            @media screen and (max-width: 576px){
-                width: 75%;
+            width: min-content;
+            display: flex;
+            justify-content: center;
+            @media only screen and (min-width: 991px) {
+                justify-content: left; 
             }
             .custom-input {
                 border-radius: 20px;
                 height: 35px;
                 padding: 0 1em;
-                width: calc(90%);
+                width: 240px !important;
                 border: none;
                 &:focus {
                     outline: none;
@@ -82,7 +84,12 @@
             }
             .custom-button {
                 position: absolute;
-                left: 73%;
+                width: 70px !important;
+                left: 71%;
+                text-align: center;
+                @media only screen and (max-width: 991px) {
+                    left: 72%;
+                }
                 top: calc(35px/2);
                 padding: 0 7%;
                 font-size: 11px;
@@ -100,11 +107,25 @@
         .newsletter-check {
             margin-top: 0.5em;
             align-items: center;
+            button {
+                background: none;
+                padding: 0;
+                text-align: left;
+                color: white;
+                &:hover {
+                    opacity: 1;
+                }
+            }
             input[type="checkbox"] {
                 border-color: white !important;
             }
             label {
                 margin-left: 1px;
+                
+            }
+            .checkbox-wrapper {
+                display: flex;
+                margin-top: 0.5em;
             }
         }
     }
@@ -117,14 +138,10 @@
 
 @media only screen and (max-width: 991px) {
     .footer-wrapper {
-
+       
         .footer {
             width: auto;
-            
-            .input-container {
-                width: 100%;
-            }
-
+            padding:2em 2em;
             .newsletter-check {
                 margin-top: 10px;
             }

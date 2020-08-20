@@ -1,4 +1,5 @@
 import React from 'react'
+import Translate from '../translation/translate'
 import InstagramLogo from '../icons/InstagramIcon'
 import FacebookLogo from '../icons/FacebookIcon'
 import LinkedinLogo from '../icons/LinkedinIcon'
@@ -8,21 +9,21 @@ export default [
     {
         key: 'team',
         image: (color) => <InstagramLogo color={color} />,
-        href: 'https://instagram.com',
+        href: () => Translate({ children: 'CONTACTS.INSTAGRAM' }),
     },
     {
         key: 'careers',
         image: (color) => <FacebookLogo color={color} />,
-        href: 'https://facebook.com',
+        href: () => Translate({ children: 'CONTACTS.FACEBOOK' }),
     },
     {
         key: 'community',
         image: (color) => <LinkedinLogo color={color} />,
-        href: 'https://linkedin.com',
+        href: () => Translate({ children: 'CONTACTS.LINKEDIN' }),
     },
     {
         key: 'partners',
         image: (color) => <TikTokLogo color={color} />,
-        href: 'https://tiktok.com',
+        href: () => Translate({ children: 'CONTACTS.TIKTOK' }),
     },
 ]

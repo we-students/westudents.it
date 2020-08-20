@@ -28,7 +28,7 @@ const HomePage = () => (
                 render: (fullpageProps) => <ADV fullpageProps={fullpageProps} />,
             },
             {
-                anchor: 'sconti_online',
+                anchor: 'sconti-online',
                 render: (fullpageProps) => <OnlineDiscounts fullpageProps={fullpageProps} />,
             },
             {
