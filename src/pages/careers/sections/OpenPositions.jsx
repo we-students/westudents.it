@@ -23,9 +23,8 @@ const OpenPosition = () => {
                             json
                         }
                         icon {
-                            fluid {
-                                srcSet
-                                srcSetWebp
+                            file {
+                                url
                             }
                         }
                     }
@@ -63,15 +62,13 @@ const OpenPosition = () => {
                         return desc
                     })()
 
-                    const imgProps =
-                        item.icon && item.icon.fluid
-                            ? {
-                                  srcSet: item.icon.fluid.srcSet,
-                                  srcSetWebp: item.icon.fluid.srcSetWebp,
-                              }
-                            : {
-                                  src: '/static/images/candidate.png',
-                              }
+                    const imgProps = item.icon
+                        ? {
+                              src: item.icon.file.url,
+                          }
+                        : {
+                              src: '/static/images/candidate.png',
+                          }
 
                     return (
                         <Link to={`/carriere/${item.slug}`}>
