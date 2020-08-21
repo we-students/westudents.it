@@ -9,7 +9,9 @@
 import React, { useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import ReactFullpage from '@fullpage/react-fullpage'
+import Modal from 'react-modal'
 
+import { getCookie, setCookie } from '../../utils/cookies'
 import Bubbles from '../bubbles/index'
 import SEO from '../seo'
 import Footer from '../footer'
@@ -26,11 +28,22 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
             }
         }
     `)
+
     const [activeTab, setActiveTab] = useState(0)
+    const [isCookieModalVisible, setCookieModalVisible] = useState(
+        getCookie('cookieCheck') !== 'true',
+    )
     const [headerStyle, setHeaderStyle] = useState(sections ? sections[0].headerStyle : undefined)
+
     const handleSectionChange = (origin, destination) => {
         setActiveTab(destination.index)
     }
+
+    const acceptCookies = () => {
+        setCookie('cookieCheck', true, 365)
+        setCookieModalVisible(false)
+    }
+
     return (
         <div className={className}>
             <SEO {...seo} />
@@ -85,6 +98,35 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
                     </>
                 )}
             </div>
+            <Modal
+                isOpen={isCookieModalVisible}
+                contentLabel="Cookie"
+                style={{
+                    content: {
+                        top: '50%',
+                        left: '50%',
+                        right: 'auto',
+                        bottom: 'auto',
+                        marginRight: '-50%',
+                        transform: 'translate(-50%, -50%)',
+                        width: '100%',
+                        maxWidth: 300,
+                        textAlign: 'center',
+                        padding: 30,
+                    },
+                }}
+            >
+                <p>
+                    Questo sito usa dei cookie di terze parti e dei cookie di profilazione. Nella
+                    cookie policy puoi trovare altre informazioni in merito e revocare il consenso
+                    alla loro installazione. Proseguendo nella navigazione, accetti che i cookie
+                    siano installati.
+                </p>
+
+                <button style={{ marginTop: 20 }} type="button" onClick={acceptCookies}>
+                    Ok, accetto
+                </button>
+            </Modal>
         </div>
     )
 }
