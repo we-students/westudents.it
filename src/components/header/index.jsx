@@ -110,9 +110,9 @@ const Header = (props) => {
                     </div>
                     <nav>
                         <ul className="navigation">
-                            {menuItems.map((item) => (
-                                <MobileMenuItem key={item.key} item={item} />
-                            ))}
+                            {menuItems.map((item) =>
+                                menuOpenend ? <MobileMenuItem key={item.key} item={item} /> : null,
+                            )}
                         </ul>
                     </nav>
                 </div>
