@@ -191,7 +191,8 @@
         },
         "COMMUNITY": {
             "TITLE": "Community",
-            "ITEM1": "Diventa un rappresentante"
+            "ITEM1": "Diventa un rappresentante",
+            "ITEM1LINK": "/community/#representant"
         },
         "JOIN_NEWSLETTER": {
             "TITLE": "Iscriviti alla nostra newsletter!",

@@ -209,7 +209,14 @@ const Footer = () => {
                                     <li className="list-item">Linkedin</li>
                                 </a>
                                 <li className="list-item">
-                                    <Translate>FOOTER.COMMUNITY.ITEM1</Translate>
+                                    <Link
+                                        to={Translate({
+                                            children: 'FOOTER.COMMUNITY.ITEM1LINK',
+                                            textOnly: true,
+                                        })}
+                                    >
+                                        <Translate>FOOTER.COMMUNITY.ITEM1</Translate>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
