@@ -24,6 +24,13 @@ const Header = (props) => {
             ? { backgroundColor: 'transparent', backdropFilter: 'none' }
             : null
 
+    const toggleMobileMenu = () => {
+        const { current: button } = menuButtonRef
+        setMenuOpened(!menuOpenend)
+        button.classList.toggle('opened')
+        button.setAttribute('aria-expanded', button.classList.contains('opened'))
+    }
+
     return (
         <header className="main-header" style={{ ...headerHeight, ...headerColor }}>
             <div className="container top">
@@ -66,15 +73,7 @@ const Header = (props) => {
                         type="button"
                         className="menu"
                         ref={menuButtonRef}
-                        onClick={() => {
-                            const { current: button } = menuButtonRef
-                            setMenuOpened(!menuOpenend)
-                            button.classList.toggle('opened')
-                            button.setAttribute(
-                                'aria-expanded',
-                                button.classList.contains('opened'),
-                            )
-                        }}
+                        onClick={toggleMobileMenu}
                         aria-label="Main Menu"
                     >
                         <svg width="100" height="100" viewBox="0 0 100 100">
@@ -111,7 +110,13 @@ const Header = (props) => {
                     <nav>
                         <ul className="navigation">
                             {menuItems.map((item) =>
-                                menuOpenend ? <MobileMenuItem key={item.key} item={item} /> : null,
+                                menuOpenend ? (
+                                    <MobileMenuItem
+                                        key={item.key}
+                                        item={item}
+                                        toggleMobileMenu={toggleMobileMenu}
+                                    />
+                                ) : null,
                             )}
                         </ul>
                     </nav>
