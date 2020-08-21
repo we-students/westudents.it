@@ -21,8 +21,6 @@ const Intro = () => {
             return 0.4
         })()
 
-        console.log('multiply', multiply)
-
         setMultiply(m)
     }, [])
 

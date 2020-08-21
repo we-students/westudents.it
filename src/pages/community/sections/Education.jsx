@@ -1,17 +1,20 @@
 import React from 'react'
-import Translate from '../../components/translation/translate'
-import './styles.scss'
+import Translate from '../../../components/translation/translate'
+import '../styles.scss'
 
-const image1 = require('../../images/manifest_4.png')
-const image2 = require('../../images/manifest_5.png')
+const image1 = require('../../../images/manifest_0.png')
+const image2 = require('../../../images/manifest_1.png')
 
-const Connection = ({ fullpageProps = {} }) => {
+const Education = ({ fullpageProps = {} }) => {
     const { isActive } = fullpageProps
     return (
         <div
             className="container d-flex manifest"
             style={{ height: '100vh', flexDirection: 'column' }}
         >
+            <h2 className="text-center title">
+                <Translate>COMMUNITY.MANIFEST.TITLE</Translate>
+            </h2>
             <div className="manifest-item d-flex" style={{ flex: 1 }}>
                 <div className="images-left">
                     <img
@@ -27,10 +30,10 @@ const Connection = ({ fullpageProps = {} }) => {
                 </div>
                 <div className="manifest-text">
                     <h1>
-                        <Translate>COMMUNITY.MANIFEST.CONNECTION</Translate>
+                        <Translate>COMMUNITY.MANIFEST.EDUCATION</Translate>
                     </h1>
                     <p className="section-description">
-                        <Translate>COMMUNITY.MANIFEST.DESCRIPTION3</Translate>
+                        <Translate>COMMUNITY.MANIFEST.DESCRIPTION1</Translate>
                     </p>
                 </div>
             </div>
@@ -38,4 +41,4 @@ const Connection = ({ fullpageProps = {} }) => {
     )
 }
 
-export default Connection
+export default Education

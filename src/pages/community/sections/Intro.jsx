@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
-import Translate from '../../components/translation/translate'
-import introVideo from '../../../static/videos/video.mp4'
 
-import CommunityIcon from '../../images/community_icon.svg'
-import ArrowDownIcon from '../../images/arrow_down.svg'
+import Translate from '../../../components/translation/translate'
+import introVideo from '../../../../static/videos/video.mp4'
 
-import './styles.scss'
+import CommunityIcon from '../../../images/community_icon.svg'
+import ArrowDownIcon from '../../../images/arrow_down.svg'
+
+import '../styles.scss'
 
 const Intro = ({ fullpageProps = {} }) => {
     const { fullpageApi, isActive } = fullpageProps

@@ -1,9 +1,9 @@
 import React from 'react'
-import Translate from '../../components/translation/translate'
+import Translate from '../../../components/translation/translate'
 
-const FacebookIcon = require('../../images/facebook_icon_white.svg')
-const InstagramIcon = require('../../images/insta_icon_white.svg')
-const LinkedinIcon = require('../../images/linkedin_icon_white.svg')
+const FacebookIcon = require('../../../images/facebook_icon_white.svg')
+const InstagramIcon = require('../../../images/insta_icon_white.svg')
+const LinkedinIcon = require('../../../images/linkedin_icon_white.svg')
 
 const Team = ({ fullpageProps = {} }) => {
     const { isActive } = fullpageProps

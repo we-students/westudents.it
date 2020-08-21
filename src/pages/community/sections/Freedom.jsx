@@ -1,9 +1,10 @@
 import React from 'react'
-import Translate from '../../components/translation/translate'
-import './styles.scss'
 
-const image1 = require('../../images/manifest_2.png')
-const image2 = require('../../images/manifest_3.png')
+import Translate from '../../../components/translation/translate'
+import '../styles.scss'
+
+const image1 = require('../../../images/manifest_2.png')
+const image2 = require('../../../images/manifest_3.png')
 
 const Freedom = ({ fullpageProps = {} }) => {
     const { isActive } = fullpageProps

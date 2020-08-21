@@ -1,10 +1,10 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react'
-import Translate from '../../components/translation/translate'
+import Translate from '../../../components/translation/translate'
 
-const ConncetedIcon = require('../../images/connected_icon.svg')
-const SustainableIcon = require('../../images/sustainable_icon.svg')
-const InnvoativeIcon = require('../../images/innovative_icon.svg')
+const ConncetedIcon = require('../../../images/connected_icon.svg')
+const SustainableIcon = require('../../../images/sustainable_icon.svg')
+const InnvoativeIcon = require('../../../images/innovative_icon.svg')
 
 const features = [
     {

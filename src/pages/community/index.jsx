@@ -1,14 +1,14 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react'
 import Layout from '../../components/layout'
-import Intro from './Intro'
-import Education from './Education'
-import Connection from './Connection'
-import Freedom from './Freedom'
-import Features from './Features'
-import Ambassador from './Ambassador'
-import Representant from './Representant'
-import Team from './Team'
+import Intro from './sections/Intro'
+import Education from './sections/Education'
+import Connection from './sections/Connection'
+import Freedom from './sections/Freedom'
+import Features from './sections/Features'
+import Ambassador from './sections/Ambassador'
+import Representant from './sections/Representant'
+import Team from './sections/Team'
 
 import './styles.scss'
 

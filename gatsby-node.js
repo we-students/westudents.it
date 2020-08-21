@@ -32,10 +32,6 @@ exports.createPages = async ({ actions, graphql }) => {
         path: `/`,
         component: require.resolve(`./src/pages/homepage/index.jsx`),
     })
-    createPage({
-        path: `/community`,
-        component: require.resolve(`./src/pages/community/index.jsx`),
-    })
 
     createPage({
         path: `/carriere`,
@@ -43,18 +39,8 @@ exports.createPages = async ({ actions, graphql }) => {
     })
 
     createPage({
-        path: `/team`,
-        component: require.resolve(`./src/pages/team/index.jsx`),
-    })
-
-    createPage({
         path: `/prodotti/westudents`,
         component: require.resolve(`./src/pages/products/westudents/index.jsx`),
-    })
-
-    createPage({
-        path: `/partners`,
-        component: require.resolve(`./src/pages/partners/index.jsx`),
     })
 
     createPage({
@@ -89,4 +75,17 @@ exports.createPages = async ({ actions, graphql }) => {
             },
         })
     })
+}
+
+exports.onCreatePage = async ({ page, actions: { deletePage } }) => {
+    if (
+        page.path.includes('sections') ||
+        page.path.includes('careers') ||
+        page.path.includes('contact') ||
+        page.path.includes('homepage') ||
+        page.path.includes('products') ||
+        page.path.includes('document')
+    ) {
+        deletePage(page)
+    }
 }
