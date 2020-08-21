@@ -1,23 +1,50 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react'
+/* eslint-disable no-use-before-define */
+import React from 'react'
 import { useFormik } from 'formik'
 import { Link } from 'gatsby'
 import * as Yup from 'yup'
+import Swal from 'sweetalert2'
 
 import Translate from '../translation/translate'
 import './styles.scss'
 
 const validationSchema = Yup.object({
     email: Yup.string().email('Non sembra essere una mail').required('La mail è obbligatoria'),
+    privacy: Yup.bool().oneOf([true], 'Devi accettare la privacy'),
 })
 
 const Footer = () => {
-    const [form, setForm] = useState({ email: '', privacy: false })
+    const handleSubmit = async (values) => {
+        const data = {
+            email: values.email,
+            listIds: [21],
+            updateEnabled: false,
+        }
 
-    const handleSubmit = () => {}
+        const resp = await fetch('https://api.sendinblue.com/v3/contacts', {
+            method: 'post',
+            body: JSON.stringify(data),
+            headers: {
+                'api-key': process.env.GATSBY_SIB_API_KEY,
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+        })
+
+        if (resp.status === 201) {
+            Swal.fire({
+                status: 'success',
+                title: 'Ok',
+                html: 'Ok!',
+            })
+
+            formik.resetForm()
+        }
+    }
 
     const formik = useFormik({
-        initialValues: { email: '' },
+        initialValues: { email: '', privacy: false },
         onSubmit: async (values) => handleSubmit(values),
         validationSchema,
     })
@@ -202,26 +229,42 @@ const Footer = () => {
                                     <input
                                         placeholder="Inserisci la tua mail.."
                                         className="custom-input"
+                                        value={formik.values.email}
+                                        onChange={formik.handleChange('email')}
+                                        onBlur={formik.handleBlur('email')}
                                     />
-                                    <button className="custom-button" type="submit">
+                                    <button
+                                        className="custom-button"
+                                        type="button"
+                                        onClick={() => formik.submitForm()}
+                                    >
                                         Invia
                                     </button>
                                 </div>
-                                <button
-                                    type="button"
-                                    className="checkbox-wrapper"
-                                    onClick={() => setForm({ ...form, privacy: !form.privacy })}
-                                >
-                                    <input
-                                        type="checkbox"
-                                        id="subscribe_id"
-                                        name="subscribe"
-                                        checked={form.privacy}
-                                    />
-                                    <label style={{ fontSize: '10px' }} htmlFor="subscribe_id">
-                                        <Translate>FOOTER.JOIN_NEWSLETTER.CONDITIONS</Translate>
-                                    </label>
-                                </button>
+
+                                <div>
+                                    {formik.errors.email ? (
+                                        <small>{formik.errors.email}</small>
+                                    ) : null}
+                                </div>
+
+                                <input
+                                    type="checkbox"
+                                    id="subscribe_id"
+                                    name="subscribe"
+                                    checked={formik.values.privacy}
+                                    onChange={formik.handleChange('privacy')}
+                                />
+
+                                <label style={{ fontSize: '10px' }} htmlFor="subscribe_id">
+                                    <Translate>FOOTER.JOIN_NEWSLETTER.CONDITIONS</Translate>
+                                </label>
+
+                                <div>
+                                    {formik.errors.privacy ? (
+                                        <small>{formik.errors.privacy}</small>
+                                    ) : null}
+                                </div>
                             </form>
                         </div>
                         <span className="horizontal-divider" />
