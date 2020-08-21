@@ -36,10 +36,10 @@ const WeGather = () => {
             <div className="blog-posts d-flex">
                 {data.map((item, index) => {
                     const imgProps =
-                        item.icon && item.icon.fluid
+                        item.heroImage && item.heroImage.fluid
                             ? {
-                                  srcSet: item.icon.fluid.srcSet,
-                                  srcSetWebp: item.icon.fluid.srcSetWebp,
+                                  srcSet: item.heroImage.fluid.srcSet,
+                                  srcSetWebp: item.heroImage.fluid.srcSetWebp,
                               }
                             : {
                                   src: '/static/images/placeholder.png',
