@@ -1,9 +1,10 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "westudents.it",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Corporate website built with Gatsby",
   "version": "0.0.2",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "WeStudents <tech@westudents.it>",
+  "lastUpdated": "2020-08-28",
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.1",
     "@contentful/rich-text-types": "^14.1.1",
@@ -60,9 +61,9 @@
     "standard-version": "^8.0.2"
   },
   "keywords": [
-    "gatsby"
+    "westudents", "gatsby"
   ],
-  "license": "0BSD",
+  "license": "GPTv3",
   "scripts": {
     "build": "node ./scripts/create-env.js && gatsby build",
     "develop": "gatsby develop",
@@ -78,10 +79,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/we-students/westudents.it"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/we-students/westudents.it/issues"
   },
   "config": {
     "commitizen": {

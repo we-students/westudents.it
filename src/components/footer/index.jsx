@@ -5,6 +5,7 @@ import { useFormik } from 'formik'
 import { Link } from 'gatsby'
 import * as Yup from 'yup'
 import Swal from 'sweetalert2'
+import packageInfo from '../../../package.json'
 
 import Translate from '../translation/translate'
 import './styles.scss'
@@ -42,6 +43,8 @@ const Footer = () => {
             formik.resetForm()
         }
     }
+
+    console.log('package', packageInfo)
 
     const formik = useFormik({
         initialValues: { email: '', privacy: false },
@@ -282,6 +285,11 @@ const Footer = () => {
                         <Translate>FOOTER.COMPANY.NAME</Translate>
                     </span>
                     ,<Translate>FOOTER.COMPANY.TYPE</Translate>
+                </p>
+                <p className="company-info">
+                    {`Versione: ${packageInfo.version}, ultimo aggiornamento: ${packageInfo.lastUpdated}`}
+                    <br />
+                    Creato con 💘 e 💻 a Torino, 🇮🇹
                 </p>
             </div>
         </div>
