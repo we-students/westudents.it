@@ -352,11 +352,15 @@
                 }
             }
         }
+        
+        a {
+            text-decoration: none;
+        }
 
         .orange-btn-mobile {
             @include orange-btn();
             order: 10;
-            margin: 0 auto;
+            margin: 1em auto;
             @media screen and ( min-width: 576px) {
                 display: none;
             }

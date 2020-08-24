@@ -47,9 +47,11 @@ const OnlineDiscounts = () => {
                         <p>{item.name}</p>
                     </div>
                 ))}
-                <button type="button" className="orange-btn">
-                    <Translate>PARTNERS.BUTTONS.BEGIN_NOW</Translate>
-                </button>
+                <a rel="noopener noreferrer" href="https://westudents.typeform.com/to/VmHzVH6q">
+                    <button type="button" className="orange-btn">
+                        <Translate>PARTNERS.BUTTONS.BEGIN_NOW</Translate>
+                    </button>
+                </a>
             </div>
             <div className="images online-discounts">
                 <img src={Image1} className="phone1" alt="WeStudents" />
@@ -57,9 +59,15 @@ const OnlineDiscounts = () => {
                 <img src={Image3} className="icons" alt="WeStudents" />
                 <img src={Image4} className="icons2" alt="WeStudents" />
             </div>
-            <button type="button" className="orange-btn-mobile">
-                <Translate>PARTNERS.BUTTONS.BEGIN_NOW</Translate>
-            </button>
+            <a
+                rel="noopener noreferrer"
+                className="d-flex"
+                href="https://westudents.typeform.com/to/VmHzVH6q"
+            >
+                <button type="button" className="orange-btn-mobile">
+                    <Translate>PARTNERS.BUTTONS.BEGIN_NOW</Translate>
+                </button>
+            </a>
         </div>
     )
 }

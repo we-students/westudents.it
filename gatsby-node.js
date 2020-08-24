@@ -48,6 +48,11 @@ exports.createPages = async ({ actions, graphql }) => {
         component: require.resolve(`./src/pages/contact/index.jsx`),
     })
 
+    createPage({
+        path: `/privacy-policy-app-intro`,
+        component: require.resolve(`./src/pages/privacy-intro/index.jsx`),
+    })
+
     data.careers.edges.forEach(({ node }) => {
         createPage({
             path: `/carriere/${node.slug}`,
@@ -88,4 +93,7 @@ exports.onCreatePage = async ({ page, actions: { deletePage } }) => {
     ) {
         deletePage(page)
     }
+/*     if (page.path.match(/404/)) {
+        return;
+    } */
 }

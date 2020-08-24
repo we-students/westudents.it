@@ -35,9 +35,14 @@ const Intro = ({ fullpageProps = {} }) => {
                         <h1 className="title">
                             <Translate>PARTNERS.INTRO.TITLE</Translate>
                         </h1>
-                        <button type="button" className="white-btn">
-                            <Translate>PARTNERS.BUTTONS.BEGIN_NOW</Translate>
-                        </button>
+                        <a
+                            rel="noopener noreferrer"
+                            href="https://westudents.typeform.com/to/VmHzVH6q"
+                        >
+                            <button type="button" className="white-btn">
+                                <Translate>PARTNERS.BUTTONS.BEGIN_NOW</Translate>
+                            </button>
+                        </a>
                         <button
                             type="button"
                             className="btn-nobg"

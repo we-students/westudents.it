@@ -12,7 +12,7 @@
         },
         "SPONSORS": {
             "TITLE": "Ci supportano in questa avventura",
-            "CTA": "Sei anche tu un'azienda e vuoi diventare un nostro partner?"
+            "CTA": "Sei un'azienda e vuoi diventare un nostro partner?"
         },
         "WESTUDENTS": {
             "TITLE": "WeStudents App",
@@ -166,7 +166,7 @@
             "ITEM1": "Privacy Policy del sito",
             "ITEM1LINK": "/privacy-policy-sito",
             "ITEM2": "Privacy Policy dell'app",
-            "ITEM2LINK": "/privacy-policy-app",
+            "ITEM2LINK": "/privacy-policy-app-intro",
             "ITEM3": "Termini e condizioni",
             "ITEM3LINK": "/termini-e-condizioni",
             "ITEM4": "Norme della Community",
@@ -191,12 +191,12 @@
         },
         "COMMUNITY": {
             "TITLE": "Community",
-            "ITEM1": "Diventa un rappresentante",
+            "ITEM1": "Diventa un rappresentante WeStudents",
             "ITEM1LINK": "/community/#representant"
         },
         "JOIN_NEWSLETTER": {
             "TITLE": "Iscriviti alla nostra newsletter!",
-            "SUBTITLE": "Puoi cancellarla in qualsiasi momento.",
+            "SUBTITLE": "Puoi disiscriverti in qualsiasi momento.",
             "CONDITIONS": "Accetto le condizioni generali per il ricevimento della newsletter"
         },
         "COMPANY": {
@@ -211,6 +211,19 @@
         "LINKEDIN": "https://www.linkedin.com/company/westudents/",
         "TIKTOK": "https://vm.tiktok.com/ZSfYs9F8/"
 
+    },
+    "PRIVACYAPP_INTRO": {
+        "TITLE": "Ci prendiamo cura dei dati dei nostri utenti",
+        "SUBTITLE": "Benvenuto nella Privacy Policy di Westudents. Ecco in forma concisa le informazioni che descrivono la modalità di trattamento dei tuoi dati.",
+        "ITEM1": "Il Titolare del trattamento dei dati è Westudents s.r.l., Strada Antica di Collegno 225, 10145 Torino, che puoi contattare all’indirizzo privacy@westudents.it. Il Responsabile della protezione dei dati (DPO) può essere contattato all’indirizzo dpo@westudents.it.",
+        "ITEM2": "Raccogliamo il tuo nome e cognome, l’indirizzo mail, la scuola e la classe che frequenti, i tuoi sondaggi ed eventi, i voti inseriti da te o sincronizzati con il registro elettronico.",
+        "ITEM3": "Usiamo le informazioni in nostro possesso per migliorare le funzioni e i contenuti della App, per mostrarti inserzioni, offerte e altri contenuti sponsorizzati.",
+        "ITEM4": "La tua scuola è il pubblico con il quale condividi i contenuti e con il quale comunichi usando la App. Forniamo agli inserzionisti report in forma anonima sulle visualizzazioni dei loro annunci e collaboriamo con partner di ricerca e del mondo accademico.",
+        "ITEM5": "Puoi creare dei sondaggi rivolti alla Community sui temi che preferisci, ma attenzione a rispettare le regole!",
+        "ITEM6": "I tuoi dati sono trattati per adempiere al contratto di fornitura della App, per rispettare i nostri obblighi legali e per il perseguimento del nostro legittimo interesse. In alcuni casi tratteremo i tuoi dati solo se ci avrai dato il consenso a farlo.",
+        "ITEM7": "Il GDPR ti riconosce tutti i diritti per esercitare il controllo sui dati che ci hai fornito.",
+        "ITEM8": "Memorizziamo i tuoi dati finché è necessario per fornire i nostri servizi, e non oltre 24 mesi da quando l’account viene eliminato.",
+        "BUTTON": "Scopri di più"
     },
     "STATISTICS": {
         "TITLE": "Vogliamo far parlare i numeri",
