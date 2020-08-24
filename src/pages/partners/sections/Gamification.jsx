@@ -21,17 +21,25 @@ const Gamification = () => {
                 <p>
                     <Translate>PARTNERS.GAMIFICATION.DESCRIPTION</Translate>
                 </p>
-                <button type="button" className="orange-btn">
-                    <Translate>PARTNERS.BUTTONS.BEGIN</Translate>
-                </button>
+                <a rel="noopener noreferrer" href="https://westudents.typeform.com/to/VmHzVH6q">
+                    <button type="button" className="orange-btn">
+                        <Translate>PARTNERS.BUTTONS.BEGIN</Translate>
+                    </button>
+                </a>
             </div>
             <div className="images gamification">
                 <img src={Image1} className="phone1" alt="WeStudents" />
                 <img src={Image2} className="icons" alt="WeStudents" />
             </div>
-            <button type="button" className="orange-btn-mobile">
-                <Translate>PARTNERS.BUTTONS.BEGIN_NOW</Translate>
-            </button>
+            <a
+                rel="noopener noreferrer"
+                className="d-flex"
+                href="https://westudents.typeform.com/to/VmHzVH6q"
+            >
+                <button type="button" className="orange-btn-mobile">
+                    <Translate>PARTNERS.BUTTONS.BEGIN_NOW</Translate>
+                </button>
+            </a>
         </div>
     )
 }

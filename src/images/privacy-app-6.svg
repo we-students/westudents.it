@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="81.55" height="83.719" viewBox="0 0 81.55 83.719">
+  <g id="_8" data-name="8" transform="translate(-13.54 -12.462)">
+    <path id="Tracciato_5630" data-name="Tracciato 5630" d="M79.33,47.65h4.8a8.2,8.2,0,0,1,8.2,8.2h0a.85.85,0,0,1-.85.85H72a.85.85,0,0,1-.85-.85h0a8.2,8.2,0,0,1,8.18-8.2Z" transform="translate(176.42 31.27) rotate(135)" fill="#ffb886"/>
+    <path id="Tracciato_5631" data-name="Tracciato 5631" d="M45.6,21.27H65.11a.85.85,0,0,1,.85.85h0a8.2,8.2,0,0,1-8.2,8.2H53a8.2,8.2,0,0,1-8.2-8.2h0a.85.85,0,0,1,.85-.85Z" transform="translate(112.73 4.89) rotate(135)" fill="#ffb886"/>
+    <path id="Tracciato_5632" data-name="Tracciato 5632" d="M82.88,87.44H93.09v6.74H52.07V87.44H76.21" fill="none" stroke="#3c3c3b" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    <path id="Tracciato_5633" data-name="Tracciato 5633" d="M55.31,87.12v-3A8.65,8.65,0,0,1,64,75.47H81.2a8.65,8.65,0,0,1,8.65,8.65v3" fill="none" stroke="#3c3c3b" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    <path id="Tracciato_5634" data-name="Tracciato 5634" d="M52.49,16.15l-6.78,6.78a5.81,5.81,0,0,0,0,8.22L70.33,55.77a5.8,5.8,0,0,0,8.21,0L85.33,49a5.8,5.8,0,0,0,0-8.21L83,38.47l-6.1-6.1-4.72-4.72-11.5-11.5a5.81,5.81,0,0,0-8.19,0Z" fill="none" stroke="#3c3c3b" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    <line id="Linea_105" data-name="Linea 105" y1="15" x2="15" transform="translate(48 18.44)" fill="none" stroke="#3c3c3b" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    <line id="Linea_106" data-name="Linea 106" x1="15" y2="15" transform="translate(68.03 38.47)" fill="none" stroke="#3c3c3b" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    <path id="Tracciato_5635" data-name="Tracciato 5635" d="M19.34,82.14l3.8,3.8L56.76,52.31" fill="none" stroke="#3c3c3b" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    <path id="Tracciato_5636" data-name="Tracciato 5636" d="M19.34,82.14l-3.8-3.8L54.22,39.66" fill="none" stroke="#3c3c3b" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    <line id="Linea_107" data-name="Linea 107" x2="7.6" y2="7.59" transform="translate(20.8 73.08)" fill="none" stroke="#3c3c3b" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+  </g>
+</svg>

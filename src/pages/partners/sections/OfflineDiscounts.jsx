@@ -53,13 +53,21 @@ const OfflineDiscounts = () => {
                         </div>
                     </div>
                 ))}
-                <button type="button" className="orange-btn">
+                <a rel="noopener noreferrer" href="https://westudents.typeform.com/to/VmHzVH6q">
+                    <button type="button" className="orange-btn">
+                        <Translate>PARTNERS.BUTTONS.BEGIN_NOW</Translate>
+                    </button>
+                </a>
+            </div>
+            <a
+                rel="noopener noreferrer"
+                className="d-flex"
+                href="https://westudents.typeform.com/to/VmHzVH6q"
+            >
+                <button type="button" className="orange-btn-mobile">
                     <Translate>PARTNERS.BUTTONS.BEGIN_NOW</Translate>
                 </button>
-            </div>
-            <button type="button" className="orange-btn-mobile">
-                <Translate>PARTNERS.BUTTONS.BEGIN_NOW</Translate>
-            </button>
+            </a>
         </div>
     )
 }
