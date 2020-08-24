@@ -502,6 +502,16 @@
     .career-submission {
         p.main-text {
             font-size: 2.4em;
+
+            > div {
+
+                small.error-info {
+                    font-size: 10px;
+                    left: -50px;
+                    max-width: min-content;
+                }
+
+            }
         } 
     }
 
