@@ -61,7 +61,8 @@
     "standard-version": "^8.0.2"
   },
   "keywords": [
-    "westudents", "gatsby"
+    "westudents",
+    "gatsby"
   ],
   "license": "GPTv3",
   "scripts": {
