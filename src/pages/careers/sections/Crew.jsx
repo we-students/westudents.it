@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Translate from '../../../components/translation/translate'
 import CrewImage from '../../../images/crew.png'
 
 const Crew = ({ fullpageProps = {} }) => {
@@ -8,19 +9,21 @@ const Crew = ({ fullpageProps = {} }) => {
         <div className="crew container">
             <div className="crew-text">
                 <h2>
-                    Join the <span>crew</span>
+                    <Translate>CARRIERS.INTRO.JOIN</Translate>{' '}
+                    <span>
+                        <Translate>CARRIERS.INTRO.CREW</Translate>
+                    </span>
                 </h2>
 
                 <p>
-                    Ah, ciao! Piacere di conoscerti.
+                    <Translate>CARRIERS.INTRO.DESCRIPTION1</Translate>
                     <br />
                     <br />
-                    Grazie per aver cliccato su questa sezione. Vuol dire che ti interessa davvero
-                    diventare uno dei brutti ceffi del team WeStudents.
+                    <Translate>CARRIERS.INTRO.DESCRIPTION2</Translate>
                 </p>
 
                 <button type="button" onClick={() => fullpageApi.moveSectionDown()}>
-                    Scopri le posizione aperte
+                    <Translate>CARRIERS.BUTTONS.DISCOVER_OPEN_POSITIONS</Translate>
                 </button>
             </div>
             <div>

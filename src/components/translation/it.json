@@ -126,6 +126,25 @@
 			"WEGATHER": "Vai su WeGather.it"
         }
     },
+    "CARRIERS": {
+        "INTRO": {
+            "JOIN": "Join the ",
+            "CREW": "crew",
+            "DESCRIPTION1": "Ah, ciao! Piacere di conoscerti.",
+            "DESCRIPTION2": "Grazie per aver cliccato su questa sezione. Vuol dire che ti interessa davvero diventare uno dei brutti ceffi del team WeStudents."
+        },
+        "OPEN_POSITIONS": {
+            "TITLE": "Tutte le posizioni aperte",
+            "SUBTITLE": "Non hai trovato quello che cercavi? Scopri tutte le posizioni aperte in Westudents o inviaci la tua candidatura spontanea!"
+        },
+        "DESIGN_TEAM": "Design team",
+        "BUTTONS": {
+            "DISCOVER_OPEN_POSITIONS": "Scopri le posizioni aperte",
+            "BECOME_DEVELOPER": "Diventa un developer",
+            "BECOME_DESIGNER": "Diventa un designer"
+
+        }
+    },
     "TEAM": {
         "INTRO": {
             "MEET": "Meet the",

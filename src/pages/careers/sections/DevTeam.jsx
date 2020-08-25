@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Translate from '../../../components/translation/translate'
 import DevShitImageOne from '../../../images/dev-team-components/1.png'
 import DevShitImageTwo from '../../../images/dev-team-components/2.png'
 import DevShitImageThree from '../../../images/dev-team-components/3.png'
@@ -29,7 +30,7 @@ const OpenPosition = ({ fullpageProps = {} }) => {
                 </div>
                 <div>
                     <button type="button" onClick={handleCtaClick}>
-                        Diventa un developer
+                        <Translate>CARRIERS.BUTTONS.BECOME_DEVELOPER</Translate>
                     </button>
                 </div>
             </div>

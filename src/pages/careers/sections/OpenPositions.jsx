@@ -3,6 +3,7 @@ import React from 'react'
 import { useStaticQuery, Link, graphql } from 'gatsby'
 
 import GridList from '../../../components/grid-list'
+import Translate from '../../../components/translation/translate'
 
 const OpenPosition = () => {
     const openPositions = useStaticQuery(graphql`
@@ -35,8 +36,12 @@ const OpenPosition = () => {
 
     return (
         <div className="open-positions container">
-            <h3>Tutte le posizioni aperte</h3>
-            <p>Non sei un developer o un designer? Scopri le altre posizioni aperte!</p>
+            <h3>
+                <Translate>CARRIERS.OPEN_POSITIONS.TITLE</Translate>
+            </h3>
+            <p>
+                <Translate>CARRIERS.OPEN_POSITIONS.SUBTITLE</Translate>
+            </p>
 
             <GridList
                 items={openPositions}

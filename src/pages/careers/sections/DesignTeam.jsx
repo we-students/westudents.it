@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Translate from '../../../components/translation/translate'
 import DesignShitImageOne from '../../../images/design-team-components/1.png'
 import DesignShitImageTwo from '../../../images/design-team-components/2.png'
 import DesignShitImageThree from '../../../images/design-team-components/3.png'
@@ -17,7 +18,7 @@ const OpenPosition = ({ fullpageProps = {} }) => {
             <div className="container">
                 <div>
                     <button type="button" onClick={handleCtaClick}>
-                        Diventa un designer
+                        <Translate>CARRIERS.BUTTONS.BECOME_DESIGNER</Translate>
                     </button>
                 </div>
                 <div className="design-things">
@@ -27,7 +28,9 @@ const OpenPosition = ({ fullpageProps = {} }) => {
                     <img alt="Design thing" src={DesignShitImageFour} />
                     <img alt="Design thing" src={DesignShitImageFive} />
                     <img alt="Design thing" src={DesignShitImageSix} />
-                    <h3>Design team</h3>
+                    <h3>
+                        <Translate>CARRIERS.DESIGN_TEAM</Translate>
+                    </h3>
                 </div>
             </div>
         </div>
