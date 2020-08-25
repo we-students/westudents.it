@@ -93,7 +93,7 @@ exports.onCreatePage = async ({ page, actions: { deletePage } }) => {
     ) {
         deletePage(page)
     }
-/*     if (page.path.match(/404/)) {
+    /*     if (page.path.match(/404/)) {
         return;
     } */
 }

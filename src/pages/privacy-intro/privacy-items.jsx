@@ -44,3 +44,5 @@ export const itemList = [
         description: <Translate>PRIVACYAPP_INTRO.ITEM8</Translate>,
     },
 ]
+
+export default () => null

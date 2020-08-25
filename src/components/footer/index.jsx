@@ -44,8 +44,6 @@ const Footer = () => {
         }
     }
 
-    console.log('package', packageInfo)
-
     const formik = useFormik({
         initialValues: { email: '', privacy: false },
         onSubmit: async (values) => handleSubmit(values),
