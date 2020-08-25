@@ -254,7 +254,7 @@
                 .icons2 {
                     position: absolute;
                     zoom: 0.7;
-                    left: 48%;
+                    left: 28%;
                     top: -14%;
                     z-index: -1;
                     transition: 0.5s;
@@ -268,11 +268,11 @@
                         }
                         .icons {
                             transform-origin: left;
-                            transform: translate(200px, -350px) rotate(30deg) scale(0.5);
+                            transform: translate(220px, -360px) rotate(30deg) scale(0.5);
                             
                         }
                         .icons2 {
-                            transform: translateY(0);
+                            transform: translateY(-18px);
                             opacity: 1;
                         }
                     }
@@ -295,7 +295,8 @@
                 .icons {
                     position: absolute;
                     zoom: 0.7;
-                    left: 20%;
+                    left: 18%;
+                    top: -10px;
                     z-index: 5;
                     transition: 0.5s;
                     transform-origin: left;
@@ -317,7 +318,7 @@
                         }
                         .icons {
                             transform-origin: left;
-                            transform: translate(190px, -390px) rotate(30deg) scale(0.5);
+                            transform: translate(195px, -380px) rotate(30deg) scale(0.5);
                             
                         }
                         .icons2 {
