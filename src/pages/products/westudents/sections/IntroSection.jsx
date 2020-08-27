@@ -44,12 +44,20 @@ const Intro = () => {
                         <Translate>WESTUDENTS.DESCRIPTION</Translate>
                     </p>
                     <div className="stores">
-                        <button type="button">
-                            <img src={AppStoreBadge} alt="appstore" />
-                        </button>
-                        <button type="button">
-                            <img src={PlaystoreBadge} alt="playstore" />
-                        </button>
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://apple.co/2D0bscj"
+                        >
+                            <button type="button">
+                                <img src={AppStoreBadge} alt="appstore" />
+                            </button>
+                        </a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://bit.ly/3hsQ6D2">
+                            <button type="button">
+                                <img src={PlaystoreBadge} alt="playstore" />
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>

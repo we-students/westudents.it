@@ -16,7 +16,13 @@ const Profile = (props) => {
                         alt="WeStudents"
                         className="main-image"
                     />
-                ) : null}
+                ) : (
+                    <img
+                        srcSet={require('../../../images/profile-placeholder.png')}
+                        alt="WeStudents"
+                        className="main-image"
+                    />
+                )}
                 {activeImage ? (
                     <img
                         srcSet={activeImage.fluid.srcSet}
