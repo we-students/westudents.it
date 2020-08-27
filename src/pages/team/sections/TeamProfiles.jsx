@@ -9,18 +9,22 @@ const Profile = (props) => {
     return (
         <div className="profile-item">
             <div>
-                <img
-                    srcSet={image.fluid.srcSet}
-                    srcSetWebp={image.fluid.srcSetWebp}
-                    alt="WeStudents"
-                    className="main-image"
-                />
-                <img
-                    srcSet={activeImage.fluid.srcSet}
-                    srcSetWebp={activeImage.fluid.srcSetWebp}
-                    alt="WeStudents"
-                    className="image active-image"
-                />
+                {image ? (
+                    <img
+                        srcSet={image.fluid.srcSet}
+                        srcSetWebp={image.fluid.srcSetWebp}
+                        alt="WeStudents"
+                        className="main-image"
+                    />
+                ) : null}
+                {activeImage ? (
+                    <img
+                        srcSet={activeImage.fluid.srcSet}
+                        srcSetWebp={activeImage.fluid.srcSetWebp}
+                        alt="WeStudents"
+                        className="image active-image"
+                    />
+                ) : null}
                 <img
                     src={require('../../../images/profile_fade.png')}
                     className="image profile-fade"
