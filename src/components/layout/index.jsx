@@ -1,3 +1,5 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable react/jsx-props-no-spreading */
 /**
  * Layout component that queries for data
@@ -10,6 +12,7 @@ import React, { useState, useCallback } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import ReactFullpage from '@fullpage/react-fullpage'
 import Modal from 'react-modal'
+import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
 import { getCookie, setCookie } from '../../utils/cookies'
 import Bubbles from '../bubbles/index'
@@ -46,22 +49,41 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
         setCookieModalVisible(false)
     }
 
+    useScrollPosition(() => {
+        if (windowWidth < 992) {
+            const sectionsElems = document.getElementsByClassName('section')
+
+            let targetIndex = 0
+            let targetOffset = sectionsElems[0].getBoundingClientRect().y
+
+            for (let i = 0; i < sectionsElems.length; i++) {
+                const offset = sectionsElems[i].getBoundingClientRect().y
+
+                if (offset < 0) {
+                    if (offset > targetOffset) {
+                        targetOffset = offset
+                        targetIndex = i
+                    }
+                }
+            }
+
+            setActiveTab(targetIndex)
+            setHeaderStyle(sections[targetIndex].headerStyle)
+        }
+    })
+
     const renderSectionContent = useCallback(() => {
         if (windowWidth < 992) {
             return (
                 <>
                     {sections.map((section, index) => {
                         return (
-                            <>
-                                <div className="section">
-                                    {section.render({
-                                        isActive: activeTab === index,
-                                    })}
-                                    {showFooter && index === sections.length - 1 ? (
-                                        <Footer />
-                                    ) : null}
-                                </div>
-                            </>
+                            <div className="section">
+                                {section.render({
+                                    isActive: activeTab === index,
+                                })}
+                                {showFooter && index === sections.length - 1 ? <Footer /> : null}
+                            </div>
                         )
                     })}
                 </>
