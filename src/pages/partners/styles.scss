@@ -607,3 +607,18 @@
         }
     }
 }
+
+
+@media only screen and (max-width: 991px) { 
+
+    .section {
+        padding-bottom: 30px;
+    }
+
+    .intro-wrapper {
+        > * {
+            padding-bottom: 30px;
+        }
+    }
+
+}

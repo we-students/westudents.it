@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import Translate from '../../../components/translation/translate'
 
 const FacebookIcon = require('../../../images/facebook_icon_white.svg')
@@ -6,7 +7,26 @@ const InstagramIcon = require('../../../images/insta_icon_white.svg')
 const LinkedinIcon = require('../../../images/linkedin_icon_white.svg')
 
 const Team = ({ fullpageProps = {} }) => {
-    const { isActive } = fullpageProps
+    const [isActive, setIsActive] = useState(false)
+    const { width: windowWidth, height: windowHeight } =
+        typeof window !== 'undefined' ? window.screen : {}
+
+    useEffect(() => {
+        if (fullpageProps.fullpageApi) {
+            setIsActive(
+                fullpageProps.fullpageApi.getActiveSection().index === fullpageProps.sectionIndex,
+            )
+        }
+    }, [fullpageProps])
+
+    useScrollPosition(() => {
+        if (windowWidth < 992 && fullpageProps) {
+            const sectionsElems = document.getElementsByClassName('section')
+            const { height, y } = sectionsElems[fullpageProps.sectionIndex].getBoundingClientRect()
+            setIsActive(y <= windowHeight - 200 && y > -height)
+        }
+    })
+
     return (
         <div className={`d-flex team-wrapper ${isActive ? 'active' : null}`}>
             <div className="bg-wrapper d-flex">

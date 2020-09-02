@@ -21,6 +21,10 @@ const OpenPosition = ({ fullpageProps = {} }) => {
             setIsActive(
                 fullpageProps.fullpageApi.getActiveSection().index === fullpageProps.sectionIndex,
             )
+        } else {
+            const sectionsElems = document.getElementsByClassName('section')
+            const { height, y } = sectionsElems[fullpageProps.sectionIndex].getBoundingClientRect()
+            setIsActive(y <= 0 && y > -height)
         }
     }, [fullpageProps])
 
