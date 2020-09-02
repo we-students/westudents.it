@@ -16,6 +16,15 @@ const Intro = ({ fullpageProps = {} }) => {
         video.current[isActive ? 'play' : 'pause']()
     }, [isActive])
 
+    const handleScrollTo = () => {
+        if (fullpageApi) {
+            fullpageApi.moveTo(2)
+        } else {
+            const top = document.getElementsByClassName('section')[1].offsetTop
+            window.scrollTo({ top, behavior: 'smooth' })
+        }
+    }
+
     return (
         <div className="video-intro-wrapper">
             <video className="videoTag" autoPlay loop muted ref={video}>
@@ -36,7 +45,7 @@ const Intro = ({ fullpageProps = {} }) => {
                     </p>
                 </div>
                 <div className="justify-center" style={{ flex: 1, alignItems: 'flex-end' }}>
-                    <button type="button" onClick={() => fullpageApi.moveTo(2)}>
+                    <button type="button" onClick={handleScrollTo}>
                         <p className="text-center" style={{ marginBottom: '1em' }}>
                             <Translate>COMMUNITY.INTRO.DISCOVER</Translate>
                         </p>

@@ -5,6 +5,16 @@ import CrewImage from '../../../images/crew.png'
 
 const Crew = ({ fullpageProps = {} }) => {
     const { fullpageApi } = fullpageProps
+
+    const handleCtaClick = () => {
+        if (fullpageApi) {
+            fullpageApi.moveTo(2)
+        } else {
+            const top = document.getElementsByClassName('section')[1].offsetTop
+            window.scrollTo({ top, behavior: 'smooth' })
+        }
+    }
+
     return (
         <div className="crew container">
             <div className="crew-text">
@@ -22,7 +32,7 @@ const Crew = ({ fullpageProps = {} }) => {
                     <Translate>CARRIERS.INTRO.DESCRIPTION2</Translate>
                 </p>
 
-                <button type="button" onClick={() => fullpageApi.moveSectionDown()}>
+                <button type="button" onClick={handleCtaClick}>
                     <Translate>CARRIERS.BUTTONS.DISCOVER_OPEN_POSITIONS</Translate>
                 </button>
             </div>

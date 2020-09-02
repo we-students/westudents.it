@@ -23,6 +23,16 @@ const stats = [
 
 const Intro = ({ fullpageProps = {} }) => {
     const { fullpageApi } = fullpageProps
+
+    const handleScrollTo = () => {
+        if (fullpageApi) {
+            fullpageApi.moveTo(2)
+        } else {
+            const top = document.getElementsByClassName('section')[1].offsetTop
+            window.scrollTo({ top, behavior: 'smooth' })
+        }
+    }
+
     return (
         <div className="intro-wrapper">
             <div className="color-wrapper">
@@ -43,11 +53,7 @@ const Intro = ({ fullpageProps = {} }) => {
                                 <Translate>PARTNERS.BUTTONS.BEGIN_NOW</Translate>
                             </button>
                         </a>
-                        <button
-                            type="button"
-                            className="btn-nobg"
-                            onClick={() => fullpageApi.moveTo(2)}
-                        >
+                        <button type="button" className="btn-nobg" onClick={handleScrollTo}>
                             <div className="arrow-icon" />
                             <Translate>PARTNERS.BUTTONS.DISCOVER</Translate>
                         </button>
@@ -64,7 +70,7 @@ const Intro = ({ fullpageProps = {} }) => {
                         type="button"
                         className="btn-nobg-mobile"
                         style={{ flex: 1 }}
-                        onClick={() => fullpageApi.moveTo(2)}
+                        onClick={handleScrollTo}
                     >
                         <div className="arrow-icon" />
                         <Translate>PARTNERS.BUTTONS.DISCOVER</Translate>

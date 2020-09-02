@@ -24,6 +24,15 @@ const Intro = ({ fullpageProps = {} }) => {
         setMultiply(m)
     }, [])
 
+    const handleScrollTo = () => {
+        if (fullpageApi) {
+            fullpageApi.moveTo(2)
+        } else {
+            const top = document.getElementsByClassName('section')[1].offsetTop
+            window.scrollTo({ top, behavior: 'smooth' })
+        }
+    }
+
     return (
         <div className="intro container">
             <div className="intro-text">
@@ -35,7 +44,7 @@ const Intro = ({ fullpageProps = {} }) => {
                     {introTitle[1]}
                 </h2>
 
-                <button type="button" onClick={() => fullpageApi.moveTo(2)}>
+                <button type="button" onClick={handleScrollTo}>
                     <Translate>HOMEPAGE.BUTTONS.INTRO</Translate>
                 </button>
             </div>

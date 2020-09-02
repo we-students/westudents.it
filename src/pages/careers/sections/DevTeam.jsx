@@ -13,7 +13,12 @@ import DevShitImageSeven from '../../../images/dev-team-components/7.png'
 const OpenPosition = ({ fullpageProps = {} }) => {
     const handleCtaClick = () => {
         const { fullpageApi } = fullpageProps
-        fullpageApi.moveTo(4)
+        if (fullpageApi) {
+            fullpageApi.moveTo(4)
+        } else {
+            const top = document.getElementsByClassName('section')[3].offsetTop
+            window.scrollTo({ top, behavior: 'smooth' })
+        }
     }
 
     const [isActive, setIsActive] = useState(false)
