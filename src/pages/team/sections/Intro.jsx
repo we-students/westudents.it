@@ -6,7 +6,9 @@ import Translate from '../../../components/translation/translate'
 import '../styles.scss'
 
 const Intro = () => {
-    const [fullScreen, setFullscreen] = useState(true)
+    const { width: windowWidth } = typeof window !== 'undefined' ? window.screen : {}
+
+    const [fullScreen, setFullscreen] = useState(windowWidth > 991)
 
     useEffect(() => {
         setTimeout(() => {
