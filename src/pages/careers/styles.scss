@@ -178,7 +178,7 @@
         .open-position-item {
             background-color: white;
             box-shadow: 0 4px 18px rgba(0,0,0,0.06), 0 10px 10px rgba(0,0,0,0.06);
-            margin: 50px;
+            margin: 30px auto;
             overflow: hidden;
             width: 230px;
             height: 230px;
@@ -437,6 +437,8 @@
         }
 
         .dev-team {
+            padding: 100px 0;
+
             .container {
                 flex-direction: column;
                 padding: 0;
@@ -452,6 +454,8 @@
         }
 
         .design-team {
+            padding: 100px 0;
+
             .container {
                 flex-direction: column-reverse;
                 padding: 0;

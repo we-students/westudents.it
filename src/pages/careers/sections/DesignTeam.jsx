@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Translate from '../../../components/translation/translate'
 import DesignShitImageOne from '../../../images/design-team-components/1.png'
@@ -13,8 +13,19 @@ const OpenPosition = ({ fullpageProps = {} }) => {
         const { fullpageApi } = fullpageProps
         fullpageApi.moveTo(4)
     }
+
+    const [isActive, setIsActive] = useState(false)
+
+    useEffect(() => {
+        if (fullpageProps.fullpageApi) {
+            setIsActive(
+                fullpageProps.fullpageApi.getActiveSection().index === fullpageProps.sectionIndex,
+            )
+        }
+    }, [fullpageProps])
+
     return (
-        <div className={`design-team ${fullpageProps.isActive ? 'active' : ''}`}>
+        <div className={`design-team ${isActive ? 'active' : ''}`}>
             <div className="container">
                 <div>
                     <button type="button" onClick={handleCtaClick}>

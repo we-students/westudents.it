@@ -33,14 +33,12 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
     `)
 
     const { width: windowWidth } = typeof window !== 'undefined' ? window.screen : {}
-    const [activeTab, setActiveTab] = useState(0)
     const [isCookieModalVisible, setCookieModalVisible] = useState(
         getCookie('cookieCheck') !== 'true',
     )
     const [headerStyle, setHeaderStyle] = useState(sections ? sections[0].headerStyle : undefined)
 
     const handleSectionChange = (origin, destination) => {
-        setActiveTab(destination.index)
         setHeaderStyle(sections[destination.index].headerStyle)
     }
 
@@ -50,7 +48,7 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
     }
 
     useScrollPosition(() => {
-        if (windowWidth < 992) {
+        if (windowWidth < 992 && sections) {
             const sectionsElems = document.getElementsByClassName('section')
 
             let targetIndex = 0
@@ -67,7 +65,6 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
                 }
             }
 
-            setActiveTab(targetIndex)
             setHeaderStyle(sections[targetIndex].headerStyle)
         }
     })
@@ -80,7 +77,7 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
                         return (
                             <div className="section">
                                 {section.render({
-                                    isActive: activeTab === index,
+                                    sectionIndex: index,
                                 })}
                                 {showFooter && index === sections.length - 1 ? <Footer /> : null}
                             </div>
@@ -118,7 +115,7 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
                                         <div className="section">
                                             {section.render({
                                                 ...fullpageProps,
-                                                isActive: activeTab === index,
+                                                sectionIndex: index,
                                             })}
                                             {showFooter && index === sections.length - 1 ? (
                                                 <Footer />

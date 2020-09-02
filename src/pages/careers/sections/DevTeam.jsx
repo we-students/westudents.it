@@ -1,4 +1,5 @@
-import React from 'react'
+/* eslint-disable no-plusplus */
+import React, { useState, useEffect } from 'react'
 
 import Translate from '../../../components/translation/translate'
 import DevShitImageOne from '../../../images/dev-team-components/1.png'
@@ -15,8 +16,26 @@ const OpenPosition = ({ fullpageProps = {} }) => {
         fullpageApi.moveTo(4)
     }
 
+    const [isActive, setIsActive] = useState(false)
+
+    useEffect(() => {
+        console.log(fullpageProps)
+        if (fullpageProps.fullpageApi) {
+            setIsActive(
+                fullpageProps.fullpageApi.getActiveSection().index === fullpageProps.sectionIndex,
+            )
+        } else {
+            const sectionsElems = document.getElementsByClassName('section')
+
+            const { height, y } = sectionsElems[fullpageProps.sectionIndex].getBoundingClientRect()
+            setIsActive(y <= 0 && y > -height)
+        }
+    }, [fullpageProps])
+
+    useEffect(() => {})
+
     return (
-        <div className={`dev-team ${fullpageProps.isActive ? 'active' : ''}`}>
+        <div className={`dev-team ${isActive ? 'active' : ''}`}>
             <div className="container">
                 <div className="dev-things">
                     <img alt="Dev thing" src={DevShitImageOne} />
