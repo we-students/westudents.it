@@ -94,8 +94,9 @@ button {
   text-align: center;
 }
 
-.fullpageSpacer {
-  
+.section {
+  max-width: 100%;
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 767px) {

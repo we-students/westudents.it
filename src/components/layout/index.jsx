@@ -6,7 +6,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import ReactFullpage from '@fullpage/react-fullpage'
 import Modal from 'react-modal'
@@ -29,6 +29,7 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
         }
     `)
 
+    const { width: windowWidth } = typeof window !== 'undefined' ? window.screen : {}
     const [activeTab, setActiveTab] = useState(0)
     const [isCookieModalVisible, setCookieModalVisible] = useState(
         getCookie('cookieCheck') !== 'true',
@@ -37,6 +38,7 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
 
     const handleSectionChange = (origin, destination) => {
         setActiveTab(destination.index)
+        setHeaderStyle(sections[destination.index].headerStyle)
     }
 
     const acceptCookies = () => {
@@ -44,53 +46,79 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
         setCookieModalVisible(false)
     }
 
+    const renderSectionContent = useCallback(() => {
+        if (windowWidth < 992) {
+            return (
+                <>
+                    {sections.map((section, index) => {
+                        return (
+                            <>
+                                <div className="section">
+                                    {section.render({
+                                        isActive: activeTab === index,
+                                    })}
+                                    {showFooter && index === sections.length - 1 ? (
+                                        <Footer />
+                                    ) : null}
+                                </div>
+                            </>
+                        )
+                    })}
+                </>
+            )
+        }
+
+        return (
+            <ReactFullpage
+                anchors={sections.map((section) => section.anchor)}
+                navigation
+                scrollingSpeed={1000} /* Options here */
+                fitToSection={false}
+                autoScrolling
+                lockAnchors={false}
+                scrollHorizontally
+                scrollOverflowOptions={{ scrollbars: false }}
+                scrollOverflow
+                scrollBar={false}
+                fitToSectionDelay={1000}
+                onLeave={(origin, destination, direction) =>
+                    handleSectionChange(origin, destination, direction)
+                }
+                render={(fullpageProps) => {
+                    return (
+                        <>
+                            {showBubbles ? (
+                                <Bubbles sectionCount={fullpageProps.state.sectionCount} />
+                            ) : null}
+                            {sections.map((section, index) => {
+                                return (
+                                    <>
+                                        <div className="section">
+                                            {section.render({
+                                                ...fullpageProps,
+                                                isActive: activeTab === index,
+                                            })}
+                                            {showFooter && index === sections.length - 1 ? (
+                                                <Footer />
+                                            ) : null}
+                                        </div>
+                                    </>
+                                )
+                            })}
+                        </>
+                    )
+                }}
+            />
+        )
+    }, [windowWidth])
+
     return (
         <div className={className}>
             <SEO {...seo} />
             <Header siteTitle={data.site.siteMetadata.title} type={headerStyle} />
             <div style={{ margin: `0 auto` }}>
                 {sections && Array.isArray(sections) ? (
-                    <ReactFullpage
-                        anchors={sections.map((section) => section.anchor)}
-                        navigation
-                        scrollingSpeed={1000} /* Options here */
-                        autoScrolling
-                        scrollHorizontally
-                        scrollOverflowOptions={{ scrollbars: false }}
-                        scrollOverflow
-                        scrollBar={false}
-                        fitToSectionDelay={1000}
-                        onLeave={(origin, destination, direction) =>
-                            handleSectionChange(origin, destination, direction)
-                        }
-                        render={(fullpageProps) => {
-                            return (
-                                <>
-                                    {showBubbles ? (
-                                        <Bubbles sectionCount={fullpageProps.state.sectionCount} />
-                                    ) : null}
-                                    {sections.map((section, index) => {
-                                        if (activeTab === index) {
-                                            setHeaderStyle(section.headerStyle)
-                                        }
-                                        return (
-                                            <>
-                                                <div className="section">
-                                                    {section.render({
-                                                        ...fullpageProps,
-                                                        isActive: activeTab === index,
-                                                    })}
-                                                    {showFooter && index === sections.length - 1 ? (
-                                                        <Footer />
-                                                    ) : null}
-                                                </div>
-                                            </>
-                                        )
-                                    })}
-                                </>
-                            )
-                        }}
-                    />
+                    renderSectionContent()
                 ) : (
                     <>
                         {children}
