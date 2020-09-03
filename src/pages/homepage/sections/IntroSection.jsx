@@ -48,12 +48,14 @@ const Intro = ({ fullpageProps = {} }) => {
                     <Translate>HOMEPAGE.BUTTONS.INTRO</Translate>
                 </button>
             </div>
-            <div>
-                <MainLottieAnimation
-                    width={(size.width > 1400 ? 1400 : size.width) * multiply}
-                    height={(size.width > 1400 ? 1400 : size.width) * multiply}
-                />
-            </div>
+            {size.width > 576 ? (
+                <div>
+                    <MainLottieAnimation
+                        width={(size.width > 1400 ? 1400 : size.width) * multiply}
+                        height={(size.width > 1400 ? 1400 : size.width) * multiply}
+                    />
+                </div>
+            ) : null}
         </div>
     )
 }
