@@ -37,8 +37,6 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
         getCookie('cookieCheck') !== 'true',
     )
     const [headerStyle, setHeaderStyle] = useState(sections ? sections[0].headerStyle : undefined)
-    const size = useWindowSize()
-
     const handleSectionChange = (origin, destination) => {
         setHeaderStyle(sections[destination.index].headerStyle)
     }
@@ -138,51 +136,7 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
             <Header siteTitle={data.site.siteMetadata.title} type={headerStyle} />
             <div style={{ margin: `0 auto` }}>
                 {sections && Array.isArray(sections) ? (
-<<<<<<< Updated upstream
                     renderSectionContent()
-=======
-                    <ReactFullpage
-                        anchors={sections.map((section) => section.anchor)}
-                        navigation
-                        scrollingSpeed={1000} /* Options here */
-                        autoScrolling={size.width > 576}
-                        scrollHorizontally
-                        scrollOverflowOptions={{ scrollbars: false }}
-                        scrollOverflow
-                        scrollBar={false}
-                        fitToSectionDelay={1000}
-                        onLeave={(origin, destination, direction) =>
-                            handleSectionChange(origin, destination, direction)
-                        }
-                        render={(fullpageProps) => {
-                            return (
-                                <>
-                                    {showBubbles ? (
-                                        <Bubbles sectionCount={fullpageProps.state.sectionCount} />
-                                    ) : null}
-                                    {sections.map((section, index) => {
-                                        if (activeTab === index) {
-                                            setHeaderStyle(section.headerStyle)
-                                        }
-                                        return (
-                                            <>
-                                                <div className="section">
-                                                    {section.render({
-                                                        ...fullpageProps,
-                                                        isActive: activeTab === index,
-                                                    })}
-                                                    {showFooter && index === sections.length - 1 ? (
-                                                        <Footer />
-                                                    ) : null}
-                                                </div>
-                                            </>
-                                        )
-                                    })}
-                                </>
-                            )
-                        }}
-                    />
->>>>>>> Stashed changes
                 ) : (
                     <>
                         {children}
