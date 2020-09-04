@@ -1,24 +1,8 @@
 .careers {
 
-    h2 {
-        font-size: 4em;
-        font-weight: 300;
-
-        span {
-            font-size: 2em;
-            display: block;
-            margin: 0;
-            padding: 0;
-            line-height: 0.5em;
-            font-weight: 700;
-        }
-    }
-
-
     .crew {
         display: flex;
         align-items: center;
-
         & > div {
             flex: 1;
 
@@ -27,13 +11,31 @@
             }
 
             button {
-                margin-top: 40px;
+                margin-top: 20px;
+                padding: 0.3em 2em;
+                max-width: 400px;
             }
         }
 
-        .crew-text {
+        .crew-text { 
 
-            h2, p {
+            .small-title {
+                margin: 0;
+                font-size: 40px;
+                font-weight: lighter;
+            }
+
+            h1 {
+                font-size: 100px;
+                display: block;
+                margin: 0;
+                margin-bottom: 40px;
+                padding: 0;
+                line-height: 0.7em;
+                font-weight: 700;
+            }
+
+            h1, p {
                 max-width: 300px;
 
             }
@@ -90,6 +92,7 @@
         button {
             margin-left: 50px;
             width: 270px;
+            padding: 0.3em 1em;
         }
     }
 
@@ -149,6 +152,7 @@
         button {
             margin-left: 50px;
             width: 270px;
+            padding: 0.3em 1em;
         }
     }
 
@@ -207,7 +211,7 @@
                     font-size: 30px;
                     line-height: 30px;
                     width: 100%;
-                    font-weight: 600;
+                    font-weight: 700;
                     margin: 0;
                     text-align: center;
                     overflow: hidden;
@@ -276,7 +280,7 @@
         justify-content: center;
 
         .apply-button-wrapper {
-            margin-top: 32px;
+            margin-top: 20px;
         }
 
         > div:nth-child(1) { 
@@ -285,14 +289,13 @@
 
         h2 {
             font-family: 'Cairo', sans-serif;
-            font-size: 60px;
+            font-size: 50px;
             font-weight: 600;
             padding: 0;
             margin: 0;
         }
 
-        button {
-            top: 6px;
+        button {    
             position: relative;
         }
 
@@ -310,7 +313,6 @@
 
     .content {
         padding: 60px 0;
-
         ul {
             margin-bottom: 60px;
         }
@@ -420,17 +422,33 @@
 
         > div {
             img {
-                margin-top: 20px;
+                margin-top: 30px;
             }
         }
 
         .crew {
             flex-direction: column;
+            margin-top: 100px;
+
+            .crew-text {
+                padding: 0 15%;
+
+                .small-title {
+                    font-size: 32px;
+                }
+                h1 {
+                    font-size: 90px;
+                }
+            }
+
+            button {
+                width: 100%;
+            }
         }
 
         .dev-team {
             padding: 100px 0;
-
+            height: 100vh;
             .container {
                 flex-direction: column;
                 padding: 0;
@@ -447,7 +465,7 @@
 
         .design-team {
             padding: 100px 0;
-
+            height: 100vh;
             .container {
                 flex-direction: column-reverse;
                 padding: 0;
@@ -469,6 +487,15 @@
 
         .open-positions {
             margin: 90px auto;
+
+            h3 {
+                line-height: 1.2em;
+                font-size: 25px;
+            }
+
+            p {
+                font-size: 16px;
+            }
 
             .open-position-item {
                 margin: 30px auto;

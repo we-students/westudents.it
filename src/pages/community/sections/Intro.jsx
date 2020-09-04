@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Translate from '../../../components/translation/translate'
 import introVideo from '../../../../static/videos/video.mp4'
@@ -9,22 +9,33 @@ import ArrowDownIcon from '../../../images/arrow_down.svg'
 import '../styles.scss'
 
 const Intro = ({ fullpageProps = {} }) => {
-    const { fullpageApi, isActive } = fullpageProps
     const video = React.createRef()
+    const [isActive, setIsActive] = useState(false)
 
     useEffect(() => {
         video.current[isActive ? 'play' : 'pause']()
     }, [isActive])
 
     const handleScrollTo = () => {
-        if (fullpageApi) {
-            fullpageApi.moveTo(2)
+        if (fullpageProps.fullpageApi) {
+            fullpageProps.fullpageApi.moveTo(2)
         } else {
             const top = document.getElementsByClassName('section')[1].offsetTop
             window.scrollTo({ top, behavior: 'smooth' })
         }
     }
 
+    useEffect(() => {
+        if (fullpageProps.fullpageApi) {
+            setIsActive(
+                fullpageProps.fullpageApi.getActiveSection().index === fullpageProps.sectionIndex,
+            )
+        } else {
+            const sectionsElems = document.getElementsByClassName('section')
+            const { height, y } = sectionsElems[fullpageProps.sectionIndex].getBoundingClientRect()
+            setIsActive(y <= 0 && y > -height)
+        }
+    }, [fullpageProps])
     return (
         <div className="video-intro-wrapper">
             <video className="videoTag" autoPlay loop muted ref={video}>
