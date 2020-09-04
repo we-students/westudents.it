@@ -51,7 +51,11 @@ const ADV = () => {
                         </div>
                     </div>
                 ))}
-                <a rel="noopener noreferrer" href="https://westudents.typeform.com/to/VmHzVH6q">
+                <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://westudents.typeform.com/to/VmHzVH6q"
+                >
                     <button type="button" className="orange-btn">
                         <Translate>PARTNERS.BUTTONS.BEGIN_NOW</Translate>
                     </button>
@@ -59,6 +63,7 @@ const ADV = () => {
             </div>
             <a
                 rel="noopener noreferrer"
+                target="_blank"
                 className="d-flex"
                 href="https://westudents.typeform.com/to/VmHzVH6q"
             >

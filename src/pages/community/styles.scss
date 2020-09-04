@@ -21,6 +21,7 @@
         }
         @media screen and (max-width: 576px) {
             padding-top: 100px;
+            height: calc(100vh - 100px);
         } 
         overflow: hidden;
         @media (max-aspect-ratio: 16/9) {
@@ -68,7 +69,7 @@
             margin: 0 12%;
             @media screen and (min-width: 576px) {
                 margin: 0 22%;
-                font-size: 34px;  
+                font-size: 40px;  
             } 
             @media screen and (max-width: 370px) {
                 margin: 0 10%;
@@ -81,6 +82,9 @@
         }
     }
     .manifest {
+        @media screen and (max-width: 576px){
+            height: 20vh !important; 
+        }
         .title {
             color: #FF9D64;
             letter-spacing: 0.2em;
@@ -103,7 +107,7 @@
                 flex: 1;
                 .img {
                     position: absolute;
-                    zoom: 0.6;
+                    zoom: 0.7;
                     &.bottom {
                         z-index: 1;
                         right: 20%;
@@ -153,7 +157,7 @@
                 flex: 1;
                 .img {
                     position: absolute;
-                    zoom: 0.6;
+                    zoom: 0.7;
                     &.bottom {
                         z-index: 1;
                         right: 20%;
@@ -216,6 +220,11 @@
             100%  {transform: translateX(100vw);}
         }
         .manifest-text {
+
+            h1 {
+                font-size: 40px;
+            }
+
             flex: 1;
             margin: auto 0;
             @media screen and ( max-width: 576px ) {
@@ -225,17 +234,23 @@
                     display: none;
                 }
             }
+            @media screen and ( min-width: 576px ) {
+                .section-description {
+                    padding-right: 20%;
+                }
+            }
         }
     }
     .features {
         height: 100%;
-        padding-top: 180px;
+        padding-top: 190px;
         .title{
             color: #E08B6C;
             display: flex;
             justify-content: center;
             align-items: flex-end;
             padding-bottom: 100px;
+            font-size: 25px;
             @media screen and (max-width: 576px){
                 padding-bottom: 20px;
             }
@@ -262,6 +277,7 @@
         .feature {
             flex: 1;
             h3 {
+                font-size: 25px;
                 text-transform: uppercase;
                 color: #E08B6C;
             }
@@ -270,15 +286,20 @@
                 height: 60px;
             }
             p {
-                font-size: 12px;
+                font-size: 16px;
                 font-weight: 600;
+            }
+
+            @media screen and (max-width: 576px) {
+                margin-top: 20px;
             }
         }
         .bottom-description {
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            padding: 5%;
+            padding: 5% 20%;
+            font-size: 20px;
             font-weight: 600;
             @media screen and (max-width: 576px){
                 display: none;
@@ -291,6 +312,7 @@
         @media screen and (max-width: 576px){
             padding-top: 110px;
             padding-bottom: 50px;
+            height: 80vh;
         }
         .text-section {
             text-align: center;

@@ -10,6 +10,12 @@ const Intro = () => {
 
     const [fullScreen, setFullscreen] = useState(windowWidth > 991)
 
+    const imageResize = () => {
+        if (windowWidth > 991) {
+            setFullscreen(!fullScreen)
+        }
+    }
+
     useEffect(() => {
         setTimeout(() => {
             setFullscreen(false)
@@ -20,12 +26,7 @@ const Intro = () => {
         <div className={`intro ${fullScreen ? 'fullscreen' : ''}`}>
             <div className="intro-row">
                 <div className="image-section">
-                    <div
-                        className="team-image"
-                        onClick={() => {
-                            setFullscreen(!fullScreen)
-                        }}
-                    />
+                    <div className="team-image" onClick={() => imageResize()} />
                 </div>
                 <div className="text-section">
                     <div>

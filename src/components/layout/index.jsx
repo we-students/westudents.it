@@ -37,7 +37,6 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
         getCookie('cookieCheck') !== 'true',
     )
     const [headerStyle, setHeaderStyle] = useState(sections ? sections[0].headerStyle : undefined)
-
     const handleSectionChange = (origin, destination) => {
         setHeaderStyle(sections[destination.index].headerStyle)
     }

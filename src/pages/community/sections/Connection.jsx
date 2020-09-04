@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Translate from '../../../components/translation/translate'
 import '../styles.scss'
 
@@ -6,7 +6,18 @@ const image1 = require('../../../images/manifest_4.png')
 const image2 = require('../../../images/manifest_5.png')
 
 const Connection = ({ fullpageProps = {} }) => {
-    const { isActive } = fullpageProps
+    const [isActive, setIsActive] = useState(false)
+    useEffect(() => {
+        if (fullpageProps.fullpageApi) {
+            setIsActive(
+                fullpageProps.fullpageApi.getActiveSection().index === fullpageProps.sectionIndex,
+            )
+        } else {
+            const sectionsElems = document.getElementsByClassName('section')
+            const { height, y } = sectionsElems[fullpageProps.sectionIndex].getBoundingClientRect()
+            setIsActive(y <= 0 && y > -height)
+        }
+    }, [fullpageProps])
     return (
         <div
             className="container d-flex manifest"

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
+import { Link } from 'gatsby'
 import Translate from '../../../components/translation/translate'
 
 const FacebookIcon = require('../../../images/facebook_icon_white.svg')
@@ -74,9 +75,11 @@ const Team = ({ fullpageProps = {} }) => {
                         <p>
                             <Translate>COMMUNITY.TEAM.CTA</Translate>
                         </p>
-                        <button type="button">
-                            <Translate>COMMUNITY.BUTTONS.GO_TO_TEAM</Translate>
-                        </button>
+                        <Link to="/team">
+                            <button type="button">
+                                <Translate>COMMUNITY.BUTTONS.GO_TO_TEAM</Translate>
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>

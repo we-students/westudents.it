@@ -18,12 +18,12 @@ const Crew = ({ fullpageProps = {} }) => {
     return (
         <div className="crew container">
             <div className="crew-text">
-                <h2>
+                <p className="small-title">
                     <Translate>CARRIERS.INTRO.JOIN</Translate>{' '}
-                    <span>
-                        <Translate>CARRIERS.INTRO.CREW</Translate>
-                    </span>
-                </h2>
+                </p>
+                <h1>
+                    <Translate>CARRIERS.INTRO.CREW</Translate>
+                </h1>
 
                 <p>
                     <Translate>CARRIERS.INTRO.DESCRIPTION1</Translate>

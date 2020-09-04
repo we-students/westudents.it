@@ -47,6 +47,7 @@ const Intro = ({ fullpageProps = {} }) => {
                         </h1>
                         <a
                             rel="noopener noreferrer"
+                            target="_blank"
                             href="https://westudents.typeform.com/to/VmHzVH6q"
                         >
                             <button type="button" className="white-btn">
