@@ -356,23 +356,24 @@
         
         a {
             text-decoration: none;
+            order: 10;
         }
 
         .orange-btn-mobile {
             @include orange-btn();
-            order: 10;
-            margin: 1em auto;
+            margin: 2em auto;
             @media screen and ( min-width: 576px) {
                 display: none;
             }
         }
 
         .text-section {
+            
             padding-top: 2em;
-            flex: 1;
             padding: 0 10%;
             @media screen and ( min-width: 576px) {
                 padding-left: 8%;
+                flex:1;
             }
             h1 {
                 color: #FF9D64;
@@ -616,9 +617,11 @@
     }
 
     .intro-wrapper {
-        > * {
-            padding-bottom: 30px;
-        }
+        height: 100vh !important;
+    }
+
+    .partner-sections {
+        height: 100vh !important;
     }
 
 }

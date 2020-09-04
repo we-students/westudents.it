@@ -47,7 +47,11 @@ const OnlineDiscounts = () => {
                         <p>{item.name}</p>
                     </div>
                 ))}
-                <a rel="noopener noreferrer" href="https://westudents.typeform.com/to/VmHzVH6q">
+                <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://westudents.typeform.com/to/VmHzVH6q"
+                >
                     <button type="button" className="orange-btn">
                         <Translate>PARTNERS.BUTTONS.BEGIN_NOW</Translate>
                     </button>
@@ -62,6 +66,7 @@ const OnlineDiscounts = () => {
             <a
                 rel="noopener noreferrer"
                 className="d-flex"
+                target="_blank"
                 href="https://westudents.typeform.com/to/VmHzVH6q"
             >
                 <button type="button" className="orange-btn-mobile">
