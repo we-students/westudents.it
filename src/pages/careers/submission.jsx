@@ -118,6 +118,7 @@ const CareerSubmission = ({ data, pageContext }) => {
                             >
                                 {formik.values.fullname}
                             </span>
+                            <span className="input-placeholder">Nome e Cognome</span>
                             {formik.errors.fullname && formik.touched.fullname ? (
                                 <small className="error-info">{formik.errors.fullname}</small>
                             ) : null}
@@ -154,6 +155,7 @@ const CareerSubmission = ({ data, pageContext }) => {
                             >
                                 {formik.values.role}
                             </span>
+                            <span className="input-placeholder">posizione</span>
                             {formik.errors.role && formik.touched.role ? (
                                 <small className="error-info">{formik.errors.role}</small>
                             ) : null}
@@ -173,6 +175,7 @@ const CareerSubmission = ({ data, pageContext }) => {
                             >
                                 {formik.values.cv_name}
                             </span>
+                            <span className="input-placeholder">nome file</span>
                             {formik.errors.cv_name && formik.touched.cv_name ? (
                                 <small className="error-info">{formik.errors.cv_name}</small>
                             ) : null}
@@ -194,6 +197,7 @@ const CareerSubmission = ({ data, pageContext }) => {
                             >
                                 {formik.values.profile}
                             </span>
+                            <span className="input-placeholder">link</span>
                             {formik.errors.profile && formik.touched.profile ? (
                                 <small className="error-info">{formik.errors.profile}</small>
                             ) : null}

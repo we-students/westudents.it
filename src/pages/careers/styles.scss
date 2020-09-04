@@ -355,34 +355,26 @@
             }
         }
 
+        span.input-placeholder {
+            color: #E5E5E5;
+        }
+
         span {
             color: #FF9D64;
             padding: 0px .3em;
             outline: none;
-
-           
+            
 
             &:empty {
-                color: #E5E5E5;
+                position: absolute;
+                width: 100%;
+                z-index: 800;
             }
 
-            &:empty::after {
-            }
-
-            &#fullname:empty::after {
-                content: 'Nome e Cognome';
-            }
-
-            &#role:empty::after {
-                content: 'posizione';
-            }
-
-            &#cv:empty::after {
-                content: 'nome file';
-            }
-
-            &#link:empty::after {
-                content: 'link';
+            &:not(:empty) {
+                & ~ .input-placeholder {
+                    display: none;
+                }
             }
 
             &#link {
