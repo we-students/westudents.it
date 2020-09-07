@@ -25,7 +25,12 @@ const Sponsor = () => {
             </h1>
             <div className="sponsors-items">
                 {sponsors.map((item) => (
-                    <img src={item.icon} alt={item.name} className="sponsor-icon" />
+                    <img
+                        key={`img_${item.name}`}
+                        src={item.icon}
+                        alt={item.name}
+                        className="sponsor-icon"
+                    />
                 ))}
             </div>
             <div className="cta-section">

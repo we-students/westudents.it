@@ -9,21 +9,21 @@ export default [
     {
         key: 'team',
         image: (color) => <InstagramLogo color={color} />,
-        href: () => Translate({ children: 'CONTACTS.INSTAGRAM' }),
+        href: () => Translate({ children: 'CONTACTS.INSTAGRAM', textOnly: true }),
     },
     {
         key: 'careers',
         image: (color) => <FacebookLogo color={color} />,
-        href: () => Translate({ children: 'CONTACTS.FACEBOOK' }),
+        href: () => Translate({ children: 'CONTACTS.FACEBOOK', textOnly: true }),
     },
     {
         key: 'community',
         image: (color) => <LinkedinLogo color={color} />,
-        href: () => Translate({ children: 'CONTACTS.LINKEDIN' }),
+        href: () => Translate({ children: 'CONTACTS.LINKEDIN', textOnly: true }),
     },
     {
         key: 'partners',
         image: (color) => <TikTokLogo color={color} />,
-        href: () => Translate({ children: 'CONTACTS.TIKTOK' }),
+        href: () => Translate({ children: 'CONTACTS.TIKTOK', textOnly: true }),
     },
 ]

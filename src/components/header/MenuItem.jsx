@@ -25,21 +25,31 @@ const MenuItem = ({ item, color }) => {
                             const props = {}
                             if (children.href[0] !== '/') props.target = '_blank'
 
+                            const content = (
+                                <>
+                                    <img
+                                        className="sub-item-logo"
+                                        src={children.image}
+                                        alt={`${children.value} logo`}
+                                    />
+                                    <div className="sub-item-info">
+                                        <span className="sub-item-title">{children.value}</span>
+                                        <span className="sub-item-description">
+                                            {children.description}
+                                        </span>
+                                    </div>
+                                </>
+                            )
+
                             return (
                                 <li key={children.key}>
-                                    <a href={children.href} {...props}>
-                                        <img
-                                            className="sub-item-logo"
-                                            src={children.image}
-                                            alt={`${children.value} logo`}
-                                        />
-                                        <div className="sub-item-info">
-                                            <span className="sub-item-title">{children.value}</span>
-                                            <span className="sub-item-description">
-                                                {children.description}
-                                            </span>
-                                        </div>
-                                    </a>
+                                    {children.href[0] === '/' ? (
+                                        <Link to={children.href}>{content}</Link>
+                                    ) : (
+                                        <a href={children.href} {...props}>
+                                            {content}
+                                        </a>
+                                    )}
                                 </li>
                             )
                         })}

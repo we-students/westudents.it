@@ -15,7 +15,7 @@ import Modal from 'react-modal'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
 import { getCookie, setCookie } from '../../utils/cookies'
-import Bubbles from '../bubbles/index'
+import Bubbles from '../bubbles'
 import SEO from '../seo'
 import Footer from '../footer'
 import Header from '../header'
@@ -102,30 +102,22 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
                 onLeave={(origin, destination, direction) =>
                     handleSectionChange(origin, destination, direction)
                 }
-                render={(fullpageProps) => {
-                    return (
-                        <>
-                            {showBubbles ? (
-                                <Bubbles sectionCount={fullpageProps.state.sectionCount} />
-                            ) : null}
-                            {sections.map((section, index) => {
-                                return (
-                                    <>
-                                        <div className="section">
-                                            {section.render({
-                                                ...fullpageProps,
-                                                sectionIndex: index,
-                                            })}
-                                            {showFooter && index === sections.length - 1 ? (
-                                                <Footer />
-                                            ) : null}
-                                        </div>
-                                    </>
-                                )
-                            })}
-                        </>
-                    )
-                }}
+                render={(fullpageProps) => (
+                    <>
+                        {showBubbles ? (
+                            <Bubbles sectionCount={fullpageProps.state.sectionCount} />
+                        ) : null}
+                        {sections.map((section, index) => (
+                            <div className="section" key={`section_${section.anchor}`}>
+                                {section.render({
+                                    ...fullpageProps,
+                                    sectionIndex: index,
+                                })}
+                                {showFooter && index === sections.length - 1 ? <Footer /> : null}
+                            </div>
+                        ))}
+                    </>
+                )}
             />
         )
     }, [windowWidth])

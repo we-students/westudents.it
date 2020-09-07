@@ -15,7 +15,7 @@ const Intro = ({ fullpageProps = {} }) => {
 
     useEffect(() => {
         const m = (() => {
-            if (size.width < 767) return 1
+            if (size.width < 767) return 0.9
             if (size.width >= 768 && size.width < 991) return 0.8
 
             return 0.4
@@ -48,14 +48,12 @@ const Intro = ({ fullpageProps = {} }) => {
                     <Translate>HOMEPAGE.BUTTONS.INTRO</Translate>
                 </button>
             </div>
-            {size.width > 576 ? (
-                <div>
-                    <MainLottieAnimation
-                        width={(size.width > 1400 ? 1400 : size.width) * multiply}
-                        height={(size.width > 1400 ? 1400 : size.width) * multiply}
-                    />
-                </div>
-            ) : null}
+            <div>
+                <MainLottieAnimation
+                    width={(size.width > 1400 ? 1400 : size.width) * multiply}
+                    height={(size.width > 1400 ? 1400 : size.width) * multiply}
+                />
+            </div>
         </div>
     )
 }

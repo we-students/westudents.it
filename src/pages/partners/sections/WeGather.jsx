@@ -46,8 +46,13 @@ const WeGather = () => {
                               }
 
                     return (
-                        <a href={item.link} rel="noopener noreferrer" target="_blank">
-                            <div key={`blog_post_${index}`} className="post-card">
+                        <a
+                            key={`blog_post_${index}`}
+                            href={item.link}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            <div className="post-card">
                                 <img {...imgProps} alt="WeGather" />
                                 <p>{item.articleTitle}</p>
                             </div>

@@ -58,6 +58,7 @@ const Header = (props) => {
                 <div className="socials-wrapper">
                     {socialItems.map((item) => (
                         <a
+                            key={item.key}
                             href={item.href()}
                             target="_blank"
                             rel="noreferrer"
@@ -98,7 +99,8 @@ const Header = (props) => {
                     <div className="social-links-wrapper">
                         {socialItems.map((item) => (
                             <a
-                                href={item.href}
+                                key={item.key}
+                                href={item.href()}
                                 target="_blank"
                                 rel="noreferrer"
                                 className="social-icon-wrapper"

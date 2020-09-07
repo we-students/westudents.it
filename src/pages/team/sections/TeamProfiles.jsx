@@ -39,6 +39,7 @@ const Profile = (props) => {
                 {animImages
                     ? animImages.map((item, index) => (
                           <img
+                              key={`anim_img_${index}`}
                               srcSet={item.fluid.srcSet}
                               srcSetWebp={item.fluid.srcSetWebp}
                               alt="WeStudents"
@@ -102,8 +103,9 @@ const TeamProfiles = () => {
             <GridList
                 items={data}
                 cols={3}
-                renderItem={(item) => (
+                renderItem={(item, index) => (
                     <Profile
+                        key={index}
                         role={item.role}
                         image={item.image}
                         activeImage={item.activeImage}

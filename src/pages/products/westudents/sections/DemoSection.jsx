@@ -31,6 +31,14 @@ const Intro = ({ fullpageProps = {} }) => {
 
     return (
         <div className="demo container">
+            <div style={{ display: 'none' }}>
+                <img src="/images/demo_westudents/blog.png" alt="preload blog" />
+                <img src="/images/demo_westudents/shop.png" alt="preload shop" />
+                <img src="/images/demo_westudents/gamification.png" alt="preload gamification" />
+                <img src="/images/demo_westudents/banco.png" alt="preload banco" />
+                <img src="/images/demo_westudents/diario.png" alt="preload diario" />
+                <img src="/images/demo_westudents/chat.png" alt="preload chat" />
+            </div>
             <h3>
                 <Translate>WESTUDENTS.ALL_NEEDS</Translate>
                 <span className="highlight">

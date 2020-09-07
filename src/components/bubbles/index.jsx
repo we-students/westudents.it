@@ -1,5 +1,5 @@
 /* eslint-disable no-plusplus */
-import React, { useEffect, useState } from 'react'
+import React, { useCallback } from 'react'
 
 import SmallBubble from '../../images/bubble_small.svg'
 import MediumBubble from '../../images/bubble_medium.svg'
@@ -48,6 +48,8 @@ const Bubble = (props) => {
 }
 
 const Bubbles = (props) => {
+    const isFirefox = navigator ? navigator.userAgent.toLowerCase().indexOf('firefox') > -1 : false
+
     const bubblesSvgs = [
         {
             image: LargeBubble,
@@ -66,11 +68,10 @@ const Bubbles = (props) => {
         },
     ]
     const { sectionCount } = props
-    const [bubbles, setBubbles] = useState([])
     const { width: windowWidth, height: windowHeight } =
         typeof window !== 'undefined' ? window.screen : {}
 
-    const generateBubbles = () => {
+    const generateBubbles = useCallback(() => {
         if (sectionCount > 0 && bubblesSvgs) {
             const bubblesTemp = []
             for (let i = 0; i < sectionCount; i++) {
@@ -100,19 +101,13 @@ const Bubbles = (props) => {
             return bubblesTemp
         }
         return []
-    }
-
-    useEffect(() => {
-        if (sectionCount > 0) {
-            setBubbles(generateBubbles())
-        }
     }, [sectionCount])
 
-    return (
+    return isFirefox ? null : (
         <div className="bubble-wrapper-container" style={{ height: `calc(${sectionCount}*100vh)` }}>
-            {bubbles}
+            {generateBubbles()}
         </div>
     )
 }
 
-export default Bubbles
+export default React.memo(Bubbles)

@@ -76,8 +76,8 @@ const OpenPosition = () => {
                           }
 
                     return (
-                        <Link to={`/carriere/${item.slug}`}>
-                            <div key={index} className="grid-item open-position-item">
+                        <Link key={index} to={`/carriere/${item.slug}`}>
+                            <div className="grid-item open-position-item">
                                 <img {...imgProps} alt="Posizione aperta" />
                                 <div className="infos ">
                                     <h4>{title}</h4>
