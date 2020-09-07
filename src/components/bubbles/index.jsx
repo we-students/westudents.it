@@ -48,7 +48,10 @@ const Bubble = (props) => {
 }
 
 const Bubbles = (props) => {
-    const isFirefox = navigator ? navigator.userAgent.toLowerCase().indexOf('firefox') > -1 : false
+    const isFirefox =
+        typeof navigator !== 'undefined'
+            ? navigator.userAgent.toLowerCase().indexOf('firefox') > -1
+            : false
 
     const bubblesSvgs = [
         {

@@ -10,6 +10,10 @@
             flex: 1;
         }
 
+        .lottie-wrapper { 
+            padding-top: 60px
+        }
+
         .text-section {
             > h3 {
                 font-family: 'Cairo', sans-serif;
@@ -38,9 +42,13 @@
         .stores {
             margin-top: 40px;
             text-align: center;
+            justify-content: center;
+            display: flex;
+            align-items: center;
 
             a {
-                margin: 0px;
+                margin: 0px 10px;
+                display: inline-block;
             }
 
 
@@ -49,8 +57,12 @@
                 border-radius: 10px;
                 width: 40vw;
                 max-width: 160px;
+                height: 60px;
                 margin-bottom: 30px;
                 padding: 12px 16px;
+                justify-content: center;
+                display: flex;
+                align-items: center;
              
                 img {
                     width: 100%

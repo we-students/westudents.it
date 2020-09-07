@@ -164,6 +164,10 @@
 
     .partner-sections {
         display: flex;
+        justify-content: center;
+        align-items: center;
+
+
         @media screen and (max-width: 576px) {
             flex-direction: column;
         }
@@ -173,6 +177,9 @@
         .images {
             flex: 1;
             position: relative;
+            height: 70vw;
+            max-height: 450px;
+            
             @media screen and (max-width: 576px) {
                 order: 2;
                 width: 250px;

@@ -7,9 +7,10 @@
     }
 
     .intro {
-        height: 100vh !important;
+        min-height: 700px;
         flex-direction: column;
         display: flex;
+
         .intro-row {
             flex: 1;
             display: flex;
@@ -37,6 +38,10 @@
         }
 
         .text-section {
+            
+            
+
+
             > * {
                 padding-left: 10%;
                 padding-right: 50%;
