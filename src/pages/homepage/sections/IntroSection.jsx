@@ -18,7 +18,7 @@ const Intro = ({ fullpageProps = {} }) => {
             if (size.width < 767) return 0.9
             if (size.width >= 768 && size.width < 991) return 0.8
 
-            return 0.4
+            return 0.35
         })()
 
         setMultiply(m)

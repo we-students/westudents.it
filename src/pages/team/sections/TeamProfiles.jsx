@@ -103,21 +103,21 @@ const TeamProfiles = () => {
 
     const minHeight = (() => {
         if (windowWidth < 768) {
-            return data.length * 320
+            return data.length * 280
         }
 
         if (windowWidth < 992) {
-            return Math.ceil(data.length / 2) * 320
+            return Math.ceil(data.length / 2) * 275
         }
 
-        return Math.ceil(data.length / 3) * 320
+        return Math.ceil(data.length / 3) * 285
     })()
 
     return (
         <div className="container team" style={{ height: minHeight + 160 }}>
             <GridList
                 items={data}
-                cols={3}
+                cols={windowWidth > 992 ? 3 : 2}
                 renderItem={(item, index) => (
                     <Profile
                         key={index}

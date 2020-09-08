@@ -32,7 +32,7 @@ const features = [
 const OfflineDiscounts = () => {
     return (
         <div className="container partner-sections">
-            <div className="images offline-discounts">
+            <div className="images offline-discounts slide-bottom-on-hover">
                 <img src={Image1} className="phone1" alt="WeStudents" />
                 <img src={Image2} className="phone2" alt="WeStudents" />
                 <img src={Image3} className="icons" alt="WeStudents" />

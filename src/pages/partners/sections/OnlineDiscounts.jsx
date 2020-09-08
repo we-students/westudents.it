@@ -57,7 +57,7 @@ const OnlineDiscounts = () => {
                     </button>
                 </a>
             </div>
-            <div className="images online-discounts">
+            <div className="images online-discounts slide-bottom-on-hover">
                 <img src={Image1} className="phone1" alt="WeStudents" />
                 <img src={Image2} className="phone2" alt="WeStudents" />
                 <img src={Image3} className="icons" alt="WeStudents" />

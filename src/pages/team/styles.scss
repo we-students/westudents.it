@@ -87,7 +87,7 @@
         .team-image {
             border-radius: 15px;
             position: absolute;
-            background-image: url('../../images/team_image.png');
+            background-image: url('../../images/crew.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -125,10 +125,9 @@
 
         .grid-container {
             justify-items: center;
-            padding: 80px 80px;
-            @media screen and (max-width: 992px){
-                padding: 40px 40px;
-            }
+            padding: 30px 30px;
+            padding-top: 110px;
+            padding-bottom: 0;
            }
 
         .profile-item {
@@ -137,10 +136,6 @@
             margin: 40px;
             width: 200px;
             height: 200px;
-
-            @media screen and (min-width: 992px){
-                margin: 60px;
-            }
 
             .main-image {
                transition: opacity 1s;
@@ -220,7 +215,7 @@
     }
 
     .join-us {
-        margin-top: 20vh;
+        margin-top: 15vh;
         margin-bottom: 15vh;
 		> .text {
 			margin-bottom: 0;
@@ -283,6 +278,17 @@
                 }
             }
         }
-	}
+    }
+    
+    @media screen and (max-width: 991px) {
+        .intro {
+            height: 100vh;
+        }
+
+        .join-us {
+            margin-top: 5vh;
+        }
+
+    }
 
 }
