@@ -21,7 +21,7 @@ import Footer from '../footer'
 import Header from '../header'
 import './layout.scss'
 
-const Layout = ({ children, className, sections, seo, showBubbles, showFooter = true }) => {
+const Layout = ({ children, className, sections, seo, showBubbles = false, showFooter = true }) => {
     const data = useStaticQuery(graphql`
         query SiteTitleQuery {
             site {
