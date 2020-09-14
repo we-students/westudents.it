@@ -3,15 +3,20 @@ import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import { Link } from 'gatsby'
 import Translate from '../../../components/translation/translate'
 
-import useWindowSize from '../../../hooks/useWindowSize'
-
 const FacebookIcon = require('../../../images/facebook_icon_white.svg')
 const InstagramIcon = require('../../../images/insta_icon_white.svg')
 const LinkedinIcon = require('../../../images/linkedin_icon_white.svg')
 
 const Team = ({ fullpageProps = {} }) => {
     const [isActive, setIsActive] = useState(false)
-    const sizes = useWindowSize()
+    const [windowWidth, setWindowWidth] = useState(0)
+    const [windowHeight, setWindowHeight] = useState(0)
+
+    useEffect(() => {
+        const { width, height } = window.screen
+        setWindowWidth(width)
+        setWindowHeight(height)
+    }, [])
 
     useEffect(() => {
         if (fullpageProps.fullpageApi) {
@@ -22,10 +27,10 @@ const Team = ({ fullpageProps = {} }) => {
     }, [fullpageProps])
 
     useScrollPosition(() => {
-        if (sizes.width < 992 && fullpageProps) {
+        if (windowWidth < 992 && fullpageProps) {
             const sectionsElems = document.getElementsByClassName('section')
             const { height, y } = sectionsElems[fullpageProps.sectionIndex].getBoundingClientRect()
-            setIsActive(y <= sizes.height - 200 && y > -height)
+            setIsActive(y <= windowHeight - 200 && y > -height)
         }
     })
 

@@ -1,10 +1,8 @@
 /* eslint-disable global-require */
 /* eslint-disable react/no-array-index-key */
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import GridList from '../../../components/grid-list'
-
-import useWindowSize from '../../../hooks/useWindowSize'
 
 const Profile = (props) => {
     const { name, image, activeImage, animImages, role } = props
@@ -59,7 +57,12 @@ const Profile = (props) => {
 }
 
 const TeamProfiles = () => {
-    const sizes = useWindowSize()
+    const [windowWidth, setWindowWidth] = useState(0)
+
+    useEffect(() => {
+        const { width } = window.screen
+        setWindowWidth(width)
+    }, [])
 
     const data = useStaticQuery(graphql`
         query PersonQuery {
@@ -104,22 +107,21 @@ const TeamProfiles = () => {
         })
 
     const minHeight = (() => {
-        if (sizes.width < 768) {
+        if (windowWidth < 768) {
             return data.length * 280
         }
 
-        if (sizes.width < 992) {
+        if (windowWidth < 992) {
             return Math.ceil(data.length / 2) * 275
         }
 
         return Math.ceil(data.length / 3) * 285
     })()
-
     return (
         <div className="container team" style={{ height: minHeight + 160 }}>
             <GridList
                 items={data}
-                cols={sizes.width > 992 ? 3 : 2}
+                cols={windowWidth > 992 ? 3 : 2}
                 renderItem={(item, index) => (
                     <Profile
                         key={index}
