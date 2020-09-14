@@ -112,7 +112,6 @@ const TeamProfiles = () => {
 
         return Math.ceil(data.length / 3) * 285
     })()
-
     return (
         <div className="container team" style={{ height: minHeight + 160 }}>
             <GridList
