@@ -50,4 +50,4 @@ const DaScuola = ({ onCtaPress = () => {} }) => {
     )
 }
 
-export default DaScuola
+export default React.memo(DaScuola)

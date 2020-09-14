@@ -8,7 +8,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import ReactFullpage from '@fullpage/react-fullpage'
 import Modal from 'react-modal'
@@ -22,6 +22,13 @@ import Header from '../header'
 import './layout.scss'
 
 const Layout = ({ children, className, sections, seo, showBubbles, showFooter = true }) => {
+    const [windowWidth, setWindowWidth] = useState(0)
+
+    useEffect(() => {
+        const { width } = window.screen
+        setWindowWidth(width)
+    }, [])
+
     const data = useStaticQuery(graphql`
         query SiteTitleQuery {
             site {
@@ -32,7 +39,6 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
         }
     `)
 
-    const { width: windowWidth } = typeof window !== 'undefined' ? window.screen : {}
     const [isCookieModalVisible, setCookieModalVisible] = useState(
         getCookie('cookieCheck') !== 'true',
     )
@@ -88,12 +94,12 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
 
         return (
             <ReactFullpage
-                anchors={sections.map((section) => section.anchor)}
+                // anchors={sections.map((section) => section.anchor)}
                 navigation
                 scrollingSpeed={1000} /* Options here */
                 fitToSection={false}
                 autoScrolling
-                lockAnchors={false}
+                lockAnchors
                 scrollHorizontally
                 scrollOverflowOptions={{ scrollbars: false }}
                 scrollOverflow
@@ -124,6 +130,7 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
 
     return (
         <div className={className}>
+            {console.log('rendering laypout')}
             <SEO {...seo} />
             <Header siteTitle={data.site.siteMetadata.title} type={headerStyle} />
             <div style={{ margin: `0 auto` }}>
@@ -169,4 +176,4 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
     )
 }
 
-export default Layout
+export default React.memo(Layout)

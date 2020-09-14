@@ -75,4 +75,4 @@ const ADV = () => {
     )
 }
 
-export default ADV
+export default React.memo(ADV)

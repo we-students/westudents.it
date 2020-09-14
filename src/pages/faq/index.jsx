@@ -115,4 +115,4 @@ export const query = graphql`
     }
 `
 
-export default OpenPosition
+export default React.memo(OpenPosition)

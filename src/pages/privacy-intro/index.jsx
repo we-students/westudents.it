@@ -9,7 +9,7 @@ import { itemList } from './privacy-items'
 
 import './styles.scss'
 
-const privacyIntro = () => (
+const PrivacyIntro = () => (
     <Layout>
         <SEO title="Privacy policy intro" />
         <div className="container privacy-intro">
@@ -40,4 +40,4 @@ const privacyIntro = () => (
     </Layout>
 )
 
-export default privacyIntro
+export default React.memo(PrivacyIntro)

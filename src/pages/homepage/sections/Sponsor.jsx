@@ -48,4 +48,4 @@ const Sponsor = () => {
     )
 }
 
-export default Sponsor
+export default React.memo(Sponsor)

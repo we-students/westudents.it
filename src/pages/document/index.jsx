@@ -51,4 +51,4 @@ export const query = graphql`
     }
 `
 
-export default Document
+export default React.memo(Document)

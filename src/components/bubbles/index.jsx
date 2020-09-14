@@ -1,5 +1,5 @@
 /* eslint-disable no-plusplus */
-import React, { useCallback } from 'react'
+import React, { useCallback, useState, useEffect } from 'react'
 
 import SmallBubble from '../../images/bubble_small.svg'
 import MediumBubble from '../../images/bubble_medium.svg'
@@ -48,10 +48,18 @@ const Bubble = (props) => {
 }
 
 const Bubbles = (props) => {
-    const isFirefox =
-        typeof navigator !== 'undefined'
-            ? navigator.userAgent.toLowerCase().indexOf('firefox') > -1
-            : false
+    const [isMounted, setIsMounted] = useState(false)
+    const [windowWidth, setWindowWidth] = useState(0)
+    const [windowHeight, setWindowHeight] = useState(0)
+
+    useEffect(() => {
+        const { width, height } = window.screen
+        setWindowWidth(width)
+        setWindowHeight(height)
+        setIsMounted(true)
+    }, [])
+
+    const isFirefox = isMounted ? navigator.userAgent.toLowerCase().indexOf('firefox') > -1 : false
 
     const bubblesSvgs = [
         {
@@ -71,8 +79,6 @@ const Bubbles = (props) => {
         },
     ]
     const { sectionCount } = props
-    const { width: windowWidth, height: windowHeight } =
-        typeof window !== 'undefined' ? window.screen : {}
 
     const generateBubbles = useCallback(() => {
         if (sectionCount > 0 && bubblesSvgs) {

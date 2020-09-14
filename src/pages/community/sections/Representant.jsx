@@ -37,4 +37,4 @@ const Representant = () => {
     )
 }
 
-export default Representant
+export default React.memo(Representant)

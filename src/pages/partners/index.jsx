@@ -11,7 +11,7 @@ import WeGather from './sections/WeGather'
 
 const pageTitle = 'WeStudents — Partners'
 
-const HomePage = () => (
+const PartnersPage = () => (
     <Layout
         showFooter
         className="partnerspage"
@@ -47,4 +47,4 @@ const HomePage = () => (
     />
 )
 
-export default HomePage
+export default React.memo(PartnersPage)
