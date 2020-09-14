@@ -1,6 +1,6 @@
 /* eslint-disable global-require */
 /* eslint-disable react/no-array-index-key */
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import GridList from '../../../components/grid-list'
 
@@ -57,7 +57,6 @@ const Profile = (props) => {
 }
 
 const TeamProfiles = ({ windowWidth }) => {
-    console.log(windowWidth)
     const data = useStaticQuery(graphql`
         query PersonQuery {
             allContentfulPerson {
