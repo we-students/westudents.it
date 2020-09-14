@@ -56,14 +56,8 @@ const Profile = (props) => {
     )
 }
 
-const TeamProfiles = () => {
-    const [windowWidth, setWindowWidth] = useState(0)
-
-    useEffect(() => {
-        const { width } = window.screen
-        setWindowWidth(width)
-    }, [])
-
+const TeamProfiles = ({ windowWidth }) => {
+    console.log(windowWidth)
     const data = useStaticQuery(graphql`
         query PersonQuery {
             allContentfulPerson {
