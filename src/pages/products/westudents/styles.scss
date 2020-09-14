@@ -42,13 +42,25 @@
         .stores {
             margin-top: 40px;
             text-align: center;
-            justify-content: center;
-            display: flex;
-            align-items: center;
 
             a {
                 margin: 0px 10px;
                 display: inline-block;
+            }
+
+            .appstore-button {
+                position: relative;
+                top: -3px;
+            }
+
+            .playstore-button {
+                position: relative;
+                top: -6px;
+            }
+
+            .app-gallery-button {
+                position: relative;
+                top: 0px;
             }
 
 
