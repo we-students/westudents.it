@@ -1,12 +1,14 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState, useEffect } from 'react'
+import isMobile from 'ismobilejs'
+
 import Translate from '../../../components/translation/translate'
 
 import '../styles.scss'
 
 const Intro = () => {
-    const [fullScreen, setFullscreen] = useState(false)
+    const [fullScreen, setFullscreen] = useState(!isMobile().any)
     const [windowWidth, setWindowWidth] = useState(0)
 
     useEffect(() => {
