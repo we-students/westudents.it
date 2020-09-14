@@ -27,6 +27,12 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
     useEffect(() => {
         const { width } = window.screen
         setWindowWidth(width)
+
+        caches.keys().then((cacheNames) => {
+            cacheNames.forEach((cacheName) => {
+                caches.delete(cacheName)
+            })
+        })
     }, [])
 
     const data = useStaticQuery(graphql`
