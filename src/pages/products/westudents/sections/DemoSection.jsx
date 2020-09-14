@@ -47,15 +47,18 @@ const Intro = ({ fullpageProps = {} }) => {
 
                 <div className={`demo-wrapper ${selectedSection}`}>
                     <div className="left">
-                        <div className="blog-selector" onClick={() => setSelectedSection('blog')}>
+                        <div
+                            className="gamification-selector"
+                            onClick={() => setSelectedSection('gamification')}
+                        >
                             <div className="top-part">
                                 <h4>
-                                    <Translate>WESTUDENTS.BLOG_TITLE</Translate>
+                                    <Translate>WESTUDENTS.GAMIFICATION_TITLE</Translate>
                                 </h4>
-                                <img src={BlogIcon} alt="Blog" />
+                                <img src={GamificationIcon} alt="Gamification" />
                             </div>
                             <p>
-                                <Translate>WESTUDENTS.BLOG_CONTENT</Translate>
+                                <Translate>WESTUDENTS.GAMIFICATION_CONTENT</Translate>
                             </p>
                         </div>
                         <div className="shop-selector" onClick={() => setSelectedSection('shop')}>
@@ -69,18 +72,16 @@ const Intro = ({ fullpageProps = {} }) => {
                                 <Translate>WESTUDENTS.SHOP_CONTENT</Translate>
                             </p>
                         </div>
-                        <div
-                            className="gamification-selector"
-                            onClick={() => setSelectedSection('gamification')}
-                        >
+
+                        <div className="blog-selector" onClick={() => setSelectedSection('blog')}>
                             <div className="top-part">
                                 <h4>
-                                    <Translate>WESTUDENTS.GAMIFICATION_TITLE</Translate>
+                                    <Translate>WESTUDENTS.BLOG_TITLE</Translate>
                                 </h4>
-                                <img src={GamificationIcon} alt="Gamification" />
+                                <img src={BlogIcon} alt="Blog" />
                             </div>
                             <p>
-                                <Translate>WESTUDENTS.GAMIFICATION_CONTENT</Translate>
+                                <Translate>WESTUDENTS.BLOG_CONTENT</Translate>
                             </p>
                         </div>
                     </div>
@@ -141,17 +142,20 @@ const Intro = ({ fullpageProps = {} }) => {
                     >
                         <div className="carousel-item">
                             <div className="top-part">
-                                <img src={BlogIcon} alt="Blog" />
+                                <img src={GamificationIcon} alt="Gamification" />
                                 <h4>
-                                    <Translate>WESTUDENTS.BLOG_TITLE</Translate>
+                                    <Translate>WESTUDENTS.GAMIFICATION_TITLE</Translate>
                                 </h4>
                             </div>
                             <p>
-                                <Translate>WESTUDENTS.BLOG_CONTENT</Translate>
+                                <Translate>WESTUDENTS.GAMIFICATION_CONTENT</Translate>
                             </p>
                             <div className="demo-image">
-                                <img src="/images/demo_westudents/blog.png" alt="Blog" />
-                            </div>
+                                <img
+                                    src="/images/demo_westudents/gamification.png"
+                                    alt="Gamification"
+                                />
+                            </div>{' '}
                         </div>
                         <div className="carousel-item">
                             <div className="top-part">
@@ -169,21 +173,19 @@ const Intro = ({ fullpageProps = {} }) => {
                         </div>
                         <div className="carousel-item">
                             <div className="top-part">
-                                <img src={GamificationIcon} alt="Gamification" />
+                                <img src={BlogIcon} alt="Blog" />
                                 <h4>
-                                    <Translate>WESTUDENTS.GAMIFICATION_TITLE</Translate>
+                                    <Translate>WESTUDENTS.BLOG_TITLE</Translate>
                                 </h4>
                             </div>
                             <p>
-                                <Translate>WESTUDENTS.GAMIFICATION_CONTENT</Translate>
+                                <Translate>WESTUDENTS.BLOG_CONTENT</Translate>
                             </p>
                             <div className="demo-image">
-                                <img
-                                    src="/images/demo_westudents/gamification.png"
-                                    alt="Gamification"
-                                />
-                            </div>{' '}
+                                <img src="/images/demo_westudents/blog.png" alt="Blog" />
+                            </div>
                         </div>
+
                         <div className="carousel-item">
                             <div className="top-part">
                                 <img src={BancoIcon} alt="Banco" />

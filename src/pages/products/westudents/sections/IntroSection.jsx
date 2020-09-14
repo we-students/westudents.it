@@ -6,6 +6,7 @@ import useWindowSize from '../../../../hooks/useWindowSize'
 
 import AppStoreBadge from '../../../../images/app_store_badge.png'
 import PlaystoreBadge from '../../../../images/playstore_badge.png'
+import AppGalleryBadge from '../../../../images/app_gallery_badge.png'
 
 import '../styles.scss'
 
@@ -48,14 +49,30 @@ const Intro = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             href="https://apple.co/2D0bscj"
+                            className="appstore-button"
                         >
                             <button type="button">
                                 <img src={AppStoreBadge} alt="appstore" />
                             </button>
                         </a>
-                        <a target="_blank" rel="noopener noreferrer" href="https://bit.ly/3hsQ6D2">
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://bit.ly/3hsQ6D2"
+                            className="playstore-button"
+                        >
                             <button type="button">
                                 <img src={PlaystoreBadge} alt="playstore" />
+                            </button>
+                        </a>
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://bit.ly/3hsQ6D2"
+                            className="app-gallery-button"
+                        >
+                            <button type="button">
+                                <img src={AppGalleryBadge} alt="app-gallery" />
                             </button>
                         </a>
                     </div>
