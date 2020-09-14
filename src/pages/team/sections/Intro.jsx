@@ -4,16 +4,21 @@ import React, { useState, useEffect } from 'react'
 import isMobile from 'ismobilejs'
 
 import Translate from '../../../components/translation/translate'
-import useWindowSize from '../../../hooks/useWindowSize'
 
 import '../styles.scss'
 
 const Intro = () => {
     const [fullScreen, setFullscreen] = useState(!isMobile().any)
-    const sizes = useWindowSize()
+    const [windowWidth, setWindowWidth] = useState(0)
+
+    useEffect(() => {
+        const { width } = window.screen
+        setWindowWidth(width)
+        setFullscreen(width > 991)
+    }, [])
 
     const imageResize = () => {
-        if (sizes.width > 991) {
+        if (windowWidth > 991) {
             setFullscreen(!fullScreen)
         }
     }

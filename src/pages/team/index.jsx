@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Layout from '../../components/layout'
 import './styles.scss'
@@ -9,7 +9,14 @@ import JoinUs from './sections/JoinUs'
 const pageTitle = 'WeStudents — Team'
 
 const TeamPage = () => {
-    return (
+    const [windowWidth, setWindowWidth] = useState(0)
+
+    useEffect(() => {
+        const width = window.innerWidth
+        setWindowWidth(width)
+    }, [])
+
+    return windowWidth === undefined ? null : (
         <Layout
             showFooter
             className="teampage"
@@ -22,7 +29,9 @@ const TeamPage = () => {
                 },
                 {
                     anchor: 'team',
-                    render: (fullpageProps) => <TeamProfiles fullpageProps={fullpageProps} />,
+                    render: (fullpageProps) => (
+                        <TeamProfiles windowWidth={windowWidth} fullpageProps={fullpageProps} />
+                    ),
                 },
                 {
                     anchor: 'candidati',
