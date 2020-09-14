@@ -130,7 +130,6 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
 
     return (
         <div className={className}>
-            {console.log('rendering laypout')}
             <SEO {...seo} />
             <Header siteTitle={data.site.siteMetadata.title} type={headerStyle} />
             <div style={{ margin: `0 auto` }}>
