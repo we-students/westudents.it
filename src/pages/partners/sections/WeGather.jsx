@@ -33,7 +33,7 @@ const WeGather = () => {
 
     return (
         <div className="wegather-section container ">
-            <div className="blog-posts d-flex">
+            <div className="blog-posts">
                 {data.map((item, index) => {
                     const imgProps =
                         item.heroImage && item.heroImage.fluid
