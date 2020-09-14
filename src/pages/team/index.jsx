@@ -8,27 +8,29 @@ import JoinUs from './sections/JoinUs'
 
 const pageTitle = 'WeStudents — Team'
 
-const TeamPage = () => (
-    <Layout
-        showFooter
-        className="teampage"
-        seo={{ title: pageTitle }}
-        showBubbles
-        sections={[
-            {
-                anchor: 'intro',
-                render: (fullpageProps) => <Intro fullpageProps={fullpageProps} />,
-            },
-            {
-                anchor: 'team',
-                render: (fullpageProps) => <TeamProfiles fullpageProps={fullpageProps} />,
-            },
-            {
-                anchor: 'candidati',
-                render: (fullpageProps) => <JoinUs fullpageProps={fullpageProps} />,
-            },
-        ]}
-    />
-)
+const TeamPage = () => {
+    return (
+        <Layout
+            showFooter
+            className="teampage"
+            seo={{ title: pageTitle }}
+            showBubbles
+            sections={[
+                {
+                    anchor: 'intro',
+                    render: (fullpageProps) => <Intro fullpageProps={fullpageProps} />,
+                },
+                {
+                    anchor: 'team',
+                    render: (fullpageProps) => <TeamProfiles fullpageProps={fullpageProps} />,
+                },
+                {
+                    anchor: 'candidati',
+                    render: (fullpageProps) => <JoinUs fullpageProps={fullpageProps} />,
+                },
+            ]}
+        />
+    )
+}
 
 export default React.memo(TeamPage)

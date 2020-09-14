@@ -9,20 +9,16 @@ module.exports = {
         title: `WeStudents.it`,
         description: ``,
         author: `https://github.com/we-students`,
+        siteUrl: `https://westudents.it/`,
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                name: `images`,
-                path: `${__dirname}/src/images`,
-            },
-        },
         `gatsby-transformer-sharp`,
+        `gatsby-plugin-sitemap`,
         `gatsby-plugin-sharp`,
         `gatsby-plugin-netlify`,
         'gatsby-plugin-remove-serviceworker',
+        'gatsby-plugin-sass',
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
@@ -35,12 +31,18 @@ module.exports = {
                 icon: `src/images/westudentsapp.svg`,
             },
         },
-        'gatsby-plugin-sass',
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `images`,
+                path: `${__dirname}/src/images`,
+            },
+        },
         {
             resolve: `gatsby-source-contentful`,
             options: {
-                spaceId: envs.CONTENTFUL_SPACE_ID, // or process.env.CONTENTFUL_SPACE_ID
-                accessToken: envs.CONTENTFUL_ACCESS_TOKEN, // or process.env.CONTENTFUL_TOKEN
+                spaceId: envs.CONTENTFUL_SPACE_ID,
+                accessToken: envs.CONTENTFUL_ACCESS_TOKEN,
             },
         },
         {
@@ -58,8 +60,5 @@ module.exports = {
                 },
             },
         },
-        // this (optional) plugin enables Progressive Web App + Offline functionality
-        // To learn more, visit: https://gatsby.dev/offline
-        // `gatsby-plugin-offline`,
     ],
 }

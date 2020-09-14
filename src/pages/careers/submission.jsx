@@ -22,7 +22,7 @@ const CareerSubmission = ({ data, pageContext }) => {
     const { title } = data.position.edges[0].node
     const { slug } = pageContext
     const [isUploading, setIsUploading] = useState(false)
-    const [cvUrl, setCvUrl] = useState()
+    const [fullFileName, setFullFileName] = useState()
 
     const recaptchaRef = React.createRef()
 
@@ -52,16 +52,19 @@ const CareerSubmission = ({ data, pageContext }) => {
             const date = new Date()
             formik.handleChange('cv_name')(file.name)
 
+            const ffn = `${date.toISOString()}_${slug}_${file.name}`
+
+            setFullFileName(ffn)
+
             setIsUploading(true)
 
             firebase
                 .storage()
                 .ref()
-                .child(`westudents.it/cv/${date.toISOString()}_${slug}_${file.name}`)
+                .child(`westudents.it/cv/${ffn}`)
                 .put(file)
-                .then((snapshot) => {
+                .then(() => {
                     setIsUploading(false)
-                    setCvUrl(snapshot.metadata.fullPath)
                 })
         }
     }
@@ -73,7 +76,9 @@ const CareerSubmission = ({ data, pageContext }) => {
         const { data: resp } = await subFunc({
             fullname: values.fullname,
             role: values.role,
-            cv_url: cvUrl,
+            cv_url: `https://firebasestorage.googleapis.com/v0/b/practical-bot-198011.appspot.com/o/westudents.it%2Fcv%2F${encodeURIComponent(
+                fullFileName,
+            )}?alt=media`,
             profile: values.profile,
             recaptcha: token,
         })

@@ -21,7 +21,7 @@ const options = {
 }
 
 const CareerDetails = ({ data }) => {
-    const { title, place, description } = data.allContentfulOpenPosition.edges[0].node
+    const { title, place, description, form } = data.allContentfulOpenPosition.edges[0].node
 
     const [hasMounted, setHasMounted] = useState(false)
 
@@ -44,11 +44,19 @@ const CareerDetails = ({ data }) => {
                         </div>
                     </div>
                     <div className="apply-button-wrapper">
-                        <Link to={`${hasMounted ? window.location.pathname : ''}/candidatura`}>
-                            <button type="button" className="custom-button">
-                                Candidati
-                            </button>
-                        </Link>
+                        {!form ? (
+                            <Link to={`${hasMounted ? window.location.pathname : ''}/candidatura`}>
+                                <button type="button" className="custom-button">
+                                    Candidati
+                                </button>
+                            </Link>
+                        ) : (
+                            <a rel="noopener noreferrer" target="_blank" href={form}>
+                                <button type="button" className="custom-button">
+                                    Candidati
+                                </button>
+                            </a>
+                        )}
                     </div>
                 </div>
             </div>
@@ -63,6 +71,7 @@ export const query = graphql`
                 node {
                     place
                     title
+                    form
                     description {
                         json
                     }

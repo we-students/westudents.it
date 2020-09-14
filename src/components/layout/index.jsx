@@ -8,13 +8,14 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState, useCallback, useEffect } from 'react'
+import React, { useState, useCallback } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import ReactFullpage from '@fullpage/react-fullpage'
 import Modal from 'react-modal'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
 import { getCookie, setCookie } from '../../utils/cookies'
+import useWindowSize from '../../hooks/useWindowSize'
 import Bubbles from '../bubbles'
 import SEO from '../seo'
 import Footer from '../footer'
@@ -22,12 +23,7 @@ import Header from '../header'
 import './layout.scss'
 
 const Layout = ({ children, className, sections, seo, showBubbles, showFooter = true }) => {
-    const [windowWidth, setWindowWidth] = useState(0)
-
-    useEffect(() => {
-        const { width } = window.screen
-        setWindowWidth(width)
-    }, [])
+    const sizes = useWindowSize()
 
     const data = useStaticQuery(graphql`
         query SiteTitleQuery {
@@ -53,7 +49,7 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
     }
 
     useScrollPosition(() => {
-        if (windowWidth < 992 && sections) {
+        if (sizes.width < 992 && sections) {
             const sectionsElems = document.getElementsByClassName('section')
 
             let targetIndex = 0
@@ -75,7 +71,7 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
     })
 
     const renderSectionContent = useCallback(() => {
-        if (windowWidth < 992) {
+        if (sizes.width < 992) {
             return (
                 <>
                     {sections.map((section, index) => {
@@ -126,11 +122,10 @@ const Layout = ({ children, className, sections, seo, showBubbles, showFooter = 
                 )}
             />
         )
-    }, [windowWidth])
+    }, [sizes.width])
 
     return (
         <div className={className}>
-            {console.log('rendering laypout')}
             <SEO {...seo} />
             <Header siteTitle={data.site.siteMetadata.title} type={headerStyle} />
             <div style={{ margin: `0 auto` }}>
