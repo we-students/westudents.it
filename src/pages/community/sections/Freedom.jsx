@@ -51,4 +51,4 @@ const Freedom = ({ fullpageProps = {} }) => {
     )
 }
 
-export default Freedom
+export default React.memo(Freedom)

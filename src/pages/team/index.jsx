@@ -8,7 +8,7 @@ import JoinUs from './sections/JoinUs'
 
 const pageTitle = 'WeStudents — Team'
 
-const HomePage = () => (
+const TeamPage = () => (
     <Layout
         showFooter
         className="teampage"
@@ -31,4 +31,4 @@ const HomePage = () => (
     />
 )
 
-export default HomePage
+export default React.memo(TeamPage)

@@ -92,4 +92,4 @@ const OpenPosition = () => {
     )
 }
 
-export default OpenPosition
+export default React.memo(OpenPosition)

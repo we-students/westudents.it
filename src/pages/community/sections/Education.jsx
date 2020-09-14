@@ -53,4 +53,4 @@ const Education = ({ fullpageProps = {} }) => {
     )
 }
 
-export default Education
+export default React.memo(Education)

@@ -45,4 +45,4 @@ const WeGather = () => {
     )
 }
 
-export default WeGather
+export default React.memo(WeGather)

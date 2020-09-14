@@ -507,6 +507,7 @@
         padding-top: 140px;
         padding-bottom: 50px;
         .blog-posts {
+            display: flex;
             flex-direction: row;
             align-content: stretch;
 
@@ -637,6 +638,11 @@
 }
 
 @media only screen and (max-width: 991px) {
+
+    .blog-posts { 
+        display: block !important;
+    }
+
     .section {
         padding-bottom: 30px;
 
@@ -651,6 +657,14 @@
 
     .partner-sections {
         height: 100vh !important;
+    }
+
+    .partnerspage .wegather-section .WeGather-card .text-section h3 {
+        line-height: 1em;
+    }
+
+    .partnerspage .wegather-section .WeGather-card .cta-section button {
+        line-height: 1em;
     }
 }
 

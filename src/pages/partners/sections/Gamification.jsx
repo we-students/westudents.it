@@ -49,4 +49,4 @@ const Gamification = () => {
     )
 }
 
-export default Gamification
+export default React.memo(Gamification)

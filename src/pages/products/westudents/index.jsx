@@ -36,4 +36,4 @@ const WeStudentsPage = () => (
     />
 )
 
-export default WeStudentsPage
+export default React.memo(WeStudentsPage)

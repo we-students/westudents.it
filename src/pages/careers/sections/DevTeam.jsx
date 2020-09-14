@@ -58,4 +58,4 @@ const OpenPosition = ({ fullpageProps = {} }) => {
     )
 }
 
-export default OpenPosition
+export default React.memo(OpenPosition)

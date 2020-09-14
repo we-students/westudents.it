@@ -6,9 +6,14 @@ import Translate from '../../../components/translation/translate'
 import '../styles.scss'
 
 const Intro = () => {
-    const { width: windowWidth } = typeof window !== 'undefined' ? window.screen : {}
+    const [fullScreen, setFullscreen] = useState(false)
+    const [windowWidth, setWindowWidth] = useState(0)
 
-    const [fullScreen, setFullscreen] = useState(windowWidth > 991)
+    useEffect(() => {
+        const { width } = window.screen
+        setWindowWidth(width)
+        setFullscreen(width > 991)
+    }, [])
 
     const imageResize = () => {
         if (windowWidth > 991) {
@@ -59,4 +64,4 @@ const Intro = () => {
     )
 }
 
-export default Intro
+export default React.memo(Intro)

@@ -9,8 +9,14 @@ const LinkedinIcon = require('../../../images/linkedin_icon_white.svg')
 
 const Team = ({ fullpageProps = {} }) => {
     const [isActive, setIsActive] = useState(false)
-    const { width: windowWidth, height: windowHeight } =
-        typeof window !== 'undefined' ? window.screen : {}
+    const [windowWidth, setWindowWidth] = useState(0)
+    const [windowHeight, setWindowHeight] = useState(0)
+
+    useEffect(() => {
+        const { width, height } = window.screen
+        setWindowWidth(width)
+        setWindowHeight(height)
+    }, [])
 
     useEffect(() => {
         if (fullpageProps.fullpageApi) {
@@ -87,4 +93,4 @@ const Team = ({ fullpageProps = {} }) => {
     )
 }
 
-export default Team
+export default React.memo(Team)

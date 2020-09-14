@@ -58,4 +58,4 @@ const CommunityPage = () => (
     />
 )
 
-export default CommunityPage
+export default React.memo(CommunityPage)

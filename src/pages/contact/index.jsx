@@ -48,8 +48,8 @@ const ContactPage = () => {
         if (resp.success) {
             Swal.fire({
                 status: 'success',
-                title: 'Ok',
-                html: 'Ok!',
+                title: 'Ok!',
+                html: 'Ti contattermo il prima possibile',
             })
 
             formik.resetForm()
@@ -216,4 +216,4 @@ const ContactPage = () => {
     )
 }
 
-export default ContactPage
+export default React.memo(ContactPage)

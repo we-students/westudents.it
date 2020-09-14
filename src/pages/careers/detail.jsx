@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { graphql, Link } from 'gatsby'
 import { BLOCKS, MARKS } from '@contentful/rich-text-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
@@ -22,6 +22,13 @@ const options = {
 
 const CareerDetails = ({ data }) => {
     const { title, place, description, form } = data.allContentfulOpenPosition.edges[0].node
+
+    const [hasMounted, setHasMounted] = useState(false)
+
+    useEffect(() => {
+        setHasMounted(true)
+    }, [])
+
     return (
         <Layout className="careers" seo={{ title: `WeStudents — ${title}` }} showBubbles>
             <div className="container career-details">
@@ -38,11 +45,7 @@ const CareerDetails = ({ data }) => {
                     </div>
                     <div className="apply-button-wrapper">
                         {!form ? (
-                            <Link
-                                to={`${
-                                    typeof window !== 'undefined' ? window.location.pathname : ''
-                                }/candidatura`}
-                            >
+                            <Link to={`${hasMounted ? window.location.pathname : ''}/candidatura`}>
                                 <button type="button" className="custom-button">
                                     Candidati
                                 </button>
@@ -78,4 +81,4 @@ export const query = graphql`
     }
 `
 
-export default CareerDetails
+export default React.memo(CareerDetails)

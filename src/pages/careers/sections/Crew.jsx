@@ -43,4 +43,4 @@ const Crew = ({ fullpageProps = {} }) => {
     )
 }
 
-export default Crew
+export default React.memo(Crew)

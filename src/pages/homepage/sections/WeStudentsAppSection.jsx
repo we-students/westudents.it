@@ -51,4 +51,4 @@ const WeStudentsApp = () => {
     )
 }
 
-export default WeStudentsApp
+export default React.memo(WeStudentsApp)
