@@ -71,4 +71,4 @@ const Intro = ({ fullpageProps = {} }) => {
     )
 }
 
-export default Intro
+export default React.memo(Intro)

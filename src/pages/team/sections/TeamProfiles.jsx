@@ -1,6 +1,6 @@
 /* eslint-disable global-require */
 /* eslint-disable react/no-array-index-key */
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import GridList from '../../../components/grid-list'
 
@@ -57,6 +57,13 @@ const Profile = (props) => {
 }
 
 const TeamProfiles = () => {
+    const [windowWidth, setWindowWidth] = useState(0)
+
+    useEffect(() => {
+        const { width } = window.screen
+        setWindowWidth(width)
+    }, [])
+
     const data = useStaticQuery(graphql`
         query PersonQuery {
             allContentfulPerson {
@@ -99,8 +106,6 @@ const TeamProfiles = () => {
             return 0
         })
 
-    const { width: windowWidth } = typeof window !== 'undefined' ? window.screen : {}
-
     const minHeight = (() => {
         if (windowWidth < 768) {
             return data.length * 280
@@ -133,4 +138,4 @@ const TeamProfiles = () => {
     )
 }
 
-export default TeamProfiles
+export default React.memo(TeamProfiles)

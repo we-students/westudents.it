@@ -36,4 +36,4 @@ const Ambassador = () => {
     )
 }
 
-export default Ambassador
+export default React.memo(Ambassador)

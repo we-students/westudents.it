@@ -77,4 +77,4 @@ const OnlineDiscounts = () => {
     )
 }
 
-export default OnlineDiscounts
+export default React.memo(OnlineDiscounts)

@@ -37,4 +37,4 @@ const Careers = () => (
     />
 )
 
-export default Careers
+export default React.memo(Careers)

@@ -49,4 +49,4 @@ const Connection = ({ fullpageProps = {} }) => {
     )
 }
 
-export default Connection
+export default React.memo(Connection)
