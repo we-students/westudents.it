@@ -6,6 +6,7 @@ import MediumBubble from '../../images/bubble_medium.png'
 import LargeBubble from '../../images/bubble_big.png'
 
 import getRandomInt from '../../utils/index'
+import useWindowSize from '../../hooks/useWindowSize'
 
 import './styles.scss'
 
@@ -49,13 +50,9 @@ const Bubble = (props) => {
 
 const Bubbles = (props) => {
     const [isMounted, setIsMounted] = useState(false)
-    const [windowWidth, setWindowWidth] = useState(0)
-    const [windowHeight, setWindowHeight] = useState(0)
+    const sizes = useWindowSize()
 
     useEffect(() => {
-        const { width, height } = window.screen
-        setWindowWidth(width)
-        setWindowHeight(height)
         setIsMounted(true)
     }, [])
 
@@ -85,9 +82,9 @@ const Bubbles = (props) => {
             const bubblesTemp = []
             for (let i = 0; i < sectionCount; i++) {
                 for (let z = 0; z < getRandomInt(1, 3); z++) {
-                    const y = windowHeight * Math.random() + i * windowHeight
+                    const y = sizes.height * Math.random() + i * sizes.height
                     const randomBubble = bubblesSvgs[Math.floor(Math.random() * bubblesSvgs.length)]
-                    const x = windowWidth * Math.random()
+                    const x = sizes.width * Math.random()
                     const rotation = getRandomInt(0, 360)
                     bubblesTemp.push(
                         <Bubble
