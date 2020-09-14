@@ -1,9 +1,9 @@
 /* eslint-disable no-plusplus */
 import React, { useCallback, useState, useEffect } from 'react'
 
-import SmallBubble from '../../images/bubble_small.svg'
-import MediumBubble from '../../images/bubble_medium.svg'
-import LargeBubble from '../../images/bubble_big.svg'
+import SmallBubble from '../../images/bubble_small.png'
+import MediumBubble from '../../images/bubble_medium.png'
+import LargeBubble from '../../images/bubble_big.png'
 
 import getRandomInt from '../../utils/index'
 
@@ -64,18 +64,18 @@ const Bubbles = (props) => {
     const bubblesSvgs = [
         {
             image: LargeBubble,
-            width: 220,
-            height: 290,
+            width: 440,
+            height: 510,
         },
         {
             image: MediumBubble,
-            width: 130,
-            height: 220,
+            width: 350,
+            height: 420,
         },
         {
             image: SmallBubble,
-            width: 90,
-            height: 130,
+            width: 190,
+            height: 190,
         },
     ]
     const { sectionCount } = props
@@ -84,11 +84,10 @@ const Bubbles = (props) => {
         if (sectionCount > 0 && bubblesSvgs) {
             const bubblesTemp = []
             for (let i = 0; i < sectionCount; i++) {
-                for (let z = 0; z < getRandomInt(2, 4); z++) {
+                for (let z = 0; z < getRandomInt(1, 3); z++) {
                     const y = windowHeight * Math.random() + i * windowHeight
                     const randomBubble = bubblesSvgs[Math.floor(Math.random() * bubblesSvgs.length)]
                     const x = windowWidth * Math.random()
-                    const opacity = Math.random() + 0.2
                     const rotation = getRandomInt(0, 360)
                     bubblesTemp.push(
                         <Bubble
@@ -98,7 +97,6 @@ const Bubbles = (props) => {
                             verticalShift={y}
                             positionX="left"
                             positionY="top"
-                            opacity={opacity}
                             height={randomBubble.height}
                             width={randomBubble.width}
                             rotation={rotation}

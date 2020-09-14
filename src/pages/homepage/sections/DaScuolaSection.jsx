@@ -15,7 +15,7 @@ const DaScuola = ({ onCtaPress = () => {} }) => {
             if (size.width < 767) return 1.2
             if (size.width >= 768 && size.width < 991) return 0.8
 
-            return 0.5
+            return 0.45
         })()
 
         setMultiply(m)

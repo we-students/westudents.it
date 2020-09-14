@@ -255,19 +255,19 @@ const Footer = () => {
                                         <small>{formik.errors.email}</small>
                                     ) : null}
                                 </div>
+                                <div className="newsletter-check-div">
+                                    <input
+                                        type="checkbox"
+                                        id="subscribe_id"
+                                        name="subscribe"
+                                        checked={formik.values.privacy}
+                                        onChange={formik.handleChange('privacy')}
+                                    />
 
-                                <input
-                                    type="checkbox"
-                                    id="subscribe_id"
-                                    name="subscribe"
-                                    checked={formik.values.privacy}
-                                    onChange={formik.handleChange('privacy')}
-                                />
-
-                                <label style={{ fontSize: '10px' }} htmlFor="subscribe_id">
-                                    <Translate>FOOTER.JOIN_NEWSLETTER.CONDITIONS</Translate>
-                                </label>
-
+                                    <label style={{ fontSize: '10px' }} htmlFor="subscribe_id">
+                                        <Translate>FOOTER.JOIN_NEWSLETTER.CONDITIONS</Translate>
+                                    </label>
+                                </div>
                                 <div>
                                     {formik.errors.privacy ? (
                                         <small>{formik.errors.privacy}</small>

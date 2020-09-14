@@ -4,12 +4,12 @@
 .community-wrapper {
     .video-intro-wrapper {
         background: linear-gradient(45deg, rgba(242,102,106,1) 0%, rgba(246,121,104,0.8) 55%, rgba(255,157,100,1) 100%);
-        height: 100%;
+        height: 100vh;
         width: 100%;
         position: relative;
         background-position: center;
         background-size: cover;
-        padding-top: 150px;
+        display: flex;
         video {
             z-index: -3;
             position: absolute;
@@ -35,8 +35,11 @@
         color: white;
         display: flex;
         flex-direction: column;
-        height: 100%;
-
+        height: 70vh;
+        margin: auto;
+        > div {
+            flex: 1 1;
+        }
         .cta {
             img {
                 width: 120px;
@@ -68,17 +71,22 @@
             text-align: center;
             margin: 0 12%;
             @media screen and (min-width: 576px) {
-                margin: 0 22%;
+                margin: 0 17%;
                 font-size: 40px;  
             } 
             @media screen and (max-width: 370px) {
                 margin: 0 10%;
                 font-size: 25px;  
             }
+            p {
+                margin: 0;
+            }
         }
         button {
             background: transparent;
+            height: min-content;
             margin-bottom: 1.5em;
+            margin-top: 0;
         }
     }
     .manifest {
@@ -107,12 +115,12 @@
                 flex: 1;
                 .img {
                     position: absolute;
-                    zoom: 0.7;
                     &.bottom {
                         z-index: 1;
-                        right: 20%;
+                        right: 10%;
                         bottom: 20%;
                         animation: exit-left 1.5s;
+                        transform: scale(0.7);
                         &.active {
                             animation: enter-left 1.5s;
                         }
@@ -126,9 +134,10 @@
                     }
                     &.top {
                         z-index: 3;
-                        right: 50%;
+                        right: 40%;
                         top: 8%;
                         animation: 1.5s exit-left 0.3s;
+                        transform: scale(0.7);
                         &.active {
                             animation: 1.7s enter-left;
                         }
@@ -157,12 +166,12 @@
                 flex: 1;
                 .img {
                     position: absolute;
-                    zoom: 0.7;
                     &.bottom {
                         z-index: 1;
                         right: 20%;
                         bottom: 20%;
                         animation: exit-right 1.5s;
+                        transform: scale(0.7);
                         &.active {
                             animation: enter-right 1.5s;
                         }
@@ -179,6 +188,7 @@
                         right: 50%;
                         top: 8%;
                         animation: 1.5s exit-right 0.3s;
+                        transform: scale(0.7);
                         &.active {
                             animation: 1.7s enter-right;
                         }
@@ -204,20 +214,20 @@
             }
         }
         @keyframes enter-left {
-            0%   {transform: translateX(-100vw);}
-            100%  {transform: translateX(0);}
+            0%   {transform: translateX(-100vw) scale(0.7);}
+            100%  {transform: translateX(0) scale(0.7);}
         }
         @keyframes exit-left {
-            0%   {transform: translateX(0);}
-            100%  {transform: translateX(-100vw);}
+            0%   {transform: translateX(0) scale(0.7);}
+            100%  {transform: translateX(-100vw) scale(0.7);}
         }
         @keyframes enter-right {
-            0%   {transform: translateX(100vw);}
-            100%  {transform: translateX(0);}
+            0%   {transform: translateX(100vw) scale(0.7);}
+            100%  {transform: translateX(0) scale(0.7);}
         }
         @keyframes exit-right {
-            0%   {transform: translateX(0);}
-            100%  {transform: translateX(100vw);}
+            0%   {transform: translateX(0) scale(0.7);}
+            100%  {transform: translateX(100vw) scale(0.7);}
         }
         .manifest-text {
 
@@ -243,13 +253,13 @@
     }
     .features {
         height: 100%;
-        padding-top: 190px;
+        padding-top: 150px;
         .title{
             color: #E08B6C;
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            padding-bottom: 100px;
+            padding-bottom: 70px;
             font-size: 25px;
             @media screen and (max-width: 576px){
                 padding-bottom: 20px;
@@ -299,7 +309,7 @@
             justify-content: center;
             align-items: flex-end;
             padding: 5% 20%;
-            font-size: 20px;
+            font-size: 19px;
             font-weight: 600;
             @media screen and (max-width: 576px){
                 display: none;
@@ -307,12 +317,12 @@
         }
     }
     .programs {
-        padding: 100px 0;
-        height: 100%;
+        align-items: center;
+        height: 100vh;
         @media screen and (max-width: 576px){
             padding-top: 110px;
             padding-bottom: 50px;
-            height: 80vh;
+            height: 60vh;
         }
         .text-section {
             text-align: center;
@@ -403,6 +413,7 @@
             
         }
         .wegather-background {
+            height: 65%;
             border-radius: 15px 0 0 15px;
             width: 100%;
             background-size: cover;
@@ -413,6 +424,7 @@
             }
         }
         .westudents-background {
+            height: 65%;
             border-radius: 0 15px 15px 0;
             width: 100%;
             background-size: cover;
@@ -430,7 +442,7 @@
         background-size: cover;
         background-image: none;
         background-position: center;
-        background-image: url('../../images/team_image.png');
+        background-image: url('../../images/crew.jpg');
         opacity: 0;
         transition: 1s;
         &.active {

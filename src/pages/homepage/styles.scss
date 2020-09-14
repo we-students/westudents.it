@@ -1,335 +1,335 @@
 .homepage {
+    .section .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-	.section .container {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+        > * {
+            flex: 1;
+            position: relative;
+        }
+    }
 
-		> * {
-			flex: 1;
-			position: relative;
-		}
-	}
+    .intro {
+        height: 100vh;
 
-	.intro {
-		> .intro-text {
-			padding-top: 50px;
-			padding-bottom: 20vh;
-		}
-
-		h2 {
-			font-size: 3.6em;
-
-			span {
-				animation: flow 3s ease-in-out infinite;
-				background: linear-gradient(-60deg, #FF9D64, #c34823, #e4552a, #ee7752, #f09c83);
-				background-size: 300%;
-				-webkit-background-clip: text;
-				background-clip: text;
-				-webkit-text-fill-color: transparent;
-			}
-		}
-
-		button {
-			padding: 0.5em 2em;
-		}
-	}
-
-	h3 {
-		font-size: 2.4em;
-		margin: 20px 0px;
-	}
-
-	p.section-description {
-		color: #A6A6A6;		
-		font-weight: 700;
-		font-size: 1.2em;
-		padding: 0;
-    	margin: 0;
-    	margin-bottom: 10px;
-	}
-
-	.westudents-app {
-		.big-bubble {
-			width: 300px;
-			height: 300px;
-			background: linear-gradient(45deg, #f0494e, #fcab7c);
-			position: absolute;
-			top: 10%;
-			left: 10%;
-			border-radius: 100%;
-		}
-
-		.logo {
-			position: absolute;
-			bottom: 8%;
-			width: 80px;
-			height: 80px;
-			left: 28%;
-		}
-	}
-
-	.wegather {
-		.big-bubble {
-			width: 300px;
-			height: 300px;
-			background: linear-gradient(45deg, #EA544C, #e76962);
-			position: absolute;
-			top: 15%;
-			right: 10%;
-			border-radius: 100%;
-		}
-	}
-
-	.dascuola {
-		.big-bubble {
-			width: 180px;
-			height: 180px;
-			background: linear-gradient(45deg, #7C6BAA, #FF9D64);
-			position: absolute;
-			top: 15%;
-			right: 0;
-			border-radius: 100%;
-		}
-
-		.logo {
-			position: absolute;
-			bottom: 20%;
-			width: 80px;
-			height: 80px;
-			left: 10%;
-		}
-	}
-
-	.westudents-app, .wegather, .dascuola {
-
-		.westudents-app-text {
-			margin-bottom: 20vh;
-		}
-
-		.wegather-text {
-			margin-right: 50px;
-			margin-bottom: 20vh;
-			margin-top: 20px;
-			text-align: right;
-		}
-
-		button {
-			margin-top: 30px;
-			height: 36px;
-			padding: 0 3em;
-			font-size: 15px;
-			&.dascuola {
-				background: #7C6BAA;
-			}
-			&.wegather {
-				background: #EA544C;
-			}
-			&.westudents {
-				background: #FF9D64;
-			}
-		}
-	}
-
-	.details-wrapper {
-		height: 100%;
-		padding: 120px 5%;
-		background: transparent;
-		color: white;
-		background: linear-gradient(45deg, rgba(195,35,40,1) 0%, rgba(214,73,59,1) 10%, rgba(224,94,69,1) 19%, rgba(255,157,100,1) 100%);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-		.items {
-			display: flex;
-			text-align: center;
-			margin-top: 100px;
-		}
-
-		.item {
-			flex: 1;
-			margin: 0 50px;
-			img {
-				width: 45px;
-				height: 45px;
-			}
-			.name {
-				margin: 0;
-				font-weight: bold;
-				text-transform: uppercase;
-				font-size: 14px;
-			}
-		}
-		&.active {
-			animation: background-orange 0.5s ease-in;
-		}
-	}
-
-	.sponsor {
-		flex-direction: column;
-		padding-top: 9%;
-		padding-bottom: 0;
-
-		> .sponsors-items {
-			display: flex;
-			margin: 20px auto;
-		}
-
-		.title {
-			color: #FF9D64;
-			text-transform: uppercase;
-			margin-bottom: 120px;
-		}
-		.sponsor-icon {
-			width: 160px;
-			height: 60px;
-			margin: 0 1.5em;
-		}
-		.cta-section {
-			justify-content: center;
-			margin-bottom: 100px;
-		}
-		.cta-text {
-			color: #A6A6A6;
-			text-transform: uppercase;
-			font-size: inherit;
-			margin: 40px auto;
-		}
-		button {
-			height: 36px;
-			padding: 0 3em;
-			font-size: 15px;
-		}
-		
-	}
- 	@keyframes background-orange {
-		0% {opacity: 0;}
-		100% {opacity: 1;}
-	  } 
-	  
-}
-
-
-@media only screen and (max-width: 991px) {
-
-    .homepage  {
-        .section .container {
-            display: block !important;
-
+        > .intro-text {
+            padding-top: 50px;
+            padding-bottom: 20vh;
         }
 
-        .intro  {
+        h2 {
+            font-size: 3.6em;
+
+            span {
+                animation: flow 3s ease-in-out infinite;
+                background: linear-gradient(-60deg, #ff9d64, #c34823, #e4552a, #ee7752, #f09c83);
+                background-size: 300%;
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+
+        button {
+            padding: 0.5em 2em;
+        }
+    }
+
+    h3 {
+        font-size: 2.4em;
+        margin: 20px 0px;
+    }
+
+    p.section-description {
+        color: #a6a6a6;
+        font-weight: 700;
+        font-size: 1.2em;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    .westudents-app {
+        .big-bubble {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, #f0494e, #fcab7c);
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            border-radius: 100%;
+        }
+
+        .logo {
+            position: absolute;
+            bottom: 8%;
+            width: 80px;
+            height: 80px;
+            left: 28%;
+        }
+    }
+
+    .wegather {
+        .big-bubble {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, #ea544c, #e76962);
+            position: absolute;
+            top: 15%;
+            right: 10%;
+            border-radius: 100%;
+        }
+    }
+
+    .dascuola {
+        .big-bubble {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(45deg, #7c6baa, #ff9d64);
+            position: absolute;
+            top: 15%;
+            right: 0;
+            border-radius: 100%;
+        }
+
+        .logo {
+            position: absolute;
+            bottom: 20%;
+            width: 80px;
+            height: 80px;
+            left: 10%;
+        }
+    }
+
+    .westudents-app,
+    .wegather,
+    .dascuola {
+        .westudents-app-text {
+            margin-bottom: 20vh;
+        }
+
+        .wegather-text {
+            margin-right: 50px;
+            margin-bottom: 20vh;
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        button {
+            margin-top: 30px;
+            height: 36px;
+            padding: 0 3em;
+            font-size: 15px;
+            &.dascuola {
+                background: #7c6baa;
+            }
+            &.wegather {
+                background: #ea544c;
+            }
+            &.westudents {
+                background: #ff9d64;
+            }
+        }
+    }
+
+    .details-wrapper {
+        height: 100vh !important;
+        background: transparent;
+        color: white;
+        background: linear-gradient(
+            45deg,
+            rgba(195, 35, 40, 1) 0%,
+            rgba(214, 73, 59, 1) 10%,
+            rgba(224, 94, 69, 1) 19%,
+            rgba(255, 157, 100, 1) 100%
+        );
+        > div {
+            margin: auto;
+        }
+        .items {
+            display: flex;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .item {
+            flex: 1;
+            margin: 0 50px;
+            img {
+                width: 45px;
+                height: 45px;
+            }
+            .name {
+                margin: 0;
+                font-weight: bold;
+                text-transform: uppercase;
+                font-size: 14px;
+            }
+        }
+        &.active {
+            animation: background-orange 0.5s ease-in;
+        }
+    }
+
+    .sponsor {
+        flex-direction: column;
+        padding-top: 9%;
+        padding-bottom: 0;
+
+        > .sponsors-items {
+            display: flex;
+            margin: 20px auto;
+        }
+
+        .title {
+            color: #ff9d64;
+            text-transform: uppercase;
+            margin-bottom: 120px;
+        }
+        .sponsor-icon {
+            width: 160px;
+            height: 60px;
+            margin: 0 1.5em;
+        }
+        .cta-section {
+            justify-content: center;
+            margin-bottom: 100px;
+        }
+        .cta-text {
+            color: #a6a6a6;
+            text-transform: uppercase;
+            font-size: inherit;
+            margin: 40px auto;
+        }
+        button {
+            height: 36px;
+            padding: 0 3em;
+            font-size: 15px;
+        }
+    }
+    @keyframes background-orange {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .homepage {
+        .section .container {
+            display: block !important;
+        }
+
+        .intro {
+            height: 80vh;
             > .intro-text {
                 margin: 100px auto 50px !important;
                 max-width: 300px;
                 text-align: center;
+                padding-bottom: 0;
+                padding-top: 30px;
             }
 
             h2 {
                 font-size: 2em !important;
             }
-		}
+        }
 
-		.section .container.westudents-app {
-			display: flex !important;
-			flex-direction: column-reverse;
-			padding-top: 80px;
+        .section .container.westudents-app {
+            display: flex !important;
+            flex-direction: column-reverse;
+            padding-top: 80px;
 
-			.big-bubble {
-				display: none;
-			}
+            .big-bubble {
+                display: none;
+            }
 
-			.westudents-app-text {
-				text-align: center;
-				margin-bottom: 0;
-			}
+            .westudents-app-text {
+                text-align: center;
+                margin-bottom: 0;
+            }
+        }
 
-			
+        .section .container.wegather {
+            display: flex !important;
+            flex-direction: column;
+            padding-top: 80px;
 
-		}
+            .big-bubble {
+                display: none;
+            }
 
-		.section .container.wegather {
-			display: flex !important;
-			flex-direction: column;
-			padding-top: 80px;
+            .wegather-text {
+                text-align: center;
+                margin: 0;
+            }
+        }
 
-			.big-bubble {
-				display: none;
-			}
+        .section .container.dascuola {
+            display: flex !important;
+            flex-direction: column-reverse;
+            padding-top: 80px;
 
-			.wegather-text {
-				text-align: center;
-				margin: 0;
-			}
-		}
+            .big-bubble {
+                display: none;
+            }
 
-		.section .container.dascuola {
-			display: flex !important;
-			flex-direction: column-reverse;
-			padding-top: 80px;
+            .dascuola-text {
+                text-align: center;
+                margin: 0;
+            }
+        }
 
-			.big-bubble {
-				display: none;
-			}
+        .section .details-wrapper {
+            h1 {
+                font-size: 1.6em;
+            }
 
-			.dascuola-text {
-				text-align: center;
-				margin: 0;
-			}
-		}
+            .items {
+                flex-direction: column;
+                margin-top: 40px;
 
-		.section .details-wrapper {
+                .item {
+                    margin: 0 30px;
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 10px;
 
-			h1 {
-				font-size: 1.6em;
-			}
+                    .icon {
+                        margin: 20px 0;
+                        width: 80px;
+                    }
 
-			.items {
-				flex-direction: column;
-				margin-top: 40px;
+                    .content {
+                        width: 120px;
+                        text-align: left;
+                    }
+                }
+            }
+        }
 
+        .section .sponsor {
+            padding-top: 80px;
 
-				.item {
-					margin: 0 30px;
-					display: flex;
-					justify-content: center;
-					margin-bottom: 10px;
+            .title {
+                padding: 0;
+                margin-bottom: 30px;
+            }
 
-					.icon {
-						margin: 20px 0;
-						width: 80px;
-					}
+            > .sponsors-items {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
 
-					.content {
-						width: 120px;
-						text-align: left;
-					}
-				}
-			}
-		}
-
-		.section .sponsor {
-			padding-top: 80px;
-
-			.title {
-				padding: 0;
-				margin-bottom: 30px;
-			}
-
-			> .sponsors-items {
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
-
-				img {
-					width: 40%;
-					margin: 10px;
-				}
-			}
-		}
-		
-	
-    }    
+                img {
+                    width: 40%;
+                    margin: 10px;
+                }
+            }
+        }
+    }
 }
-

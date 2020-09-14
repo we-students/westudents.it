@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Translate from '../../../components/translation/translate'
-import CrewImage from '../../../images/crew.png'
+import CrewImage from '../../../images/crew.jpg'
 
 const Crew = ({ fullpageProps = {} }) => {
     const { fullpageApi } = fullpageProps

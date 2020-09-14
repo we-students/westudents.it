@@ -55,7 +55,10 @@ const Intro = ({ fullpageProps = {} }) => {
                         <Translate>COMMUNITY.INTRO.SUBTITLE</Translate>
                     </p>
                 </div>
-                <div className="justify-center" style={{ flex: 1, alignItems: 'flex-end' }}>
+                <div
+                    className="justify-center"
+                    style={{ marginTop: '20px', alignItems: 'flex-end' }}
+                >
                     <button type="button" onClick={handleScrollTo}>
                         <p className="text-center" style={{ marginBottom: '1em' }}>
                             <Translate>COMMUNITY.INTRO.DISCOVER</Translate>
