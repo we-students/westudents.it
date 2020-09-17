@@ -188,8 +188,10 @@
             margin-bottom: 120px;
         }
         .sponsor-icon {
-            width: 160px;
-            height: 60px;
+            width: auto;
+            max-width: 160px;
+            height: auto;
+            max-height: 60px;
             margin: 0 1.5em;
         }
         .cta-section {
