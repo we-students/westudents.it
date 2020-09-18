@@ -417,6 +417,48 @@
             top: 2px;
         }
     }
+
+
+    .input-wrapper {
+        position: relative;
+        margin: 15px 0;
+    }
+
+    label {
+        padding: 15px;
+    }
+
+    input[type="checkbox"] {
+        margin-right: 10px;
+        background-color: #d1d3d1;
+        -webkit-appearance: default;
+        -moz-appearance: none;
+        appearance: none;
+        width: inherit;
+
+        &::before {
+            content: '';
+            background-color: #ffffff;
+            border-radius: 4px;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 3px;
+            left: 0px;
+            box-shadow: 0 0px 2px rgba(0,0,0,0.06), 0 0px 4px rgba(0,0,0,0.06);
+        }
+
+        &:checked::before {
+            background-color: #F2666A;
+            background: radial-gradient(circle, rgba(242,102,106,1) 30%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 100%);
+        }
+    }
+
+    .error-info {
+        display: block;
+        color: #F2666A;
+    }
+
 }
 
 @media only screen and (max-width: 991px) {

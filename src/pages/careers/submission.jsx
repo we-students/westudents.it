@@ -16,6 +16,7 @@ const validationSchema = Yup.object({
     role: Yup.string().required('Che cosa vuoi fare?'),
     cv_name: Yup.string().required('Ci serve il tuo curriculum'),
     profile: Yup.string().url('Non sembra un url valido'),
+    privacy: Yup.bool().oneOf([true], 'Devi accettare la privacy'),
 })
 
 const CareerSubmission = ({ data, pageContext }) => {
@@ -41,6 +42,7 @@ const CareerSubmission = ({ data, pageContext }) => {
             role: openPositions[slug] ? openPositions[slug].title : '',
             cv_name: '',
             profile: '',
+            privacy: false,
         },
         onSubmit: async (values) => handleSubmit(values),
         validationSchema,
@@ -93,6 +95,8 @@ const CareerSubmission = ({ data, pageContext }) => {
             formik.resetForm()
         }
     }
+
+    console.log(formik.errors)
 
     return (
         <Layout className="careers" seo={{ title: `WeStudents — ${title}` }} showBubbles>
@@ -215,6 +219,21 @@ const CareerSubmission = ({ data, pageContext }) => {
                             onChange={handleFileUpload}
                         />
                     </p>
+
+                    <div className={`input-wrapper ${formik.errors.privacy ? 'error' : ''}`}>
+                        <label htmlFor="privacy">
+                            <input
+                                id="privacy"
+                                type="checkbox"
+                                name="privacy"
+                                value={formik.values.privacy}
+                                onChange={formik.handleChange('privacy')}
+                            />
+                            Dichiaro di aver preso visione della Privacy Policy e di acconsentire al
+                            trattamento dei miei dati personali
+                        </label>
+                        <small className="error-info">{formik.errors.privacy}</small>
+                    </div>
 
                     <button type="submit" disabled={isUploading || formik.isSubmitting}>
                         <span>Candidati</span>

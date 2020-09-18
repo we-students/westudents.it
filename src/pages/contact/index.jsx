@@ -19,7 +19,9 @@ const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2
 const validationSchema = Yup.object({
     fullname: Yup.string().required('Il nome è obbligatorio'),
     email: Yup.string().email('Non sembra essere una mail').required('La mail è obbligatoria'),
-    phone: Yup.string().matches(phoneRegExp, 'Numero di telefono non valido'),
+    phone: Yup.string()
+        .matches(phoneRegExp, 'Numero di telefono non valido')
+        .required('Il numero di telefono è obbligatorio'),
     text: Yup.string().required('Non devi dirci niente?'),
     subject: Yup.string().required(),
     privacy: Yup.bool().oneOf([true], 'Devi accettare la privacy'),
@@ -130,7 +132,7 @@ const ContactPage = () => {
                         {' '}
                         <input
                             name="phone"
-                            placeholder="Potete chiamarmi al numero"
+                            placeholder="Potete chiamarmi al numero*"
                             value={formik.values.phone}
                             onChange={formik.handleChange('phone')}
                             onBlur={formik.handleBlur('phone')}
