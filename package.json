@@ -4,7 +4,7 @@
   "description": "Corporate website built with Gatsby",
   "version": "0.0.3",
   "author": "WeStudents <tech@westudents.it>",
-  "lastUpdated": "2020-08-28",
+  "lastUpdated": "2020-09-18",
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.1",
     "@contentful/rich-text-types": "^14.1.1",
