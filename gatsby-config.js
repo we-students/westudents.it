@@ -60,5 +60,16 @@ module.exports = {
                 },
             },
         },
+        {
+            resolve: 'gatsby-plugin-google-tagmanager',
+            options: {
+                id: 'GTM-NWJDCWH',
+                includeInDevelopment: false,
+                defaultDataLayer: { platform: 'gatsby' },
+                // gtmAuth: 'YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING',
+                // gtmPreview: 'YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_PREVIEW_NAME',
+                // dataLayerName: 'YOUR_DATA_LAYER_NAME',
+            },
+        },
     ],
 }
