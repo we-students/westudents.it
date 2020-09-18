@@ -2,7 +2,7 @@
   "name": "westudents.it",
   "private": true,
   "description": "Corporate website built with Gatsby",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "WeStudents <tech@westudents.it>",
   "lastUpdated": "2020-08-28",
   "dependencies": {
