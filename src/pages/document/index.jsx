@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { BLOCKS, MARKS } from '@contentful/rich-text-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import ReactMarkdown from 'react-markdown'
 
 import Layout from '../../components/layout'
 import './styles.scss'
@@ -19,7 +20,8 @@ const options = {
 }
 
 const Document = ({ data }) => {
-    const { title, content } = data.document.edges[0].node
+    const { title, content, markdown } = data.document.edges[0].node
+
     return (
         <Layout
             showFooter
@@ -29,7 +31,19 @@ const Document = ({ data }) => {
         >
             <div className="container document">
                 <h2>{title}</h2>
-                {documentToReactComponents(content.json, options)}
+                {markdown === true ? (
+                    <ReactMarkdown
+                        source={content.json.content.reduce((acc, curr) => {
+                            const text = curr.content.reduce((innerAcc, innerCurr) => {
+                                return `${innerAcc}\n${innerCurr.value.replace('\n', '\n')}`
+                            }, '')
+
+                            return `${acc}\n${text}`
+                        }, '')}
+                    />
+                ) : (
+                    documentToReactComponents(content.json, options)
+                )}
             </div>
         </Layout>
     )
@@ -42,6 +56,7 @@ export const query = graphql`
                 node {
                     title
                     slug
+                    markdown
                     content {
                         json
                     }

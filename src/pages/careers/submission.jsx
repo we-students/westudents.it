@@ -96,8 +96,6 @@ const CareerSubmission = ({ data, pageContext }) => {
         }
     }
 
-    console.log(formik.errors)
-
     return (
         <Layout className="careers" seo={{ title: `WeStudents — ${title}` }} showBubbles>
             <div className="container career-submission">
