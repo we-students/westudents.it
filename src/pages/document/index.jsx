@@ -35,7 +35,7 @@ const Document = ({ data }) => {
                     <ReactMarkdown
                         source={content.json.content.reduce((acc, curr) => {
                             const text = curr.content.reduce((innerAcc, innerCurr) => {
-                                return `${innerAcc}\n${innerCurr.value.replace('\n', '\n')}`
+                                return `${innerAcc}\n${innerCurr.value}`
                             }, '')
 
                             return `${acc}\n${text}`
