@@ -1,7 +1,7 @@
 import React from 'react'
 import Translate from '../../../components/translation/translate'
 
-const ByWegather = require('../../../images/by_wegather.svg')
+const ByWestudents = require('../../../images/by_westudents.svg')
 
 const Ambassador = () => {
     return (
@@ -16,19 +16,21 @@ const Ambassador = () => {
                                 <Translate>COMMUNITY.PROGRAMS.AMBASSADOR</Translate>
                             </span>
                         </h2>
-                        <img src={ByWegather} alt="WeGather" style={{ display: 'block' }} />
+                        <img src={ByWestudents} alt="WeGather" style={{ display: 'block' }} />
                         <p className="description">
                             <Translate>COMMUNITY.PROGRAMS.AMBASSADOR_DESCRIPTION</Translate>
                         </p>
                     </div>
-                    <button type="button" className="ambassador">
-                        <span className="default">
-                            <Translate>COMMUNITY.BUTTONS.DISCOVER</Translate>
-                        </span>
-                        <span className="active">
-                            <Translate>COMMUNITY.BUTTONS.WEGATHER</Translate>
-                        </span>
-                    </button>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScYRqkbWTEs8c6zJFg6MZg9rCBrJahNwpUzzsdW7ibLLQFr4A/viewform?usp=sf_link">
+                        <button type="button" className="ambassador">
+                            <span className="default">
+                                <Translate>COMMUNITY.BUTTONS.DISCOVER</Translate>
+                            </span>
+                            <span className="active">
+                                <Translate>COMMUNITY.BUTTONS.WEGATHER</Translate>
+                            </span>
+                        </button>
+                    </a>
                 </div>
             </div>
             <div className="wegather-background" style={{ flex: 1 }} />
