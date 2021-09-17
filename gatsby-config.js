@@ -71,5 +71,9 @@ module.exports = {
                 // dataLayerName: 'YOUR_DATA_LAYER_NAME',
             },
         },
+        {
+            resolve: `gatsby-plugin-create-client-paths`,
+            options: { prefixes: [`/login/*`] },
+        },
     ],
 }
