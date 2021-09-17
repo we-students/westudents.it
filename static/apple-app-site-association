@@ -4,7 +4,9 @@
         "details": [
             {
                 "appID": "1436773096.com.westudents.WeStudents",
-                "paths": [ "/login"]
+                "paths": [
+                    "/login/*"
+                ]
             }
         ]
     }
