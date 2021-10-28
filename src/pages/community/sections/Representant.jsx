@@ -23,14 +23,20 @@ const Representant = () => {
                             <Translate>COMMUNITY.PROGRAMS.REPRESENTANT_DESCRIPTION</Translate>
                         </p>
                     </div>
-                    <button type="button" className="representant">
-                        <span className="default">
-                            <Translate>COMMUNITY.BUTTONS.DISCOVER</Translate>
-                        </span>
-                        <span className="active">
-                            <Translate>COMMUNITY.BUTTONS.JOIN</Translate>
-                        </span>
-                    </button>
+                    <a
+                        href="https://forms.monday.com/forms/a1d7ec079ab37ad1343f7e28e77e33e8?r=use1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <button type="button" className="representant">
+                            <span className="default">
+                                <Translate>COMMUNITY.BUTTONS.DISCOVER</Translate>
+                            </span>
+                            <span className="active">
+                                <Translate>COMMUNITY.BUTTONS.JOIN</Translate>
+                            </span>
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
