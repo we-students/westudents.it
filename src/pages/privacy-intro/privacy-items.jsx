@@ -38,11 +38,7 @@ export const itemList = [
     {
         icon: Icon7,
         description: <Translate>PRIVACYAPP_INTRO.ITEM7</Translate>,
-    },
-    {
-        icon: Icon8,
-        description: <Translate>PRIVACYAPP_INTRO.ITEM8</Translate>,
-    },
+    }
 ]
 
 export default () => null
